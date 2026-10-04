@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "letters": 26,
+  "pictureWords": 52,
+  "newNameRecordings": 27,
+  "decodedNameClips": 27,
+  "checks": [
+    "spelling introduction precedes existing blending",
+    "each repeated letter name is a separate audio clip",
+    "every lowercase character highlights at its exact spoken position",
+    "both examples play then stay on the same letter",
+    "Replay, Pause/Resume and rapid manual Previous/Next cancel old audio",
+    "unfinished spelling resumes at the saved letter position after browser close",
+    "old lessons and partial writing/building/story progress remain",
+    "Letters narration and pictures stay unchanged without word spelling",
+    "phonics blending still plays pure sounds and remains directly accessible",
+    "390x844 and 320x568 mobile controls fit including long words",
+    "200 percent text can scroll without horizontal overflow",
+    "all name recordings decode and contain audio",
+    "no page errors or external runtime requests"
+  ],
+  "unverifiedAudio": [
+    "Automated playback, spelling sequence and clip decoding passed. The 27 new spoken letter-name recordings have not had a perceptual listening review."
+  ]
+}

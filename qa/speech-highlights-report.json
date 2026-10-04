@@ -1,0 +1,50 @@
+{
+  "timedRecordings": 235,
+  "speeds": [
+    {
+      "rate": 1,
+      "letters": true,
+      "spellingRepeatedLetters": true,
+      "words": true,
+      "storySentence": true,
+      "paragraphAllWords": true,
+      "pauseResume": true,
+      "replayAndNavigation": true
+    },
+    {
+      "rate": 0.85,
+      "letters": true,
+      "spellingRepeatedLetters": true,
+      "words": true,
+      "storySentence": true,
+      "paragraphAllWords": true,
+      "pauseResume": true,
+      "replayAndNavigation": true
+    }
+  ],
+  "mobile": [
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "checks": [
+    "Unchanged curriculum and narration text",
+    "Captured timestamp order and character ranges",
+    "Audio-clock word order at normal and slow speed",
+    "Uppercase/lowercase separately",
+    "Repeated p separately",
+    "Pause freezes time and highlight",
+    "Replay begins at first letter",
+    "Navigation and stale events clear highlights",
+    "Q/U and final X",
+    "Whole-sentence fallback",
+    "No layout movement"
+  ],
+  "fallback": "Retained sentence recordings without word metadata highlight the complete sentence. System voices use word boundaries when supplied.",
+  "unverified": "Physical mobile devices and pronunciation by ear were not verified."
+}

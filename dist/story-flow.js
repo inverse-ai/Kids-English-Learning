@@ -2,6 +2,7 @@ import {stories} from './stage-data.js';
 import {storyIntroductions} from './story-words.js';
 import {storyScene} from './story-scenes.js';
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pause=()=>'<button class="btn story-pause" data-action="stages-pause" disabled aria-pressed="false">Pause</button>';
 const button=(label,action,extra='',kind='')=>'<button class="btn '+kind+'" data-action="stages-story-'+action+'" '+extra+'>'+label+'</button>';
 
 export function createStoryFlow({getProgress,save,isSaved,render,status,play,stop,picture}){
@@ -27,13 +28,13 @@ export function createStoryFlow({getProgress,save,isSaved,render,status,play,sto
   if(p.phase==='helper'){
    const entry=intro();
    heading='One word before sentence '+(p.line+1);
-   content='<div class="story-helper"><div class="story-helper-main"><p class="story-helper-word '+(entry.word.length>6?'long':'')+'" lang="en">'+esc(entry.word)+'</p>'+(s.newWords.some(w=>w.toLowerCase()===entry.word.toLowerCase())?picture(entry.word,true):'')+'</div><p class="story-helper-meaning" lang="bn">'+esc(entry.meaning)+'</p></div><div class="story-controls">'+button('Replay','helper-replay')+button('Next →','helper-next','','primary')+'</div>';
+   content='<div class="story-helper"><div class="story-helper-main"><p class="story-helper-word '+(entry.word.length>6?'long':'')+'" lang="en">'+esc(entry.word)+'</p>'+(s.newWords.some(w=>w.toLowerCase()===entry.word.toLowerCase())?picture(entry.word,true):'')+'</div><p class="story-helper-meaning" lang="bn">'+esc(entry.meaning)+'</p></div><div class="story-controls">'+button('Replay','helper-replay')+pause()+button('Next →','helper-next','','primary')+'</div>';
   }else if(p.phase==='sentence'){
    heading='Sentence '+(p.line+1)+' of '+s.sentences.length;
-   content=storyScene(s,p.line)+'<p class="story-sentence" lang="en">'+esc(s.sentences[p.line])+'</p><div class="story-listen">'+button('Hear sentence','sentence-audio','aria-label="Hear this sentence (optional)"')+'</div><div class="story-controls">'+button('← Previous','previous',p.line===0?'disabled':'')+button('Next →','next','','primary')+'</div>';
+   content=storyScene(s,p.line)+'<p class="story-sentence" lang="en">'+esc(s.sentences[p.line])+'</p><div class="story-listen">'+button('Hear sentence','sentence-audio','aria-label="Hear this sentence (optional)"')+pause()+'</div><div class="story-controls">'+button('← Previous','previous',p.line===0?'disabled':'')+button('Next →','next','','primary')+'</div>';
   }else if(p.phase==='paragraph'){
    heading='Your whole story';hint='Read the sentences together.';
-   content=paragraph()+'<div class="story-listen">'+button('Hear paragraph','audio','aria-label="Hear the story (optional)"')+'</div><div class="story-controls">'+button('← Previous','previous')+(p.done?button('Try blanks →','mode','data-mode="blanks"','primary'):button('I read this story','finish','','primary'))+'</div><p class="story-feedback" role="status">'+(p.done?'Story practice complete. Try the blanks if you like.':'Tap when you have finished this practice.')+'</p>';
+   content=paragraph()+'<div class="story-listen">'+button('Hear paragraph','audio','aria-label="Hear the story (optional)"')+pause()+'</div><div class="story-controls">'+button('← Previous','previous')+(p.done?button('Try blanks →','mode','data-mode="blanks"','primary'):button('I read this story','finish','','primary'))+'</div><p class="story-feedback" role="status">'+(p.done?'Story practice complete. Try the blanks if you like.':'Tap when you have finished this practice.')+'</p>';
   }else{
    const b=s.blanks[p.blank],correct=p.answers[p.blank]===b.word,complete=s.blanks.every((b,i)=>p.answers[i]===b.word);
    heading=complete?'Your complete story':'Blank '+(p.blank+1)+' of '+s.blanks.length;

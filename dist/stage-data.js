@@ -55,7 +55,10 @@ export const stories=[
 stories.sort((a,b)=>a.level-b.level||a.sentences.length-b.sentences.length);
 export function normalizeLearning(raw){
  const validWords=new Set(wordLessons.map(l=>l.id)),validStories=new Set(stories.map(s=>s.id));
- const result={letter:Number.isInteger(raw?.letter)&&raw.letter>=0&&raw.letter<26?raw.letter:0,lettersDone:[],words:{},stories:{},patterns:[],storyWordsMet:[],wordCurrent:wordLessons[0].id,storyCurrent:null};
+ const spellingLetter=Number.isInteger(raw?.spelling?.letter)&&raw.spelling.letter>=0&&raw.spelling.letter<26?raw.spelling.letter:0;
+ const spellingLength=alphabet[spellingLetter].examples.reduce((count,word)=>count+word.length+1,0);
+ const spelling={letter:spellingLetter,position:Number.isInteger(raw?.spelling?.position)&&raw.spelling.position>=0&&raw.spelling.position<spellingLength?raw.spelling.position:0,done:[...new Set((Array.isArray(raw?.spelling?.done)?raw.spelling.done:[]).filter(letter=>alphabet.some(a=>a.letter===letter)))]};
+ const result={letter:Number.isInteger(raw?.letter)&&raw.letter>=0&&raw.letter<26?raw.letter:0,lettersDone:[],words:{},stories:{},patterns:[],storyWordsMet:[],wordCurrent:wordLessons[0].id,storyCurrent:null,spelling};
  result.lettersDone=[...new Set((Array.isArray(raw?.lettersDone)?raw.lettersDone:[]).filter(x=>alphabet.some(a=>a.letter===x)))];
  result.patterns=[...new Set((Array.isArray(raw?.patterns)?raw.patterns:[]).filter(x=>patternLessons.some(p=>p.id===x)))];
  const introWords=new Set([...Object.keys(supportingWords),...stories.flatMap(s=>s.newWords)].map(w=>w.toLowerCase()));

@@ -1,5 +1,6 @@
 import {alphabet,stageInfo,wordLessons,supportingWords,stories,patternLessons,pictureSymbols} from './stage-data.js';
 import {createStoryFlow} from './story-flow.js';
+import {createSpellingFlow} from './spelling-flow.js';
 import {familyWords} from './family-data.js';
 import {profiles} from './curriculum.js';
 import {playStageSequence,toggleStagePause,stopStageAudio,stageAudioState} from './stage-audio.js';
@@ -19,16 +20,16 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
  const state=()=>getProgress();
  const status=message=>onStatus(message);
  const storyFlow=createStoryFlow({getProgress,save,isSaved,render,status,play:audioParts,stop,picture:stagePicture});
+ const spellingFlow=createSpellingFlow({getProgress:()=>state().spelling,save,isSaved,render,status,picture:stagePicture,getSpeed});
  const saveLabel=()=>'<span id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</span>';
- function stop(){stopStageAudio();status('');activeStoryLine=-1;}
+ function stop(){stopStageAudio();spellingFlow.clear();status('');activeStoryLine=-1;}
  function audioParts(parts,onEnd=()=>{}){
   playStageSequence(parts,{speed:getSpeed(),onPart:part=>{
    if(part.example!==undefined){exampleIndex=part.example;phase=part.phase;}
    if(part.line!==undefined)activeStoryLine=part.line;
-   document.querySelectorAll('.letter-example').forEach((el,i)=>el.classList.toggle('playing',i===exampleIndex&&part.example!==undefined));
    const label=document.querySelector('#letter-phase');if(label)label.textContent=part.phase||'Listening';
-   document.querySelectorAll('.sound-chip').forEach(el=>el.classList.toggle('playing',part.part!==undefined&&Number(el.dataset.part)===part.part));
-   document.querySelectorAll('.story-line').forEach((el,i)=>el.classList.toggle('playing',i===activeStoryLine));
+  },onActive:(part,active)=>{
+   document.querySelectorAll('.letter-example').forEach((el,i)=>el.classList.toggle('playing',active&&i===part.example));
   },onState:()=>syncAudioControls(),onEnd:()=>{
    document.querySelectorAll('.playing').forEach(el=>el.classList.remove('playing'));phase='Ready to replay';
    const label=document.querySelector('#letter-phase');if(label)label.textContent=phase;
@@ -43,10 +44,10 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
   const a=alphabet[letterIndex];
   state().letter=letterIndex;save();
   audioParts([
-   {key:'alphabet-case:'+a.letter,phase:'Uppercase and lowercase: '+a.letter.toUpperCase()+a.letter},
+   {key:'alphabet-case:'+a.letter,caseLetter:a.letter,phase:'Uppercase and lowercase: '+a.letter.toUpperCase()+a.letter},
    ...a.examples.flatMap((word,i)=>[
-    {key:'alphabet-example:'+a.letter+':'+word,example:i,phase:'Listen: '+word},
-    ...[1,2,3].map(repeat=>({key:'sound:'+a.sound,example:i,phase:'Letter sound · '+repeat+' of 3'})),
+    {key:'alphabet-example:'+a.letter+':'+word,letterName:a.letter,exampleWord:word,example:i,phase:'Listen: '+word},
+    ...[1,2,3].map(repeat=>({key:'sound:'+a.sound,letterSound:a.letter,example:i,phase:'Letter sound · '+repeat+' of 3'})),
     {key:'word:'+word,example:i,phase:'Picture word: '+word,pauseAfter:600}
    ])
   ],()=>{if(!state().lettersDone.includes(a.letter)){state().lettersDone.push(a.letter);save();}});
@@ -61,17 +62,17 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
  }
  function lettersHome(){
   const a=alphabet[letterIndex];
-  return '<section class="stage-letter activity"><div class="eyebrow">Letters · Suggested age 4+</div><h1>Say hello to '+a.letter.toUpperCase()+a.letter+'.</h1><p class="muted">Hear the name, the sound, and two picture words.</p><div class="big-letter letter-display">'+a.letter.toUpperCase()+a.letter+'</div><div class="letter-examples">'+a.examples.map((word,i)=>'<div class="letter-example" data-example="'+i+'">'+stagePicture(word)+'<b>'+word+'</b></div>').join('')+'</div><p class="letter-note">'+esc(a.note)+'</p><div class="activity-actions">'+button('Start','letter-start','','primary')+button('Replay','letter-start')+button('Pause','pause','disabled aria-pressed="false"')+'</div><p id="letter-phase" class="letter-phase" role="status">'+esc(phase)+'</p><p id="audio-status" class="status"></p><div class="letter-paging">'+button('← Previous','letter-next','data-index="'+(letterIndex-1)+'" '+(letterIndex===0?'disabled':''))+ '<span>'+ (letterIndex+1)+' / 26</span>'+button('Next →','letter-next','data-index="'+(letterIndex+1)+'" '+(letterIndex===25?'disabled':''))+'</div><p class="small muted">Stay here and practise. Only Next changes to the next letter.</p></section>'+
+  return '<section class="stage-letter activity"><div class="eyebrow">Letters · Suggested age 4+</div><h1>Say hello to '+a.letter.toUpperCase()+a.letter+'.</h1><p class="muted">Hear the name, the sound, and two picture words.</p><div class="big-letter letter-display"><span data-case="upper">'+a.letter.toUpperCase()+'</span><span data-case="lower">'+a.letter+'</span></div><div class="letter-examples">'+a.examples.map((word,i)=>'<div class="letter-example" data-example="'+i+'">'+stagePicture(word)+'<b>'+word+'</b></div>').join('')+'</div><p class="letter-note">'+esc(a.note).replace('with u:', 'with <span data-letter="u">u</span>:')+'</p><div class="activity-actions">'+button('Start','letter-start','','primary')+button('Replay','letter-start')+button('Pause','pause','disabled aria-pressed="false"')+'</div><p id="letter-phase" class="letter-phase" role="status">'+esc(phase)+'</p><p id="audio-status" class="status"></p><div class="letter-paging">'+button('← Previous','letter-next','data-index="'+(letterIndex-1)+'" '+(letterIndex===0?'disabled':''))+ '<span>'+ (letterIndex+1)+' / 26</span>'+button('Next →','letter-next','data-index="'+(letterIndex+1)+'" '+(letterIndex===25?'disabled':''))+'</div><p class="small muted">Stay here and practise. Only Next changes to the next letter.</p></section>'+
    (state().letter!==letterIndex?'<div class="resume-strip"><span>Your saved letter is '+alphabet[state().letter].letter.toUpperCase()+alphabet[state().letter].letter+'.</span>'+button('Continue that letter →','letter-next','data-index="'+state().letter+'"')+'</div>':'')+
    '<details class="stage-practice"><summary>Choose a letter · '+state().lettersDone.length+' explored</summary><div class="letter-grid">'+alphabet.map((a,i)=>'<button data-action="stages-letter-next" data-index="'+i+'" aria-label="Open '+a.letter.toUpperCase()+a.letter+'">'+a.letter.toUpperCase()+a.letter+(state().lettersDone.includes(a.letter)?'<small>✓</small>':'')+'</button>').join('')+'</div></details><details class="stage-practice"><summary>More letter practice: matching, writing and talking</summary>'+legacyCards('little',profiles.little.lessons.map((_,i)=>i))+'</details>';
  }
  function helperCards(keys){
   return '<div class="helper-grid">'+keys.map(key=>{const h=supportingWords[key.toLowerCase()]||supportingWords[key];return '<div class="helper-card"><b>'+esc(key)+'</b>'+(h?'<p lang="bn">'+esc(h.meaning)+'</p><p>'+esc(h.help)+'</p>':'<p>Meet this word with a grown-up before reading.</p>')+button('Hear '+esc(key),'audio','data-key="word:'+esc(key)+'"')+'</div>';}).join('')+'</div>';
  }
- function wordsHome(){
+ function wordsHome(showSpelling=true){
   const current=wordLessons.find(l=>l.id===state().wordCurrent),resuming=current&&state().words[current.id]&&!state().words[current.id].done;
   const recommended=resuming?current:wordLessons.find(l=>!state().words[l.id]?.done)||wordLessons[0];
-  return '<section class="intro"><div><div class="eyebrow">Words · Suggested age 5+</div><h1>Sounds become words.</h1><p class="muted">Start with sounds you met in Letters. Blend, then read a phrase and a sentence.</p></div></section><section class="blend-intro"><div>'+stagePicture('sat',true)+'<div><h2>Start with s–a–t.</h2>'+sounds('sat')+'<p>Say the sounds, slide them together, then say sat.</p></div></div>'+button('Hear the blend','blend','data-word="sat"','primary')+'</section><p id="audio-status" class="status"></p><div class="resume-strip"><span>'+esc(recommended.word)+' · Your next short word</span>'+button((resuming?'Continue ':'Start with ')+recommended.word+' →','word-open','data-id="'+recommended.id+'"','primary')+'</div><div class="word-path">'+wordLessons.map((l,i)=>'<button class="word-path-card" data-action="stages-word-open" data-id="'+l.id+'">'+stagePicture(l.word,true)+'<b>'+l.word+'</b><small>'+(state().words[l.id]?.done?'Practised ✓':'Word '+(i+1))+'</small></button>').join('')+'</div><section class="stage-existing"><h2>Picture word families</h2><p>All your picture rounds, Bangla help, word building and saved writing are here.</p>'+button('Explore picture words →','families','','primary')+'</section><details class="stage-practice"><summary>More word practice: build, listen, read and talk</summary>'+legacyCards('big',profiles.big.lessons.map((_,i)=>i).filter(i=>i<15))+'</details>';
+  return '<section class="intro"><div><div class="eyebrow">Words · Suggested age 5+</div><h1>Sounds become words.</h1><p class="muted">Spell with letter names, then blend sounds to read phrases and sentences.</p></div></section>'+(showSpelling?spellingFlow.intro():button('Spelling practice →','spelling-open'))+'<section class="blend-intro" id="word-blending"><div>'+stagePicture('sat',true)+'<div><h2>Start with s–a–t.</h2>'+sounds('sat')+'<p>Say the sounds, slide them together, then say sat.</p></div></div>'+button('Hear the blend','blend','data-word="sat"','primary')+'</section><p id="audio-status" class="status"></p><div class="resume-strip"><span>'+esc(recommended.word)+' · Your next short word</span>'+button((resuming?'Continue ':'Start with ')+recommended.word+' →','word-open','data-id="'+recommended.id+'"','primary')+'</div><div class="word-path">'+wordLessons.map((l,i)=>'<button class="word-path-card" data-action="stages-word-open" data-id="'+l.id+'">'+stagePicture(l.word,true)+'<b>'+l.word+'</b><small>'+(state().words[l.id]?.done?'Practised ✓':'Word '+(i+1))+'</small></button>').join('')+'</div><section class="stage-existing"><h2>Picture word families</h2><p>All your picture rounds, Bangla help, word building and saved writing are here.</p>'+button('Explore picture words →','families','','primary')+'</section><details class="stage-practice"><summary>More word practice: build, listen, read and talk</summary>'+legacyCards('big',profiles.big.lessons.map((_,i)=>i).filter(i=>i<15))+'</details>';
  }
  function wordView(){
   const l=wordLessons.find(x=>x.id===wordId),p=state().words[wordId],correct=p.answer===l.word;
@@ -80,7 +81,7 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
   else if(p.step===1){body='<div class="eyebrow">2 · Helping words</div><h1>A few words to help you read.</h1><p class="muted">Meet these before reading the sentence. Listen and say them together.</p>'+helperCards(l.helpers)+'<div class="activity-actions">'+button('Read a short phrase →','word-next','','primary')+'</div>';}
   else if(p.step===2){body='<div class="eyebrow">3 · A short phrase</div><h1>Put words together.</h1>'+stagePicture(l.word)+'<p class="sentence">'+esc(l.phrase)+'</p>'+button('Hear the phrase','audio','data-key="text:'+esc(l.phrase)+'"')+'<div class="activity-actions">'+button('Try the sentence →','word-next','','primary')+'</div>';}
   else{body='<div class="eyebrow">4 · Complete & read</div><h1>Finish the picture sentence.</h1>'+stagePicture(l.word)+'<p class="sentence completed-sentence" role="status">'+esc(correct?l.sentence:l.blank)+'</p><div class="choices sentence-choices">'+l.choices.map(w=>'<button class="choice word-choice '+(p.answer===w?(correct?'correct':'retry'):'')+'" data-action="stages-word-answer" data-word="'+w+'" '+(correct?'disabled':'')+'>'+w+'</button>').join('')+'</div><p class="feedback" role="status">'+(correct?'You did it! Now read the whole sentence aloud.':p.answer?'Good try. Look at the picture and try again.':'Choose one word.')+'</p>'+(correct?button('Hear the whole sentence','audio','data-key="text:'+esc(l.sentence)+'"')+'<div class="activity-actions">'+button('I read the sentence ✓','word-finish','','primary')+'</div>':'');}
-  return '<div class="lesson-head">'+button('← Words','back')+'<span class="lesson-meta">'+(state().words[wordId]?.done?'Practised · ':'')+saveLabel()+'</span></div><section class="activity stage-word">'+body+'<p id="audio-status" class="status"></p></section>';
+  return '<div class="lesson-head">'+button('← Words','back')+'<span class="lesson-meta">'+(state().words[wordId]?.done?'Practised · ':'')+saveLabel()+'</span></div><section class="activity stage-word">'+body+button('Pause','pause','disabled aria-pressed="false"')+'<p id="audio-status" class="status"></p></section>';
  }
  function storiesHome(){
   const levels=['First connected sentences','Add sh and ch','Next: the ai vowel team','Then: the ea vowel team'];
@@ -89,7 +90,7 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
  }
  function patternView(){
   const p=patternLessons.find(x=>x.id===storyId);
-  return '<div class="lesson-head">'+button('← Stories','back')+'</div><section class="activity"><div class="eyebrow">Meet a new pattern</div><h1>'+esc(p.title)+'</h1><p class="lead">'+esc(p.note)+'</p><div class="pattern-word-grid">'+p.words.map((word,i)=>'<div>'+stagePicture(word,true)+'<b>'+word+'</b><p>'+p.parts[i].join(' – ')+'</p>'+button('Hear '+word,'pattern-blend','data-id="'+p.id+'" data-index="'+i+'"')+'</div>').join('')+'</div><div class="activity-actions">'+button('We tried this pattern ✓','pattern-finish','data-id="'+p.id+'"','primary')+'</div><p id="audio-status" class="status"></p></section>';
+  return '<div class="lesson-head">'+button('← Stories','back')+'</div><section class="activity"><div class="eyebrow">Meet a new pattern</div><h1>'+esc(p.title)+'</h1><p class="lead">'+esc(p.note)+'</p><div class="pattern-word-grid">'+p.words.map((word,i)=>'<div>'+stagePicture(word,true)+'<b>'+word+'</b><p>'+p.parts[i].map((part,j)=>'<span data-pattern="'+i+'" data-part="'+j+'">'+part+'</span>').join(' – ')+'</p>'+button('Hear '+word,'pattern-blend','data-id="'+p.id+'" data-index="'+i+'"')+'</div>').join('')+'</div><div class="activity-actions">'+button('We tried this pattern ✓','pattern-finish','data-id="'+p.id+'"','primary')+'</div><p id="audio-status" class="status"></p></section>';
  }
  function storyView(){return storyFlow.html();}
 
@@ -98,13 +99,16 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
   setStage(value){if(!stageInfo[value])return;stop();stage=value;page='home';},
   reset(){openLetter(0,false);},
   stop,
-  html(){return page==='word'?wordView():page==='story'?storyView():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
+  html(){return page==='spelling'?spellingFlow.html():page==='blending'?wordsHome(false):page==='word'?wordView():page==='story'?storyView():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
   handle(data){
    const action=data.action.replace('stages-','');
    if(action==='letter-start')playLetter();
    else if(action==='letter-next')openLetter(Number(data.index));
    else if(action==='pause')toggleStagePause();
-   else if(action==='audio')audioParts([{key:data.key}]);
+   else if(action==='spelling-open'){stop();page='spelling';spellingFlow.open();}
+   else if(action==='spelling-blend'){stop();page='blending';render();}
+   else if(action.startsWith('spelling-'))spellingFlow.handle(data);
+   else if(action==='audio')audioParts([{key:data.key,part:data.part===undefined?undefined:Number(data.part)}]);
    else if(action==='blend')audioParts([...data.word].map((c,i)=>({key:'sound:'+c,part:i})).concat({key:'word:'+data.word}));
    else if(action==='back'||action==='story-back'){stop();page='home';render();}
    else if(action==='families'){stop();onFamily();}
@@ -122,7 +126,7 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
    }else if(action==='pattern'){if(!patternLessons.some(p=>p.id===data.id))return;stop();storyId=data.id;page='pattern';render();}
    else if(action==='pattern-blend'){
     const p=patternLessons.find(p=>p.id===data.id),i=Number(data.index);if(!p?.parts[i])return;
-    audioParts(p.parts[i].map(part=>({key:'sound:'+part})).concat({key:'word:'+p.words[i]}));
+    audioParts(p.parts[i].map((part,j)=>({key:'sound:'+part,target:'.pattern-word-grid [data-pattern="'+i+'"][data-part="'+j+'"]'})).concat({key:'word:'+p.words[i]}));
    }else if(action==='pattern-finish'){if(!state().patterns.includes(data.id))state().patterns.push(data.id);save();stop();page='home';render();}
    else if(action==='story-open'){if(!stories.some(s=>s.id===data.id))return;page='story';storyFlow.open(data.id);}
    else if(action.startsWith('story-'))storyFlow.handle(data);

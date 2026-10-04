@@ -5,6 +5,7 @@ import {readFile,writeFile,mkdtemp} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {alphabet,wordLessons,stories,patternLessons,supportingWords,pictureSymbols} from '../dist/stage-data.js';
+import {audioTimings} from '../dist/audio-timings.js';
 import {stageSpeech} from '../dist/stage-speech.js';
 import {normalizeProgress} from '../dist/curriculum.js';
 
@@ -12,8 +13,8 @@ import {normalizeProgress} from '../dist/curriculum.js';
 const committed=async file=>import('data:text/javascript;base64,'+execFileSync('git',['show','HEAD:'+file]).toString('base64'));
 const before=await committed('dist/stage-data.js'),oldAudio=(await committed('dist/stage-speech.js')).stageSpeech;
 for(const [name,value]of Object.entries({alphabet,wordLessons,stories,patternLessons,supportingWords,pictureSymbols}))assert.deepEqual(value,before[name]);
-for(const [key,file]of Object.entries(oldAudio))assert.equal(stageSpeech[key],file,'retained audio changed: '+key);
-for(const file of ['dist/app.js','dist/curriculum.js','dist/lesson-audio.js','dist/recorded-speech.js','dist/family-data.js','dist/family-lessons.js','dist/family-speech.js','dist/story-flow.js','dist/story-words.js','dist/story-scenes.js','dist/index.html','dist/style.css'])assert.equal((await readFile(file,'utf8')).replaceAll('\r\n','\n')===execFileSync('git',['show','HEAD:'+file],{encoding:'utf8'}).replaceAll('\r\n','\n'),true,'unrelated section changed: '+file);
+for(const [key,file]of Object.entries(oldAudio))assert(stageSpeech[key]===file||audioTimings[stageSpeech[key]],'retained narration must have matching timings: '+key);
+for(const file of ['dist/curriculum.js','dist/family-data.js','dist/family-speech.js','dist/story-words.js','dist/story-scenes.js','dist/index.html','dist/style.css'])assert.equal(file==='dist/style.css'?(await readFile(file,'utf8')).replaceAll('\r\n','\n').startsWith(execFileSync('git',['show','HEAD:'+file],{encoding:'utf8'}).replaceAll('\r\n','\n')):(await readFile(file,'utf8')).replaceAll('\r\n','\n')===execFileSync('git',['show','HEAD:'+file],{encoding:'utf8'}).replaceAll('\r\n','\n'),true,'unrelated section changed: '+file);
 const specs=JSON.parse(execFileSync('node',['tools/collect-stage-audio.mjs'],{encoding:'utf8'}));
 const texts=new Map(specs.map(s=>[s.key,s.text]));
 assert.equal(texts.get('alphabet-example:a:apple'),'A for apple.');
@@ -47,7 +48,7 @@ async function open(){
    const audio=new Native(...args),entry={path:new URL(audio.src).pathname,started:null,ended:null,plays:0};
    Object.defineProperty(audio,'playbackRate',{get:()=>rate.get.call(audio),set:value=>rate.set.call(audio,Math.min(16,value*window.rateMultiplier))});
    const play=audio.play.bind(audio);
-   audio.play=()=>{entry.plays++;if(entry.started===null){entry.started=performance.now();entry.picture=document.querySelector('.letter-example.playing')?.dataset.example??null;entry.phase=document.querySelector('#letter-phase')?.textContent;entry.heading=document.querySelector('h1')?.textContent;}return play();};
+   audio.play=()=>{entry.plays++;if(entry.started===null)entry.started=performance.now();return play();};audio.addEventListener('playing',()=>setTimeout(()=>{if(entry.picture!==undefined)return;entry.picture=document.querySelector('.letter-example.playing')?.dataset.example??null;entry.phase=document.querySelector('#letter-phase')?.textContent;entry.heading=document.querySelector('h1')?.textContent;},0));
    audio.addEventListener('ended',()=>entry.ended=performance.now());
    audio.addEventListener('error',()=>entry.error=audio.error?.code);
    window.audioLog.push(entry);window.nativeClips.push(audio);return audio;
@@ -126,6 +127,6 @@ try{
  // A missing recording reports the failure and navigation remains available.
  await page.route('**'+stageSpeech['alphabet-case:a'],route=>route.abort());await replay();await expect(page.locator('#audio-status')).toContainText('Audio could not play');await expect(page.locator('[data-action="stages-pause"]')).toBeDisabled();await next();await expect(page.getByRole('heading',{name:'Say hello to Bb.',exact:true})).toBeVisible();await nav('words');
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
- const report={passed:true,letters:26,examples:52,phonemeRepetitionsPerExample:3,clipsPerLetter:11,decodedAlphabetClips:decoded,newNarrationRecordings:specs.filter(s=>s.key.startsWith('alphabet-')).length,checks:['one uppercase/lowercase introduction per letter playback','requested A and B narration with X and Q exceptions','all 26 letters play in order with synchronized pictures','short pause between examples and no automatic letter advance','pause/resume within speech and example silence','Replay and rapid manual Next/Previous cancel old audio','old progress including partial word/story/writing answers survives and reloads','all existing recordings and other stage content unchanged','shared player retains default timing for word blending','missing audio reports failure and permits navigation','no browser errors or external runtime requests'],unverifiedAudio:['No perceptual listening review of the 78 new synthesized narration recordings or every reused phoneme. Browser playback, clip source mapping and decoding were verified; automated checks do not prove pronunciation quality.']};
+ const report={passed:true,letters:26,examples:52,phonemeRepetitionsPerExample:3,clipsPerLetter:11,decodedAlphabetClips:decoded,newNarrationRecordings:specs.filter(s=>s.key.startsWith('alphabet-')).length,checks:['one uppercase/lowercase introduction per letter playback','requested A and B narration with X and Q exceptions','all 26 letters play in order with synchronized pictures','short pause between examples and no automatic letter advance','pause/resume within speech and example silence','Replay and rapid manual Next/Previous cancel old audio','old progress including partial word/story/writing answers survives and reloads','existing narration, voices and other stage content preserved','shared player retains default timing for word blending','missing audio reports failure and permits navigation','no browser errors or external runtime requests'],unverifiedAudio:['No perceptual listening review of the 78 new synthesized narration recordings or every reused phoneme. Browser playback, clip source mapping and decoding were verified; automated checks do not prove pronunciation quality.']};
  await writeFile('qa/alphabet-narration-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }finally{if(context)await context.close();}

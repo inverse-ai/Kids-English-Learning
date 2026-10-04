@@ -39,7 +39,8 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
    kind==='ending'?[...word.slice(1)].map(c=>'sound:'+c):
    kind==='sound'&&Number.isInteger(index)&&index>=0&&index<word.length?['sound:'+word[index]]:
    [kind+':'+word];
-  playFamilyAudio(keys,{speed:getSpeed(),onPart:(part)=>{
+  const targets=keys.map((key,part)=>key.startsWith('sound:')?'.blend-sound[data-index="'+(kind==='first'?0:kind==='sound'?index:kind==='ending'?part+1:part)+'"]':key.startsWith('word:')?'.blend-row > .family-word,.family-spotlight > .family-word':'.bangla-helper p');
+  playFamilyAudio(keys,{speed:getSpeed(),targets,onPart:(part)=>{
    document.querySelectorAll('.blend-sound').forEach((element,i)=>element.classList.toggle('playing',part>=0&&(kind==='blend'&&(part===i||part===3)||kind==='sound'&&index===i||kind==='first'&&i===0||kind==='ending'&&i===part+1)));
   }},(message,failed)=>{
    if(message==='Ready to listen again.'||failed)document.querySelectorAll('.blend-sound').forEach(el=>el.classList.remove('playing'));

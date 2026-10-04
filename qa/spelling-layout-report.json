@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "mobileSizes": [
+    "390x844",
+    "320x568"
+  ],
+  "letterPairsPerSize": 26,
+  "checks": [
+    "intro cards fit for every saved letter",
+    "all main spelling controls visible while paused",
+    "long-word illustrations fit before and after completion",
+    "200 percent text scrolls without horizontal overflow"
+  ]
+}

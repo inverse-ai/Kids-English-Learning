@@ -4,7 +4,7 @@
   "sentenceScenes": 89,
   "meaningClipsDecoded": 108,
   "checks": [
-    "story text and existing audio preserved",
+    "story text, narration and voices preserved",
     "one unfamiliar word at its first use, with English then Bengali audio",
     "too means also",
     "Replay and Skip to story work",

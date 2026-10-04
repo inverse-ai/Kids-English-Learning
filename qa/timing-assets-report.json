@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "timedClipsDecoded": 235,
+  "checks": [
+    "Exact audio content hashes match timing entries",
+    "All recorded boundary cues fit the decoded duration",
+    "All timed clips contain audible samples"
+  ],
+  "unverified": "Decoding does not verify pronunciation by ear."
+}

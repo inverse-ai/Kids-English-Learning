@@ -3,6 +3,7 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
 import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -14,6 +15,10 @@ SOURCE = 'https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/'
 
 async def main():
     specs = json.loads(subprocess.check_output(['node', 'tools/collect-stage-audio.mjs'], cwd=ROOT, encoding='utf-8'))
+    timing_file = ROOT / 'dist' / 'audio-timings.js'
+    speech_file = ROOT / 'dist' / 'stage-speech.js'
+    timings = json.loads(timing_file.read_text(encoding='utf-8').split('Object.freeze(', 1)[1].rsplit(');', 1)[0]) if timing_file.exists() else {}
+    prior_speech = json.loads(speech_file.read_text(encoding='utf-8').split('Object.freeze(', 1)[1].rsplit(');', 1)[0]) if speech_file.exists() else {}
     raw = await asyncio.to_thread(lambda: urllib.request.urlopen(SOURCE + 'assets/xml/phonics.xml', timeout=30).read())
     names = {}
     for item in ET.fromstring(raw.decode('utf-8-sig')).iter('item'):
@@ -27,6 +32,11 @@ async def main():
     completed = 0
     async def generate(spec):
         nonlocal completed
+        prior = prior_speech.get(spec['key'])
+        metadata = timings.get(prior)
+        if metadata and metadata['text'] == spec.get('text') and metadata.get('voice') == spec.get('voice') and metadata.get('rate') == spec.get('rate') and (ROOT / 'dist' / prior.lstrip('/')).exists():
+            completed += 1
+            return spec['key'], prior
         seed = spec.get('url') or '|'.join([spec['voice'],spec['rate'],spec['text']])
         target = DEST / (hashlib.sha256(seed.encode()).hexdigest()[:24]+'.mp3')
         async with slots:
@@ -59,3 +69,4 @@ async def main():
     (ROOT/'tools'/'stage-audio-source.json').write_text(json.dumps({'voice':'en-GB-SoniaNeural','bengaliVoice':'bn-BD-NabanitaNeural','phonemeSource':SOURCE+'index.html?id=ae','phonemes':[s for s in specs if s.get('url')],'clips':len(results)},indent=2),encoding='utf-8')
 
 asyncio.run(main())
+subprocess.check_call([sys.executable, str(ROOT / 'tools' / 'generate-highlight-timings.py')], cwd=ROOT)

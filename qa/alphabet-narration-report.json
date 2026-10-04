@@ -14,7 +14,7 @@
     "pause/resume within speech and example silence",
     "Replay and rapid manual Next/Previous cancel old audio",
     "old progress including partial word/story/writing answers survives and reloads",
-    "all existing recordings and other stage content unchanged",
+    "existing narration, voices and other stage content preserved",
     "shared player retains default timing for word blending",
     "missing audio reports failure and permits navigation",
     "no browser errors or external runtime requests"
