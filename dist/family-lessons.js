@@ -1,5 +1,6 @@
 import {pictureFamilies,familyWords,familyRounds,familyStages} from './family-data.js';
-import {playFamilyAudio,stopLessonAudio} from './lesson-audio.js';
+import {playFamilyAudio} from './lesson-audio.js';
+import {createAtReading} from './at-reading.js';
 
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const shuffle=items=>[...items].map(item=>({item,rank:Math.random()})).sort((a,b)=>a.rank-b.rank).map(x=>x.item);
@@ -20,7 +21,8 @@ export function familyEntry(progress){
 export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onStatus,isSaved=()=>true}){
  let page='library',familyId=null,selected=null,session=null,writing=null,canvasObserver=null;
  const persist=()=>save();
- const stopAudio=()=>{stopLessonAudio();status('');};
+ const reading=createAtReading({getProgress:()=>getProgress().reading.at,save:persist,render,status,getSpeed,picture,isSaved,onBack:()=>{familyId='at';selected=getProgress().selected.at||'cat';page='board';render();}});
+ const stopAudio=()=>reading.stop();
  function checkpoint(){
   if(page==='writing'&&writing){
    getProgress().writing.drafts[writing.word]={drawing:writing.drawing,showGuide:writing.showGuide};
@@ -62,14 +64,14 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
   return navigation()+'<section class="intro"><div><div class="eyebrow">Word Adventurer · Start with sounds</div><h1>Little words. Big discoveries.</h1><p class="muted">Explore a picture family. Listen in English, use Bangla help, then try a short lesson.</p></div></section>'+
    (saved?'<div class="family-resume"><div><b>Your -'+saved.family+' lesson is waiting.</b><p>Round '+saved.number+' · Activity '+(p.inProgress[saved.id].step+1)+' of '+familyStages(saved).length+'</p></div>'+btn('Continue picture lesson →','resume','','primary')+'</div>':'')+
    (unfinishedWriting(p)?'<div class="family-resume"><div><b>Your writing is waiting.</b><p>Pick up your unfinished word.</p></div>'+btn('Continue writing →','write-resume','','primary')+'</div>':'')+
-   '<div class="family-library">'+pictureFamilies.map(f=>{
+   reading.resume()+'<div class="family-library">'+pictureFamilies.map(f=>{
     const count=roundsDone(f.id,p),total=roundsFor(f.id).length;
     return '<button class="family-card theme-'+f.colour+'" data-action="family-open" data-family="'+f.id+'" aria-label="Explore the -'+f.id+' word family">'+picture(f.words[0])+'<span class="family-card-ending">-'+f.id+'</span><span>'+f.words.slice(0,3).join(' · ')+'</span><small>'+f.words.length+' picture words · '+count+'/'+total+' rounds '+(count===total?'★':'')+'</small></button>';
    }).join('')+'</div><div class="family-parent-note"><b>Start together.</b> Knowing how to write letters is a good start. Help him hear their sounds before asking him to read. Up to three new words are enough for one sitting.</div>';
  }
  function board(){
   const family=familyOf(familyId),p=getProgress(),rounds=roundsFor(familyId);
-  return navigation(true)+'<section class="family-board theme-'+family.colour+'"><div class="eyebrow">Listen · Say · Build</div><h1>The <span class="family-ending">-'+family.id+'</span> word family</h1><p class="lead">Different beginnings. The same ending. Choose a picture to explore.</p><div class="family-board-layout"><div class="family-board-main"><div class="family-spotlight">'+picture(selected)+colouredWord(selected)+'</div>'+sounds(selected)+listening(selected)+'</div><div class="family-picker" role="group" aria-label="Picture words in the -'+family.id+' family">'+family.words.map(word=>'<button class="family-pick '+(word===selected?'selected':'')+'" data-action="family-word" data-word="'+word+'" aria-pressed="'+(word===selected)+'" aria-label="Explore '+word+'">'+picture(word)+colouredWord(word)+'</button>').join('')+'</div></div></section>'+
+  return navigation(true)+'<section class="family-board theme-'+family.colour+'"><div class="eyebrow">Listen · Say · Build</div><h1>The <span class="family-ending">-'+family.id+'</span> word family</h1>'+(familyId==='at'?'<p class="lead">Different beginnings. The same ending.</p>'+reading.entry()+'<h2>Explore words</h2><p>Choose a picture to explore.</p>':'<p class="lead">Different beginnings. The same ending. Choose a picture to explore.</p>')+'<div class="family-board-layout"><div class="family-board-main"><div class="family-spotlight">'+picture(selected)+colouredWord(selected)+'</div>'+sounds(selected)+listening(selected)+'</div><div class="family-picker" role="group" aria-label="Picture words in the -'+family.id+' family">'+family.words.map(word=>'<button class="family-pick '+(word===selected?'selected':'')+'" data-action="family-word" data-word="'+word+'" aria-pressed="'+(word===selected)+'" aria-label="Explore '+word+'">'+picture(word)+colouredWord(word)+'</button>').join('')+'</div></div></section>'+
    '<section class="family-rounds"><div class="section-heading"><h2>Try a short lesson</h2><span>Up to three words at a time</span></div><div class="family-round-grid">'+rounds.map(round=>{
     const saved=p.inProgress[round.id],done=p.completed.includes(round.id);
     return '<button class="family-round" data-action="family-'+(saved?'resume':'start')+'" data-round="'+round.id+'"><span>ROUND '+round.number+' '+(done?'★':'')+'</span><b>'+round.items.join(' · ')+'</b><small>'+(saved?'Continue · Activity '+(saved.step+1):'Pictures → build → listen & find')+'</small></button>';
@@ -136,6 +138,7 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
  }
  function mount(){
   canvasObserver?.disconnect();canvasObserver=null;
+  if(page==='reading'){reading.mount();return;}
   const canvas=document.querySelector('#family-writing');if(page!=='writing'||!canvas)return;
   const ctx=canvas.getContext('2d');let stroke=null,pointer=null,lastSaved=0;
   let points=writing.drawing.reduce((sum,line)=>sum+line.length,0);
@@ -174,11 +177,16 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
  return {
   showLibrary(){stopAudio();page='library';},
   checkpoint,
-   html(){return page==='writing'?writingView():page==='writing-complete'?writingComplete():page==='board'?board():page==='lesson'?lesson():page==='complete'?complete():library();},
+   html(){return page==='reading'?reading.html():page==='writing'?writingView():page==='writing-complete'?writingComplete():page==='board'?board():page==='lesson'?lesson():page==='complete'?complete():library();},
    mount,
   handle(data){
    const action=data.action.replace('family-',''),p=getProgress();
     if(page==='writing')checkpoint();
+   if(action.startsWith('reading-')){
+    if(['reading-open','reading-continue','reading-review'].includes(action)){stopAudio();familyId='at';selected=p.selected.at||'cat';p.lastFamily='at';page='reading';reading.open(action==='reading-review');}
+    else if(page==='reading')reading.handle(data);
+    return;
+   }
    if(action==='home'){stopAudio();onHome();return;}
    if(action==='library'){stopAudio();page='library';render();return;}
    if(action==='open'){

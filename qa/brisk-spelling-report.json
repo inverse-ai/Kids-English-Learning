@@ -1,0 +1,35 @@
+{
+  "checks": [
+    "Normal letter silence trimmed; original pronunciation retained",
+    "55 ms added gaps and 600 ms word repetition pause",
+    "Intro A for apple uses existing timed audio",
+    "Every letter separately highlighted, including each p and l",
+    "Original slower clips and 180 ms gaps unchanged",
+    "Pause freezes audio and highlight; Replay restarts",
+    "Manual navigation stops previous audio",
+    "All 26 picture pairs, X and Q exception intros",
+    "79 normal spelling files decoded, audible and hash-checked",
+    "Saved second-P checkpoint resumes without migration",
+    "Other saved word rounds and writing preserved"
+  ],
+  "speeds": [
+    {
+      "rate": 1,
+      "order": true,
+      "separateRepeatedLetters": true,
+      "audioHighlightsTogether": true,
+      "pauseResume": true,
+      "duration": 12025.89999999851
+    },
+    {
+      "rate": 0.85,
+      "order": true,
+      "separateRepeatedLetters": true,
+      "audioHighlightsTogether": true,
+      "pauseResume": true,
+      "duration": 24703.70000000298
+    }
+  ],
+  "assets": 79,
+  "unverified": "Pronunciation by ear and physical mobile devices."
+}

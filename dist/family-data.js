@@ -1,3 +1,4 @@
+import {normalizeAtReading} from './at-reading-data.js';
 export const pictureFamilies = [
  {id:'at',words:['cat','hat','mat','rat','bat','pat','sat','fat'],poster:'/pictures/family-at.jpeg',sheet:'/pictures/family-at.png',columns:3,rows:3,colour:'pink'},
  {id:'an',words:['can','man','pan','fan','van','ran'],poster:'/pictures/family-an.jpeg',sheet:'/pictures/family-an.png',columns:3,rows:2,colour:'green'},
@@ -57,7 +58,7 @@ export function normalizeWordWriting(raw){
  return result;
 }
 export function normalizeFamilyProgress(raw){
- const result={completed:[],inProgress:{},current:null,lastFamily:null,selected:{},writing:normalizeWordWriting(raw?.writing)};
+ const result={completed:[],inProgress:{},current:null,lastFamily:null,selected:{},writing:normalizeWordWriting(raw?.writing),reading:{at:normalizeAtReading(raw?.reading?.at)}};
  const valid=new Set(familyRounds.map(r=>r.id));
  result.completed=[...new Set((Array.isArray(raw?.completed)?raw.completed:[]).filter(id=>valid.has(id)))];
  for(const round of familyRounds){

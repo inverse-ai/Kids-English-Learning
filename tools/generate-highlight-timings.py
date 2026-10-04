@@ -13,7 +13,7 @@ PREFIX = 'export const audioTimings=Object.freeze('
 
 async def main():
     specs = json.loads(subprocess.check_output(['node', 'tools/collect-stage-audio.mjs'], cwd=ROOT, encoding='utf-8'))
-    specs = [s for s in specs if s['key'].startswith(('alphabet-case:', 'alphabet-example:', 'text:'))]
+    specs = [s for s in specs if s['key'].startswith(('alphabet-case:', 'alphabet-example:', 'text:', 'at-say:'))]
     legacy_file = ROOT / 'dist' / 'recorded-speech.js'
     legacy_source = legacy_file.read_text(encoding='utf-8')
     legacy = json.loads(legacy_source.split('Object.freeze(', 1)[1].rsplit(');', 1)[0])

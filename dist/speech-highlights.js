@@ -26,6 +26,12 @@ function mark(elements){
  selected.forEach(element=>{element.classList.add('speech-highlight');element.dataset.speechActive='true';if(element.classList.contains('spoken-word'))element.setAttribute('aria-current','true');});
 }
 function select(part,metadata,index){
+ if(part.spellingIntro){
+  if(!metadata||index<0)return [];
+  const token=metadata.text.slice(metadata.words[index].from,metadata.words[index].to).replace(/[.,!?]/g,'').toLowerCase(),example=document.querySelector('.spelling-example[data-example="'+part.example+'"]');
+  if(token===part.introLetter||part.introLetter==='q'&&token==='u')return [example?.querySelector('[data-letter-index="'+part.introWord.indexOf(token)+'"]')];
+  return token===part.introWord?[example?.querySelector('.spelling-word')]:[];
+ }
  if(part.legacyLetter&&metadata&&index>=0){const token=metadata.text.slice(metadata.words[index].from,metadata.words[index].to).toLowerCase();if(token===part.legacyLetter)return [document.querySelector('.big-letter [data-case="upper"]')];return [...document.querySelectorAll('.flash-word')].filter(element=>element.textContent.toLowerCase()===token);}
  if(part.caseLetter){return index<0?[]:[document.querySelector('.letter-display [data-case="'+(index<2?'upper':index>=3?'lower':'none')+'"]')];}
  if(part.letterName){

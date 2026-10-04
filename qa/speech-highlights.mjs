@@ -67,11 +67,11 @@ try{
   for(const sample of letterSamples.filter(s=>s.path===stageSpeech['sound:a']))assert.deepEqual(sample.marks.map(m=>m.case),['lower']);
   assert(letterSamples.every(s=>s.rate===speed));await expect(page.locator('.speech-highlight')).toHaveCount(0);
   await nav('words');await clear();await page.locator('[data-action="stages-spelling-open"]').click();
-  await expect.poll(()=>page.evaluate(()=>document.querySelector('.spelling-letter.speech-highlight')?.dataset.letterIndex)).toBe('2');
+  await page.waitForFunction(()=>document.querySelector('.spelling-letter.speech-highlight')?.dataset.letterIndex==='2',null,{polling:'raf',timeout:10000});
   await freeze(page.locator('[data-action="stages-spelling-pause"]'));
   await expect(page.locator('#spelling-phase')).toHaveText('Ready to replay',{timeout:30000});
-  const spelling=await samples(),pSamples=spelling.filter(s=>s.path===stageSpeech['spelling-name:p']);assert.deepEqual([...new Set(pSamples.flatMap(s=>s.marks.map(m=>m.index)))],['1','2']);assert(spelling.every(s=>s.marks.length===1&&s.rate===speed));
-  await page.locator('[data-action="stages-spelling-replay"]').click();await expect.poll(()=>page.evaluate(()=>document.querySelector('.spelling-letter.speech-highlight')?.dataset.letterIndex)).toBe('0');
+  const spelling=await samples(),pSamples=spelling.filter(s=>s.path===stageSpeech[(speed===1?'spelling-brisk-':'')+'spelling-name:p']);assert.deepEqual([...new Set(pSamples.flatMap(s=>s.marks.map(m=>m.index)))],['1','2']);assert(spelling.every(s=>s.rate===speed));assert(spelling.filter(s=>!alphabet[0].examples.some(word=>s.path===stageSpeech['alphabet-example:a:'+word])).every(s=>s.marks.length===1));
+  await page.locator('[data-action="stages-spelling-replay"]').click();await page.waitForFunction(()=>document.querySelector('.spelling-letter.speech-highlight')?.dataset.letterIndex==='0',null,{polling:'raf',timeout:10000});
   await page.locator('.spelling-paging button').last().click();await expect(page.locator('.spelling-guide b')).toHaveText('Bb picture words');
   assert(await page.evaluate(()=>window.clips.slice(0,-1).every(a=>a.paused)));
   await nav('words');await expect(page.locator('.speech-highlight')).toHaveCount(0);await clear();

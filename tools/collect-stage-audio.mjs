@@ -1,6 +1,7 @@
 import {alphabet,alphabetCaseText,alphabetExampleText,wordLessons,stories,patternLessons,supportingWords} from '../dist/stage-data.js';
 import {storyWords} from '../dist/story-words.js';
 import {spellingNames} from '../dist/spelling-data.js';
+import {atAudioSpecs} from '../dist/at-reading-data.js';
 const entries=new Map();
 const add=(key,text,voice='en-GB-SoniaNeural',rate='-12%')=>entries.set(key,{key,text,voice,rate});
 for(const a of alphabet){
@@ -16,4 +17,5 @@ for(const [key,entry]of storyWords){if(!entry.meaning)throw Error('Missing Benga
 for(const [letter,name]of Object.entries(spellingNames))add('spelling-name:'+(letter==='-'?'hyphen':letter),name);
 add('meaning:sit','সিট মানে বসা।','bn-BD-NabanitaNeural','-8%');
 add('approx:sit','সিট। আবার বলো, সিট।','bn-BD-NabanitaNeural','-12%');
+for(const spec of atAudioSpecs)entries.set(spec.key,spec);
 process.stdout.write(JSON.stringify([...entries.values()]));

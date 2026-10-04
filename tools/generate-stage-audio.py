@@ -70,3 +70,5 @@ async def main():
 
 asyncio.run(main())
 subprocess.check_call([sys.executable, str(ROOT / 'tools' / 'generate-highlight-timings.py')], cwd=ROOT)
+subprocess.check_call([sys.executable, str(ROOT / 'tools' / 'generate-at-reading-audio.py')], cwd=ROOT)
+subprocess.check_call(['node', str(ROOT / 'tools' / 'prepare-brisk-spelling.mjs')], cwd=ROOT)

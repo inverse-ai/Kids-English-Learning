@@ -76,6 +76,8 @@ const scenes={
  'beach-clean':[frame([o('dad',220,271,153),o('person',383,271,132)],'sea'),frame([o('person',188,271,147),o('bag',409,285,116)],'sea'),frame([o('dad',239,275,166),o('person',382,275,143),o('bin',310,289,121),o('bag',310,225,81)],'sea'),frame([o('sun',456,95,65),o('dad',221,274,146),o('person',383,274,128)],'sea')]
 };
 
+// The -at reading pilot reuses these characters without altering story scenes.
+export function sceneSymbol(name){if(!symbols[name])throw Error('Unknown scene object: '+name);return symbols[name];}
 export function storyScene(story,line){
  const scene=scenes[story.id]?.[line];if(!scene)throw Error('Missing story scene: '+story.id+' '+line);
  const sky=scene.background==='room'?'#f7efdf':'#e5f0f4';

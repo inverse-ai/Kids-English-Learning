@@ -1,0 +1,58 @@
+{
+  "changedFamily": "at only",
+  "steps": 26,
+  "story": [
+    "I see a cat.",
+    "The cat is on a mat.",
+    "The cat has a hat.",
+    "The hat is on the cat.",
+    "A rat is on the mat too."
+  ],
+  "checks": [
+    "Existing family data and old audio unchanged",
+    "Optional four-word review",
+    "Eight contextual Bengali hints on request with working clips",
+    "Exact phrases and five sentences",
+    "Unambiguous three-choice scenes",
+    "Wrong choice fills gap; helpful retry; two misses demonstrate phonics",
+    "First-attempt and assisted records survive reopening",
+    "Correct sentence stays visible until Next",
+    "Previous preserves completed answers",
+    "Sequential paragraph gaps and full story",
+    "Normal and slow audio-clock word highlighting with no layout movement",
+    "Pause/resume, Replay and cancellation",
+    "Three play questions, praise and gentle sound",
+    "One completion star including assistance",
+    "Revisit completed steps",
+    "Old stars, unfinished word tiles and writing untouched",
+    "No extra -at card or other-family reading button",
+    "Keyboard answers and modal Escape",
+    "Text enlargement scrolls without horizontal overflow"
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "steps": 26
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "steps": 26
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "steps": 26
+    }
+  ],
+  "audio": {
+    "decodedReadingAssets": 25,
+    "english": "Recorded WordBoundary timestamps from the same audio; every paragraph word tested at 1 and 0.85.",
+    "bengali": "Existing and new Bengali recordings play; the meaning is highlighted as a whole during its clip."
+  },
+  "unverified": [
+    "Physical phones and tablets",
+    "English and Bengali pronunciation by ear"
+  ]
+}

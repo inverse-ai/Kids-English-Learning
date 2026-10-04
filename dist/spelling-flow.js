@@ -1,4 +1,4 @@
-import {alphabet} from './stage-data.js';
+import {alphabet,alphabetExampleText} from './stage-data.js';
 import {spellingParts} from './spelling-data.js';
 import {playStageSequence,stopStageAudio,toggleStagePause,stageAudioState} from './stage-audio.js';
 
@@ -12,9 +12,16 @@ export function createSpellingFlow({getProgress,save,isSaved,render,status,pictu
  function play(replay=false){
   stopStageAudio();clear();const progress=state(),letter=alphabet[progress.letter].letter;
   if(replay)progress.position=0;
-  const start=progress.position;save();
-  playStageSequence(spellingParts(progress.letter).slice(start),{speed:getSpeed(),onPart:(part,position)=>{
-   progress.position=start+position;save();clearHighlights();
+  const start=progress.position,speed=getSpeed();save();
+  // Keep saved positions in the original spelling sequence. Introductory clips
+  // do not add checkpoint positions; each repeated letter is still its own clip.
+  const parts=spellingParts(progress.letter).slice(start).flatMap((part,index)=>{
+   const position=start+index,word=alphabet[progress.letter].examples[part.example];
+   const spoken={...part,checkpoint:position,...(speed===1?{key:'spelling-brisk-'+part.key,...(!part.wholeWord?{pauseAfter:55}:{})}:{})};
+   return speed===1&&part.letterIndex===0?[{key:'alphabet-example:'+letter+':'+word,spellingIntro:true,introLetter:letter,introWord:word,example:part.example,phase:alphabetExampleText(letter,word),checkpoint:position,pauseAfter:180},spoken]:[spoken];
+  });
+  playStageSequence(parts,{speed,onPart:(part)=>{
+   progress.position=part.checkpoint;save();clearHighlights();
    const phase=document.querySelector('#spelling-phase');if(phase)phase.textContent=part.phase;
   },onActive:(part,active)=>{
    clearHighlights();if(!active)return;
