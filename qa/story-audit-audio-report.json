@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "speed": 1,
+      "actualPlayback": true,
+      "pauseFreeze": true,
+      "resume": true,
+      "replay": true,
+      "noOverlap": true,
+      "navigationClears": true
+    },
+    {
+      "speed": 0.85,
+      "actualPlayback": true,
+      "pauseFreeze": true,
+      "resume": true,
+      "replay": true,
+      "noOverlap": true,
+      "navigationClears": true
+    }
+  ],
+  "limitation": "Audible pronunciation has not been reviewed by a human listener."
+}

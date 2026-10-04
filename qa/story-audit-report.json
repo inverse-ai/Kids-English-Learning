@@ -1,0 +1,327 @@
+{
+  "passed": true,
+  "stories": 24,
+  "questions": 28,
+  "changed": [
+    {
+      "story": "A hen in the sun",
+      "sentence": "I see a hen.",
+      "answer": "hen",
+      "task": "scene",
+      "hint": "Look—a hen is in the picture."
+    },
+    {
+      "story": "The pig pen",
+      "sentence": "The pig can run in the pen.",
+      "answer": "run",
+      "task": "scene",
+      "hint": "Look—the pig is running."
+    },
+    {
+      "story": "The red bag",
+      "sentence": "A pen is in the bag.",
+      "answer": "pen",
+      "task": "scene",
+      "hint": "Look—a writing pen is sticking out of the bag."
+    },
+    {
+      "story": "A nap on a log",
+      "sentence": "The dog sat on a log.",
+      "answer": "log",
+      "task": "scene",
+      "hint": "Look—the dog is sitting on a log."
+    },
+    {
+      "story": "A bun for Mum",
+      "sentence": "Mum has a bun.",
+      "answer": "bun",
+      "task": "scene",
+      "hint": "Look—Mum has a bun."
+    },
+    {
+      "story": "The cat and the rat",
+      "sentence": "The cat is on a mat.",
+      "answer": "mat",
+      "task": "scene",
+      "hint": "Look—the cat is sitting on a mat."
+    },
+    {
+      "story": "The cat and the rat",
+      "sentence": "The cat and the rat run.",
+      "answer": "run",
+      "task": "scene",
+      "hint": "Look—the cat and rat are running."
+    },
+    {
+      "story": "A map by the tap",
+      "sentence": "The map is on a mat.",
+      "answer": "mat",
+      "task": "scene",
+      "hint": "Look—the map is on a mat."
+    },
+    {
+      "story": "At the bus stop",
+      "sentence": "The bus is red.",
+      "answer": "red",
+      "task": "recall",
+      "hint": "The story told us the colour: red."
+    },
+    {
+      "story": "The fish shop",
+      "sentence": "I see a fish shop.",
+      "answer": "shop",
+      "task": "recall",
+      "hint": "The story says fish shop."
+    },
+    {
+      "story": "The fish shop",
+      "sentence": "He can get a fish for his tank.",
+      "answer": "fish",
+      "task": "scene",
+      "hint": "Look—a fish is in the tank."
+    },
+    {
+      "story": "The ship at the dock",
+      "sentence": "A fish is by the ship.",
+      "answer": "fish",
+      "task": "scene",
+      "hint": "Look—a fish is beside the ship."
+    },
+    {
+      "story": "A shell for Dad",
+      "sentence": "The shell is in my hand.",
+      "answer": "shell",
+      "task": "scene",
+      "hint": "Look—a shell is in the hand."
+    },
+    {
+      "story": "The cat in the shed",
+      "sentence": "The cat ran to the shed.",
+      "answer": "shed",
+      "task": "scene",
+      "hint": "Look—the cat is running towards a shed."
+    },
+    {
+      "story": "A chip at lunch",
+      "sentence": "A chip is on my dish.",
+      "answer": "dish",
+      "task": "scene",
+      "hint": "Look—the chip is on a dish."
+    },
+    {
+      "story": "A chat with Dad",
+      "sentence": "Dad has a spot on his chin.",
+      "answer": "chin",
+      "task": "recall",
+      "hint": "The story says Dad has a spot on his chin."
+    },
+    {
+      "story": "The chick and the hen",
+      "sentence": "The chick can run.",
+      "answer": "chick",
+      "task": "scene",
+      "hint": "Look—the little chick is running."
+    },
+    {
+      "story": "A rest on the bench",
+      "sentence": "We can chat on the bench.",
+      "answer": "bench",
+      "task": "scene",
+      "hint": "Look—the children are on a bench."
+    },
+    {
+      "story": "Rain and a snail",
+      "sentence": "A snail is on the path.",
+      "answer": "snail",
+      "task": "scene",
+      "hint": "Look—a snail is on the path."
+    },
+    {
+      "story": "Rain and a snail",
+      "sentence": "I wait for the rain to stop.",
+      "answer": "rain",
+      "task": "scene",
+      "hint": "Look—rain is falling outside."
+    },
+    {
+      "story": "A train trip",
+      "sentence": "We wait for the train.",
+      "answer": "train",
+      "task": "scene",
+      "hint": "Look—a train is at the station."
+    },
+    {
+      "story": "The cat tail",
+      "sentence": "The cat has a long tail.",
+      "answer": "tail",
+      "task": "recall",
+      "hint": "The story says the cat has a long tail."
+    },
+    {
+      "story": "Painting the rain",
+      "sentence": "I paint a cat by the rain.",
+      "answer": "rain",
+      "task": "scene",
+      "hint": "Look—the painted lines show rain."
+    },
+    {
+      "story": "A seat by the sea",
+      "sentence": "We find a seat by the sea.",
+      "answer": "seat",
+      "task": "recall",
+      "hint": "The story says they find a seat by the sea."
+    },
+    {
+      "story": "A seat by the sea",
+      "sentence": "I see a shell on the beach.",
+      "answer": "shell",
+      "task": "scene",
+      "hint": "Look—a shell is on the beach."
+    },
+    {
+      "story": "The leaf and the tree",
+      "sentence": "A leaf falls from the tree.",
+      "answer": "leaf",
+      "task": "scene",
+      "hint": "Look—a leaf is falling from the tree."
+    },
+    {
+      "story": "A peach for a snack",
+      "sentence": "We each eat a piece of the peach.",
+      "answer": "peach",
+      "task": "scene",
+      "hint": "Look—they are eating pieces of a peach."
+    },
+    {
+      "story": "A clean beach",
+      "sentence": "We walk on the beach.",
+      "answer": "beach",
+      "task": "recall",
+      "hint": "The story says they walk on the beach."
+    }
+  ],
+  "decoded": [
+    {
+      "key": "story-hint:Look—a hen is in the picture.",
+      "duration": 2.592
+    },
+    {
+      "key": "story-hint:Look—the pig is running.",
+      "duration": 2.208
+    },
+    {
+      "key": "story-hint:Look—a writing pen is sticking out of the bag.",
+      "duration": 3.624
+    },
+    {
+      "key": "story-hint:Look—the dog is sitting on a log.",
+      "duration": 2.832
+    },
+    {
+      "key": "story-hint:Look—Mum has a bun.",
+      "duration": 2.232
+    },
+    {
+      "key": "story-hint:Look—the cat is sitting on a mat.",
+      "duration": 2.808
+    },
+    {
+      "key": "story-hint:Look—the cat and rat are running.",
+      "duration": 2.664
+    },
+    {
+      "key": "story-hint:Look—the map is on a mat.",
+      "duration": 2.448
+    },
+    {
+      "key": "story-hint:The story told us the colour: red.",
+      "duration": 3.216
+    },
+    {
+      "key": "story-hint:The story says fish shop.",
+      "duration": 2.52
+    },
+    {
+      "key": "story-hint:Look—a fish is in the tank.",
+      "duration": 2.544
+    },
+    {
+      "key": "story-hint:Look—a fish is beside the ship.",
+      "duration": 2.88
+    },
+    {
+      "key": "story-hint:Look—a shell is in the hand.",
+      "duration": 2.568
+    },
+    {
+      "key": "story-hint:Look—the cat is running towards a shed.",
+      "duration": 3.216
+    },
+    {
+      "key": "story-hint:Look—the chip is on a dish.",
+      "duration": 2.472
+    },
+    {
+      "key": "story-hint:The story says Dad has a spot on his chin.",
+      "duration": 3.624
+    },
+    {
+      "key": "story-hint:Look—the little chick is running.",
+      "duration": 2.664
+    },
+    {
+      "key": "story-hint:Look—the children are on a bench.",
+      "duration": 2.808
+    },
+    {
+      "key": "story-hint:Look—a snail is on the path.",
+      "duration": 2.712
+    },
+    {
+      "key": "story-hint:Look—rain is falling outside.",
+      "duration": 2.856
+    },
+    {
+      "key": "story-hint:Look—a train is at the station.",
+      "duration": 2.808
+    },
+    {
+      "key": "story-hint:The story says the cat has a long tail.",
+      "duration": 3.408
+    },
+    {
+      "key": "story-hint:Look—the painted lines show rain.",
+      "duration": 2.976
+    },
+    {
+      "key": "story-hint:The story says they find a seat by the sea.",
+      "duration": 3.552
+    },
+    {
+      "key": "story-hint:Look—a shell is on the beach.",
+      "duration": 2.64
+    },
+    {
+      "key": "story-hint:Look—a leaf is falling from the tree.",
+      "duration": 3.072
+    },
+    {
+      "key": "story-hint:Look—they are eating pieces of a peach.",
+      "duration": 3.192
+    },
+    {
+      "key": "story-hint:The story says they walk on the beach.",
+      "duration": 3.096
+    }
+  ],
+  "progressPreserved": true,
+  "layouts": [
+    "1440x1000",
+    "390x844",
+    "320x568",
+    "200% text scroll"
+  ],
+  "limitations": [
+    "Human listening review of synthesized hints and a physical mobile device were not available."
+  ]
+}

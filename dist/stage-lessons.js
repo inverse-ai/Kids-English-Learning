@@ -1,3 +1,4 @@
+import {storyScene} from './story-scenes.js';
 import {alphabet,stageInfo,wordLessons,supportingWords,stories,patternLessons,pictureSymbols} from './stage-data.js';
 import {createStoryFlow} from './story-flow.js';
 import {createSpellingFlow} from './spelling-flow.js';
@@ -37,8 +38,8 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
   },onError:message=>{document.querySelectorAll('.playing').forEach(el=>el.classList.remove('playing'));status(message);syncAudioControls();}});
  }
  function syncAudioControls(){
-  const s=stageAudioState(),pause=document.querySelector('[data-action="stages-pause"]');
-  if(pause){pause.disabled=!s.playing;pause.textContent=s.paused?'Resume':'Pause';pause.setAttribute('aria-pressed',String(s.paused));}
+  const s=stageAudioState();
+  document.querySelectorAll('[data-action="stages-pause"]').forEach(pause=>{pause.disabled=!s.playing;pause.textContent=s.paused?'Resume':'Pause';pause.setAttribute('aria-pressed',String(s.paused));});
  }
  function playLetter(){
   const a=alphabet[letterIndex];
@@ -86,7 +87,7 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
  function storiesHome(){
   const levels=['First connected sentences','Add sh and ch','Next: the ai vowel team','Then: the ea vowel team'];
   return '<section class="intro"><div><div class="eyebrow">Stories · Suggested age 6+</div><h1>Little stories to read.</h1><p class="muted">Start with familiar words. Add new patterns, then read longer paragraphs. Audio is always optional.</p></div></section>'+(state().storyCurrent?'<div class="resume-strip"><span>Pick up '+esc(stories.find(s=>s.id===state().storyCurrent).title)+'.</span>'+button('Continue story →','story-open','data-id="'+state().storyCurrent+'"','primary')+'</div>':'')+
-   levels.map((label,level)=>'<section class="story-band"><h2>'+label+'</h2>'+(level>0?'<div class="pattern-links">'+patternLessons.filter(p=>level===1?['sh','ch'].includes(p.id):p.id===(level===2?'ai':'ea')).map(p=>button('Meet '+p.id+(state().patterns.includes(p.id)?' ✓':''),'pattern','data-id="'+p.id+'"')).join('')+'</div>':'')+'<div class="story-grid">'+stories.filter(s=>s.level===level).map(s=>'<button class="story-card" data-action="stages-story-open" data-id="'+s.id+'"><div class="story-thumb">'+s.pictures.slice(0,2).map(w=>stagePicture(w,true)).join('')+'</div><b>'+esc(s.title)+'</b><small>'+s.sentences.length+' connected sentences'+(state().stories[s.id]?.done?' · Practised ✓':'')+'</small></button>').join('')+'</div></section>').join('')+'<details class="stage-practice"><summary>More pattern practice: sh, ch and ck</summary>'+legacyCards('big',[15,16,17])+'</details>';
+   levels.map((label,level)=>'<section class="story-band"><h2>'+label+'</h2>'+(level>0?'<div class="pattern-links">'+patternLessons.filter(p=>level===1?['sh','ch'].includes(p.id):p.id===(level===2?'ai':'ea')).map(p=>button('Meet '+p.id+(state().patterns.includes(p.id)?' ✓':''),'pattern','data-id="'+p.id+'"')).join('')+'</div>':'')+'<div class="story-grid">'+stories.filter(s=>s.level===level).map(s=>'<button class="story-card" data-action="stages-story-open" data-id="'+s.id+'"><div class="story-thumb">'+(s.id==='pig-pen'?storyScene(s,0):s.pictures.slice(0,2).map(w=>stagePicture(w,true)).join(''))+'</div><b>'+esc(s.title)+'</b><small>'+s.sentences.length+' connected sentences'+(state().stories[s.id]?.done?' · Practised ✓':'')+'</small></button>').join('')+'</div></section>').join('')+'<details class="stage-practice"><summary>More pattern practice: sh, ch and ck</summary>'+legacyCards('big',[15,16,17])+'</details>';
  }
  function patternView(){
   const p=patternLessons.find(x=>x.id===storyId);

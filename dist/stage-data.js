@@ -1,3 +1,4 @@
+import {normalizeAttempt} from './story-gaps.js';
 export const stageInfo={letters:{title:'Letters',age:'4+',hint:'Meet a letter, hear its sound.'},words:{title:'Words',age:'5+',hint:'Blend sounds. Read little sentences.'},stories:{title:'Stories',age:'6+',hint:'Read connected sentences and stories.'}};
 export const alphabetCaseText=letter=>'Uppercase '+letter.toUpperCase()+' and lowercase '+letter.toUpperCase()+'.';
 export const alphabetExampleText=(letter,word)=>letter==='x'?'X at the end of '+word+'.':letter==='q'?'Q with U for '+word+'.':letter.toUpperCase()+' for '+word+'.';
@@ -72,7 +73,7 @@ export function normalizeLearning(raw){
   const saved=raw?.stories?.[s.id];if(!saved)continue;
   const line=Number.isInteger(saved.line)&&saved.line>=0&&saved.line<s.sentences.length?saved.line:0;
   const phase=['helper','sentence','paragraph','blanks'].includes(saved.phase)?saved.phase:saved.mode==='blanks'?'blanks':saved.done===true?'paragraph':'sentence';
-  result.stories[s.id]={mode:phase==='blanks'?'blanks':'read',phase,line,skipIntro:saved.skipIntro===true,blank:Number.isInteger(saved.blank)&&saved.blank>=0&&saved.blank<s.blanks.length?saved.blank:0,answers:s.blanks.map((b,i)=>b.choices.includes(saved.answers?.[i])?saved.answers[i]:null),done:saved.done===true};
+  result.stories[s.id]={mode:phase==='blanks'?'blanks':'read',phase,line,skipIntro:saved.skipIntro===true,blank:Number.isInteger(saved.blank)&&saved.blank>=0&&saved.blank<s.blanks.length?saved.blank:0,answers:s.blanks.map((b,i)=>b.choices.includes(saved.answers?.[i])?saved.answers[i]:null),done:saved.done===true,gapAttempts:s.blanks.map((b,i)=>normalizeAttempt(saved.gapAttempts?.[i],b)),assisted:saved.assisted===true};
  }
  if(validWords.has(raw?.wordCurrent))result.wordCurrent=raw.wordCurrent;
  if(validStories.has(raw?.storyCurrent))result.storyCurrent=raw.storyCurrent;

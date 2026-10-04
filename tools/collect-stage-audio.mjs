@@ -1,3 +1,4 @@
+import {gapHintSpecs} from '../dist/story-gaps.js';
 import {alphabet,alphabetCaseText,alphabetExampleText,wordLessons,stories,patternLessons,supportingWords} from '../dist/stage-data.js';
 import {storyWords} from '../dist/story-words.js';
 import {spellingNames} from '../dist/spelling-data.js';
@@ -18,4 +19,5 @@ for(const [letter,name]of Object.entries(spellingNames))add('spelling-name:'+(le
 add('meaning:sit','সিট মানে বসা।','bn-BD-NabanitaNeural','-8%');
 add('approx:sit','সিট। আবার বলো, সিট।','bn-BD-NabanitaNeural','-12%');
 for(const spec of atAudioSpecs)entries.set(spec.key,spec);
+for(const spec of gapHintSpecs)entries.set(spec.key,spec);
 process.stdout.write(JSON.stringify([...entries.values()]));

@@ -1,6 +1,8 @@
 import {stories} from './stage-data.js';
 import {storyIntroductions} from './story-words.js';
 import {storyScene} from './story-scenes.js';
+import {storyGap} from './story-gaps.js';
+import {emptyAttempt} from './story-gaps.js';
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pause=()=>'<button class="btn story-pause" data-action="stages-pause" disabled aria-pressed="false">Pause</button>';
 const button=(label,action,extra='',kind='')=>'<button class="btn '+kind+'" data-action="stages-story-'+action+'" '+extra+'>'+label+'</button>';
@@ -21,7 +23,7 @@ export function createStoryFlow({getProgress,save,isSaved,render,status,play,sto
    if(blanks)s.blanks.forEach((blank,i)=>{if(blank.line===line){const filled=p.answers[i]===blank.word;text=text.replace(new RegExp('\\b'+blank.word+'\\b'),'<span class="paragraph-blank '+(filled?'filled':i===p.blank?'current':'')+'">'+(filled?blank.word:'_____')+'</span>');}});
    return '<span class="story-line" data-line="'+line+'">'+text+'</span>';
   });
-  return '<div class="story-paragraph" aria-label="Story paragraph">'+lines.join(' ')+'</div>';
+  return '<div class="story-paragraph" aria-label="Story paragraph" tabindex="0">'+lines.join(' ')+'</div>';
  }
  function html(){
   const s=story(),p=progress();let content='',heading='',hint='';
@@ -36,17 +38,19 @@ export function createStoryFlow({getProgress,save,isSaved,render,status,play,sto
    heading='Your whole story';hint='Read the sentences together.';
    content=paragraph()+'<div class="story-listen">'+button('Hear paragraph','audio','aria-label="Hear the story (optional)"')+pause()+'</div><div class="story-controls">'+button('← Previous','previous')+(p.done?button('Try blanks →','mode','data-mode="blanks"','primary'):button('I read this story','finish','','primary'))+'</div><p class="story-feedback" role="status">'+(p.done?'Story practice complete. Try the blanks if you like.':'Tap when you have finished this practice.')+'</p>';
   }else{
-   const b=s.blanks[p.blank],correct=p.answers[p.blank]===b.word,complete=s.blanks.every((b,i)=>p.answers[i]===b.word);
+   const b=storyGap(s,p.blank),a=p.gapAttempts[p.blank],correct=p.answers[p.blank]===b.word,complete=s.blanks.every((b,i)=>p.answers[i]===b.word);
    heading=complete?'Your complete story':'Blank '+(p.blank+1)+' of '+s.blanks.length;
-   content=paragraph(true)+(complete?'':'<p class="blank-prompt">Sentence '+(b.line+1)+' · Choose a word.</p>')+(!correct?'<div class="story-answer-choices">'+b.choices.map(w=>'<button class="choice word-choice '+(p.answers[p.blank]===w?'retry':'')+'" data-action="stages-story-answer" data-blank="'+p.blank+'" data-word="'+w+'">'+esc(w)+'</button>').join('')+'</div>':'')+'<p class="story-feedback" role="status">'+(complete?'Your paragraph is complete! Read the whole story aloud.':correct?'You did it! Read the completed sentence.':p.answers[p.blank]?'Good try. Read around the gap and try again.':'Read around the gap, then choose.')+'</p><div class="story-controls">'+button('← Paragraph','previous')+(complete?button('Done ✓','finish','','primary'):correct?button('Next blank →','blank-next','','primary'):'')+'</div>';
+   const choices=a.easier?b.choices.filter(w=>w===b.word||w===b.choices.find(w=>w!==b.word)):b.choices;
+   content=(complete?'':storyScene(s,b.line)+'<p class="blank-prompt">'+(b.task==='recall'?'Which word was in the story?':'Look, then fill the gap.')+'</p>')+(a.helpOpen&&!correct?'':paragraph(true))+(!correct&&!a.helpOpen?'<div class="story-answer-choices">'+choices.map(w=>'<button class="choice word-choice '+(p.answers[p.blank]===w?'retry':'')+'" data-action="stages-story-answer" data-blank="'+p.blank+'" data-word="'+w+'">'+esc(w)+'</button>').join('')+'</div>':'')+(a.helpOpen&&!correct?'<div class="story-demonstration"><p class="story-sentence">'+esc(s.sentences[b.line])+'</p><div class="story-controls">'+button('Replay demonstration','demonstrate')+pause()+button('Try with help →','retry','','primary')+'</div></div>':'')+'<p class="story-feedback story-gap-hint" role="status">'+(complete?'✓ Your paragraph is complete! Read the whole story aloud.':correct?'✓ You did it! Read the completed sentence.':a.wrong?esc(b.hint):b.task==='recall'?'Remember the sentence you read.':'Look, then choose.')+'</p>'+(!correct&&a.wrong&&!a.helpOpen?'<div class="story-listen">'+button('Hear hint','hint')+pause()+'</div>':'')+'<div class="story-controls">'+button('← Paragraph','previous')+(complete?button('Done ✓','finish','','primary'):correct?button('Next blank →','blank-next','','primary'):'')+'</div>';
   }
-  return '<section class="activity story-player" data-phase="'+p.phase+'"><div class="story-player-heading"><p class="eyebrow">'+heading+'</p><h1>'+esc(s.title)+'</h1></div>'+(hint?'<p class="story-hint">'+hint+'</p>':'')+content+'<p class="story-save" id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</p><p id="audio-status" class="status" role="status"></p>'+(p.phase==='helper'?button('Skip to story','skip','','quiet story-skip'):'')+'</section>';
+  return '<section class="activity story-player" data-phase="'+p.phase+'" data-gap-state="'+(p.phase==='blanks'&&p.answers[p.blank]!==s.blanks[p.blank].word?(p.gapAttempts[p.blank].helpOpen?'demonstration':p.gapAttempts[p.blank].wrong?'hint':'ready'):'ready')+'"><div class="story-player-heading"><p class="eyebrow">'+heading+'</p><h1>'+esc(s.title)+'</h1></div>'+(hint?'<p class="story-hint">'+hint+'</p>':'')+content+'<p class="story-save" id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</p><p id="audio-status" class="status" role="status"></p>'+(p.phase==='helper'?button('Skip to story','skip','','quiet story-skip'):'')+'</section>';
  }
  return {
   html,
   open(id){
    if(!stories.some(s=>s.id===id))return;stop();selected=id;learning().storyCurrent=id;
    learning().stories[id]??={mode:'read',phase:'sentence',line:0,skipIntro:false,blank:0,answers:story().blanks.map(()=>null),done:false};
+   progress().gapAttempts??=story().blanks.map(()=>emptyAttempt());progress().assisted??=false;
    if(['sentence','helper'].includes(progress().phase))prepareSentence();else{save();render();}
   },
   handle(data){
@@ -68,9 +72,15 @@ export function createStoryFlow({getProgress,save,isSaved,render,status,play,sto
     stop();p.phase='blanks';p.mode='blanks';p.blank=Math.max(0,s.blanks.findIndex((b,i)=>p.answers[i]!==b.word));save();render();
    }else if(action==='answer'&&p.phase==='blanks'){
     const index=Number(data.blank),b=s.blanks[index];if(index!==p.blank||!b?.choices.includes(data.word)||p.answers[index]===b.word)return;
-    p.answers[index]=data.word;save();render(false);if(data.word===b.word)document.querySelector('.story-controls .primary')?.focus({preventScroll:true});
+    const a=p.gapAttempts[index];if(a.helpOpen)return;stop();a.attempts++;if(a.firstChoice===null){a.firstChoice=data.word;a.firstCorrect=data.word===b.word;}
+    p.answers[index]=data.word;
+    if(data.word!==b.word){a.wrong++;a.assisted=true;p.assisted=true;if(a.wrong>=2){a.demonstrated=true;a.helpOpen=true;}}
+    save();render(false);const current=document.querySelector('.paragraph-blank.current'),para=current?.closest('.story-paragraph');if(para&&para.scrollHeight>para.clientHeight)para.scrollTop+=current.getBoundingClientRect().top-para.getBoundingClientRect().top-para.clientHeight/2;if(data.word===b.word)document.querySelector('.story-controls .primary')?.focus({preventScroll:true});else{const gap=storyGap(s,index);listen([...(a.helpOpen?[{key:'text:'+s.sentences[b.line]}]:[]),{key:'story-hint:'+gap.hint,target:'.story-gap-hint'}]);}
+   }else if(action==='hint'&&p.phase==='blanks'){const b=storyGap(s,p.blank);listen([{key:'story-hint:'+b.hint,target:'.story-gap-hint'}]);
+   }else if(action==='demonstrate'&&p.phase==='blanks'){const b=storyGap(s,p.blank);listen([{key:'text:'+s.sentences[b.line]},{key:'story-hint:'+b.hint,target:'.story-gap-hint'}]);
+   }else if(action==='retry'&&p.phase==='blanks'&&p.gapAttempts[p.blank].helpOpen){stop();const a=p.gapAttempts[p.blank];a.helpOpen=false;a.easier=true;a.assisted=true;p.assisted=true;p.answers[p.blank]=null;save();render();
    }else if(action==='blank-next'&&p.phase==='blanks'&&p.answers[p.blank]===s.blanks[p.blank].word){
-    const next=s.blanks.findIndex((b,i)=>p.answers[i]!==b.word);if(next<0)return;p.blank=next;save();render();
+    const next=s.blanks.findIndex((b,i)=>p.answers[i]!==b.word);if(next<0)return;stop();p.blank=next;save();render();
    }else if(action==='finish'&&(p.phase==='paragraph'||p.phase==='blanks'&&s.blanks.every((b,i)=>p.answers[i]===b.word))){
     stop();p.done=true;save();render(false);status(isSaved()?'Story practice saved.':'Progress could not be saved yet.');document.querySelector('[data-action="stages-story-mode"]')?.focus({preventScroll:true});
    }

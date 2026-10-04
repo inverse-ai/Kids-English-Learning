@@ -39,7 +39,7 @@ const symbols={
  peach:'<path d="M53 22q30-24 41 16 15 36-32 52-18 10-40-10Q-7 52 17 30q19-20 36-8Z" fill="#eaa094" stroke="#cb8079" stroke-width="3"/><path d="M52 25q-11 31 6 59" stroke="#d48182" stroke-width="3" fill="none"/><path d="M51 20Q42-8 79 4q-2 19-28 16Z" fill="#86ae7b"/>',
  slice:'<path d="M5 35q50 57 90 0 0 65-44 65T5 35Z" fill="#eeb79a" stroke="#d4847a" stroke-width="4"/><path d="M15 46q33 27 71-1" stroke="#f7d5a7" stroke-width="9" fill="none"/>',
  bin:'<path d="m20 20 8 74h49l8-74Z" fill="#81a3a5" stroke="#547b83" stroke-width="3"/><path d="M13 18h79M38 5h32m-24 32v39m17-39v39" stroke="#547b83" stroke-width="6" stroke-linecap="round"/>',
- paper:'<rect x="10" y="5" width="79" height="93" rx="4" fill="#fff9ed" stroke="#c5b18e" stroke-width="3"/><path d="m25 21-4 14m22-9-4 14m24-19-4 14m17-11-4 14" stroke="#86b8ce" stroke-width="4"/><path d="m28 76 14-35 21 1 10 34Z" fill="#e9b672"/>',
+ paper:'<rect x="10" y="5" width="79" height="93" rx="4" fill="#fff9ed" stroke="#c5b18e" stroke-width="3"/><path d="m25 21-4 14m22-9-4 14m24-19-4 14m17-11-4 14" stroke="#86b8ce" stroke-width="4"/>'+ '<g transform="translate(26 39) scale(.48)">'+cat()+'</g>',
  table:'<path d="M2 13h96v16H2Z" fill="#caa680"/><path d="M16 28v69m68-69v69" stroke="#a37f5e" stroke-width="9"/>',
  cloud:'<path d="M9 66q-17-32 18-40 21-34 45-4 37-5 24 42Z" fill="#a9bfcd"/>',
  talk:'<path d="M4 5h86v52H42L24 75V57H4Z" fill="#fff8e3" stroke="#9fb4be" stroke-width="3"/><circle cx="26" cy="29" r="4" fill="#9fb4be"/><circle cx="46" cy="29" r="4" fill="#9fb4be"/><circle cx="66" cy="29" r="4" fill="#9fb4be"/>'
@@ -49,13 +49,15 @@ const o=(name,x=300,y=255,w=120,h=w)=>({name,x,y,w,h});
 const frame=(objects,background='room',extras='')=>({objects,background,extras});
 const motion='<path d="M132 188h44m-59 17h51m203 21h30" stroke="#b4a397" stroke-width="5" fill="none" stroke-linecap="round"/>';
 const drops='<path d="m95 92-6 20m74-29-7 23m88-24-7 20m75-25-7 25m101-27-6 19m88-26-7 24" stroke="#83b6cb" stroke-width="5" stroke-linecap="round"/>';
+symbols.mum=person(true).replaceAll('#568bad','#b381ae');
+symbols['pig-run']=symbols.pig.replace('m23 73 2 21m25-21 2 21m20-21 4 18','m23 73-18 13m43-13 15 12m5-12 18-10').replace('rx="35" ry="27"','rx="38" ry="23"');
 const scenes={
  'cat-rat':[frame([o('cat',300,259,153)]),frame([o('mat',310,281,325,46),o('cat',305,263,150)]),frame([o('mat',305,281,370,48),o('cat',246,264,145),o('rat',389,266,102)]),frame([o('cat-run',261,263,157,129),o('rat-run',424,265,110)],'garden',motion)],
  'hen-sun':[frame([o('hen',300,260,163)]),frame([o('sun',460,105,72),o('hen',300,264,156)],'garden')],
- 'pig-pen':[frame([o('fence',310,226,455,125),o('pig',300,267,159),o('fence',310,285,475,85)],'garden'),frame([o('fence',310,226,455,125),o('pig',339,262,160),o('fence',310,285,475,85)],'garden',motion)],
+ 'pig-pen':[frame([o('fence',310,226,455,125),o('pig',300,267,159),o('fence',310,285,475,85)],'garden'),frame([o('fence',310,226,455,125),o('pig-run',339,251,174,139),o('fence',310,296,475,45)],'garden',motion)],
  'red-bag':[frame([o('bag',300,270,180)]),frame([o('bag',300,270,185),o('pen',300,210,55,93)]),frame([o('mat',300,283,310,40),o('bag',300,268,171)])],
  'dog-log':[frame([o('log',307,281,344,84),o('dog',305,239,159)]),frame([o('sun',440,106,86),o('log',306,281,333,80),o('dog',294,241,150)],'garden'),frame([o('log',305,281,333,80),o('dog',302,241,172,98)],'garden')],
- 'bun-cup':[frame([o('dad',300,270,170),o('bun',300,213,78,60)]),frame([o('table',300,280,300,82),o('cup',300,224,116)]),frame([o('person',300,270,177),o('bun',300,216,82,60)])],
+ 'bun-cup':[frame([o('mum',300,270,170),o('bun',300,213,78,60)]),frame([o('table',300,280,300,82),o('cup',300,224,116)]),frame([o('mum',300,270,177),o('bun',300,216,82,60)])],
  'map-tap':[frame([o('map',300,268,195)]),frame([o('mat',305,281,370,57),o('map',308,258,144,107)]),frame([o('mat',244,281,272,51),o('tap',461,252,99)]),frame([o('tap',300,256,212)])],
  'bus-stop':[frame([o('dad',300,274,183),o('hat',299,138,105,59)]),frame([o('busstop',185,271,96),o('dad',317,273,157),o('hat',317,155,84,46)],'garden'),frame([o('bus',300,274,355,218)],'garden'),frame([o('bus',346,274,342,211),o('dad',423,260,103)],'garden')],
  'fish-shop':[frame([o('shop',300,279,285,234)],'garden'),frame([o('tank',300,269,350,192),o('fish',313,226,131,92)]),frame([o('dad',300,274,190),o('bag',372,254,95)]),frame([o('dad',190,274,156),o('tank',394,264,241,151),o('fish',393,223,87,66),o('bag',211,247,60)])],
@@ -69,7 +71,7 @@ const scenes={
  'rain-snail':[frame([o('cloud',292,105,255,82)],'path',drops),frame([o('cloud',300,101,240,80),o('snail',327,276,148)],'path',drops),frame([o('cloud',345,94,225,75),o('shed',151,277,218),o('person',163,276,102)],'path',drops),frame([o('person',175,277,151),o('snail',375,282,151)],'path')],
  'train-trip':[frame([o('person',251,276,162),o('train',455,279,171,190)],'station'),frame([o('train',300,284,246,257)],'station'),frame([o('bench',300,282,210,109),o('person',300,240,154),o('bag',300,241,85)]),frame([o('tree',110,234,134,177),o('tree',478,234,139,191),o('train',300,285,210,247)],'garden',motion)],
  'cat-tail':[frame([o('cat',300,274,188)],'garden'),frame([o('cat',300,272,196)],'garden','<path d="M451 72q31 20 21 53m-4-64q34 19 31 49" stroke="#ceb19b" fill="none" stroke-width="4"/>'),frame([o('cloud',300,99,271,83),o('cat',300,279,161)],'garden',drops),frame([o('shed',432,287,230,260),o('cat-run',272,268,166,121)],'garden',motion)],
- 'rain-paint':[frame([o('table',300,292,353,111),o('person',300,190,121),o('paper',300,248,149,120)]),frame([o('paper',300,274,213,222)]),frame([o('paper',300,274,213,222),o('cat',300,241,100)]),frame([o('paper',323,212,194,173),o('person',124,278,140)])],
+ 'rain-paint':[frame([o('table',300,292,353,111),o('person',300,190,121),o('paper',300,248,149,120)]),frame([o('paper',300,274,213,222)]),frame([o('paper',300,274,213,222)]),frame([o('paper',323,212,194,173),o('person',124,278,140)])],
  'sea-seat':[frame([o('bench',300,285,274,125),o('dad',174,260,141),o('person',430,260,125)],'sea'),frame([o('shell',302,276,150)],'sea'),frame([o('bench',300,285,282,130),o('dad',300,239,157)],'sea'),frame([o('bench',300,285,324,130),o('dad',226,239,159),o('person',377,239,139)],'sea')],
  'leaf-tree':[frame([o('tree',300,278,243,265),o('leaf',429,206,66)],'garden'),frame([o('person',262,278,153),o('leaf',328,254,58)],'garden'),frame([o('leaf',300,265,201)],'garden'),frame([o('person',225,277,144),o('dad',369,277,162),o('book',300,245,147,97),o('tree',303,221,36)])],
  'peach-meal':[frame([o('table',312,288,318,100),o('person',170,277,165),o('plate',332,225,211,57),o('peach',331,206,79)]),frame([o('person',193,279,155),o('tap',399,171,114),o('plate',353,264,252,66),o('palm',321,236,62),o('palm',385,236,62)],'room','<path d="M389 155v47m-9-39v30" stroke="#86b8cb" stroke-width="4"/>'),frame([o('person',219,277,167),o('dad',399,277,170),o('slice',253,231,76),o('slice',366,227,76)]),frame([o('table',300,288,363,103),o('plate',234,220,142,45),o('plate',413,220,139,44),o('peach',331,229,93)])],
