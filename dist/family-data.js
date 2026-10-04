@@ -34,8 +34,30 @@ export const familyRounds = pictureFamilies.flatMap(family=>{
  return result;
 });
 export function familyStages(round){return round.items.flatMap(item=>[{type:'learn',item},{type:'build',item},{type:'match',item}]);}
+export function normalizeWordDrawing(raw){
+ const drawing=[];let count=0;
+ if(!Array.isArray(raw))return drawing;
+ for(const stroke of raw.slice(0,1000)){
+  if(!Array.isArray(stroke))continue;
+  const points=stroke.filter(point=>Array.isArray(point)&&point.length===2&&point.every(n=>Number.isFinite(n)&&n>=0&&n<=1)).slice(0,20000-count).map(point=>[...point]);
+  if(points.length)drawing.push(points);
+  count+=points.length;if(count>=20000)break;
+ }
+ return drawing;
+}
+export function normalizeWordWriting(raw){
+ const result={completed:[],drafts:{},current:null};
+ const valid=Object.keys(familyWords);
+ result.completed=[...new Set((Array.isArray(raw?.completed)?raw.completed:[]).filter(word=>valid.includes(word)))];
+ for(const word of valid){
+  const draft=raw?.drafts?.[word];if(!draft||typeof draft!=='object')continue;
+  result.drafts[word]={drawing:normalizeWordDrawing(draft.drawing),showGuide:draft.showGuide!==false};
+ }
+ if(valid.includes(raw?.current)&&result.drafts[raw.current])result.current=raw.current;
+ return result;
+}
 export function normalizeFamilyProgress(raw){
- const result={completed:[],inProgress:{},current:null,lastFamily:null,selected:{}};
+ const result={completed:[],inProgress:{},current:null,lastFamily:null,selected:{},writing:normalizeWordWriting(raw?.writing)};
  const valid=new Set(familyRounds.map(r=>r.id));
  result.completed=[...new Set((Array.isArray(raw?.completed)?raw.completed:[]).filter(id=>valid.has(id)))];
  for(const round of familyRounds){

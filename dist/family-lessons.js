@@ -9,18 +9,23 @@ const colouredWord=word=>'<span class="family-word">'+word[0]+'<span class="fami
 const familyOf=id=>pictureFamilies.find(f=>f.id===id);
 const roundsFor=id=>familyRounds.filter(r=>r.family===id);
 const unfinishedRound=progress=>familyRounds.find(r=>r.id===progress.current&&progress.inProgress[r.id])||familyRounds.find(r=>progress.inProgress[r.id]);
+const unfinishedWriting=progress=>progress.writing.current||Object.keys(progress.writing.drafts)[0];
 const roundsDone=(id,progress)=>roundsFor(id).filter(r=>progress.completed.includes(r.id)).length;
 
 export function familyEntry(progress){
  const saved=unfinishedRound(progress);
- return '<section class="family-entry"><div><div class="eyebrow">New · Pictures, sounds & Bangla help</div><h2>Picture word families</h2><p>Start with '+colouredWord('cat')+'. Hear the sounds, build a word, and learn what it means.</p><div class="family-entry-actions">'+btn('Explore picture words →','library','','primary')+(saved?btn('Continue picture lesson →','resume'):'')+'</div></div><div class="family-entry-art" aria-hidden="true">'+picture('cat')+'<span>-at</span></div></section>';
+ return '<section class="family-entry"><div><div class="eyebrow">Pictures, sounds & Bangla help</div><h2>Picture word families</h2><p>Start with '+colouredWord('cat')+'. Hear the sounds, build a word, and try writing it.</p><div class="family-entry-actions">'+btn('Explore picture words →','library','','primary')+(saved?btn('Continue picture lesson →','resume'):'')+(unfinishedWriting(progress)?btn('Continue writing →','write-resume'):'')+'</div></div><div class="family-entry-art" aria-hidden="true">'+picture('cat')+'<span>-at</span></div></section>';
 }
 
 export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onStatus,isSaved=()=>true}){
- let page='library',familyId=null,selected=null,session=null;
+ let page='library',familyId=null,selected=null,session=null,writing=null,canvasObserver=null;
  const persist=()=>save();
  const stopAudio=()=>{stopLessonAudio();status('');};
  function checkpoint(){
+  if(page==='writing'&&writing){
+   getProgress().writing.drafts[writing.word]={drawing:writing.drawing,showGuide:writing.showGuide};
+   getProgress().writing.current=writing.word;persist();return;
+  }
   if(page!=='lesson'||!session)return;
   getProgress().inProgress[session.round.id]={step:session.step,tiles:[...session.tiles],placed:[...session.placed],choices:[...session.choices],answer:session.answer};
   getProgress().current=session.round.id;
@@ -55,6 +60,7 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
   const p=getProgress(),saved=unfinishedRound(p);
   return navigation()+'<section class="intro"><div><div class="eyebrow">Word Adventurer · Start with sounds</div><h1>Little words. Big discoveries.</h1><p class="muted">Explore a picture family. Listen in English, use Bangla help, then try a short lesson.</p></div></section>'+
    (saved?'<div class="family-resume"><div><b>Your -'+saved.family+' lesson is waiting.</b><p>Round '+saved.number+' · Activity '+(p.inProgress[saved.id].step+1)+' of '+familyStages(saved).length+'</p></div>'+btn('Continue picture lesson →','resume','','primary')+'</div>':'')+
+   (unfinishedWriting(p)?'<div class="family-resume"><div><b>Your writing is waiting.</b><p>Pick up your unfinished word.</p></div>'+btn('Continue writing →','write-resume','','primary')+'</div>':'')+
    '<div class="family-library">'+pictureFamilies.map(f=>{
     const count=roundsDone(f.id,p),total=roundsFor(f.id).length;
     return '<button class="family-card theme-'+f.colour+'" data-action="family-open" data-family="'+f.id+'" aria-label="Explore the -'+f.id+' word family">'+picture(f.words[0])+'<span class="family-card-ending">-'+f.id+'</span><span>'+f.words.slice(0,3).join(' · ')+'</span><small>'+f.words.length+' picture words · '+count+'/'+total+' rounds '+(count===total?'★':'')+'</small></button>';
@@ -68,7 +74,7 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
     return '<button class="family-round" data-action="family-'+(saved?'resume':'start')+'" data-round="'+round.id+'"><span>ROUND '+round.number+' '+(done?'★':'')+'</span><b>'+round.items.join(' · ')+'</b><small>'+(saved?'Continue · Activity '+(saved.step+1):'Pictures → build → listen & find')+'</small></button>';
    }).join('')+'</div></section>'+
    (family.poster?'<details class="family-poster"><summary>See your original picture chart</summary><img src="'+family.poster+'" alt="The supplied -'+family.id+' picture word-family chart" loading="lazy"></details>':'')+
-   '<p id="audio-status" class="status"></p>';
+   '<section class="family-writing-entry"><div><h2>From letters to a word</h2><p>Write one letter, then add the next. Try '+colouredWord(selected)+' on the pad or on paper.</p><p class="small muted">'+p.writing.completed.filter(w=>family.words.includes(w)).length+' of '+family.words.length+' words practised in writing</p></div>'+btn(p.writing.drafts[selected]?'Continue writing this word →':'Write this word →','write','data-word="'+selected+'"','primary')+'</section><p id="audio-status" class="status"></p>';
  }
  function prepare(){
   const stage=familyStages(session.round)[session.step],family=familyOf(session.round.family);
@@ -113,6 +119,53 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
  function partPrompt(word){
   return 'Use the first sound in '+word+', then blend it with '+word.slice(1)+'. Keep consonants short without adding “uh”. The sound buttons play sounds, not letter names.';
  }
+ function startWriting(word){
+  if(!familyWords[word])return;
+  stopAudio();familyId=familyWords[word].family;selected=word;
+  const draft=getProgress().writing.drafts[word];
+  writing={word,drawing:draft?.drawing.map(stroke=>stroke.map(point=>[...point]))||[],showGuide:draft?.showGuide!==false};
+  page='writing';checkpoint();render();
+ }
+ function writingView(){
+  const word=writing.word;
+  return '<div class="lesson-head">'+btn('← Picture family','back','','quiet')+'<div class="lesson-meta">Writing practice<br><span id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</span></div></div><section class="activity family-activity theme-'+familyOf(familyId).colour+'"><div class="eyebrow">From letters to a word</div><h1>Write a little word.</h1><p class="lead">You can write letters. Now put three together.</p><div class="family-lesson-picture small">'+picture(word)+'</div>'+sounds(word)+listening(word)+'<p class="writing-instructions" id="writing-help">Say the word. Copy one letter at a time, from left to right. Use your finger or mouse, or write on paper.</p><div class="canvas-wrap word-writing-pad"><div class="word-writing-guide" aria-hidden="true" '+(writing.showGuide?'':'hidden')+'>'+[...word].map(c=>'<span>'+c+'</span>').join('')+'</div><canvas id="family-writing" role="img" aria-label="Your writing pad" aria-describedby="writing-help">You can practise this word on paper instead.</canvas></div><div class="writing-tools">'+btn(writing.showGuide?'Hide tracing guide':'Show tracing guide','write-guide','aria-pressed="'+writing.showGuide+'"')+btn('Clear my writing','write-clear')+'</div><p class="small muted">Your drawing saves automatically in this browser. Try without the tracing guide when you feel ready.</p><details class="parent-cue"><summary>Parent prompt</summary><p>Say the sounds together, then let him write each letter. He can look back at the word. One word is enough for today. A parent can help him compare his writing with the model.</p><p>The pad saves his marks; it does not judge handwriting. Choose “We practised this word” after trying on the pad or on paper.</p></details><div class="activity-actions">'+btn('We practised this word ✓','write-finish','','primary')+'</div><p id="audio-status" class="status"></p></section>';
+ }
+ function writingComplete(){
+  return navigation(true)+'<section class="activity"><div class="eyebrow">Writing practice complete</div><h1>You wrote a little word!</h1><div class="family-lesson-picture small">'+picture(writing.word)+'</div>'+colouredWord(writing.word)+'<p class="lead">'+(isSaved()?'Your writing practice is saved.':'Your practice could not be saved in this browser.')+'</p><p class="muted">Say your word together. This is a good time for a break.</p><div class="activity-actions">'+btn('Back to this family','back','','primary')+btn('Write it again','write','data-word="'+writing.word+'"')+'</div></section>';
+ }
+ function mount(){
+  canvasObserver?.disconnect();canvasObserver=null;
+  const canvas=document.querySelector('#family-writing');if(page!=='writing'||!canvas)return;
+  const ctx=canvas.getContext('2d');let stroke=null,pointer=null,lastSaved=0;
+  let points=writing.drawing.reduce((sum,line)=>sum+line.length,0);
+  function draw(line){
+   if(!line.length)return;
+   const rect=canvas.getBoundingClientRect();ctx.beginPath();ctx.moveTo(line[0][0]*rect.width,line[0][1]*rect.height);
+   if(line.length===1)ctx.lineTo(line[0][0]*rect.width+.01,line[0][1]*rect.height+.01);
+   for(const [x,y]of line.slice(1))ctx.lineTo(x*rect.width,y*rect.height);ctx.stroke();
+  }
+  function resize(){
+   const rect=canvas.getBoundingClientRect(),ratio=window.devicePixelRatio||1;
+   canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
+   ctx.scale(ratio,ratio);ctx.lineWidth=6;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#2e52df';
+   writing.drawing.forEach(draw);
+  }
+  const point=event=>{const rect=canvas.getBoundingClientRect();return [Math.max(0,Math.min(1,(event.clientX-rect.left)/rect.width)),Math.max(0,Math.min(1,(event.clientY-rect.top)/rect.height))];};
+  canvas.addEventListener('pointerdown',event=>{
+   if(stroke||writing.drawing.length>=1000||points>=20000)return;
+   event.preventDefault();canvas.setPointerCapture(event.pointerId);pointer=event.pointerId;
+   stroke=[point(event)];writing.drawing.push(stroke);points++;draw(stroke);checkpoint();lastSaved=Date.now();
+  });
+  canvas.addEventListener('pointermove',event=>{
+   if(!stroke||event.pointerId!==pointer||points>=20000)return;
+   stroke.push(point(event));points++;draw(stroke.slice(-2));
+   if(Date.now()-lastSaved>=200){checkpoint();lastSaved=Date.now();}
+  });
+  for(const name of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(name,event=>{
+   if(stroke&&event.pointerId===pointer){stroke=null;pointer=null;checkpoint();}
+  });
+  resize();canvasObserver=new ResizeObserver(resize);canvasObserver.observe(canvas);
+ }
  function complete(){
   const next=roundsFor(session.round.family).find(r=>!getProgress().completed.includes(r.id));
   return navigation(true)+'<section class="activity"><div class="complete-star" aria-hidden="true">🌟</div><div class="eyebrow">Picture round complete</div><h1>You built little words!</h1><p class="lead">We practised '+session.round.items.join(', ')+'. Your round star is saved.</p><div class="family-complete-pictures">'+session.round.items.map(w=>'<div>'+picture(w)+colouredWord(w)+'</div>').join('')+'</div><p class="muted">Try one word with a toy or something at home. This is a good time for a break.</p><div class="activity-actions">'+btn('Back to this family','back','','primary')+(next?btn('Try the next round →','start','data-round="'+next.id+'"'):'')+'</div></section>';
@@ -120,9 +173,11 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
  return {
   showLibrary(){stopAudio();page='library';},
   checkpoint,
-  html(){return page==='board'?board():page==='lesson'?lesson():page==='complete'?complete():library();},
+   html(){return page==='writing'?writingView():page==='writing-complete'?writingComplete():page==='board'?board():page==='lesson'?lesson():page==='complete'?complete():library();},
+   mount,
   handle(data){
    const action=data.action.replace('family-',''),p=getProgress();
+    if(page==='writing')checkpoint();
    if(action==='home'){stopAudio();onHome();return;}
    if(action==='library'){stopAudio();page='library';render();return;}
    if(action==='open'){
@@ -133,6 +188,19 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
     stopAudio();selected=data.word;p.selected[familyId]=selected;persist();render(false);audio(selected,'word');
    }else if(action==='back'){
     stopAudio();page='board';selected=p.selected[familyId]||familyOf(familyId).words[0];persist();render();
+   }else if(action==='write')startWriting(data.word);
+   else if(action==='write-resume')startWriting(unfinishedWriting(p));
+   else if(action==='write-guide'&&page==='writing'){
+    writing.showGuide=!writing.showGuide;checkpoint();render(false);
+    document.querySelector('[data-action="family-write-guide"]')?.focus({preventScroll:true});
+   }else if(action==='write-clear'&&page==='writing'){
+    writing.drawing=[];checkpoint();render(false);
+    document.querySelector('[data-action="family-write-clear"]')?.focus({preventScroll:true});
+   }else if(action==='write-finish'&&page==='writing'){
+    stopAudio();if(!p.writing.completed.includes(writing.word))p.writing.completed.push(writing.word);
+    delete p.writing.drafts[writing.word];
+    if(p.writing.current===writing.word)p.writing.current=null;
+    page='writing-complete';persist();render();
    }else if(action==='start')start(data.round);
    else if(action==='resume')start(data.round||unfinishedRound(p)?.id,true);
    else if(action==='audio')audio(data.word,data.kind,Number(data.index));

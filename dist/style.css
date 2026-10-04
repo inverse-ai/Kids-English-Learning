@@ -35,6 +35,10 @@
 
 .family-pick,.family-pick.selected{width:100%;margin:0}
 
+.family-writing-entry{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:26px 0;padding:24px;border:1px solid var(--line);border-radius:20px;background:white}.family-writing-entry h2{margin-bottom:8px}.family-writing-entry .family-word{font-size:1.2rem}.family-writing-entry .btn{flex-shrink:0}.writing-instructions{max-width:580px;margin:24px auto 0;color:var(--muted)}.word-writing-pad{height:240px;background:linear-gradient(to bottom,#fff 35%,#dce3f0 35%,#fff calc(35% + 1px),#fff 73%,#aab9d5 73%,#fff calc(73% + 2px))}.word-writing-guide{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;padding:0 6%;pointer-events:none;user-select:none;color:#c6d0e8;font-family:'Trebuchet MS',Arial,sans-serif;font-size:clamp(4rem,15vw,9rem);line-height:1;text-align:center}.word-writing-guide[hidden]{display:none}.writing-tools{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}.word-writing-pad canvas{cursor:crosshair}
+@media(max-width:720px){.family-writing-entry{align-items:stretch;flex-direction:column}.word-writing-pad{height:210px}}
+@media print{.writing-tools,.family-writing-entry{display:none}.word-writing-pad{height:240px}}
+
 .picture-cat{background-image:url("/pictures/family-at.png");background-size:300% 300%;background-position:0.0000% 0.0000%}
 .picture-hat{background-image:url("/pictures/family-at.png");background-size:300% 300%;background-position:50.0000% 0.0000%}
 .picture-mat{background-image:url("/pictures/family-at.png");background-size:300% 300%;background-position:100.0000% 0.0000%}
