@@ -41,7 +41,7 @@ try{
  const pausedCount=await page.evaluate(()=>window.clips.length);await page.waitForTimeout(400);assert.equal(await page.evaluate(()=>window.clips.length),pausedCount);
  await page.locator('[data-action="stages-pause"]').click();await letterDone();
  await expect(page.getByRole('heading',{name:'Say hello to Aa.',exact:true})).toBeVisible();
- const expected=a=>a.examples.flatMap(w=>['name:'+a.letter,'sound:'+a.sound,'word:'+w]).map(k=>stageSpeech[k]);
+ const expected=a=>['alphabet-case:'+a.letter,...a.examples.flatMap(w=>['alphabet-example:'+a.letter+':'+w,...Array(3).fill('sound:'+a.sound),'word:'+w])].map(k=>stageSpeech[k]);
  assert.deepEqual(await page.evaluate(()=>window.clips.map(a=>new URL(a.src).pathname)),expected(alphabet[0]));
  for(let i=1;i<26;i++){
   await page.evaluate(()=>{window.clips=[];});await page.locator('.letter-paging [data-action="stages-letter-next"]').last().click();
@@ -111,6 +111,6 @@ try{
   assert(result.duration>.1&&result.audible,file);decoded++;
  }
  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
- const report={passed:true,letters:26,letterExamples:52,coreWords:9,stories:24,patterns:['sh','ch','ai','ea'],decodedClips:decoded,checks:['Aa first screen with Start and persistent navigation','all 26 letters play six synchronized clips without extra Listen','pause/resume, replay and manual previous/next only','old exercises remain in appropriate stages','old stars and checkpoints unchanged','explicit helper words and phrases before sentence blanks','correct sentences and paragraphs stay visible','all story blanks and all core lessons complete','reload restores answers','320px and 390px layouts fit','every new recording decodes and contains audio','no page errors or external runtime requests']};
+ const report={passed:true,letters:26,letterExamples:52,coreWords:9,stories:24,patterns:['sh','ch','ai','ea'],decodedClips:decoded,checks:['Aa first screen with Start and persistent navigation','all 26 letters play one case introduction and two five-clip examples without extra Listen','pause/resume, replay and manual previous/next only','old exercises remain in appropriate stages','old stars and checkpoints unchanged','explicit helper words and phrases before sentence blanks','correct sentences and paragraphs stay visible','all story blanks and all core lessons complete','reload restores answers','320px and 390px layouts fit','every new recording decodes and contains audio','no page errors or external runtime requests']};
  await writeFile('qa/stages-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));
 }finally{if(context)await context.close();}

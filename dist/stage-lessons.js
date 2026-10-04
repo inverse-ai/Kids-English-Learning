@@ -42,7 +42,14 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
  function playLetter(){
   const a=alphabet[letterIndex];
   state().letter=letterIndex;save();
-  audioParts(a.examples.flatMap((word,i)=>[{key:'name:'+a.letter,example:i,phase:'Letter name: '+a.letter.toUpperCase()},{key:'sound:'+a.sound,example:i,phase:'Letter sound'},{key:'word:'+word,example:i,phase:'Picture word: '+word}]),()=>{if(!state().lettersDone.includes(a.letter)){state().lettersDone.push(a.letter);save();}});
+  audioParts([
+   {key:'alphabet-case:'+a.letter,phase:'Uppercase and lowercase: '+a.letter.toUpperCase()+a.letter},
+   ...a.examples.flatMap((word,i)=>[
+    {key:'alphabet-example:'+a.letter+':'+word,example:i,phase:'Listen: '+word},
+    ...[1,2,3].map(repeat=>({key:'sound:'+a.sound,example:i,phase:'Letter sound · '+repeat+' of 3'})),
+    {key:'word:'+word,example:i,phase:'Picture word: '+word,pauseAfter:600}
+   ])
+  ],()=>{if(!state().lettersDone.includes(a.letter)){state().lettersDone.push(a.letter);save();}});
  }
  function openLetter(index,autoplay=true){
   if(!Number.isInteger(index)||index<0||index>=alphabet.length)return;

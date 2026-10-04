@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": [
+    "Next during a paused example gap resets Pause and starts the new letter",
+    "Next during an active example gap cancels the old queued example",
+    "interrupted A never plays ant or receives a completion mark",
+    "B completes and remains on B after both transitions"
+  ]
+}

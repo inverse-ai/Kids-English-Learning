@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "letters": 26,
+  "examples": 52,
+  "phonemeRepetitionsPerExample": 3,
+  "clipsPerLetter": 11,
+  "decodedAlphabetClips": 155,
+  "newNarrationRecordings": 78,
+  "checks": [
+    "one uppercase/lowercase introduction per letter playback",
+    "requested A and B narration with X and Q exceptions",
+    "all 26 letters play in order with synchronized pictures",
+    "short pause between examples and no automatic letter advance",
+    "pause/resume within speech and example silence",
+    "Replay and rapid manual Next/Previous cancel old audio",
+    "old progress including partial word/story/writing answers survives and reloads",
+    "all existing recordings and other stage content unchanged",
+    "shared player retains default timing for word blending",
+    "missing audio reports failure and permits navigation",
+    "no browser errors or external runtime requests"
+  ],
+  "unverifiedAudio": [
+    "No perceptual listening review of the 78 new synthesized narration recordings or every reused phoneme. Browser playback, clip source mapping and decoding were verified; automated checks do not prove pronunciation quality."
+  ]
+}
