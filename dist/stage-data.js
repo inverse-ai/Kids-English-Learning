@@ -53,9 +53,11 @@ export const stories=[
 stories.sort((a,b)=>a.level-b.level||a.sentences.length-b.sentences.length);
 export function normalizeLearning(raw){
  const validWords=new Set(wordLessons.map(l=>l.id)),validStories=new Set(stories.map(s=>s.id));
- const result={letter:Number.isInteger(raw?.letter)&&raw.letter>=0&&raw.letter<26?raw.letter:0,lettersDone:[],words:{},stories:{},patterns:[],wordCurrent:wordLessons[0].id,storyCurrent:null};
+ const result={letter:Number.isInteger(raw?.letter)&&raw.letter>=0&&raw.letter<26?raw.letter:0,lettersDone:[],words:{},stories:{},patterns:[],storyWordsMet:[],wordCurrent:wordLessons[0].id,storyCurrent:null};
  result.lettersDone=[...new Set((Array.isArray(raw?.lettersDone)?raw.lettersDone:[]).filter(x=>alphabet.some(a=>a.letter===x)))];
  result.patterns=[...new Set((Array.isArray(raw?.patterns)?raw.patterns:[]).filter(x=>patternLessons.some(p=>p.id===x)))];
+ const introWords=new Set([...Object.keys(supportingWords),...stories.flatMap(s=>s.newWords)].map(w=>w.toLowerCase()));
+ result.storyWordsMet=[...new Set((Array.isArray(raw?.storyWordsMet)?raw.storyWordsMet:[]).filter(w=>introWords.has(w)))];
  for(const lesson of wordLessons){
   const saved=raw?.words?.[lesson.id];if(!saved)continue;
   const step=Number.isInteger(saved.step)&&saved.step>=0&&saved.step<=3?saved.step:0;
@@ -63,7 +65,9 @@ export function normalizeLearning(raw){
  }
  for(const s of stories){
   const saved=raw?.stories?.[s.id];if(!saved)continue;
-  result.stories[s.id]={mode:saved.mode==='blanks'?'blanks':'read',answers:s.blanks.map((b,i)=>b.choices.includes(saved.answers?.[i])?saved.answers[i]:null),done:saved.done===true};
+  const line=Number.isInteger(saved.line)&&saved.line>=0&&saved.line<s.sentences.length?saved.line:0;
+  const phase=['helper','sentence','paragraph','blanks'].includes(saved.phase)?saved.phase:saved.mode==='blanks'?'blanks':saved.done===true?'paragraph':'sentence';
+  result.stories[s.id]={mode:phase==='blanks'?'blanks':'read',phase,line,skipIntro:saved.skipIntro===true,blank:Number.isInteger(saved.blank)&&saved.blank>=0&&saved.blank<s.blanks.length?saved.blank:0,answers:s.blanks.map((b,i)=>b.choices.includes(saved.answers?.[i])?saved.answers[i]:null),done:saved.done===true};
  }
  if(validWords.has(raw?.wordCurrent))result.wordCurrent=raw.wordCurrent;
  if(validStories.has(raw?.storyCurrent))result.storyCurrent=raw.storyCurrent;

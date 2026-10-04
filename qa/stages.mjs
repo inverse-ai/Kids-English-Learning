@@ -1,3 +1,4 @@
+import {showParagraph} from './story-helpers.mjs';
 import {chromium,expect} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {mkdtemp,stat,readFile,writeFile} from 'node:fs/promises';
@@ -77,16 +78,17 @@ try{
   await page.locator('[data-action="stages-pattern-finish"]').click();
  }
  for(const s of stories){
-  await page.locator('.story-grid [data-action="stages-story-open"][data-id="'+s.id+'"]').click();await expect(page.locator('.story-line')).toHaveCount(s.sentences.length);await expect(page.locator('.story-paragraph')).toHaveText(s.sentences.join(' '));
+  await page.locator('.story-grid [data-action="stages-story-open"][data-id="'+s.id+'"]').click();await showParagraph(page);await expect(page.locator('.story-line')).toHaveCount(s.sentences.length);await expect(page.locator('.story-paragraph')).toHaveText(s.sentences.join(' '));
   if(['cat-rat','sea-seat'].includes(s.id)){
    await page.evaluate(()=>{window.clips=[];});await page.locator('[data-action="stages-story-audio"]').click();await expect(page.locator('.story-line.playing')).toHaveCount(1);await expect(page.locator('#audio-status')).toHaveText('Ready to listen again.',{timeout:15000});
    assert.deepEqual(await page.evaluate(()=>window.clips.map(a=>new URL(a.src).pathname)),s.sentences.map(line=>stageSpeech['text:'+line]));
   }
+  if(await page.locator('[data-action="stages-story-finish"]').count())await page.locator('[data-action="stages-story-finish"]').click();
   await page.locator('[data-action="stages-story-mode"][data-mode="blanks"]').click();
   for(const [i,b]of s.blanks.entries()){
    const buttons=page.locator('[data-action="stages-story-answer"][data-blank="'+i+'"]');await expect(buttons).toHaveCount(3);
    await buttons.filter({hasText:new RegExp('^'+b.choices.find(w=>w!==b.word)+'$')}).click();assert.equal(await page.locator('[data-action="stages-story-finish"]').count(),0);
-   await buttons.filter({hasText:new RegExp('^'+b.word+'$')}).click();
+   await buttons.filter({hasText:new RegExp('^'+b.word+'$')}).click();if(i+1<s.blanks.length)await page.locator('[data-action="stages-story-blank-next"]').click();
   }
   await expect(page.locator('.story-paragraph')).toHaveText(s.sentences.join(' '));await page.locator('[data-action="stages-story-finish"]').click();
   if(s.id==='cat-rat'){await page.screenshot({path:'qa/stages-complete-paragraph.png',fullPage:true});await page.reload();await nav('stories');await page.locator('.story-grid [data-action="stages-story-open"][data-id="'+s.id+'"]').click();await expect(page.locator('.story-paragraph')).toHaveText(s.sentences.join(' '));}
@@ -97,7 +99,7 @@ try{
  for(const width of [390,320]){
   await page.setViewportSize({width,height:900});for(const stage of ['letters','words','stories']){await nav(stage);await fit();}await page.screenshot({path:'qa/stages-stories-'+width+'.png',fullPage:true});
   await page.locator('.story-grid [data-action="stages-story-open"][data-id="cat-rat"]').click();await fit();await page.screenshot({path:'qa/stages-paragraph-'+width+'.png',fullPage:true});
-  await page.locator('.story-support summary').click();await fit();
+  await showParagraph(page);await fit();
   await nav('words');await page.locator('.word-path [data-action="stages-word-open"][data-id="first-cat"]').click();await fit();
   await nav('letters');await page.locator('.stage-practice').first().locator('summary').click();await fit();
  }

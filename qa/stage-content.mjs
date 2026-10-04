@@ -1,3 +1,4 @@
+import {showParagraph} from './story-helpers.mjs';
 import {chromium,expect} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
@@ -12,9 +13,9 @@ try{
  for(const id of ['little-ship','rain-snail','train-trip']){
   const s=stories.find(s=>s.id===id);
   assert(!s.sentences.some(line=>/\b(sea|seat|leaf)\b/.test(line)));
-  await page.locator('.story-grid [data-action="stages-story-open"][data-id="'+id+'"]').click();await expect(page.getByRole('heading',{name:s.title,exact:true})).toBeVisible();await expect(page.locator('.story-paragraph')).toHaveText(s.sentences.join(' '));
+  await page.locator('.story-grid [data-action="stages-story-open"][data-id="'+id+'"]').click();await expect(page.getByRole('heading',{name:s.title,exact:true})).toBeVisible();await showParagraph(page);await expect(page.locator('.story-paragraph')).toHaveText(s.sentences.join(' '));
   await page.evaluate(()=>{window.clips=[];});await page.locator('[data-action="stages-story-audio"]').click();await expect(page.locator('#audio-status')).toHaveText('Ready to listen again.',{timeout:15000});assert.deepEqual(await page.evaluate(()=>window.clips.map(a=>new URL(a.src).pathname)),s.sentences.map(line=>stageSpeech['text:'+line]));
-  await page.locator('[data-action="stages-story-mode"][data-mode="blanks"]').click();for(const [i,b]of s.blanks.entries())await page.locator('[data-action="stages-story-answer"][data-blank="'+i+'"][data-word="'+b.word+'"]').click();await expect(page.locator('.story-paragraph')).toHaveText(s.sentences.join(' '));await page.locator('[data-action="stages-back"]').click();
+  await page.locator('[data-action="stages-story-finish"]').click();await page.locator('[data-action="stages-story-mode"][data-mode="blanks"]').click();for(const [i,b]of s.blanks.entries()){await page.locator('[data-action="stages-story-answer"][data-blank="'+i+'"][data-word="'+b.word+'"]').click();if(i+1<s.blanks.length)await page.locator('[data-action="stages-story-blank-next"]').click();}await expect(page.locator('.story-paragraph')).toHaveText(s.sentences.join(' '));await page.locator('[data-action="stage"][data-stage="stories"]').click();
  }
  let decoded=0;
  for(const file of new Set(Object.values(stageSpeech))){

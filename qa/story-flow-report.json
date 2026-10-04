@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "stories": 24,
+  "sentenceScenes": 89,
+  "meaningClipsDecoded": 108,
+  "checks": [
+    "story text and existing audio preserved",
+    "one unfamiliar word at its first use, with English then Bengali audio",
+    "too means also",
+    "Replay and Skip to story work",
+    "one sentence and matching scene, with optional audio and Previous/Next",
+    "sentence position survives browser close",
+    "full paragraph precedes blanks",
+    "completion records practice only",
+    "one blank question at a time and answers survive reload",
+    "all existing stories and blanks work",
+    "other stage progress preserved",
+    "390x844, 320x640 and 320x568 controls fit",
+    "200% text can scroll without clipping",
+    "no script errors or external runtime requests"
+  ]
+}
