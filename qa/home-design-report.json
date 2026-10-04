@@ -1,0 +1,556 @@
+{
+  "layouts": [
+    {
+      "width": 320,
+      "enlarged": false,
+      "scroll": 320,
+      "clipped": [],
+      "buttons": [
+        {
+          "text": "For parents",
+          "width": 103.859375,
+          "height": 56
+        },
+        {
+          "text": "Continue →Letters · Aa",
+          "width": 262,
+          "height": 89.578125
+        },
+        {
+          "text": "AaLettersMeet letters & soundsSuggested age 4+→",
+          "width": 296,
+          "height": 109.8125
+        },
+        {
+          "text": "catWordsSpell, build & readSuggested age 5+→",
+          "width": 296,
+          "height": 109.8125
+        },
+        {
+          "text": "StoriesRead little storiesSuggested age 6+→",
+          "width": 296,
+          "height": 109.8125
+        },
+        {
+          "text": "Listen & MoveListen and move objectsAll ages welcome→",
+          "width": 296,
+          "height": 132.203125
+        }
+      ],
+      "art": [
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        }
+      ],
+      "minText": 16,
+      "plays": 0,
+      "colors": [
+        "rgb(232, 243, 251)",
+        "rgb(255, 240, 232)",
+        "rgb(241, 235, 252)",
+        "rgb(229, 243, 235)"
+      ]
+    },
+    {
+      "width": 320,
+      "enlarged": true,
+      "scroll": 320,
+      "clipped": [],
+      "buttons": [
+        {
+          "text": "For parents",
+          "width": 189.703125,
+          "height": 56
+        },
+        {
+          "text": "Continue →Letters · Aa",
+          "width": 262,
+          "height": 188.921875
+        },
+        {
+          "text": "AaLettersMeet letters & soundsSuggested age 4+→",
+          "width": 296,
+          "height": 312.0625
+        },
+        {
+          "text": "catWordsSpell, build & readSuggested age 5+→",
+          "width": 296,
+          "height": 267.265625
+        },
+        {
+          "text": "StoriesRead little storiesSuggested age 6+→",
+          "width": 296,
+          "height": 267.265625
+        },
+        {
+          "text": "Listen & MoveListen and move objectsAll ages welcome→",
+          "width": 296,
+          "height": 358.140625
+        }
+      ],
+      "art": [
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        }
+      ],
+      "minText": 32,
+      "plays": 0,
+      "colors": [
+        "rgb(232, 243, 251)",
+        "rgb(255, 240, 232)",
+        "rgb(241, 235, 252)",
+        "rgb(229, 243, 235)"
+      ]
+    },
+    {
+      "width": 390,
+      "enlarged": false,
+      "scroll": 390,
+      "clipped": [],
+      "buttons": [
+        {
+          "text": "For parents",
+          "width": 103.859375,
+          "height": 56
+        },
+        {
+          "text": "Continue →Letters · Aa",
+          "width": 316,
+          "height": 89.578125
+        },
+        {
+          "text": "AaLettersMeet letters & soundsSuggested age 4+→",
+          "width": 358,
+          "height": 110.78125
+        },
+        {
+          "text": "catWordsSpell, build & readSuggested age 5+→",
+          "width": 358,
+          "height": 110.78125
+        },
+        {
+          "text": "StoriesRead little storiesSuggested age 6+→",
+          "width": 358,
+          "height": 110.78125
+        },
+        {
+          "text": "Listen & MoveListen and move objectsAll ages welcome→",
+          "width": 358,
+          "height": 110.78125
+        }
+      ],
+      "art": [
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        }
+      ],
+      "minText": 16,
+      "plays": 0,
+      "colors": [
+        "rgb(232, 243, 251)",
+        "rgb(255, 240, 232)",
+        "rgb(241, 235, 252)",
+        "rgb(229, 243, 235)"
+      ]
+    },
+    {
+      "width": 390,
+      "enlarged": true,
+      "scroll": 390,
+      "clipped": [],
+      "buttons": [
+        {
+          "text": "For parents",
+          "width": 189.703125,
+          "height": 56
+        },
+        {
+          "text": "Continue →Letters · Aa",
+          "width": 316,
+          "height": 143.1875
+        },
+        {
+          "text": "AaLettersMeet letters & soundsSuggested age 4+→",
+          "width": 358,
+          "height": 269.1875
+        },
+        {
+          "text": "catWordsSpell, build & readSuggested age 5+→",
+          "width": 358,
+          "height": 269.1875
+        },
+        {
+          "text": "StoriesRead little storiesSuggested age 6+→",
+          "width": 358,
+          "height": 269.1875
+        },
+        {
+          "text": "Listen & MoveListen and move objectsAll ages welcome→",
+          "width": 358,
+          "height": 317.1875
+        }
+      ],
+      "art": [
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        }
+      ],
+      "minText": 32,
+      "plays": 0,
+      "colors": [
+        "rgb(232, 243, 251)",
+        "rgb(255, 240, 232)",
+        "rgb(241, 235, 252)",
+        "rgb(229, 243, 235)"
+      ]
+    },
+    {
+      "width": 768,
+      "enlarged": false,
+      "scroll": 768,
+      "clipped": [],
+      "buttons": [
+        {
+          "text": "For parents",
+          "width": 112.984375,
+          "height": 56
+        },
+        {
+          "text": "Continue →Letters · Aa",
+          "width": 332.6875,
+          "height": 91.578125
+        },
+        {
+          "text": "AaLettersMeet letters & soundsSuggested age 4+→",
+          "width": 343,
+          "height": 149.25
+        },
+        {
+          "text": "catWordsSpell, build & readSuggested age 5+→",
+          "width": 343,
+          "height": 149.25
+        },
+        {
+          "text": "StoriesRead little storiesSuggested age 6+→",
+          "width": 343,
+          "height": 176.125
+        },
+        {
+          "text": "Listen & MoveListen and move objectsAll ages welcome→",
+          "width": 343,
+          "height": 176.125
+        }
+      ],
+      "art": [
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        }
+      ],
+      "minText": 14,
+      "plays": 0,
+      "colors": [
+        "rgb(232, 243, 251)",
+        "rgb(255, 240, 232)",
+        "rgb(241, 235, 252)",
+        "rgb(229, 243, 235)"
+      ]
+    },
+    {
+      "width": 768,
+      "enlarged": true,
+      "scroll": 768,
+      "clipped": [],
+      "buttons": [
+        {
+          "text": "For parents",
+          "width": 185.953125,
+          "height": 60
+        },
+        {
+          "text": "Continue →Letters · Aa",
+          "width": 332.6875,
+          "height": 145.1875
+        },
+        {
+          "text": "AaLettersMeet letters & soundsSuggested age 4+→",
+          "width": 343,
+          "height": 378.265625
+        },
+        {
+          "text": "catWordsSpell, build & readSuggested age 5+→",
+          "width": 343,
+          "height": 378.265625
+        },
+        {
+          "text": "StoriesRead little storiesSuggested age 6+→",
+          "width": 343,
+          "height": 476.8125
+        },
+        {
+          "text": "Listen & MoveListen and move objectsAll ages welcome→",
+          "width": 343,
+          "height": 476.8125
+        }
+      ],
+      "art": [
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        }
+      ],
+      "minText": 16,
+      "plays": 0,
+      "colors": [
+        "rgb(232, 243, 251)",
+        "rgb(255, 240, 232)",
+        "rgb(241, 235, 252)",
+        "rgb(229, 243, 235)"
+      ]
+    },
+    {
+      "width": 1366,
+      "enlarged": false,
+      "scroll": 1366,
+      "clipped": [],
+      "buttons": [
+        {
+          "text": "For parents",
+          "width": 112.984375,
+          "height": 56
+        },
+        {
+          "text": "Continue →Letters · Aa",
+          "width": 360,
+          "height": 91.578125
+        },
+        {
+          "text": "AaLettersMeet letters & soundsSuggested age 4+→",
+          "width": 441,
+          "height": 129
+        },
+        {
+          "text": "catWordsSpell, build & readSuggested age 5+→",
+          "width": 441,
+          "height": 129
+        },
+        {
+          "text": "StoriesRead little storiesSuggested age 6+→",
+          "width": 441,
+          "height": 129
+        },
+        {
+          "text": "Listen & MoveListen and move objectsAll ages welcome→",
+          "width": 441,
+          "height": 129
+        }
+      ],
+      "art": [
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        }
+      ],
+      "minText": 14,
+      "plays": 0,
+      "colors": [
+        "rgb(232, 243, 251)",
+        "rgb(255, 240, 232)",
+        "rgb(241, 235, 252)",
+        "rgb(229, 243, 235)"
+      ]
+    },
+    {
+      "width": 1366,
+      "enlarged": true,
+      "scroll": 1366,
+      "clipped": [],
+      "buttons": [
+        {
+          "text": "For parents",
+          "width": 185.953125,
+          "height": 60
+        },
+        {
+          "text": "Continue →Letters · Aa",
+          "width": 360,
+          "height": 145.1875
+        },
+        {
+          "text": "AaLettersMeet letters & soundsSuggested age 4+→",
+          "width": 441,
+          "height": 240.53125
+        },
+        {
+          "text": "catWordsSpell, build & readSuggested age 5+→",
+          "width": 441,
+          "height": 240.53125
+        },
+        {
+          "text": "StoriesRead little storiesSuggested age 6+→",
+          "width": 441,
+          "height": 294.28125
+        },
+        {
+          "text": "Listen & MoveListen and move objectsAll ages welcome→",
+          "width": 441,
+          "height": 294.28125
+        }
+      ],
+      "art": [
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        },
+        {
+          "inside": true,
+          "fit": true
+        }
+      ],
+      "minText": 16,
+      "plays": 0,
+      "colors": [
+        "rgb(232, 243, 251)",
+        "rgb(255, 240, 232)",
+        "rgb(241, 235, 252)",
+        "rgb(229, 243, 235)"
+      ]
+    }
+  ],
+  "checks": [
+    "Four distinct palettes, five fully contained vector illustrations, 56px buttons, no horizontal overflow at 320/390/768/1366px and 200% text",
+    "New-learner Start opens Aa; returning Home preserves position without audio",
+    "Little profile Bb and big profile unfinished pig-pen blank resume independently",
+    "All four section cards retain their existing destinations",
+    "Letter lesson layout, typography and colors match the pre-refresh stylesheet"
+  ],
+  "passed": true
+}
