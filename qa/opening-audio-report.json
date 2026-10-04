@@ -1,15 +1,42 @@
 {
   "checks": [
-    "Default on, real opening playback, lesson waits for ending, Stop, no restart during page navigation, persistent off/on control",
+    "390px: default on, real opening playback, lesson waits for ending, Stop, no restart during page navigation, persistent off/on control, profile progress unchanged",
+    "Blocked autoplay shows Tap to begin; first learning tap plays opening once before lesson; no overlapping audio",
+    "1366px: default on, real opening playback, lesson waits for ending, Stop, no restart during page navigation, persistent off/on control, profile progress unchanged",
     "Blocked autoplay shows Tap to begin; first learning tap plays opening once before lesson; no overlapping audio"
+  ],
+  "viewports": [
+    {
+      "width": 390,
+      "touch": true,
+      "passed": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "passed": true
+    }
   ],
   "humanListeningVerified": false,
   "decoded": {
-    "duration": 7.08,
-    "audible": true
+    "updated": {
+      "duration": 9.168,
+      "audible": true,
+      "peak": 0.45398643612861633,
+      "rms": 0.06568711892803265,
+      "voicedRms": 0.0852984326100371
+    },
+    "previous": {
+      "duration": 7.08,
+      "audible": true,
+      "peak": 0.535097599029541,
+      "rms": 0.08115508447592219,
+      "voicedRms": 0.0966654221911433
+    }
   },
   "passed": true,
   "limitations": [
-    "Arabic pronunciation, ordinary tone and perceived similarity to Sonia require fluent human listening; synthetic Arabic uses Zariyah rather than an English voice"
+    "Playback, duration and signal levels were checked; they do not verify pronunciation or perceived warmth",
+    "Fluent Arabic listening is still required for all three phrases; this synthetic recording has not been human-verified"
   ]
 }

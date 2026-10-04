@@ -20,6 +20,12 @@
     "audioRetained": true,
     "profilesPreserved": true
   },
+  "revisedOpening": {
+    "clip": "/audio/10f8257b3e6c1bbcc61c21b1.mp3",
+    "playedOnline": true,
+    "cached": true,
+    "playedOffline": true
+  },
   "offlineScience": {
     "cachedModules": true,
     "interactiveScene": true,

@@ -1,8 +1,16 @@
 {
   "text": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ، بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ، رَبِّ زِدْنِي عِلْمًا",
+  "spokenText": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ. بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ. رَبِّ زِدْنِي عِلْمًا.",
   "voice": "ar-SA-ZariyahNeural",
-  "rate": "+0%",
-  "clip": "/audio/acb71904d7476ac0f80487c1.mp3",
-  "style": "ordinary neural speech; no music, echo, chanting or effects",
-  "humanListeningVerified": false
+  "rate": "-8%",
+  "volume": "-15%",
+  "pitch": "+0Hz",
+  "clip": "/audio/10f8257b3e6c1bbcc61c21b1.mp3",
+  "style": "ordinary neural speech; separate phrase pauses; no music, echo, chanting or effects",
+  "humanListeningVerified": false,
+  "textReferences": [
+    "https://sunnah.com/bukhari:6115",
+    "https://quran.com/1/1",
+    "https://quran.com/20/114"
+  ]
 }
