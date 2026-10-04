@@ -29,7 +29,7 @@ async function draw(){
 const ink=()=>page.locator('#family-writing').evaluate(canvas=>{const bytes=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;return bytes.some((n,i)=>i%4===3&&n>0);});
 try{
  await open();await page.evaluate(value=>localStorage.setItem('little-english-v1',JSON.stringify(value)),seed);await page.reload();
- await page.locator('[data-action="family-library"]').click();await page.locator('[data-action="family-open"][data-family="at"]').click();
+ await page.locator('[data-action="stage"][data-stage="words"]').click();await page.locator('[data-action="stages-families"]').click();await page.locator('[data-action="family-open"][data-family="at"]').click();
  await page.locator('[data-action="family-write"][data-word="cat"]').click();
  await expect(page.getByRole('heading',{name:'Write a little word.',exact:true})).toBeVisible();
  await expect(page.locator('.word-writing-guide')).toHaveText('cat');await draw();assert(await ink());
@@ -42,7 +42,7 @@ try{
   assert.equal(await page.evaluate(()=>new URL(window.clips.at(-1).src).pathname),familySpeech[kind+':cat']);
  }
  await page.screenshot({path:'qa/word-writing-desktop.png',fullPage:true});
- await context.close();await open();await expect(page.locator('[data-action="family-write-resume"]')).toBeVisible();
+ await context.close();await open();await page.locator('[data-action="stage"][data-stage="words"]').click();await page.locator('[data-action="stages-families"]').click();await expect(page.locator('[data-action="family-write-resume"]')).toBeVisible();
  await page.locator('[data-action="family-write-resume"]').click();await expect(page.locator('.word-writing-guide')).toBeHidden();assert(await ink());
  assert.deepEqual((await stored()).pictureFamilies.writing.drafts.cat.drawing,drawing);
  for(const width of [390,320]){
@@ -55,7 +55,7 @@ try{
  await page.locator('[data-action="family-write-clear"]').click();assert(!(await ink()));
  assert.deepEqual((await stored()).pictureFamilies.writing.drafts.cat.drawing,[]);
  await draw();await page.getByRole('button',{name:'For parents',exact:true}).click();
- await page.getByRole('button',{name:'← Learning path',exact:true}).click();await page.locator('[data-action="family-write-resume"]').click();assert(await ink());
+ await page.getByRole('button',{name:'← Back to learning',exact:true}).click();await page.locator('[data-action="stages-families"]').click();await page.locator('[data-action="family-write-resume"]').click();assert(await ink());
  await page.locator('[data-action="family-back"]').click();await page.locator('[data-action="family-word"][data-word="hat"]').click();
  await page.locator('[data-action="family-write"][data-word="hat"]').click();await draw();
  await page.locator('[data-action="family-write-finish"]').click();
@@ -66,7 +66,7 @@ try{
  await expect(page.locator('.blend-row .family-word')).toHaveText('cat');assert(await ink());
  // Saving during an unfinished pointer stroke must also survive pagehide.
  await page.locator('#family-writing').scrollIntoViewIfNeeded();const box=await page.locator('#family-writing').boundingBox();await page.mouse.move(box.x+15,box.y+15);await page.mouse.down();await page.mouse.move(box.x+35,box.y+55,{steps:2});
- await page.reload();await page.mouse.up();await page.locator('[data-action="family-write-resume"]').click();assert(await ink());
+ await page.reload();await page.mouse.up();await page.locator('[data-action="stage"][data-stage="words"]').click();await page.locator('[data-action="stages-families"]').click();await page.locator('[data-action="family-write-resume"]').click();assert(await ink());
  saved=await stored();assert(saved.pictureFamilies.writing.drafts.cat.drawing.length>=2);
  await page.locator('[data-action="family-write-finish"]').click();
  // Paper practice works with keyboard buttons and no canvas input.

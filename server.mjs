@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 const port = Number(process.env.PORT || 4174);
 if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('PORT must be between 1024 and 65535.');
 const files = new Map([['/', ['index.html','text/html; charset=utf-8']], ['/app.js',['app.js','text/javascript; charset=utf-8']], ['/lesson-audio.js',['lesson-audio.js','text/javascript; charset=utf-8']], ['/recorded-speech.js',['recorded-speech.js','text/javascript; charset=utf-8']], ['/curriculum.js',['curriculum.js','text/javascript; charset=utf-8']], ['/style.css',['style.css','text/css; charset=utf-8']], ...['family-data','family-lessons','family-speech'].map(name=>['/'+name+'.js',[name+'.js','text/javascript; charset=utf-8']])]);
+for(const name of ['stage-data','stage-lessons','stage-audio','stage-speech'])files.set('/'+name+'.js',[name+'.js','text/javascript; charset=utf-8']);
 const server = http.createServer(async (req,res) => {
   const headers = {'X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Cache-Control':'no-cache','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"};
   if (!['GET','HEAD'].includes(req.method)) { res.writeHead(405,{...headers,Allow:'GET, HEAD'}); return res.end(); }

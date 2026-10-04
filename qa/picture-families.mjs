@@ -33,14 +33,14 @@ async function open(){
  page.on('request',r=>{if(!r.url().startsWith(URL)&&!r.url().startsWith('data:'))external.push(r.url());});
  await page.goto(URL);
 }
-async function reopen(){await context.close();await open();}
+async function reopen(){await context.close();await open();await page.locator('[data-action="stage"][data-stage="words"]').click();await page.locator('[data-action="stages-families"]').click();}
 async function fit(){assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'horizontal overflow');}
 async function finishedAudio(){await page.waitForFunction(()=>window.familyAudio.at(-1)?.ended);}
 async function beginFamily(id){await page.locator('[data-action="family-open"][data-family="'+id+'"]').click();}
 try{
  await open();await page.evaluate(value=>localStorage.setItem('little-english-v1',JSON.stringify(value)),seed);await page.reload();
- await expect(page.getByText('18 of 18 lessons explored',{exact:true})).toBeVisible();
- await page.locator('[data-action="family-library"]').click();await expect(page.locator('.family-card')).toHaveCount(10);
+ await page.locator('[data-action="stage"][data-stage="words"]').click();
+ await page.locator('[data-action="stages-families"]').click();await expect(page.locator('.family-card')).toHaveCount(10);
  await page.screenshot({path:'qa/picture-library.png',fullPage:true});
  // Every generated and supplied picture is loaded, with no runtime internet dependency.
  for(const family of pictureFamilies){
@@ -133,9 +133,9 @@ try{
  assert.deepEqual(stored.currentLesson,expectedOld.currentLesson);
  assert.deepEqual([...stored.pictureFamilies.completed].sort(),familyRounds.map(r=>r.id).sort());assert.deepEqual(stored.pictureFamilies.inProgress,{});
  assert.equal(stored.audioSpeed,.85);
- await page.getByRole('button',{name:/Little Explorer Age 5/}).click();await expect(page.locator('.lesson-card')).toHaveCount(9);await expect(page.locator('.family-entry')).toHaveCount(0);
- await page.getByRole('button',{name:/Word Adventurer Age 6/}).click();
- await page.locator('[data-action="family-library"]').click();await beginFamily('op');
+ await page.locator('[data-action="stage"][data-stage="letters"]').click();await expect(page.locator('[data-action="stages-legacy"][data-profile="little"]')).toHaveCount(9);await expect(page.locator('.family-entry')).toHaveCount(0);
+ await page.locator('[data-action="stage"][data-stage="words"]').click();
+ await page.locator('[data-action="stages-families"]').click();await beginFamily('op');
  await page.setViewportSize({width:320,height:900});
  await page.locator('[data-action="family-start"][data-round="picture-op-1"]').click();await fit();
  await page.screenshot({path:'qa/picture-learn-mobile.png',fullPage:true});

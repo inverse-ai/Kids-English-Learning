@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "letters": 26,
+  "letterExamples": 52,
+  "coreWords": 9,
+  "stories": 24,
+  "patterns": [
+    "sh",
+    "ch",
+    "ai",
+    "ea"
+  ],
+  "decodedClips": 362,
+  "checks": [
+    "Aa first screen with Start and persistent navigation",
+    "all 26 letters play six synchronized clips without extra Listen",
+    "pause/resume, replay and manual previous/next only",
+    "old exercises remain in appropriate stages",
+    "old stars and checkpoints unchanged",
+    "explicit helper words and phrases before sentence blanks",
+    "correct sentences and paragraphs stay visible",
+    "all story blanks and all core lessons complete",
+    "reload restores answers",
+    "320px and 390px layouts fit",
+    "every new recording decodes and contains audio",
+    "no page errors or external runtime requests",
+    "final ai stories keep ea reading for the later group, with matching audio and blanks"
+  ]
+}

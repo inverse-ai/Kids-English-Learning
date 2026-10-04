@@ -1,4 +1,5 @@
 import {normalizeFamilyProgress} from './family-data.js';
+import {normalizeLearning} from './stage-data.js';
 export const letters = {
  a:{word:'ant',picture:'🐜',sound:'Open your mouth for the short a in ant. Keep it short.'},
  b:{word:'ball',picture:'⚽',sound:'Close your lips, then release a short b, as in ball. Avoid adding “uh”.'},
@@ -125,5 +126,6 @@ export function normalizeProgress(raw) {
   }
   if (valid.has(raw?.currentLesson?.[key]) && result.inProgress[key][raw.currentLesson[key]]) result.currentLesson[key] = raw.currentLesson[key];
  }
+ result.learning=normalizeLearning(raw?.learning);
  return result;
 }

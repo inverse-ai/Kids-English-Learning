@@ -1,0 +1,132 @@
+{
+  "voice": "en-GB-SoniaNeural",
+  "bengaliVoice": "bn-BD-NabanitaNeural",
+  "phonemeSource": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/index.html?id=ae",
+  "phonemes": [
+    {
+      "key": "sound:a",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/a.mp3"
+    },
+    {
+      "key": "sound:b",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/b_alt1.mp3"
+    },
+    {
+      "key": "sound:c",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/k.mp3"
+    },
+    {
+      "key": "sound:d",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/d_alt1.mp3"
+    },
+    {
+      "key": "sound:e",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/e.mp3"
+    },
+    {
+      "key": "sound:f",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/f.mp3"
+    },
+    {
+      "key": "sound:g",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/g_alt2.mp3"
+    },
+    {
+      "key": "sound:h",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/h.mp3"
+    },
+    {
+      "key": "sound:i",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/i_alt3.mp3"
+    },
+    {
+      "key": "sound:j",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/j.mp3"
+    },
+    {
+      "key": "sound:k",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/k.mp3"
+    },
+    {
+      "key": "sound:l",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/l_alt2.mp3"
+    },
+    {
+      "key": "sound:m",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/m.mp3"
+    },
+    {
+      "key": "sound:n",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/n.mp3"
+    },
+    {
+      "key": "sound:o",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/o_alt1.mp3"
+    },
+    {
+      "key": "sound:p",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/p.mp3"
+    },
+    {
+      "key": "sound:r",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/r_alt3.mp3"
+    },
+    {
+      "key": "sound:s",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/s.mp3"
+    },
+    {
+      "key": "sound:t",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/t.mp3"
+    },
+    {
+      "key": "sound:u",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/u.mp3"
+    },
+    {
+      "key": "sound:v",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/v.mp3"
+    },
+    {
+      "key": "sound:w",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/w.mp3"
+    },
+    {
+      "key": "sound:x",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/Ks_new.mp3"
+    },
+    {
+      "key": "sound:y",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/y.mp3"
+    },
+    {
+      "key": "sound:z",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/z.mp3"
+    },
+    {
+      "key": "sound:qu",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/Kw_new.mp3"
+    },
+    {
+      "key": "sound:sh",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/sh.mp3"
+    },
+    {
+      "key": "sound:ch",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/ch.mp3"
+    },
+    {
+      "key": "sound:ck",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/k.mp3"
+    },
+    {
+      "key": "sound:ai",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/ai.mp3"
+    },
+    {
+      "key": "sound:ea",
+      "url": "https://cdn.oxfordowl.co.uk/2016/05/05/20/22/32/561/20097_content/assets/sounds/ee.mp3"
+    }
+  ],
+  "clips": 364
+}
