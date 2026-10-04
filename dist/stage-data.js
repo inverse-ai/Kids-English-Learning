@@ -1,4 +1,3 @@
-import {normalizeAttempt} from './story-gaps.js';
 export const stageInfo={letters:{title:'Letters',age:'4+',hint:'Meet a letter, hear its sound.'},words:{title:'Words',age:'5+',hint:'Blend sounds. Read little sentences.'},stories:{title:'Stories',age:'6+',hint:'Read connected sentences and stories.'}};
 export const alphabetCaseText=letter=>'Uppercase '+letter.toUpperCase()+' and lowercase '+letter.toUpperCase()+'.';
 export const alphabetExampleText=(letter,word)=>letter==='x'?'X at the end of '+word+'.':letter==='q'?'Q with U for '+word+'.':letter.toUpperCase()+' for '+word+'.';
@@ -54,6 +53,9 @@ export const stories=[
  story('beach-clean','A clean beach',3,['beach','bag','sea'],['We walk on the beach.','I see a bag near the sea.','Dad and I put the bag in a bin.','The beach is clean for everyone.'],[{line:0,word:'beach',choices:['beach','bench','seat']}],['we','on','the','I','see','a','and','in','is','for'],['walk','near','Dad','put','bin','clean','everyone'])
 ];
 stories.sort((a,b)=>a.level-b.level||a.sentences.length-b.sentences.length);
+export function emptyStoryAttempt(){return {attempts:0,wrong:0,firstChoice:null,firstCorrect:null,assisted:false,demonstrated:false,easier:false,helpOpen:false};}
+export function normalizeStoryAttempt(raw,q){const base=emptyStoryAttempt();if(!raw)return base;for(const k of ['attempts','wrong'])base[k]=Number.isInteger(raw[k])&&raw[k]>=0?Math.min(raw[k],10000):0;for(const k of ['assisted','demonstrated','easier','helpOpen'])base[k]=raw[k]===true;base.firstChoice=q.choices.includes(raw.firstChoice)?raw.firstChoice:null;base.firstCorrect=base.firstChoice===null?null:base.firstChoice===q.word;return base;}
+
 export function normalizeLearning(raw){
  const validWords=new Set(wordLessons.map(l=>l.id)),validStories=new Set(stories.map(s=>s.id));
  const spellingLetter=Number.isInteger(raw?.spelling?.letter)&&raw.spelling.letter>=0&&raw.spelling.letter<26?raw.spelling.letter:0;
@@ -73,7 +75,7 @@ export function normalizeLearning(raw){
   const saved=raw?.stories?.[s.id];if(!saved)continue;
   const line=Number.isInteger(saved.line)&&saved.line>=0&&saved.line<s.sentences.length?saved.line:0;
   const phase=['helper','sentence','paragraph','blanks'].includes(saved.phase)?saved.phase:saved.mode==='blanks'?'blanks':saved.done===true?'paragraph':'sentence';
-  result.stories[s.id]={mode:phase==='blanks'?'blanks':'read',phase,line,skipIntro:saved.skipIntro===true,blank:Number.isInteger(saved.blank)&&saved.blank>=0&&saved.blank<s.blanks.length?saved.blank:0,answers:s.blanks.map((b,i)=>b.choices.includes(saved.answers?.[i])?saved.answers[i]:null),done:saved.done===true,gapAttempts:s.blanks.map((b,i)=>normalizeAttempt(saved.gapAttempts?.[i],b)),assisted:saved.assisted===true};
+  result.stories[s.id]={mode:phase==='blanks'?'blanks':'read',phase,line,skipIntro:saved.skipIntro===true,blank:Number.isInteger(saved.blank)&&saved.blank>=0&&saved.blank<s.blanks.length?saved.blank:0,answers:s.blanks.map((b,i)=>b.choices.includes(saved.answers?.[i])?saved.answers[i]:null),done:saved.done===true,gapAttempts:s.blanks.map((b,i)=>normalizeStoryAttempt(saved.gapAttempts?.[i],b)),assisted:saved.assisted===true};
  }
  if(validWords.has(raw?.wordCurrent))result.wordCurrent=raw.wordCurrent;
  if(validStories.has(raw?.storyCurrent))result.storyCurrent=raw.storyCurrent;

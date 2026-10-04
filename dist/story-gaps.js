@@ -18,5 +18,4 @@ const recall=new Set(['bus-stop:0','fish-shop:0','chin-chat:0','cat-tail:0','sea
 export function storyGap(s,index){if(!hints[s.id]?.[index])throw Error('Unaudited story gap '+s.id+':'+index);return {...s.blanks[index],hint:hints[s.id][index],task:recall.has(s.id+':'+index)?'recall':'scene'};}
 export const gapHintSpecs=Object.values(hints).flat().map(hint=>({key:'story-hint:'+hint,text:hint,voice:'en-GB-SoniaNeural',rate:'-12%'}));
 
-export function emptyAttempt(){return {attempts:0,wrong:0,firstChoice:null,firstCorrect:null,assisted:false,demonstrated:false,easier:false,helpOpen:false};}
-export function normalizeAttempt(raw,q){const base=emptyAttempt();if(!raw)return base;for(const k of ['attempts','wrong'])base[k]=Number.isInteger(raw[k])&&raw[k]>=0?Math.min(raw[k],10000):0;for(const k of ['assisted','demonstrated','easier','helpOpen'])base[k]=raw[k]===true;base.firstChoice=q.choices.includes(raw.firstChoice)?raw.firstChoice:null;base.firstCorrect=base.firstChoice===null?null:base.firstChoice===q.word;return base;}
+export {emptyStoryAttempt as emptyAttempt,normalizeStoryAttempt as normalizeAttempt} from './stage-data.js';
