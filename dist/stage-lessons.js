@@ -1,3 +1,7 @@
+import {createMoveFlow} from './move-flow.js';
+import {valuesStories,valuesOrder} from './values-stories.js';
+import {createValueStoryFlow} from './values-flow.js';
+import {valueScene} from './values-scenes.js';
 import {storyScene} from './story-scenes.js';
 import {alphabet,stageInfo,wordLessons,supportingWords,stories,patternLessons,pictureSymbols} from './stage-data.js';
 import {createStoryFlow} from './story-flow.js';
@@ -21,9 +25,12 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
  const state=()=>getProgress();
  const status=message=>onStatus(message);
  const storyFlow=createStoryFlow({getProgress,save,isSaved,render,status,play:audioParts,stop,picture:stagePicture});
+ const moveFlow=createMoveFlow({getProgress,save,isSaved,render,play:audioParts,stop});
+ const valueFlow=createValueStoryFlow({getProgress,save,isSaved,render,status,play:audioParts,stop});
+ const newStories=valuesStories.filter(s=>!stories.some(old=>old.sentences.join(' ')===s.sentences.join(' '))).sort((a,b)=>valuesOrder.indexOf(a.id)-valuesOrder.indexOf(b.id));
  const spellingFlow=createSpellingFlow({getProgress:()=>state().spelling,save,isSaved,render,status,picture:stagePicture,getSpeed});
  const saveLabel=()=>'<span id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</span>';
- function stop(){stopStageAudio();spellingFlow.clear();status('');activeStoryLine=-1;}
+ function stop(){moveFlow.cancel();stopStageAudio();spellingFlow.clear();status('');activeStoryLine=-1;}
  function audioParts(parts,onEnd=()=>{}){
   playStageSequence(parts,{speed:getSpeed(),onPart:part=>{
    if(part.example!==undefined){exampleIndex=part.example;phase=part.phase;}
@@ -92,9 +99,9 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
   return '<div class="lesson-head">'+button('← Words','back')+'<span class="lesson-meta">'+(state().words[wordId]?.done?'Practised · ':'')+saveLabel()+'</span></div><section class="activity stage-word">'+body+button('Pause','pause','disabled aria-pressed="false"')+'<p id="audio-status" class="status"></p></section>';
  }
  function storiesHome(){
-  const levels=['First connected sentences','Add sh and ch','Next: the ai vowel team','Then: the ea vowel team'];
-  return '<section class="intro"><div><div class="eyebrow">Stories · Suggested age 6+</div><h1>Little stories to read.</h1><p class="muted">Start with familiar words. Add new patterns, then read longer paragraphs. Audio is always optional.</p></div></section>'+(state().storyCurrent?'<div class="resume-strip"><span>Pick up '+esc(stories.find(s=>s.id===state().storyCurrent).title)+'.</span>'+button('Continue story →','story-open','data-id="'+state().storyCurrent+'"','primary')+'</div>':'')+
-   levels.map((label,level)=>'<section class="story-band"><h2>'+label+'</h2>'+(level>0?'<div class="pattern-links">'+patternLessons.filter(p=>level===1?['sh','ch'].includes(p.id):p.id===(level===2?'ai':'ea')).map(p=>button('Meet '+p.id+(state().patterns.includes(p.id)?' ✓':''),'pattern','data-id="'+p.id+'"')).join('')+'</div>':'')+'<div class="story-grid">'+stories.filter(s=>s.level===level).map(s=>'<button class="story-card" data-action="stages-story-open" data-id="'+s.id+'"><div class="story-thumb">'+(s.id==='pig-pen'?storyScene(s,0):s.pictures.slice(0,2).map(w=>stagePicture(w,true)).join(''))+'</div><b>'+esc(s.title)+'</b><small>'+s.sentences.length+' connected sentences'+(state().stories[s.id]?.done?' · Practised ✓':'')+'</small></button>').join('')+'</div></section>').join('')+'<details class="stage-practice"><summary>More pattern practice: sh, ch and ck</summary>'+legacyCards('big',[15,16,17])+'</details>';
+  const levels=['First connected sentences','Add sh and ch','Next: the ai vowel team','Then: the ea vowel team','New patterns · read with an adult','Longer sentences · read with an adult','More vocabulary & dialogue · read with an adult'];
+  return '<section class="intro"><div><div class="eyebrow">Stories · Suggested age 6+</div><h1>Little stories to read.</h1><p class="muted">Start with familiar words. Add new patterns, then read longer paragraphs. Audio is always optional.</p></div></section>'+(state().valueCurrent?'<div class="resume-strip"><span>Pick up '+esc(valuesStories.find(s=>s.id===state().valueCurrent).title)+'.</span>'+button('Continue story →','value-story-open','data-id="'+state().valueCurrent+'"','primary')+'</div>':state().storyCurrent?'<div class="resume-strip"><span>Pick up '+esc(stories.find(s=>s.id===state().storyCurrent).title)+'.</span>'+button('Continue story →','story-open','data-id="'+state().storyCurrent+'"','primary')+'</div>':'')+
+   levels.map((label,level)=>'<section class="story-band"><h2>'+label+'</h2>'+(level>0&&level<4?'<div class="pattern-links">'+patternLessons.filter(p=>level===1?['sh','ch'].includes(p.id):p.id===(level===2?'ai':'ea')).map(p=>button('Meet '+p.id+(state().patterns.includes(p.id)?' ✓':''),'pattern','data-id="'+p.id+'"')).join('')+'</div>':'')+'<div class="story-grid">'+[...stories.filter(s=>s.level===level),...newStories.filter(s=>s.level===level)].map(s=>'<button class="story-card" data-action="'+(s.kind==='values'?'stages-value-story-open':'stages-story-open')+'" data-id="'+s.id+'"><div class="story-thumb">'+(s.kind==='values'?valueScene(s,0):s.id==='pig-pen'?storyScene(s,0):s.pictures.slice(0,2).map(w=>stagePicture(w,true)).join(''))+'</div><b>'+esc(s.title)+'</b><small>'+s.sentences.length+' connected sentences'+(s.kind==='values'?' · Assisted reading':'')+((s.kind==='values'?state().valueStories[s.id]?.done:state().stories[s.id]?.done)?' · Practised ✓':'')+'</small></button>').join('')+'</div></section>').join('')+'<details class="stage-practice"><summary>More pattern practice: sh, ch and ck</summary>'+legacyCards('big',[15,16,17])+'</details>';
  }
  function patternView(){
   const p=patternLessons.find(x=>x.id===storyId);
@@ -104,13 +111,16 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
 
  return {
   stage:()=>stage,
-  snapshot(){return page==='spelling'?{kind:'stage',page:'spelling'}:page==='word'?{kind:'stage',page:'word',id:wordId}:page==='story'?{kind:'stage',page:'story',id:state().storyCurrent}:page==='pattern'?{kind:'stage',page:'pattern',id:storyId}:stage==='letters'?{kind:'stage',page:'letter',index:letterIndex}:null;},
+  bind(){if(page==='move-lesson')moveFlow.bind();},
+  snapshot(){return page==='move-lesson'?{kind:'stage',page:'move-lesson',id:state().moveCurrent}:page==='spelling'?{kind:'stage',page:'spelling'}:page==='word'?{kind:'stage',page:'word',id:wordId}:page==='value-story'?{kind:'stage',page:'value-story',id:state().valueCurrent}:page==='story'?{kind:'stage',page:'story',id:state().storyCurrent}:page==='pattern'?{kind:'stage',page:'pattern',id:storyId}:stage==='letters'?{kind:'stage',page:'letter',index:letterIndex}:null;},
   openResume(route){
    stop();
    if(route.page==='letter'){openLetter(route.index,false);return;}
-   stage=['story','pattern'].includes(route.page)?'stories':'words';page=route.page;
+   stage=route.page==='move-lesson'?'move':['story','pattern','value-story'].includes(route.page)?'stories':'words';page=route.page;
+   if(page==='move-lesson'){moveFlow.open(route.id);return;}
    if(page==='spelling'){spellingFlow.open(false);return;}
    if(page==='story'){storyFlow.open(route.id,true);return;}
+   if(page==='value-story'){valueFlow.open(route.id);return;}
    if(page==='word'){wordId=route.id;state().wordCurrent=wordId;state().words[wordId]??={step:0,answer:null,done:false};}
    if(page==='pattern')storyId=route.id;
    save();render();
@@ -122,13 +132,17 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
     ...[1,2,3].map(()=>({key:'sound:'+a.sound,target:'.big-letter [data-case="lower"]'})),
     {key:'word:'+word,target:'.flash-word,.activity h2'}]);
   },
-  setStage(value){if(!stageInfo[value])return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';}},
+  setStage(value){if(!stageInfo[value]&&value!=='move')return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';}},
   reset(){openLetter(0,false);},
   stop,
-  html(){return page==='spelling'?spellingFlow.html():page==='blending'?wordLibrary():page==='sentences'?wordLibrary(true):page==='word'?wordView():page==='story'?storyView():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
+  html(){return page==='move-lesson'?moveFlow.html():stage==='move'?moveFlow.home():page==='spelling'?spellingFlow.html():page==='blending'?wordLibrary():page==='sentences'?wordLibrary(true):page==='word'?wordView():page==='story'?storyView():page==='value-story'?valueFlow.html():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
   handle(data){
    const action=data.action.replace('stages-','');
-   if(action==='letter-start')playLetter();
+   if(action==='move-open'){stop();stage='move';page='move-lesson';moveFlow.open(data.id);}
+   else if(action.startsWith('move-')){if(action==='move-back'){stop();page='home';render();}else moveFlow.handle(data);}
+   else if(action==='value-story-open'){if(!newStories.some(s=>s.id===data.id))return;stop();page='value-story';valueFlow.open(data.id);}
+   else if(action.startsWith('value-story-')){if(action==='value-story-home'){stop();page='home';render();}else valueFlow.handle(data);}
+   else if(action==='letter-start')playLetter();
    else if(action==='letter-next')openLetter(Number(data.index));
    else if(action==='pause')toggleStagePause();
    else if(action==='spelling-open'){stop();page='spelling';spellingFlow.open();}
@@ -156,7 +170,7 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
     const p=patternLessons.find(p=>p.id===data.id),i=Number(data.index);if(!p?.parts[i])return;
     audioParts(p.parts[i].map((part,j)=>({key:'sound:'+part,target:'.pattern-word-grid [data-pattern="'+i+'"][data-part="'+j+'"]'})).concat({key:'word:'+p.words[i]}));
    }else if(action==='pattern-finish'){if(!state().patterns.includes(data.id))state().patterns.push(data.id);save();stop();page='home';render();}
-   else if(action==='story-open'){if(!stories.some(s=>s.id===data.id))return;page='story';storyFlow.open(data.id);}
+   else if(action==='story-open'){if(!stories.some(s=>s.id===data.id))return;page='story';state().valueCurrent=null;storyFlow.open(data.id);}
    else if(action.startsWith('story-'))storyFlow.handle(data);
   }
  };

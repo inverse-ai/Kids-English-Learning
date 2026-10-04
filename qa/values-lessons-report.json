@@ -1,0 +1,396 @@
+{
+  "passed": true,
+  "totalStories": 47,
+  "newStories": 23,
+  "duplicates": [],
+  "difficultyOrder": [
+    {
+      "id": "values-brothers-truck",
+      "title": "Two brothers, one truck",
+      "patterns": "tr / br blends; toy (oy); brother; dialogue fragments"
+    },
+    {
+      "id": "values-two-dates",
+      "title": "One date, two smiles",
+      "patterns": "date (a_e); sister; have; none; quoted speech"
+    },
+    {
+      "id": "values-salam-door",
+      "title": "Salam at the door",
+      "patterns": "oo / or; knock (silent k); replies; Arabic greeting"
+    },
+    {
+      "id": "values-water-cat",
+      "title": "Water for the cat",
+      "patterns": "ow / er; empty; fill; drinks (final blend); possessive Its"
+    },
+    {
+      "id": "values-thank-you",
+      "title": "Thank you, Allah",
+      "patterns": "apple; cuts; crunch (ch / cr); sweet (ee); gratitude phrase"
+    },
+    {
+      "id": "values-little-bird",
+      "title": "The little bird",
+      "patterns": "ir / er; nearby; step back; takes; hot day"
+    },
+    {
+      "id": "values-bismillah-bite",
+      "title": "Bismillah, then a bite",
+      "patterns": "plate / bite (a_e / i_e); reach (ea / ch); right (igh)"
+    },
+    {
+      "id": "values-smile-friend",
+      "title": "A smile for my friend",
+      "patterns": "smile (i_e); friend; floor; come; dialogue"
+    },
+    {
+      "id": "values-lost-pencil",
+      "title": "The lost pencil",
+      "patterns": "pencil (soft c); floor; lost; give; ownership"
+    },
+    {
+      "id": "values-red-cup",
+      "title": "The red cup",
+      "patterns": "bump / spills blends; happened; cloth (th); wipe (i_e)"
+    },
+    {
+      "id": "values-prayer-mat",
+      "title": "My prayer mat",
+      "patterns": "pr / br; prayer; beside (i_e); towel; mine; family dialogue"
+    },
+    {
+      "id": "values-fallen-blocks",
+      "title": "The fallen blocks",
+      "patterns": "bl / br; tower; foot (oo); sorry; again; dialogue fragments"
+    },
+    {
+      "id": "values-turns-bike",
+      "title": "My turn, your turn",
+      "patterns": "turn (ur); bike (i_e); gate (a_e); rides; clap; both"
+    },
+    {
+      "id": "values-little-gift",
+      "title": "A little gift",
+      "patterns": "draw / Grandma blends; flower (ow); fold; opens; gift"
+    },
+    {
+      "id": "values-busy-ant",
+      "title": "The busy ant",
+      "patterns": "lift / crumb blends; tiny (long y); carries; past; Go on"
+    },
+    {
+      "id": "values-ready-prayer",
+      "title": "Ready for prayer",
+      "patterns": "ready (ea); wudu; prayer; side by side; calls; toys"
+    },
+    {
+      "id": "values-quiet-surprise",
+      "title": "A quiet surprise",
+      "patterns": "quiet; resting; neatly (ea); together; helped; question"
+    },
+    {
+      "id": "values-come-in",
+      "title": "May I come in?",
+      "patterns": "knock; permission phrase; room (oo); drawing (aw); dialogue"
+    },
+    {
+      "id": "values-clear-path",
+      "title": "A clear path",
+      "patterns": "twig / tr blends; someone; may; trip; aside; clear (ear)"
+    },
+    {
+      "id": "values-guest-date",
+      "title": "A date for our guest",
+      "patterns": "guest; plate (a_e); rolls; fresh (sh); pick it up; hygiene context"
+    },
+    {
+      "id": "values-dua-mum",
+      "title": "A dua for Mum",
+      "patterns": "quietly; please; not well / get well; holds; original prayer"
+    },
+    {
+      "id": "values-brother-friend",
+      "title": "My brother, my friend",
+      "patterns": "knocks; angry; fix; together; Arabic listening phrase"
+    },
+    {
+      "id": "values-not-hit-back",
+      "title": "I will not hit back",
+      "patterns": "hurts (ur); step away; forgive; safety dialogue; complex response"
+    }
+  ],
+  "flows": [
+    {
+      "id": "values-bismillah-bite",
+      "title": "Bismillah, then a bite",
+      "sentences": 6,
+      "vocabulary": 19,
+      "assisted": true
+    },
+    {
+      "id": "values-smile-friend",
+      "title": "A smile for my friend",
+      "sentences": 5,
+      "vocabulary": 21,
+      "assisted": true
+    },
+    {
+      "id": "values-water-cat",
+      "title": "Water for the cat",
+      "sentences": 6,
+      "vocabulary": 20,
+      "assisted": true
+    },
+    {
+      "id": "values-salam-door",
+      "title": "Salam at the door",
+      "sentences": 5,
+      "vocabulary": 15,
+      "assisted": true
+    },
+    {
+      "id": "values-two-dates",
+      "title": "One date, two smiles",
+      "sentences": 6,
+      "vocabulary": 16,
+      "assisted": true
+    },
+    {
+      "id": "values-prayer-mat",
+      "title": "My prayer mat",
+      "sentences": 6,
+      "vocabulary": 22,
+      "assisted": true
+    },
+    {
+      "id": "values-red-cup",
+      "title": "The red cup",
+      "sentences": 5,
+      "vocabulary": 20,
+      "assisted": true
+    },
+    {
+      "id": "values-quiet-surprise",
+      "title": "A quiet surprise",
+      "sentences": 6,
+      "vocabulary": 22,
+      "assisted": true
+    },
+    {
+      "id": "values-thank-you",
+      "title": "Thank you, Allah",
+      "sentences": 6,
+      "vocabulary": 16,
+      "assisted": true
+    },
+    {
+      "id": "values-clear-path",
+      "title": "A clear path",
+      "sentences": 5,
+      "vocabulary": 21,
+      "assisted": true
+    },
+    {
+      "id": "values-little-bird",
+      "title": "The little bird",
+      "sentences": 5,
+      "vocabulary": 22,
+      "assisted": true
+    },
+    {
+      "id": "values-come-in",
+      "title": "May I come in?",
+      "sentences": 5,
+      "vocabulary": 17,
+      "assisted": true
+    },
+    {
+      "id": "values-fallen-blocks",
+      "title": "The fallen blocks",
+      "sentences": 5,
+      "vocabulary": 20,
+      "assisted": true
+    },
+    {
+      "id": "values-turns-bike",
+      "title": "My turn, your turn",
+      "sentences": 6,
+      "vocabulary": 22,
+      "assisted": true
+    },
+    {
+      "id": "values-guest-date",
+      "title": "A date for our guest",
+      "sentences": 5,
+      "vocabulary": 20,
+      "assisted": true
+    },
+    {
+      "id": "values-lost-pencil",
+      "title": "The lost pencil",
+      "sentences": 6,
+      "vocabulary": 18,
+      "assisted": true
+    },
+    {
+      "id": "values-little-gift",
+      "title": "A little gift",
+      "sentences": 5,
+      "vocabulary": 21,
+      "assisted": true
+    },
+    {
+      "id": "values-busy-ant",
+      "title": "The busy ant",
+      "sentences": 5,
+      "vocabulary": 21,
+      "assisted": true
+    },
+    {
+      "id": "values-ready-prayer",
+      "title": "Ready for prayer",
+      "sentences": 5,
+      "vocabulary": 18,
+      "assisted": true
+    },
+    {
+      "id": "values-dua-mum",
+      "title": "A dua for Mum",
+      "sentences": 5,
+      "vocabulary": 20,
+      "assisted": true
+    },
+    {
+      "id": "values-brother-friend",
+      "title": "My brother, my friend",
+      "sentences": 5,
+      "vocabulary": 17,
+      "assisted": true
+    },
+    {
+      "id": "values-not-hit-back",
+      "title": "I will not hit back",
+      "sentences": 8,
+      "vocabulary": 24,
+      "assisted": true
+    },
+    {
+      "id": "values-brothers-truck",
+      "title": "Two brothers, one truck",
+      "sentences": 6,
+      "vocabulary": 19,
+      "assisted": true
+    }
+  ],
+  "explanationDurations": [
+    {
+      "id": "values-bismillah-bite",
+      "seconds": 18.432
+    },
+    {
+      "id": "values-smile-friend",
+      "seconds": 19.176
+    },
+    {
+      "id": "values-water-cat",
+      "seconds": 20.712
+    },
+    {
+      "id": "values-salam-door",
+      "seconds": 20.664
+    },
+    {
+      "id": "values-two-dates",
+      "seconds": 18.72
+    },
+    {
+      "id": "values-prayer-mat",
+      "seconds": 20.352
+    },
+    {
+      "id": "values-red-cup",
+      "seconds": 19.248
+    },
+    {
+      "id": "values-quiet-surprise",
+      "seconds": 20.568
+    },
+    {
+      "id": "values-thank-you",
+      "seconds": 20.688
+    },
+    {
+      "id": "values-clear-path",
+      "seconds": 20.856
+    },
+    {
+      "id": "values-little-bird",
+      "seconds": 20.136
+    },
+    {
+      "id": "values-come-in",
+      "seconds": 21.96
+    },
+    {
+      "id": "values-fallen-blocks",
+      "seconds": 20.88
+    },
+    {
+      "id": "values-turns-bike",
+      "seconds": 21.072
+    },
+    {
+      "id": "values-guest-date",
+      "seconds": 20.688
+    },
+    {
+      "id": "values-lost-pencil",
+      "seconds": 20.352
+    },
+    {
+      "id": "values-little-gift",
+      "seconds": 21.096
+    },
+    {
+      "id": "values-busy-ant",
+      "seconds": 19.008
+    },
+    {
+      "id": "values-ready-prayer",
+      "seconds": 20.784
+    },
+    {
+      "id": "values-dua-mum",
+      "seconds": 21.96
+    },
+    {
+      "id": "values-brother-friend",
+      "seconds": 22.104
+    },
+    {
+      "id": "values-not-hit-back",
+      "seconds": 21.576
+    },
+    {
+      "id": "values-brothers-truck",
+      "seconds": 19.344
+    }
+  ],
+  "checks": [
+    "All original stories, letters, word lessons and audio aliases unchanged",
+    "All 23 lessons navigated end to end",
+    "46 scene gaps: wrong twice, demonstration, easier retry, assisted recording, manual Next",
+    "46 paragraph gaps: one active choice set, filled words retained",
+    "69 play questions: explicit recall task, one star",
+    "All 23 complete paragraphs preserved exactly",
+    "Parent-only moral notes collapsed and optional",
+    "Home and reload continue at saved step without autoplay",
+    "Existing completion, writing, -at reading, story answers and spelling progress preserved"
+  ],
+  "limitations": [
+    "Arabic recording has no word timestamps; whole phrase highlights",
+    "Synthetic pronunciation has not had a human listening review",
+    "Headless mobile and desktop testing does not replace physical-device testing"
+  ]
+}

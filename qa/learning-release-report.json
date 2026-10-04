@@ -1,0 +1,5177 @@
+{
+  "checkedAt": "2026-10-04T16:46:10.353Z",
+  "listenAndMove": {
+    "homepageCard": true,
+    "ageRestriction": false,
+    "order": [
+      {
+        "id": "move-in-out",
+        "title": "1 · In / out of",
+        "instructions": [
+          "Put the ball in the box.",
+          "Take the ball out of the box.",
+          "Put the pen in the pocket.",
+          "Take the pen out of the pocket."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-on-under",
+        "title": "2 · On / under",
+        "instructions": [
+          "Put the ball on the chair.",
+          "Put the ball under the chair.",
+          "Put the book on the table.",
+          "Put the book under the table."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-beside",
+        "title": "3 · Beside",
+        "instructions": [
+          "Put the ball beside the box.",
+          "Put the pen beside the book.",
+          "Put the toy car beside the chair."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-front-behind",
+        "title": "4 · In front of / behind",
+        "instructions": [
+          "Put the ball in front of the chair.",
+          "Put the ball behind the chair.",
+          "Put the toy car in front of the box.",
+          "Put the toy car behind the box."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-between",
+        "title": "5 · Between",
+        "instructions": [
+          "Put the ball between the two boxes.",
+          "Put the pen between the two books.",
+          "Put the toy car between the chair and the table."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-above-below",
+        "title": "6 · Above / below",
+        "instructions": [
+          "Move the balloon above the table.",
+          "Move the balloon below the table.",
+          "Move the star above the cloud.",
+          "Move the star below the cloud."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-near-far",
+        "title": "7 · Near / far from",
+        "instructions": [
+          "Put the ball near the tree.",
+          "Put the ball far from the tree.",
+          "Put the toy car near the house.",
+          "Put the toy car far from the house."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-into-out",
+        "title": "8 · Into / out of",
+        "instructions": [
+          "Move the toy car into the garage.",
+          "Move the toy car out of the garage.",
+          "Move the ball into the box.",
+          "Move the ball out of the box."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-over-through",
+        "title": "9 · Over / through",
+        "instructions": [
+          "Move the ball over the low wall.",
+          "Move the ball through the hoop.",
+          "Move the toy car through the tunnel."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-across-around",
+        "title": "10 · Across / around",
+        "instructions": [
+          "Move the toy car across the bridge.",
+          "Move the toy car around the tree.",
+          "Move the boat across the pond."
+        ],
+        "practiceTasks": 3
+      },
+      {
+        "id": "move-two-steps",
+        "title": "Final review · Two steps",
+        "instructions": [
+          "Take the ball out of the box. Put it under the chair.",
+          "Put the book on the table. Put the pen beside the book.",
+          "Move the toy car out of the garage. Put it behind the box."
+        ],
+        "unlocks": "After all individual lessons are practised"
+      }
+    ],
+    "staticLessons": 7,
+    "movementLessons": 3,
+    "mainInstructions": 36,
+    "practiceTasks": 30,
+    "twoStepGroups": 3,
+    "routeValidation": "Ordered path checkpoints and a 43-world-unit corridor; a final position alone is insufficient",
+    "interactions": [
+      "Mouse dragging",
+      "Browser touch dragging",
+      "Tap placement",
+      "Keyboard buttons",
+      "Accessible validated route selection"
+    ],
+    "staticBeforePaths": true
+  },
+  "stories": {
+    "retained": 24,
+    "added": 23,
+    "total": 47,
+    "duplicates": 0,
+    "parentOnlyMorals": true,
+    "difficultyOrder": [
+      {
+        "id": "hen-sun",
+        "title": "A hen in the sun",
+        "level": 0,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "pig-pen",
+        "title": "The pig pen",
+        "level": 0,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "red-bag",
+        "title": "The red bag",
+        "level": 0,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "dog-log",
+        "title": "A nap on a log",
+        "level": 0,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "bun-cup",
+        "title": "A bun for Mum",
+        "level": 0,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "cat-rat",
+        "title": "The cat and the rat",
+        "level": 0,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "map-tap",
+        "title": "A map by the tap",
+        "level": 0,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "bus-stop",
+        "title": "At the bus stop",
+        "level": 0,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "fish-shop",
+        "title": "The fish shop",
+        "level": 1,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "little-ship",
+        "title": "The ship at the dock",
+        "level": 1,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "shell-gift",
+        "title": "A shell for Dad",
+        "level": 1,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "shed-cat",
+        "title": "The cat in the shed",
+        "level": 1,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "chip-lunch",
+        "title": "A chip at lunch",
+        "level": 1,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "chin-chat",
+        "title": "A chat with Dad",
+        "level": 1,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "chick-run",
+        "title": "The chick and the hen",
+        "level": 1,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "bench-rest",
+        "title": "A rest on the bench",
+        "level": 1,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "rain-snail",
+        "title": "Rain and a snail",
+        "level": 2,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "train-trip",
+        "title": "A train trip",
+        "level": 2,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "cat-tail",
+        "title": "The cat tail",
+        "level": 2,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "rain-paint",
+        "title": "Painting the rain",
+        "level": 2,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "sea-seat",
+        "title": "A seat by the sea",
+        "level": 3,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "leaf-tree",
+        "title": "The leaf and the tree",
+        "level": 3,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "peach-meal",
+        "title": "A peach for a snack",
+        "level": 3,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "beach-clean",
+        "title": "A clean beach",
+        "level": 3,
+        "assisted": false,
+        "patterns": null
+      },
+      {
+        "id": "values-brothers-truck",
+        "title": "Two brothers, one truck",
+        "level": 4,
+        "assisted": true,
+        "patterns": "tr / br blends; toy (oy); brother; dialogue fragments"
+      },
+      {
+        "id": "values-two-dates",
+        "title": "One date, two smiles",
+        "level": 4,
+        "assisted": true,
+        "patterns": "date (a_e); sister; have; none; quoted speech"
+      },
+      {
+        "id": "values-salam-door",
+        "title": "Salam at the door",
+        "level": 4,
+        "assisted": true,
+        "patterns": "oo / or; knock (silent k); replies; Arabic greeting"
+      },
+      {
+        "id": "values-water-cat",
+        "title": "Water for the cat",
+        "level": 4,
+        "assisted": true,
+        "patterns": "ow / er; empty; fill; drinks (final blend); possessive Its"
+      },
+      {
+        "id": "values-thank-you",
+        "title": "Thank you, Allah",
+        "level": 4,
+        "assisted": true,
+        "patterns": "apple; cuts; crunch (ch / cr); sweet (ee); gratitude phrase"
+      },
+      {
+        "id": "values-little-bird",
+        "title": "The little bird",
+        "level": 4,
+        "assisted": true,
+        "patterns": "ir / er; nearby; step back; takes; hot day"
+      },
+      {
+        "id": "values-bismillah-bite",
+        "title": "Bismillah, then a bite",
+        "level": 4,
+        "assisted": true,
+        "patterns": "plate / bite (a_e / i_e); reach (ea / ch); right (igh)"
+      },
+      {
+        "id": "values-smile-friend",
+        "title": "A smile for my friend",
+        "level": 4,
+        "assisted": true,
+        "patterns": "smile (i_e); friend; floor; come; dialogue"
+      },
+      {
+        "id": "values-lost-pencil",
+        "title": "The lost pencil",
+        "level": 5,
+        "assisted": true,
+        "patterns": "pencil (soft c); floor; lost; give; ownership"
+      },
+      {
+        "id": "values-red-cup",
+        "title": "The red cup",
+        "level": 5,
+        "assisted": true,
+        "patterns": "bump / spills blends; happened; cloth (th); wipe (i_e)"
+      },
+      {
+        "id": "values-prayer-mat",
+        "title": "My prayer mat",
+        "level": 5,
+        "assisted": true,
+        "patterns": "pr / br; prayer; beside (i_e); towel; mine; family dialogue"
+      },
+      {
+        "id": "values-fallen-blocks",
+        "title": "The fallen blocks",
+        "level": 5,
+        "assisted": true,
+        "patterns": "bl / br; tower; foot (oo); sorry; again; dialogue fragments"
+      },
+      {
+        "id": "values-turns-bike",
+        "title": "My turn, your turn",
+        "level": 5,
+        "assisted": true,
+        "patterns": "turn (ur); bike (i_e); gate (a_e); rides; clap; both"
+      },
+      {
+        "id": "values-little-gift",
+        "title": "A little gift",
+        "level": 5,
+        "assisted": true,
+        "patterns": "draw / Grandma blends; flower (ow); fold; opens; gift"
+      },
+      {
+        "id": "values-busy-ant",
+        "title": "The busy ant",
+        "level": 5,
+        "assisted": true,
+        "patterns": "lift / crumb blends; tiny (long y); carries; past; Go on"
+      },
+      {
+        "id": "values-ready-prayer",
+        "title": "Ready for prayer",
+        "level": 5,
+        "assisted": true,
+        "patterns": "ready (ea); wudu; prayer; side by side; calls; toys"
+      },
+      {
+        "id": "values-quiet-surprise",
+        "title": "A quiet surprise",
+        "level": 6,
+        "assisted": true,
+        "patterns": "quiet; resting; neatly (ea); together; helped; question"
+      },
+      {
+        "id": "values-come-in",
+        "title": "May I come in?",
+        "level": 6,
+        "assisted": true,
+        "patterns": "knock; permission phrase; room (oo); drawing (aw); dialogue"
+      },
+      {
+        "id": "values-clear-path",
+        "title": "A clear path",
+        "level": 6,
+        "assisted": true,
+        "patterns": "twig / tr blends; someone; may; trip; aside; clear (ear)"
+      },
+      {
+        "id": "values-guest-date",
+        "title": "A date for our guest",
+        "level": 6,
+        "assisted": true,
+        "patterns": "guest; plate (a_e); rolls; fresh (sh); pick it up; hygiene context"
+      },
+      {
+        "id": "values-dua-mum",
+        "title": "A dua for Mum",
+        "level": 6,
+        "assisted": true,
+        "patterns": "quietly; please; not well / get well; holds; original prayer"
+      },
+      {
+        "id": "values-brother-friend",
+        "title": "My brother, my friend",
+        "level": 6,
+        "assisted": true,
+        "patterns": "knocks; angry; fix; together; Arabic listening phrase"
+      },
+      {
+        "id": "values-not-hit-back",
+        "title": "I will not hit back",
+        "level": 6,
+        "assisted": true,
+        "patterns": "hurts (ur); step away; forgive; safety dialogue; complex response"
+      }
+    ],
+    "notes": "Exact supplied story text and Bengali lesson notes retained; new records use stable values- IDs"
+  },
+  "verification": {
+    "move-static": {
+      "passed": true,
+      "records": [
+        {
+          "id": "move-in-out",
+          "tasks": 7,
+          "practices": 3
+        },
+        {
+          "id": "move-on-under",
+          "tasks": 7,
+          "practices": 3
+        },
+        {
+          "id": "move-beside",
+          "tasks": 6,
+          "practices": 3
+        },
+        {
+          "id": "move-front-behind",
+          "tasks": 7,
+          "practices": 3
+        },
+        {
+          "id": "move-between",
+          "tasks": 6,
+          "practices": 3
+        },
+        {
+          "id": "move-above-below",
+          "tasks": 7,
+          "practices": 3
+        },
+        {
+          "id": "move-near-far",
+          "tasks": 7,
+          "practices": 3
+        }
+      ],
+      "checks": [
+        "Homepage separate card, no age gate",
+        "Seven static lessons completed",
+        "Objects and contrasting meanings taught before tasks",
+        "All placement zone centers have correct acceptance",
+        "Spoken feedback, repeated-error demonstration and assisted records",
+        "Three practice tasks per lesson",
+        "Two-step review remains locked until all individual lessons are practised"
+      ]
+    },
+    "move-paths": {
+      "passed": true,
+      "records": [
+        {
+          "id": "move-into-out",
+          "tasks": 7
+        },
+        {
+          "id": "move-over-through",
+          "tasks": 6
+        },
+        {
+          "id": "move-across-around",
+          "tasks": 6
+        }
+      ],
+      "twoStepGroups": 3,
+      "checks": [
+        "Static test gate passed before path verification",
+        "Ten movement instructions and nine practice tasks completed",
+        "Route validation rejects final-position-only, wrong and incomplete paths",
+        "Route tolerance accepts small sensible deviations",
+        "Accessible route choices go through the same geometric validation",
+        "Final review unlocked only after all ten lessons practised",
+        "All three two-step groups preserve order and offer full/individual replay"
+      ]
+    },
+    "move-interactions": {
+      "checks": [
+        "Mouse dragging; actual spoken praise then completed-action description",
+        "Touch dragging through browser pointer events",
+        "Keyboard placement alternative",
+        "Mouse path crossing over wall; straight floor shortcut rejected",
+        "Home, reopen and continue a saved partial route",
+        "Keyboard route alternative",
+        "Normal and slower recorded instruction playback; actual word timings; pause freezes; Home stops and clears",
+        "Reduced motion follows the same route validation without animated travel",
+        "Two-step full and individual actual recordings; word highlighting uses the correct sentence offset"
+      ],
+      "audio": [
+        {
+          "clip": "/audio/393abee819b7af2e008f3b4a.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/e3eb956568df4fd0a994c069.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/13cf9e288baa8df2eedb3deb.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/94b6fd77460cacc6256b2ee9.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/e01ebe95bd6bfc5e3650c99e.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/2a6e38bf8bc37cb1c83303ed.mp3",
+          "seconds": 2.04
+        },
+        {
+          "clip": "/audio/7ba5c2973e4cde8cb9abf7a8.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/d424b57396b6923923afff04.mp3",
+          "seconds": 3.36
+        },
+        {
+          "clip": "/audio/b65ed3e2127c0734d66394dc.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/581603b8edee0bbfeea977e9.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/6d8689691534889ea775b7c1.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/241f13f7085bd88b4a4c1f77.mp3",
+          "seconds": 2.664
+        },
+        {
+          "clip": "/audio/c3e3996efc2da32abdd5498e.mp3",
+          "seconds": 2.184
+        },
+        {
+          "clip": "/audio/69f48b19d35d2270da8ce9fc.mp3",
+          "seconds": 2.472
+        },
+        {
+          "clip": "/audio/2db98cecdbed1da62819b45e.mp3",
+          "seconds": 2.208
+        },
+        {
+          "clip": "/audio/497eb12c7f6189a7fddee94f.mp3",
+          "seconds": 2.568
+        },
+        {
+          "clip": "/audio/ff2da8dd9a0308fd7a4ecf6c.mp3",
+          "seconds": 3.672
+        },
+        {
+          "clip": "/audio/00a9f5f4cd3d9a3a7a838d7c.mp3",
+          "seconds": 2.616
+        },
+        {
+          "clip": "/audio/2db48667562d886d9a0665ac.mp3",
+          "seconds": 2.304
+        },
+        {
+          "clip": "/audio/72d39be23c633b74a2aeee64.mp3",
+          "seconds": 2.28
+        },
+        {
+          "clip": "/audio/1f66710ccd6502c08fc5a90e.mp3",
+          "seconds": 2.664
+        },
+        {
+          "clip": "/audio/41a88153ee211ea0da5dd717.mp3",
+          "seconds": 2.64
+        },
+        {
+          "clip": "/audio/ade8951a0a1af2e7acc3e171.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/9b4fde000c00be74c0c78bd8.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/f1322ffc2f6ae58184bb9ce5.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/387e9df915fc9ff607212d8a.mp3",
+          "seconds": 2.352
+        },
+        {
+          "clip": "/audio/f734e3fe0239eda90a722ea7.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/8efabf5404878650ec9716a4.mp3",
+          "seconds": 2.448
+        },
+        {
+          "clip": "/audio/00235d7124cf281de44c3555.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/88de2ce0cc5d8ca5598d4c15.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/cafea39981c1f90983f93b4e.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/97a2d334fa4ab52ff0cf8e63.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/b8172e72fa97bcfc96c29ab0.mp3",
+          "seconds": 2.112
+        },
+        {
+          "clip": "/audio/4b7aa40e19ba45801cae5c1b.mp3",
+          "seconds": 3.192
+        },
+        {
+          "clip": "/audio/d5ae7d4c1a4a6681dce94584.mp3",
+          "seconds": 2.16
+        },
+        {
+          "clip": "/audio/e273dfac7659c48ac0f47e97.mp3",
+          "seconds": 2.328
+        },
+        {
+          "clip": "/audio/d7bb1c6f75898c2f018ecdec.mp3",
+          "seconds": 2.352
+        },
+        {
+          "clip": "/audio/9a6b8be85673ce56ee0170e8.mp3",
+          "seconds": 2.28
+        },
+        {
+          "clip": "/audio/d1aa06aaa8bfb2a6b477b074.mp3",
+          "seconds": 2.28
+        },
+        {
+          "clip": "/audio/19477f1573a08435f5e9ce11.mp3",
+          "seconds": 2.208
+        },
+        {
+          "clip": "/audio/609adc75adddb9e00420bf28.mp3",
+          "seconds": 2.448
+        },
+        {
+          "clip": "/audio/ca285902ecab868a1a9c85f1.mp3",
+          "seconds": 2.4
+        },
+        {
+          "clip": "/audio/e4c7957f09b8d6c8e0f0d374.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/2d8cc9f11a3c669b34de09fe.mp3",
+          "seconds": 2.736
+        },
+        {
+          "clip": "/audio/86cbbaedfdc40b18db153af8.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/118c5c08a78e5ec7e970254f.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/1d381edfd7a54c4af3fd39c5.mp3",
+          "seconds": 2.616
+        },
+        {
+          "clip": "/audio/04a5fa2746401b4e0c11a280.mp3",
+          "seconds": 3.816
+        },
+        {
+          "clip": "/audio/16cbba182b17f0d51a81cb32.mp3",
+          "seconds": 2.64
+        },
+        {
+          "clip": "/audio/7e2b3d60df7b305f8649603e.mp3",
+          "seconds": 2.496
+        },
+        {
+          "clip": "/audio/7dc1b648dfd199c4eaeeb062.mp3",
+          "seconds": 2.472
+        },
+        {
+          "clip": "/audio/745321955fbbdcc941e6fc94.mp3",
+          "seconds": 2.76
+        },
+        {
+          "clip": "/audio/e4b78231ed21bc83ff5673c0.mp3",
+          "seconds": 2.856
+        },
+        {
+          "clip": "/audio/698fd9671a92e808130c4f73.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/57e5d09d7d464b2754fb0805.mp3",
+          "seconds": 3.432
+        },
+        {
+          "clip": "/audio/a945b882d548d18efc9206b6.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/ecb7624ddb4d53056dbbac85.mp3",
+          "seconds": 5.52
+        },
+        {
+          "clip": "/audio/332c7f5c69cbc263455c8714.mp3",
+          "seconds": 2.664
+        },
+        {
+          "clip": "/audio/d0bfb6f0e8caef25dcd6bd81.mp3",
+          "seconds": 3.912
+        },
+        {
+          "clip": "/audio/28a4691e6baac90f6c27310d.mp3",
+          "seconds": 2.64
+        },
+        {
+          "clip": "/audio/f8fb9fa80539fbeeaf1ac21e.mp3",
+          "seconds": 2.424
+        },
+        {
+          "clip": "/audio/62947fb9ee232099ee78e71a.mp3",
+          "seconds": 4.848
+        },
+        {
+          "clip": "/audio/0706eb162922b6011f4a891c.mp3",
+          "seconds": 2.496
+        },
+        {
+          "clip": "/audio/9f7a4a19bd2673f423e20571.mp3",
+          "seconds": 3.12
+        },
+        {
+          "clip": "/audio/8f591aeb8d3e559f37c363d5.mp3",
+          "seconds": 3.048
+        },
+        {
+          "clip": "/audio/c13057b4794b8d13775ed878.mp3",
+          "seconds": 2.856
+        },
+        {
+          "clip": "/audio/920f30e04cced70c031ebfb5.mp3",
+          "seconds": 2.88
+        },
+        {
+          "clip": "/audio/86ef115ed723bb110339cf29.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/4b33b0b1f32a1f6d40748da9.mp3",
+          "seconds": 3.96
+        },
+        {
+          "clip": "/audio/8f896aec8d9be70173770db4.mp3",
+          "seconds": 2.976
+        },
+        {
+          "clip": "/audio/ddb58bfe2bb582855191fdae.mp3",
+          "seconds": 3.528
+        },
+        {
+          "clip": "/audio/54a733ac5e29633e7f97fca8.mp3",
+          "seconds": 2.976
+        },
+        {
+          "clip": "/audio/f04764c054a3ae4d651d39c5.mp3",
+          "seconds": 2.808
+        },
+        {
+          "clip": "/audio/cc2ea6bcca3ce32adc436b3f.mp3",
+          "seconds": 2.736
+        },
+        {
+          "clip": "/audio/cb82c63098373f02b5927676.mp3",
+          "seconds": 3.576
+        },
+        {
+          "clip": "/audio/0146483a100d14a64737ff1e.mp3",
+          "seconds": 3.456
+        },
+        {
+          "clip": "/audio/601fdfc9bbd5345e2280295c.mp3",
+          "seconds": 1.272
+        },
+        {
+          "clip": "/audio/03fd2df13122f571331f0e8e.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/4a03245227a9fd63ad27d0d9.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/eef708c4bf0665f1415c3d03.mp3",
+          "seconds": 4.488
+        },
+        {
+          "clip": "/audio/fafdb263536d74faf6a58337.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/77fa95db645d14d17b1911e0.mp3",
+          "seconds": 1.92
+        },
+        {
+          "clip": "/audio/815b812ca7284eafafc5de2b.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/039b695eb3739aa4b079f04e.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/5e0d23405f0eef8fa3d5bd92.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/952821b7a28a2d6048abdd91.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/4bd1f8b8fc5aee460a696279.mp3",
+          "seconds": 2.736
+        },
+        {
+          "clip": "/audio/135320be8730e40fc5136932.mp3",
+          "seconds": 4.248
+        },
+        {
+          "clip": "/audio/18daff24a44a6371f36d5879.mp3",
+          "seconds": 2.688
+        },
+        {
+          "clip": "/audio/58dfc199092004bf890f9148.mp3",
+          "seconds": 2.784
+        },
+        {
+          "clip": "/audio/3f59f49a7660c0a5c10bf657.mp3",
+          "seconds": 2.568
+        },
+        {
+          "clip": "/audio/a93e4676c6add982280ccab2.mp3",
+          "seconds": 2.736
+        },
+        {
+          "clip": "/audio/d60abe8f3af33b22e4f25443.mp3",
+          "seconds": 2.712
+        },
+        {
+          "clip": "/audio/f1c41c12901641b1e1d85f6e.mp3",
+          "seconds": 2.592
+        },
+        {
+          "clip": "/audio/ec5d4f7953e78a37a93c929f.mp3",
+          "seconds": 2.688
+        },
+        {
+          "clip": "/audio/f3a1f071b162b9f4b704999f.mp3",
+          "seconds": 2.64
+        },
+        {
+          "clip": "/audio/3b61e6b030d0f9cf40a0f44c.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/9b2ddd35c720685e4b4a4cad.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/405e14ff52abc2bd768a6543.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/e9bc487b89c9421734b762b5.mp3",
+          "seconds": 3.792
+        },
+        {
+          "clip": "/audio/6d358f2725ecb3ad2dcada2c.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/020af5fb05eb558972801cea.mp3",
+          "seconds": 4.44
+        },
+        {
+          "clip": "/audio/709948d123fef14c7e4189c1.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/3e48044f4a14050db899c949.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/be4654c5d501a74840862ea3.mp3",
+          "seconds": 2.304
+        },
+        {
+          "clip": "/audio/4a13944f7c56f426a8e7bd13.mp3",
+          "seconds": 2.736
+        },
+        {
+          "clip": "/audio/715e3a10ec715eb20f1c02d7.mp3",
+          "seconds": 2.328
+        },
+        {
+          "clip": "/audio/7bb60116a25f7a4f95cf2fc2.mp3",
+          "seconds": 2.568
+        },
+        {
+          "clip": "/audio/af7ebe23d05cd269e93fb126.mp3",
+          "seconds": 3.096
+        },
+        {
+          "clip": "/audio/46003c0ff8507a00c9448f84.mp3",
+          "seconds": 2.592
+        },
+        {
+          "clip": "/audio/71443fea3b960b61bd5e2170.mp3",
+          "seconds": 2.592
+        },
+        {
+          "clip": "/audio/3d86d41db51aa60a2ba96a5c.mp3",
+          "seconds": 2.688
+        },
+        {
+          "clip": "/audio/8a22dfbc3dede136f4678d49.mp3",
+          "seconds": 2.952
+        },
+        {
+          "clip": "/audio/0c55792c30600025fef730a0.mp3",
+          "seconds": 2.952
+        },
+        {
+          "clip": "/audio/5353f526fc39f5774a22feff.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/04af401d1890fff286797733.mp3",
+          "seconds": 2.736
+        },
+        {
+          "clip": "/audio/da34f379914dabeeb9c986bd.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/529eff2d2ed12d909848fbf9.mp3",
+          "seconds": 3.768
+        },
+        {
+          "clip": "/audio/4b54cd9af62607bf94ef5aca.mp3",
+          "seconds": 2.952
+        },
+        {
+          "clip": "/audio/e0d6f1348411ff5c6642c802.mp3",
+          "seconds": 5.304
+        },
+        {
+          "clip": "/audio/a5b470cc91342bb124f82331.mp3",
+          "seconds": 2.904
+        },
+        {
+          "clip": "/audio/c4b9d6e738e733ac79573cc9.mp3",
+          "seconds": 3.072
+        },
+        {
+          "clip": "/audio/6de3c8d2994121ac06844cc1.mp3",
+          "seconds": 3.024
+        },
+        {
+          "clip": "/audio/75d1bf6fad29586b7b048784.mp3",
+          "seconds": 2.472
+        },
+        {
+          "clip": "/audio/8ef33756944903089719e840.mp3",
+          "seconds": 2.52
+        },
+        {
+          "clip": "/audio/e6cdb34e641d4b6417651ae6.mp3",
+          "seconds": 2.568
+        },
+        {
+          "clip": "/audio/1f2c46d64bb5c09343d2fdac.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/e7f60a4602c04d45b8c9cf32.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/cb710c3c4de47124450af4fd.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/6876478b0316a71b8b42d444.mp3",
+          "seconds": 3.504
+        },
+        {
+          "clip": "/audio/a0f4e5adf936040dd665b43f.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/81b31f3b245c0ae926137adc.mp3",
+          "seconds": 2.112
+        },
+        {
+          "clip": "/audio/8615730063d81a00e22042c9.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/259cfb2586f88d8b3756ae87.mp3",
+          "seconds": 2.952
+        },
+        {
+          "clip": "/audio/dee94cc7f38c0e98e03e38a1.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/a93bfff4435e2e77844c3879.mp3",
+          "seconds": 2.328
+        },
+        {
+          "clip": "/audio/2121c88f517ed2dfa24c526f.mp3",
+          "seconds": 2.76
+        },
+        {
+          "clip": "/audio/5cfe3ec69e4e034c52b620bb.mp3",
+          "seconds": 3.984
+        },
+        {
+          "clip": "/audio/37a9cc4db0a0a447b558f2c9.mp3",
+          "seconds": 2.784
+        },
+        {
+          "clip": "/audio/ab979ec02ce34393c04eb85d.mp3",
+          "seconds": 2.352
+        },
+        {
+          "clip": "/audio/89f18354b1c880c8fdaee52a.mp3",
+          "seconds": 3.792
+        },
+        {
+          "clip": "/audio/6c56eba943b9d246235d7f10.mp3",
+          "seconds": 2.424
+        },
+        {
+          "clip": "/audio/7a4e09987001630f47bad326.mp3",
+          "seconds": 2.688
+        },
+        {
+          "clip": "/audio/7ede62477ab8e83090ab9e67.mp3",
+          "seconds": 2.76
+        },
+        {
+          "clip": "/audio/ab11d1adbbaba69570f330e8.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/b9479d9e27b2e2803bf89f9f.mp3",
+          "seconds": 2.976
+        },
+        {
+          "clip": "/audio/91cb264a1eac60cd05da7dd3.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/3f6ed9d4b34eba48a893e266.mp3",
+          "seconds": 3.672
+        },
+        {
+          "clip": "/audio/7d170b3a19e8b00c69e3f597.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/a0cadbef1e66c61a91092e80.mp3",
+          "seconds": 3.48
+        },
+        {
+          "clip": "/audio/325e66e3473a43786a5cbf11.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/887a87ca236cc6d081b32150.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/3653e0f6bea93a51cc8a7673.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/f2423270773278eb886524b9.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/e470366c22c8348984b39c53.mp3",
+          "seconds": 2.88
+        },
+        {
+          "clip": "/audio/e02a48848990ec6604552531.mp3",
+          "seconds": 4.752
+        },
+        {
+          "clip": "/audio/a9fdfbf04c3e21d736fc42c1.mp3",
+          "seconds": 2.928
+        },
+        {
+          "clip": "/audio/4f218e9403018b214fd389d2.mp3",
+          "seconds": 2.736
+        },
+        {
+          "clip": "/audio/638f79a4a631a713ed50b78b.mp3",
+          "seconds": 3.696
+        },
+        {
+          "clip": "/audio/af613d17c21749b98a8a3919.mp3",
+          "seconds": 2.76
+        },
+        {
+          "clip": "/audio/ea9a5d025551ae7528dfb0bd.mp3",
+          "seconds": 2.52
+        },
+        {
+          "clip": "/audio/89e50ab0c43a7d2ffec9b235.mp3",
+          "seconds": 2.688
+        },
+        {
+          "clip": "/audio/508e61f615364a890f8e8bd7.mp3",
+          "seconds": 4.368
+        },
+        {
+          "clip": "/audio/ea0c5c1251f814d62df4969e.mp3",
+          "seconds": 1.944
+        },
+        {
+          "clip": "/audio/403091b3acaa0b04fcb92854.mp3",
+          "seconds": 4.656
+        },
+        {
+          "clip": "/audio/c00b24275b865782c97f1107.mp3",
+          "seconds": 5.232
+        },
+        {
+          "clip": "/audio/62d6b1aca4412481c13497ea.mp3",
+          "seconds": 2.256
+        },
+        {
+          "clip": "/audio/71b7c5fbe9f8dd16ba474137.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/0b4e71ddc5bd919d79e5d658.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/a7f0c5f8924ebb9215672e12.mp3",
+          "seconds": 3.96
+        },
+        {
+          "clip": "/audio/91a6c173ea277d2b41395be8.mp3",
+          "seconds": 2.976
+        },
+        {
+          "clip": "/audio/bf1899d03f5026f6face860f.mp3",
+          "seconds": 3.888
+        },
+        {
+          "clip": "/audio/526631f5e4605787b8699120.mp3",
+          "seconds": 1.872
+        },
+        {
+          "clip": "/audio/3a50a86cf3deca0e1ed42cad.mp3",
+          "seconds": 2.4
+        }
+      ],
+      "layouts": [
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "controls": [
+            {
+              "text": "Listen · Replay",
+              "bottom": 248.640625,
+              "height": 46
+            },
+            {
+              "text": "Pause",
+              "bottom": 248.640625,
+              "height": 46
+            },
+            {
+              "text": "1 · In front",
+              "bottom": 481.953125,
+              "height": 46
+            },
+            {
+              "text": "2 · Behind",
+              "bottom": 481.953125,
+              "height": 46
+            },
+            {
+              "text": "3 · Beside",
+              "bottom": 481.953125,
+              "height": 46
+            },
+            {
+              "text": "← Previous",
+              "bottom": 531.953125,
+              "height": 46
+            },
+            {
+              "text": "Watch again",
+              "bottom": 531.953125,
+              "height": 46
+            }
+          ]
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "controls": [
+            {
+              "text": "Listen · Replay",
+              "bottom": 370.125,
+              "height": 46
+            },
+            {
+              "text": "Pause",
+              "bottom": 370.125,
+              "height": 46
+            },
+            {
+              "text": "1 · In front",
+              "bottom": 690.4375,
+              "height": 46
+            },
+            {
+              "text": "2 · Behind",
+              "bottom": 690.4375,
+              "height": 46
+            },
+            {
+              "text": "3 · Beside",
+              "bottom": 690.4375,
+              "height": 46
+            },
+            {
+              "text": "← Previous",
+              "bottom": 744.4375,
+              "height": 46
+            },
+            {
+              "text": "Watch again",
+              "bottom": 744.4375,
+              "height": 46
+            }
+          ]
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "controls": [
+            {
+              "text": "Listen · Replay",
+              "bottom": 423.375,
+              "height": 47
+            },
+            {
+              "text": "Pause",
+              "bottom": 423.375,
+              "height": 47
+            },
+            {
+              "text": "1 · In front",
+              "bottom": 793.765625,
+              "height": 46
+            },
+            {
+              "text": "2 · Behind",
+              "bottom": 793.765625,
+              "height": 46
+            },
+            {
+              "text": "3 · Beside",
+              "bottom": 793.765625,
+              "height": 46
+            },
+            {
+              "text": "← Previous",
+              "bottom": 850.765625,
+              "height": 47
+            },
+            {
+              "text": "Watch again",
+              "bottom": 850.765625,
+              "height": 47
+            }
+          ]
+        }
+      ],
+      "passed": true,
+      "limitations": [
+        "Synthetic recordings have not had a human listening review",
+        "Touch and responsive tests are browser simulations, not physical-device checks"
+      ]
+    },
+    "move-layout": {
+      "passed": true,
+      "states": [
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-in-out",
+          "text": "Put the ball in the box.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-in-out",
+          "text": "Take the ball out of the box.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-in-out",
+          "text": "Put the pen in the pocket.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-in-out",
+          "text": "Take the pen out of the pocket.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-on-under",
+          "text": "Put the ball on the chair.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-on-under",
+          "text": "Put the ball under the chair.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-on-under",
+          "text": "Put the book on the table.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-on-under",
+          "text": "Put the book under the table.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-beside",
+          "text": "Put the ball beside the box.",
+          "bottom": 520.578125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-beside",
+          "text": "Put the pen beside the book.",
+          "bottom": 520.578125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-beside",
+          "text": "Put the toy car beside the chair.",
+          "bottom": 520.578125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the ball in front of the chair.",
+          "bottom": 531.953125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the ball behind the chair.",
+          "bottom": 531.953125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the toy car in front of the box.",
+          "bottom": 555.46875
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the toy car behind the box.",
+          "bottom": 531.953125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-between",
+          "text": "Put the ball between the two boxes.",
+          "bottom": 544.09375
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-between",
+          "text": "Put the pen between the two books.",
+          "bottom": 544.09375
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-between",
+          "text": "Put the toy car between the chair and the table.",
+          "bottom": 544.09375
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-above-below",
+          "text": "Move the balloon above the table.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-above-below",
+          "text": "Move the balloon below the table.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-above-below",
+          "text": "Move the star above the cloud.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-above-below",
+          "text": "Move the star below the cloud.",
+          "bottom": 517.390625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-near-far",
+          "text": "Put the ball near the tree.",
+          "bottom": 520.578125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-near-far",
+          "text": "Put the ball far from the tree.",
+          "bottom": 520.578125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-near-far",
+          "text": "Put the toy car near the house.",
+          "bottom": 520.578125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-near-far",
+          "text": "Put the toy car far from the house.",
+          "bottom": 544.09375
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-into-out",
+          "text": "Move the toy car into the garage.",
+          "bottom": 526.765625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-into-out",
+          "text": "Move the toy car out of the garage.",
+          "bottom": 550.28125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-into-out",
+          "text": "Move the ball into the box.",
+          "bottom": 526.765625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-into-out",
+          "text": "Move the ball out of the box.",
+          "bottom": 526.765625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-over-through",
+          "text": "Move the ball over the low wall.",
+          "bottom": 511.171875
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-over-through",
+          "text": "Move the ball through the hoop.",
+          "bottom": 526.765625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-over-through",
+          "text": "Move the toy car through the tunnel.",
+          "bottom": 550.28125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-across-around",
+          "text": "Move the toy car across the bridge.",
+          "bottom": 550.28125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-across-around",
+          "text": "Move the toy car around the tree.",
+          "bottom": 526.765625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-across-around",
+          "text": "Move the boat across the pond.",
+          "bottom": 526.765625
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-two-steps",
+          "text": "Take the ball out of the box.",
+          "bottom": 531.953125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-two-steps",
+          "text": "Put it under the chair.",
+          "bottom": 531.953125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-two-steps",
+          "text": "Put the book on the table.",
+          "bottom": 531.953125
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-two-steps",
+          "text": "Put the pen beside the book.",
+          "bottom": 550.734375
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-two-steps",
+          "text": "Move the toy car out of the garage.",
+          "bottom": 564.84375
+        },
+        {
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "lesson": "move-two-steps",
+          "text": "Put it behind the box.",
+          "bottom": 531.953125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-in-out",
+          "text": "Put the ball in the box.",
+          "bottom": 722.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-in-out",
+          "text": "Take the ball out of the box.",
+          "bottom": 722.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-in-out",
+          "text": "Put the pen in the pocket.",
+          "bottom": 722.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-in-out",
+          "text": "Take the pen out of the pocket.",
+          "bottom": 722.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-on-under",
+          "text": "Put the ball on the chair.",
+          "bottom": 722.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-on-under",
+          "text": "Put the ball under the chair.",
+          "bottom": 722.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-on-under",
+          "text": "Put the book on the table.",
+          "bottom": 722.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-on-under",
+          "text": "Put the book under the table.",
+          "bottom": 722.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-beside",
+          "text": "Put the ball beside the box.",
+          "bottom": 724.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-beside",
+          "text": "Put the pen beside the book.",
+          "bottom": 724.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-beside",
+          "text": "Put the toy car beside the chair.",
+          "bottom": 724.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the ball in front of the chair.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the ball behind the chair.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the toy car in front of the box.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the toy car behind the box.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-between",
+          "text": "Put the ball between the two boxes.",
+          "bottom": 724.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-between",
+          "text": "Put the pen between the two books.",
+          "bottom": 724.6875
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-between",
+          "text": "Put the toy car between the chair and the table.",
+          "bottom": 751.5625
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-above-below",
+          "text": "Move the balloon above the table.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-above-below",
+          "text": "Move the balloon below the table.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-above-below",
+          "text": "Move the star above the cloud.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-above-below",
+          "text": "Move the star below the cloud.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-near-far",
+          "text": "Put the ball near the tree.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-near-far",
+          "text": "Put the ball far from the tree.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-near-far",
+          "text": "Put the toy car near the house.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-near-far",
+          "text": "Put the toy car far from the house.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-into-out",
+          "text": "Move the toy car into the garage.",
+          "bottom": 756.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-into-out",
+          "text": "Move the toy car out of the garage.",
+          "bottom": 751.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-into-out",
+          "text": "Move the ball into the box.",
+          "bottom": 756.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-into-out",
+          "text": "Move the ball out of the box.",
+          "bottom": 751.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-over-through",
+          "text": "Move the ball over the low wall.",
+          "bottom": 751.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-over-through",
+          "text": "Move the ball through the hoop.",
+          "bottom": 756.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-over-through",
+          "text": "Move the toy car through the tunnel.",
+          "bottom": 756.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-across-around",
+          "text": "Move the toy car across the bridge.",
+          "bottom": 751.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-across-around",
+          "text": "Move the toy car around the tree.",
+          "bottom": 756.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-across-around",
+          "text": "Move the boat across the pond.",
+          "bottom": 751.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-two-steps",
+          "text": "Take the ball out of the box.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-two-steps",
+          "text": "Put it under the chair.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-two-steps",
+          "text": "Put the book on the table.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-two-steps",
+          "text": "Put the pen beside the book.",
+          "bottom": 746.4375
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-two-steps",
+          "text": "Move the toy car out of the garage.",
+          "bottom": 751.28125
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "lesson": "move-two-steps",
+          "text": "Put it behind the box.",
+          "bottom": 744.4375
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-in-out",
+          "text": "Put the ball in the box.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-in-out",
+          "text": "Take the ball out of the box.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-in-out",
+          "text": "Put the pen in the pocket.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-in-out",
+          "text": "Take the pen out of the pocket.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-on-under",
+          "text": "Put the ball on the chair.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-on-under",
+          "text": "Put the ball under the chair.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-on-under",
+          "text": "Put the book on the table.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-on-under",
+          "text": "Put the book under the table.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-beside",
+          "text": "Put the ball beside the box.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-beside",
+          "text": "Put the pen beside the book.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-beside",
+          "text": "Put the toy car beside the chair.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the ball in front of the chair.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the ball behind the chair.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the toy car in front of the box.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-front-behind",
+          "text": "Put the toy car behind the box.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-between",
+          "text": "Put the ball between the two boxes.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-between",
+          "text": "Put the pen between the two books.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-between",
+          "text": "Put the toy car between the chair and the table.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-above-below",
+          "text": "Move the balloon above the table.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-above-below",
+          "text": "Move the balloon below the table.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-above-below",
+          "text": "Move the star above the cloud.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-above-below",
+          "text": "Move the star below the cloud.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-near-far",
+          "text": "Put the ball near the tree.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-near-far",
+          "text": "Put the ball far from the tree.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-near-far",
+          "text": "Put the toy car near the house.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-near-far",
+          "text": "Put the toy car far from the house.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-into-out",
+          "text": "Move the toy car into the garage.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-into-out",
+          "text": "Move the toy car out of the garage.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-into-out",
+          "text": "Move the ball into the box.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-into-out",
+          "text": "Move the ball out of the box.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-over-through",
+          "text": "Move the ball over the low wall.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-over-through",
+          "text": "Move the ball through the hoop.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-over-through",
+          "text": "Move the toy car through the tunnel.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-across-around",
+          "text": "Move the toy car across the bridge.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-across-around",
+          "text": "Move the toy car around the tree.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-across-around",
+          "text": "Move the boat across the pond.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-two-steps",
+          "text": "Take the ball out of the box.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-two-steps",
+          "text": "Put it under the chair.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-two-steps",
+          "text": "Put the book on the table.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-two-steps",
+          "text": "Put the pen beside the book.",
+          "bottom": 850.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-two-steps",
+          "text": "Move the toy car out of the garage.",
+          "bottom": 881.765625
+        },
+        {
+          "viewport": {
+            "width": 1366,
+            "height": 900
+          },
+          "lesson": "move-two-steps",
+          "text": "Put it behind the box.",
+          "bottom": 850.765625
+        }
+      ],
+      "outside": []
+    },
+    "values-lessons": {
+      "passed": true,
+      "totalStories": 47,
+      "newStories": 23,
+      "duplicates": [],
+      "difficultyOrder": [
+        {
+          "id": "values-brothers-truck",
+          "title": "Two brothers, one truck",
+          "patterns": "tr / br blends; toy (oy); brother; dialogue fragments"
+        },
+        {
+          "id": "values-two-dates",
+          "title": "One date, two smiles",
+          "patterns": "date (a_e); sister; have; none; quoted speech"
+        },
+        {
+          "id": "values-salam-door",
+          "title": "Salam at the door",
+          "patterns": "oo / or; knock (silent k); replies; Arabic greeting"
+        },
+        {
+          "id": "values-water-cat",
+          "title": "Water for the cat",
+          "patterns": "ow / er; empty; fill; drinks (final blend); possessive Its"
+        },
+        {
+          "id": "values-thank-you",
+          "title": "Thank you, Allah",
+          "patterns": "apple; cuts; crunch (ch / cr); sweet (ee); gratitude phrase"
+        },
+        {
+          "id": "values-little-bird",
+          "title": "The little bird",
+          "patterns": "ir / er; nearby; step back; takes; hot day"
+        },
+        {
+          "id": "values-bismillah-bite",
+          "title": "Bismillah, then a bite",
+          "patterns": "plate / bite (a_e / i_e); reach (ea / ch); right (igh)"
+        },
+        {
+          "id": "values-smile-friend",
+          "title": "A smile for my friend",
+          "patterns": "smile (i_e); friend; floor; come; dialogue"
+        },
+        {
+          "id": "values-lost-pencil",
+          "title": "The lost pencil",
+          "patterns": "pencil (soft c); floor; lost; give; ownership"
+        },
+        {
+          "id": "values-red-cup",
+          "title": "The red cup",
+          "patterns": "bump / spills blends; happened; cloth (th); wipe (i_e)"
+        },
+        {
+          "id": "values-prayer-mat",
+          "title": "My prayer mat",
+          "patterns": "pr / br; prayer; beside (i_e); towel; mine; family dialogue"
+        },
+        {
+          "id": "values-fallen-blocks",
+          "title": "The fallen blocks",
+          "patterns": "bl / br; tower; foot (oo); sorry; again; dialogue fragments"
+        },
+        {
+          "id": "values-turns-bike",
+          "title": "My turn, your turn",
+          "patterns": "turn (ur); bike (i_e); gate (a_e); rides; clap; both"
+        },
+        {
+          "id": "values-little-gift",
+          "title": "A little gift",
+          "patterns": "draw / Grandma blends; flower (ow); fold; opens; gift"
+        },
+        {
+          "id": "values-busy-ant",
+          "title": "The busy ant",
+          "patterns": "lift / crumb blends; tiny (long y); carries; past; Go on"
+        },
+        {
+          "id": "values-ready-prayer",
+          "title": "Ready for prayer",
+          "patterns": "ready (ea); wudu; prayer; side by side; calls; toys"
+        },
+        {
+          "id": "values-quiet-surprise",
+          "title": "A quiet surprise",
+          "patterns": "quiet; resting; neatly (ea); together; helped; question"
+        },
+        {
+          "id": "values-come-in",
+          "title": "May I come in?",
+          "patterns": "knock; permission phrase; room (oo); drawing (aw); dialogue"
+        },
+        {
+          "id": "values-clear-path",
+          "title": "A clear path",
+          "patterns": "twig / tr blends; someone; may; trip; aside; clear (ear)"
+        },
+        {
+          "id": "values-guest-date",
+          "title": "A date for our guest",
+          "patterns": "guest; plate (a_e); rolls; fresh (sh); pick it up; hygiene context"
+        },
+        {
+          "id": "values-dua-mum",
+          "title": "A dua for Mum",
+          "patterns": "quietly; please; not well / get well; holds; original prayer"
+        },
+        {
+          "id": "values-brother-friend",
+          "title": "My brother, my friend",
+          "patterns": "knocks; angry; fix; together; Arabic listening phrase"
+        },
+        {
+          "id": "values-not-hit-back",
+          "title": "I will not hit back",
+          "patterns": "hurts (ur); step away; forgive; safety dialogue; complex response"
+        }
+      ],
+      "flows": [
+        {
+          "id": "values-bismillah-bite",
+          "title": "Bismillah, then a bite",
+          "sentences": 6,
+          "vocabulary": 19,
+          "assisted": true
+        },
+        {
+          "id": "values-smile-friend",
+          "title": "A smile for my friend",
+          "sentences": 5,
+          "vocabulary": 21,
+          "assisted": true
+        },
+        {
+          "id": "values-water-cat",
+          "title": "Water for the cat",
+          "sentences": 6,
+          "vocabulary": 20,
+          "assisted": true
+        },
+        {
+          "id": "values-salam-door",
+          "title": "Salam at the door",
+          "sentences": 5,
+          "vocabulary": 15,
+          "assisted": true
+        },
+        {
+          "id": "values-two-dates",
+          "title": "One date, two smiles",
+          "sentences": 6,
+          "vocabulary": 16,
+          "assisted": true
+        },
+        {
+          "id": "values-prayer-mat",
+          "title": "My prayer mat",
+          "sentences": 6,
+          "vocabulary": 22,
+          "assisted": true
+        },
+        {
+          "id": "values-red-cup",
+          "title": "The red cup",
+          "sentences": 5,
+          "vocabulary": 20,
+          "assisted": true
+        },
+        {
+          "id": "values-quiet-surprise",
+          "title": "A quiet surprise",
+          "sentences": 6,
+          "vocabulary": 22,
+          "assisted": true
+        },
+        {
+          "id": "values-thank-you",
+          "title": "Thank you, Allah",
+          "sentences": 6,
+          "vocabulary": 16,
+          "assisted": true
+        },
+        {
+          "id": "values-clear-path",
+          "title": "A clear path",
+          "sentences": 5,
+          "vocabulary": 21,
+          "assisted": true
+        },
+        {
+          "id": "values-little-bird",
+          "title": "The little bird",
+          "sentences": 5,
+          "vocabulary": 22,
+          "assisted": true
+        },
+        {
+          "id": "values-come-in",
+          "title": "May I come in?",
+          "sentences": 5,
+          "vocabulary": 17,
+          "assisted": true
+        },
+        {
+          "id": "values-fallen-blocks",
+          "title": "The fallen blocks",
+          "sentences": 5,
+          "vocabulary": 20,
+          "assisted": true
+        },
+        {
+          "id": "values-turns-bike",
+          "title": "My turn, your turn",
+          "sentences": 6,
+          "vocabulary": 22,
+          "assisted": true
+        },
+        {
+          "id": "values-guest-date",
+          "title": "A date for our guest",
+          "sentences": 5,
+          "vocabulary": 20,
+          "assisted": true
+        },
+        {
+          "id": "values-lost-pencil",
+          "title": "The lost pencil",
+          "sentences": 6,
+          "vocabulary": 18,
+          "assisted": true
+        },
+        {
+          "id": "values-little-gift",
+          "title": "A little gift",
+          "sentences": 5,
+          "vocabulary": 21,
+          "assisted": true
+        },
+        {
+          "id": "values-busy-ant",
+          "title": "The busy ant",
+          "sentences": 5,
+          "vocabulary": 21,
+          "assisted": true
+        },
+        {
+          "id": "values-ready-prayer",
+          "title": "Ready for prayer",
+          "sentences": 5,
+          "vocabulary": 18,
+          "assisted": true
+        },
+        {
+          "id": "values-dua-mum",
+          "title": "A dua for Mum",
+          "sentences": 5,
+          "vocabulary": 20,
+          "assisted": true
+        },
+        {
+          "id": "values-brother-friend",
+          "title": "My brother, my friend",
+          "sentences": 5,
+          "vocabulary": 17,
+          "assisted": true
+        },
+        {
+          "id": "values-not-hit-back",
+          "title": "I will not hit back",
+          "sentences": 8,
+          "vocabulary": 24,
+          "assisted": true
+        },
+        {
+          "id": "values-brothers-truck",
+          "title": "Two brothers, one truck",
+          "sentences": 6,
+          "vocabulary": 19,
+          "assisted": true
+        }
+      ],
+      "explanationDurations": [
+        {
+          "id": "values-bismillah-bite",
+          "seconds": 18.432
+        },
+        {
+          "id": "values-smile-friend",
+          "seconds": 19.176
+        },
+        {
+          "id": "values-water-cat",
+          "seconds": 20.712
+        },
+        {
+          "id": "values-salam-door",
+          "seconds": 20.664
+        },
+        {
+          "id": "values-two-dates",
+          "seconds": 18.72
+        },
+        {
+          "id": "values-prayer-mat",
+          "seconds": 20.352
+        },
+        {
+          "id": "values-red-cup",
+          "seconds": 19.248
+        },
+        {
+          "id": "values-quiet-surprise",
+          "seconds": 20.568
+        },
+        {
+          "id": "values-thank-you",
+          "seconds": 20.688
+        },
+        {
+          "id": "values-clear-path",
+          "seconds": 20.856
+        },
+        {
+          "id": "values-little-bird",
+          "seconds": 20.136
+        },
+        {
+          "id": "values-come-in",
+          "seconds": 21.96
+        },
+        {
+          "id": "values-fallen-blocks",
+          "seconds": 20.88
+        },
+        {
+          "id": "values-turns-bike",
+          "seconds": 21.072
+        },
+        {
+          "id": "values-guest-date",
+          "seconds": 20.688
+        },
+        {
+          "id": "values-lost-pencil",
+          "seconds": 20.352
+        },
+        {
+          "id": "values-little-gift",
+          "seconds": 21.096
+        },
+        {
+          "id": "values-busy-ant",
+          "seconds": 19.008
+        },
+        {
+          "id": "values-ready-prayer",
+          "seconds": 20.784
+        },
+        {
+          "id": "values-dua-mum",
+          "seconds": 21.96
+        },
+        {
+          "id": "values-brother-friend",
+          "seconds": 22.104
+        },
+        {
+          "id": "values-not-hit-back",
+          "seconds": 21.576
+        },
+        {
+          "id": "values-brothers-truck",
+          "seconds": 19.344
+        }
+      ],
+      "checks": [
+        "All original stories, letters, word lessons and audio aliases unchanged",
+        "All 23 lessons navigated end to end",
+        "46 scene gaps: wrong twice, demonstration, easier retry, assisted recording, manual Next",
+        "46 paragraph gaps: one active choice set, filled words retained",
+        "69 play questions: explicit recall task, one star",
+        "All 23 complete paragraphs preserved exactly",
+        "Parent-only moral notes collapsed and optional",
+        "Home and reload continue at saved step without autoplay",
+        "Existing completion, writing, -at reading, story answers and spelling progress preserved"
+      ],
+      "limitations": [
+        "Arabic recording has no word timestamps; whole phrase highlights",
+        "Synthetic pronunciation has not had a human listening review",
+        "Headless mobile and desktop testing does not replace physical-device testing"
+      ]
+    },
+    "values-audio": {
+      "decoded": [
+        {
+          "clip": "/audio/c07b271006664c8de82cea1a.mp3",
+          "seconds": 2.232,
+          "words": 6
+        },
+        {
+          "clip": "/audio/1eae56b7fa70171c38e984d9.mp3",
+          "seconds": 1.896,
+          "words": 5
+        },
+        {
+          "clip": "/audio/1215050f24a39da4dd29c163.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/863edc3e500bb5ccb4dfa33d.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/9f83e4b56a133a7352a52351.mp3",
+          "seconds": 2.376,
+          "words": 3
+        },
+        {
+          "clip": "/audio/3fcd6ec278a029ee4bfaadf1.mp3",
+          "seconds": 2.376,
+          "words": 6
+        },
+        {
+          "clip": "/audio/12e97407e9e22cac0d4490c8.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/814256ca9b709ce9886eecc0.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/5bfa9b31dbc5cbda1b18a798.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/12e9e2f02be634989551ad99.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/30ed52bd2ebdbb500b05247f.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/f1322ffc2f6ae58184bb9ce5.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/4b604e669392bbe8c4b5876e.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/04f3284f73de623007f3c9e0.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/825ad1c7b0de31eedfa0e9d1.mp3",
+          "seconds": 1.008,
+          "words": 1
+        },
+        {
+          "clip": "/audio/1083bc0d2ee2843c78ab642f.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/8fa85fe6719de071752dce16.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/cb5d201b0495ade818bebc97.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/3fcab57486bf122ceea8db97.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/4064fba1de04697da4f5cb9d.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/0ca7c7262c647b283421eea3.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/09b046890e7d8ae5a8d020a3.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/54777d8810b26c6937d2d020.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/86bff43ee4d7eda8de30a746.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/0286d057ab2db7cc14b6692e.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/54e3be86e17413566e8eb59d.mp3",
+          "seconds": 2.568,
+          "words": 7
+        },
+        {
+          "clip": "/audio/f10059d48ff09aae61ae3e13.mp3",
+          "seconds": 3.12,
+          "words": 8
+        },
+        {
+          "clip": "/audio/cc12af931948de3cff7d11f1.mp3",
+          "seconds": 3.024,
+          "words": 6
+        },
+        {
+          "clip": "/audio/9a527a10a129c9ec37f9ba95.mp3",
+          "seconds": 18.432,
+          "words": 0
+        },
+        {
+          "clip": "/audio/ab1db5bfc2ea4b9ec004145d.mp3",
+          "seconds": 2.256,
+          "words": 6
+        },
+        {
+          "clip": "/audio/77d4c2be18caed3876fed944.mp3",
+          "seconds": 1.872,
+          "words": 5
+        },
+        {
+          "clip": "/audio/fd0f5bd3c66b69862d97f863.mp3",
+          "seconds": 3.216,
+          "words": 7
+        },
+        {
+          "clip": "/audio/d254a33e452ccc5c29913eda.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/ca0701d2e301550c8e7ca47c.mp3",
+          "seconds": 2.064,
+          "words": 5
+        },
+        {
+          "clip": "/audio/001416e4a93d320b2c1158a0.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/4a5298f2f2c7071e019c988f.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/42c39db292736c0946e660a2.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/c251aeae8fda1bc2ff1d1fd9.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b1b08fddbd5fb8ce07e8d31f.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e4f347a62cabbb9a57b712c7.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b0e3042a9f07269414231fc3.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/26ffd7dbb0aef1b498b4b247.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/8611b5d4f9dd1eb7c05a8601.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/280c6dba2d623a7aac738552.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/7612167254287168ce1e99b0.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/975d8e680fb658ac9a9eec64.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/393abee819b7af2e008f3b4a.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/76743d57ba9a9d8120ba63b3.mp3",
+          "seconds": 3.12,
+          "words": 9
+        },
+        {
+          "clip": "/audio/d380a3d5bfd62a490e1f9224.mp3",
+          "seconds": 3.072,
+          "words": 8
+        },
+        {
+          "clip": "/audio/5e758afcdad4e8f641d830cc.mp3",
+          "seconds": 19.176,
+          "words": 0
+        },
+        {
+          "clip": "/audio/a1529611a8c005616178a35b.mp3",
+          "seconds": 2.184,
+          "words": 6
+        },
+        {
+          "clip": "/audio/c278debb76fbb8f5024f60bc.mp3",
+          "seconds": 2.376,
+          "words": 5
+        },
+        {
+          "clip": "/audio/55afd2499c6375ab5c67ae5d.mp3",
+          "seconds": 2.28,
+          "words": 5
+        },
+        {
+          "clip": "/audio/61a9e7be5dd76da373b08919.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/28a5e72e754703d3e13e62ba.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/1f81f1840a03b55a5bc576be.mp3",
+          "seconds": 1.896,
+          "words": 4
+        },
+        {
+          "clip": "/audio/2b75eda2c53b2d99287696d0.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/411e361b6699f652587f0394.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e01ebe95bd6bfc5e3650c99e.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/3cda90866e1ae11836b66a62.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e822458d97d795aa9a5bac18.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5b4c4791f0aad91a8f12efac.mp3",
+          "seconds": 1.2,
+          "words": 1
+        },
+        {
+          "clip": "/audio/d1a5b0758ef5fffac35b20ba.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/a6eee34bdf44137afec03f64.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e94ce60e8a7532c3355ae522.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/49594e1db2539d4c16d8ce1d.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/f2a2913efb3fd0afcc351e8d.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/62e29baa4fedb8f8b1984591.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/1bf88509cc24804b5576e433.mp3",
+          "seconds": 2.784,
+          "words": 8
+        },
+        {
+          "clip": "/audio/9769f3fa57abc752449363be.mp3",
+          "seconds": 3.144,
+          "words": 8
+        },
+        {
+          "clip": "/audio/ef9784dc3a6d43cda0ee5572.mp3",
+          "seconds": 20.712,
+          "words": 0
+        },
+        {
+          "clip": "/audio/7c889ed4807d48c33fc020cb.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/cd86a583d2945dfd0118597c.mp3",
+          "seconds": 1.872,
+          "words": 5
+        },
+        {
+          "clip": "/audio/da9ea59b85b32f81535240f3.mp3",
+          "seconds": 3.216,
+          "words": 4
+        },
+        {
+          "clip": "/audio/6ee71f91fe4d735e8a0f9233.mp3",
+          "seconds": 2.592,
+          "words": 4
+        },
+        {
+          "clip": "/audio/35eca52b2cbb52208c0cf42f.mp3",
+          "seconds": 2.208,
+          "words": 6
+        },
+        {
+          "clip": "/audio/f22a81c06e0ad24a2b91f738.mp3",
+          "seconds": 2.112,
+          "words": 2
+        },
+        {
+          "clip": "/audio/ebd4a5ae83e5af4cb0f71fad.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/af464d9db3cdb7c5914196f3.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/675a92b72a0048a4ec0209f4.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/ee1d662b44ffeaa44e5f41ac.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/de6f26c34f9720a0590675ff.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/486bb288e15d366b31644f06.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/c4616843cf555a05b56cf784.mp3",
+          "seconds": 2.712,
+          "words": 7
+        },
+        {
+          "clip": "/audio/cc7fdc9408578a2c0327d9d7.mp3",
+          "seconds": 2.76,
+          "words": 6
+        },
+        {
+          "clip": "/audio/3b86a7149e454a95e89b84c3.mp3",
+          "seconds": 20.664,
+          "words": 0
+        },
+        {
+          "clip": "/audio/4906edc2f1f417b759af2c01.mp3",
+          "seconds": 2.016,
+          "words": 4
+        },
+        {
+          "clip": "/audio/37b3e530fb44fb38a239f816.mp3",
+          "seconds": 2.04,
+          "words": 4
+        },
+        {
+          "clip": "/audio/510f92d6cbe76c3e29d303b9.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/f489798bfbdbdd40fc5f1069.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/443bc1eaabee4db442fa4423.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/ef7cb765177900f210094d83.mp3",
+          "seconds": 2.064,
+          "words": 3
+        },
+        {
+          "clip": "/audio/438ae9d688eeb2d5fed3673c.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/05b3b49fe733f409805f107e.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/6a6ee46e960fc186952ed5b6.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/71b678d867ad41aa37e890b4.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/26d0c1e4e393ecc555c44760.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/032b793da82c004a3fc173f0.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/1e2a61ad278c99ba2ecbc386.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/d9c136aef34bb4fc426240ee.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e3f5a0327e7ebcbc4ae4d11f.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/77809fd15df7b41a50615903.mp3",
+          "seconds": 3.168,
+          "words": 6
+        },
+        {
+          "clip": "/audio/1d92cccd6273cc1c1104e55f.mp3",
+          "seconds": 2.976,
+          "words": 6
+        },
+        {
+          "clip": "/audio/bdb8234197e53dc11781197e.mp3",
+          "seconds": 18.72,
+          "words": 0
+        },
+        {
+          "clip": "/audio/f048994c04e5cb7521182365.mp3",
+          "seconds": 2.664,
+          "words": 6
+        },
+        {
+          "clip": "/audio/8dca6c25da86f1b684e3c58d.mp3",
+          "seconds": 2.28,
+          "words": 5
+        },
+        {
+          "clip": "/audio/22220c582cf0fb9f1f858d61.mp3",
+          "seconds": 2.712,
+          "words": 6
+        },
+        {
+          "clip": "/audio/760f31e90b47b9c79788da60.mp3",
+          "seconds": 2.04,
+          "words": 4
+        },
+        {
+          "clip": "/audio/58e66f75264ac38289cb29ee.mp3",
+          "seconds": 2.16,
+          "words": 5
+        },
+        {
+          "clip": "/audio/2b6a3ce4c7049cd32ef3f72c.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/b4e9f3c10b7742297dac700d.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/c6c78eff9a03b7fc6351a1b0.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/b9368c6dd37396f8d3e46533.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5918ad1cdfd4a4df0de3ec34.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e4c7957f09b8d6c8e0f0d374.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/631ec51595b999d14a7fa4e4.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/04fbddc4b710635b8ed9089c.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/a0791e7af3b3db56e8128f52.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5a93d4327373f9e3ef100e58.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b20e71f2173e774c65dd5b21.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/2396fe9c7c1b1aff7357e051.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/cdc5463aaf21bbd8e24ca896.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/1529fd9345bb3430f0517443.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/6a0729a04bc946730ccf8887.mp3",
+          "seconds": 3.432,
+          "words": 8
+        },
+        {
+          "clip": "/audio/ac436ed3cd3079a501430014.mp3",
+          "seconds": 3.144,
+          "words": 7
+        },
+        {
+          "clip": "/audio/63fcababcb38de7bd876a740.mp3",
+          "seconds": 20.352,
+          "words": 0
+        },
+        {
+          "clip": "/audio/568a47c51fcb010fd4bf0aa3.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/94a6de19381e676fd4b2461b.mp3",
+          "seconds": 2.4,
+          "words": 5
+        },
+        {
+          "clip": "/audio/df6a2adf164e4ca2560d1cdf.mp3",
+          "seconds": 2.64,
+          "words": 4
+        },
+        {
+          "clip": "/audio/1f934d742d77aae4ab574721.mp3",
+          "seconds": 2.208,
+          "words": 5
+        },
+        {
+          "clip": "/audio/68f8f0af6504832a9c97ddf4.mp3",
+          "seconds": 2.664,
+          "words": 8
+        },
+        {
+          "clip": "/audio/9fe2bf38bfd0b710085b6aab.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/103f53436fac81a4d4ac6082.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/9fdbf926e6cefad0cb175bf9.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/50fd645bdedc0f0bc6a7f309.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5ba88b646bff26abf35980ee.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/83a745429099fb904a43cbbc.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/bd6d8b29172b988d989071e2.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/149cb5967e9fb4b78a135e76.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/dec78033eefb4c6ffecc2272.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/bf88a76bf1c2b7dffc293f70.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/67541854772279e9fab0f2ed.mp3",
+          "seconds": 2.664,
+          "words": 6
+        },
+        {
+          "clip": "/audio/d6266df24d70b01783e7f00e.mp3",
+          "seconds": 2.808,
+          "words": 7
+        },
+        {
+          "clip": "/audio/f07e0ff0bd45527b15a98803.mp3",
+          "seconds": 19.248,
+          "words": 0
+        },
+        {
+          "clip": "/audio/cae3c5f67e8d75eed42979d5.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/ecadd2b47b4b5996f35a28d9.mp3",
+          "seconds": 2.496,
+          "words": 7
+        },
+        {
+          "clip": "/audio/4a4ed66872089252ccb81ca0.mp3",
+          "seconds": 2.424,
+          "words": 5
+        },
+        {
+          "clip": "/audio/4e0e23f64585b53bc4478a33.mp3",
+          "seconds": 2.28,
+          "words": 6
+        },
+        {
+          "clip": "/audio/a9ff41ee5d4bdea1bcd45cd7.mp3",
+          "seconds": 2.736,
+          "words": 5
+        },
+        {
+          "clip": "/audio/56a876d25963af8ab8574f0f.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/50cdab9edcd2964975f6e9f9.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/ee30b82586df37112a8a4b03.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/af0461cf98c6d791594b580a.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/36a3aa800d0c1ec4076d25ee.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b39ef054cad15486050d1bbd.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e581b866ef523ed310618d34.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/dd85086aba40d014f183ab3c.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/3e11059ebde079208191f917.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b0372ebde0a1a535a584d2dc.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/152e9d46bb32708b134876c0.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/996dd6eacf172c32dd3260c6.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/2e5270fb57d95877a3dcc1c1.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/1f35cef87efab63f1b6d08ae.mp3",
+          "seconds": 2.64,
+          "words": 7
+        },
+        {
+          "clip": "/audio/b2b04d8ac29ac407ef88923b.mp3",
+          "seconds": 2.856,
+          "words": 7
+        },
+        {
+          "clip": "/audio/4c7e15dac0c239f96d56f44c.mp3",
+          "seconds": 20.568,
+          "words": 0
+        },
+        {
+          "clip": "/audio/86c6d6cd105528d76b222c97.mp3",
+          "seconds": 1.992,
+          "words": 4
+        },
+        {
+          "clip": "/audio/69c324fc4577dc1d00c77291.mp3",
+          "seconds": 2.088,
+          "words": 5
+        },
+        {
+          "clip": "/audio/c5b799d26cc988eb59b61dad.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/7b74710a6fcf63ddd9493c8b.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/ecab3b1ba111f1ff4115f505.mp3",
+          "seconds": 2.04,
+          "words": 4
+        },
+        {
+          "clip": "/audio/6abf7272f61fd704fee3559b.mp3",
+          "seconds": 2.496,
+          "words": 3
+        },
+        {
+          "clip": "/audio/20d9ebb99dfad34caa20a64d.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/b5326fe4bc1228178b531ee8.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/273471b0c28e9b5fa9145831.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/c13009d00730e6760b35416d.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/dc635e1f72d942a6c943b601.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b29187356811677851c15cfd.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e0fb99acba063d1c56186c15.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/513e4389156d2848b35fb89a.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/60d7b57576004ce17f769710.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b1d65e421d068683ae5ad843.mp3",
+          "seconds": 2.712,
+          "words": 6
+        },
+        {
+          "clip": "/audio/da7ede8fb91559d35d2e8854.mp3",
+          "seconds": 2.784,
+          "words": 6
+        },
+        {
+          "clip": "/audio/34e92aa4708d6c6fed71d236.mp3",
+          "seconds": 20.688,
+          "words": 0
+        },
+        {
+          "clip": "/audio/646844d96fa673cd8af81311.mp3",
+          "seconds": 2.04,
+          "words": 5
+        },
+        {
+          "clip": "/audio/96de17b5d2e7072542e6eb48.mp3",
+          "seconds": 2.496,
+          "words": 7
+        },
+        {
+          "clip": "/audio/45fa7ee425c92b34af37f9d5.mp3",
+          "seconds": 2.928,
+          "words": 5
+        },
+        {
+          "clip": "/audio/b0bd58b6bcc7de548920e0b6.mp3",
+          "seconds": 2.112,
+          "words": 4
+        },
+        {
+          "clip": "/audio/433bfe230542c00c5713a6a2.mp3",
+          "seconds": 2.16,
+          "words": 5
+        },
+        {
+          "clip": "/audio/959413bfeb03c8d539278bad.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5b200e44931edd289683d951.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/3c73aba516f80ea150541310.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/2e5e97825bffcdf627130844.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/efbc6ffae788aa83dde21089.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e63b1c4be8edd0f2f8c22a55.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/9a7feeaf723fefdf0d021e47.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/c173a6142ecaa0e7adf26ff6.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/60df3f090e997b365e02ced4.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/7bb58ac1e69188f496db51ab.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/776e30bcc924dbb7b3e24d67.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/8eccdbb954607076c98b9f57.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/0f65c85799453d95809e9652.mp3",
+          "seconds": 3.288,
+          "words": 8
+        },
+        {
+          "clip": "/audio/8e2497d7171f998d5a6ea4a3.mp3",
+          "seconds": 2.472,
+          "words": 5
+        },
+        {
+          "clip": "/audio/50dc00fec3ca32eaf25663c5.mp3",
+          "seconds": 20.856,
+          "words": 0
+        },
+        {
+          "clip": "/audio/3b38aa5cef9f50a1c2629060.mp3",
+          "seconds": 2.64,
+          "words": 7
+        },
+        {
+          "clip": "/audio/2c4dc6cbe1d366097cca8ac7.mp3",
+          "seconds": 1.872,
+          "words": 5
+        },
+        {
+          "clip": "/audio/30bca33f09baec36debec48c.mp3",
+          "seconds": 2.88,
+          "words": 7
+        },
+        {
+          "clip": "/audio/a94855c679158d37175dd926.mp3",
+          "seconds": 2.184,
+          "words": 5
+        },
+        {
+          "clip": "/audio/5dbc120e9b17a4734a8463dd.mp3",
+          "seconds": 2.112,
+          "words": 5
+        },
+        {
+          "clip": "/audio/8510f63ad46c63b27f580cf4.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/fe66a7132e971764305b1998.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/8daaa74fa932d62f6e92f34c.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/2c67b5103f2ec30317b0ab8a.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5762e5aa60865b4daf4481cb.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/349e829787372d645ebe8481.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/9a941c3a3c0701a37253848a.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/51331a86200842c3f056bc58.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/165bccace560de6656d34cba.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/ac2f113cc6768f10fc66cdd3.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/a5b1a8627009e6ea377a0c90.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/94c39eaedeff50f5c0588395.mp3",
+          "seconds": 3.192,
+          "words": 8
+        },
+        {
+          "clip": "/audio/02f995135f01374d0c77014f.mp3",
+          "seconds": 2.832,
+          "words": 7
+        },
+        {
+          "clip": "/audio/97c3a958fc462e7a15da8dcc.mp3",
+          "seconds": 20.136,
+          "words": 0
+        },
+        {
+          "clip": "/audio/71426874b912526ea788607d.mp3",
+          "seconds": 1.896,
+          "words": 5
+        },
+        {
+          "clip": "/audio/6b572e0c836ca3462b3564d8.mp3",
+          "seconds": 1.872,
+          "words": 5
+        },
+        {
+          "clip": "/audio/b5e83cf114b5910a98c6ff02.mp3",
+          "seconds": 2.928,
+          "words": 6
+        },
+        {
+          "clip": "/audio/8bfddf377844cc08ada3cb03.mp3",
+          "seconds": 2.88,
+          "words": 5
+        },
+        {
+          "clip": "/audio/daff958e0aa60c15d9ae3e76.mp3",
+          "seconds": 2.352,
+          "words": 6
+        },
+        {
+          "clip": "/audio/c1efc7ff719262de1c5506a2.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/c483b118cddb91ebb8afd697.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/42896a0482ec5ff5b3b69cab.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/16874d6a453cb0b7e35286ad.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5fdfd13ab4c7e21aebbd6608.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/d6804a719c5fc12357360e9e.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/ba57d5700b84a307b62766da.mp3",
+          "seconds": 3,
+          "words": 8
+        },
+        {
+          "clip": "/audio/1ea99a7ec78d4067a0218a3c.mp3",
+          "seconds": 2.904,
+          "words": 7
+        },
+        {
+          "clip": "/audio/cd2bf11bcf2acbc89c3f4957.mp3",
+          "seconds": 21.96,
+          "words": 0
+        },
+        {
+          "clip": "/audio/2cd705e01bf47f1ed7b9e871.mp3",
+          "seconds": 2.712,
+          "words": 6
+        },
+        {
+          "clip": "/audio/b3f86a4ed2b4ff3153cdea00.mp3",
+          "seconds": 2.28,
+          "words": 6
+        },
+        {
+          "clip": "/audio/d34b2b29ac3bdba54ded3deb.mp3",
+          "seconds": 1.896,
+          "words": 4
+        },
+        {
+          "clip": "/audio/ea8b3d5a64743e7d61f15230.mp3",
+          "seconds": 2.376,
+          "words": 5
+        },
+        {
+          "clip": "/audio/8df68c52eb398c4a61999dcf.mp3",
+          "seconds": 2.568,
+          "words": 5
+        },
+        {
+          "clip": "/audio/fb3887d3007f107cacda9721.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/ac18f4e07333425c2ae72d35.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/ef3bdd7f59d94ca39a1ce387.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/dc89eb56a54d39c66289b2a5.mp3",
+          "seconds": 1.224,
+          "words": 1
+        },
+        {
+          "clip": "/audio/c6b12d597e6505affa8c170e.mp3",
+          "seconds": 1.152,
+          "words": 1
+        },
+        {
+          "clip": "/audio/7002def5bef671433e948bc8.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/a5c7dd510e4130474b362fd4.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/06871076404f54ef6aa99649.mp3",
+          "seconds": 1.32,
+          "words": 1
+        },
+        {
+          "clip": "/audio/f7f9b536cbac13abc6506426.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/82fa56c3dd24b911ef81749b.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/fa75ab019f0770241d379a05.mp3",
+          "seconds": 2.952,
+          "words": 7
+        },
+        {
+          "clip": "/audio/13b8ed7b6663749750f79a89.mp3",
+          "seconds": 2.736,
+          "words": 6
+        },
+        {
+          "clip": "/audio/655c6e5ddde03a80c07cd676.mp3",
+          "seconds": 20.88,
+          "words": 0
+        },
+        {
+          "clip": "/audio/29f906acd1dd18774ee74262.mp3",
+          "seconds": 2.232,
+          "words": 5
+        },
+        {
+          "clip": "/audio/d8cbbb2d0de32bcd2a53ed2c.mp3",
+          "seconds": 2.64,
+          "words": 6
+        },
+        {
+          "clip": "/audio/cabec1e8da75881d71c7c918.mp3",
+          "seconds": 2.448,
+          "words": 4
+        },
+        {
+          "clip": "/audio/d0fd5e05bc2d1f65e8aab2de.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/42041c82212ed1a9accb2749.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/a2b94a7f4507d80378c6906f.mp3",
+          "seconds": 2.568,
+          "words": 7
+        },
+        {
+          "clip": "/audio/35de82edf88c577546619935.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/231d731fa91c198c5e304943.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/c88e1e272259ce83abc8e8d4.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/21681a7dacacdeaee0497535.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/a22bc5d5e357839505661c11.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/58d6aa9232395336d529444a.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/87385e37ccf88f31d9e5e749.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/ad006981d2c6b465c6b1940a.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/67fe125194d6397e3c8ac32b.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/859e3880d04a8e737af07ab2.mp3",
+          "seconds": 2.952,
+          "words": 7
+        },
+        {
+          "clip": "/audio/1948210cbef7cb1655937ed2.mp3",
+          "seconds": 3.24,
+          "words": 7
+        },
+        {
+          "clip": "/audio/96e12941f25d20735406a36b.mp3",
+          "seconds": 21.072,
+          "words": 0
+        },
+        {
+          "clip": "/audio/9f4475c59dc29d4e15363b54.mp3",
+          "seconds": 2.376,
+          "words": 5
+        },
+        {
+          "clip": "/audio/0d398a886e23c4c52626f138.mp3",
+          "seconds": 2.304,
+          "words": 6
+        },
+        {
+          "clip": "/audio/06362b14167744486bd3e6a0.mp3",
+          "seconds": 2.568,
+          "words": 6
+        },
+        {
+          "clip": "/audio/2f80f509775e20bca283a5bb.mp3",
+          "seconds": 2.28,
+          "words": 6
+        },
+        {
+          "clip": "/audio/985eaf71bc5cac07464ba83e.mp3",
+          "seconds": 2.736,
+          "words": 7
+        },
+        {
+          "clip": "/audio/73ec5c573a5dc5b8084dfbd3.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/bbec0698f4c29bf9e9bf28cf.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/5ea880e2a68e7e9cbda5db8c.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/80700f3a82913edb779da56c.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/84fa81fcad34ef29782a5601.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b6fda39b6f33f5c43d8ef15d.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/dd5172f5c6a183e95c7dcc01.mp3",
+          "seconds": 2.616,
+          "words": 5
+        },
+        {
+          "clip": "/audio/ec60d99a8743e9091eafc07b.mp3",
+          "seconds": 2.592,
+          "words": 7
+        },
+        {
+          "clip": "/audio/246e4cb733bce6310936c16c.mp3",
+          "seconds": 20.688,
+          "words": 0
+        },
+        {
+          "clip": "/audio/7f19f40ff812bfdbe5c88459.mp3",
+          "seconds": 2.568,
+          "words": 7
+        },
+        {
+          "clip": "/audio/da14cded52379dec965e372a.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/387132cd0f2982be2bcc917a.mp3",
+          "seconds": 3.264,
+          "words": 6
+        },
+        {
+          "clip": "/audio/26ed58a8edc72aa730e01817.mp3",
+          "seconds": 2.352,
+          "words": 6
+        },
+        {
+          "clip": "/audio/e7a61fa1cd2a1f1f5221ff94.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/082d5133019ee480f9cc97b2.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/dd7b811c17add0151751df7d.mp3",
+          "seconds": 1.872,
+          "words": 4
+        },
+        {
+          "clip": "/audio/bb414b55ed7e9d044bce897c.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/c40672aab18dd3efa77f6ef0.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b4fb8fbf898cad6ee9c6a7d6.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/640b73c1e0e17ca40f345185.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/cc9797c761ea662557e76e92.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/be815fc9027283da48f7bf29.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/6628847c5c78b8e507598695.mp3",
+          "seconds": 2.736,
+          "words": 7
+        },
+        {
+          "clip": "/audio/21d7ba18bb7df959141681e6.mp3",
+          "seconds": 2.952,
+          "words": 7
+        },
+        {
+          "clip": "/audio/7955ccc2b4f3d16da7c9def1.mp3",
+          "seconds": 20.352,
+          "words": 0
+        },
+        {
+          "clip": "/audio/6e53b27073a227d2954dfc7e.mp3",
+          "seconds": 2.592,
+          "words": 6
+        },
+        {
+          "clip": "/audio/fb8f0a5e4680a97882fc10b5.mp3",
+          "seconds": 2.04,
+          "words": 4
+        },
+        {
+          "clip": "/audio/da0264b864b4feba162f526e.mp3",
+          "seconds": 2.856,
+          "words": 6
+        },
+        {
+          "clip": "/audio/4053da254e42a013152ee773.mp3",
+          "seconds": 2.832,
+          "words": 5
+        },
+        {
+          "clip": "/audio/ff42aa24d3b8b3c442212807.mp3",
+          "seconds": 2.736,
+          "words": 7
+        },
+        {
+          "clip": "/audio/f1676f5c4584097abc56cc89.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/dda09f3b98d4465d69f9d005.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/ab0d2009f93dd60959635e30.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/245830a5b8561ac0ebea2a33.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/952d8185e9001814f145285d.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/00de3f984cdfcacdc731d852.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/6b122c4a665529021c77469d.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/dc1a95e58074c9af53031bf0.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e598d08700e7bd288f4a251e.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/4c19225328225ef385b35163.mp3",
+          "seconds": 2.976,
+          "words": 7
+        },
+        {
+          "clip": "/audio/71592c8cb999c1d14d281745.mp3",
+          "seconds": 3.96,
+          "words": 8
+        },
+        {
+          "clip": "/audio/00b23c4a666591d97caa3863.mp3",
+          "seconds": 21.096,
+          "words": 0
+        },
+        {
+          "clip": "/audio/b8016860ebd79ece025989b0.mp3",
+          "seconds": 2.352,
+          "words": 6
+        },
+        {
+          "clip": "/audio/31779d8f6840d1099ed21f2f.mp3",
+          "seconds": 2.424,
+          "words": 6
+        },
+        {
+          "clip": "/audio/b2877612ffcc5414e93aa9f5.mp3",
+          "seconds": 2.352,
+          "words": 5
+        },
+        {
+          "clip": "/audio/e8dfc7cc780f3f936dda74cb.mp3",
+          "seconds": 2.28,
+          "words": 5
+        },
+        {
+          "clip": "/audio/a534aea279f701dd285bd503.mp3",
+          "seconds": 2.328,
+          "words": 4
+        },
+        {
+          "clip": "/audio/9e5e8648796a978aecef41f3.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/aa116aa720a92242a6c3256b.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/62663a31f6f5177ca6cfd738.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/b31a6bf40fe95d4a0efb6c10.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/7e712335bb6cf8b4590604ac.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/fa559de2614200b7894e7e43.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5f0e935bc9df331991bed2c1.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/0a18e4c0c4c4288917f5c726.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/5eb517d8de5373e53d6edeaf.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/f1fc23b8293e8388fcc13529.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/bbefb00483264c2bf155db6c.mp3",
+          "seconds": 3.192,
+          "words": 8
+        },
+        {
+          "clip": "/audio/ca5a68e68b21472a33930a93.mp3",
+          "seconds": 2.928,
+          "words": 7
+        },
+        {
+          "clip": "/audio/fc2def6c5ec6cdbc72f83be8.mp3",
+          "seconds": 19.008,
+          "words": 0
+        },
+        {
+          "clip": "/audio/f915d70ca5dfbd441e7a69ca.mp3",
+          "seconds": 2.784,
+          "words": 5
+        },
+        {
+          "clip": "/audio/d095450fd2f90256aa90966e.mp3",
+          "seconds": 2.52,
+          "words": 7
+        },
+        {
+          "clip": "/audio/fe37e729e783ddc3edcbbbf7.mp3",
+          "seconds": 2.304,
+          "words": 5
+        },
+        {
+          "clip": "/audio/5adcf1e0f228974b5a151ad8.mp3",
+          "seconds": 3.168,
+          "words": 8
+        },
+        {
+          "clip": "/audio/8f4790012743cf2277f41bff.mp3",
+          "seconds": 2.088,
+          "words": 4
+        },
+        {
+          "clip": "/audio/81ed570583512174f27d1468.mp3",
+          "seconds": 1.608,
+          "words": 3
+        },
+        {
+          "clip": "/audio/adfbe954f5c64738f28dd35e.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/9b6d925ecfef35d8e0e4b038.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/4be0d06d4e1bb7e69e1443cf.mp3",
+          "seconds": 1.944,
+          "words": 3
+        },
+        {
+          "clip": "/audio/ea3583c1e95cf4a624269646.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/98d5c91166c40cfa6f88aa3d.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/13cf9e288baa8df2eedb3deb.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/f9628a4b6b99b81beb346566.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/9b910dd3dee8e3cf7874877d.mp3",
+          "seconds": 3.12,
+          "words": 8
+        },
+        {
+          "clip": "/audio/5855b8c681d6b331d167f63a.mp3",
+          "seconds": 3.192,
+          "words": 7
+        },
+        {
+          "clip": "/audio/3d47d5177a72c207e90d1f05.mp3",
+          "seconds": 20.784,
+          "words": 0
+        },
+        {
+          "clip": "/audio/d44c73c935d839e8eee07aa4.mp3",
+          "seconds": 2.208,
+          "words": 5
+        },
+        {
+          "clip": "/audio/18d87f689747770fccb22d2c.mp3",
+          "seconds": 2.16,
+          "words": 5
+        },
+        {
+          "clip": "/audio/5ca2db9159661d440c8ae1c1.mp3",
+          "seconds": 2.736,
+          "words": 6
+        },
+        {
+          "clip": "/audio/c78bdf3d60a144c0bf45148e.mp3",
+          "seconds": 2.952,
+          "words": 6
+        },
+        {
+          "clip": "/audio/529cdabf8389499ae9884a78.mp3",
+          "seconds": 2.088,
+          "words": 4
+        },
+        {
+          "clip": "/audio/9e367759e8a10869fbc5deb3.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/27fcb93daa4ffa98610b2a0e.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/f4ccd6ebe0d8b2871816cdd4.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/2d593b9965683861106ff148.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/70cc255e3af3f36d71a16f26.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/6759c989c886a7a5c0b95286.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/e5a1e3f4f9507427988fcbd0.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/edcf5975a194e89ac17748e7.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/fc38803b54813728a4eb740a.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/2a9b4988227ef099d7246265.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/1dbb44be0dd920f6b33dc2b9.mp3",
+          "seconds": 3.648,
+          "words": 8
+        },
+        {
+          "clip": "/audio/c18169b5e936e79588758512.mp3",
+          "seconds": 3.264,
+          "words": 7
+        },
+        {
+          "clip": "/audio/a482bb6984bc945c6bc766d8.mp3",
+          "seconds": 21.96,
+          "words": 0
+        },
+        {
+          "clip": "/audio/52ba03e9774657e21fc63766.mp3",
+          "seconds": 2.784,
+          "words": 6
+        },
+        {
+          "clip": "/audio/37d87adf9b9aee3de3eea908.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/c3334fe9c3b6946eac9f638f.mp3",
+          "seconds": 2.904,
+          "words": 7
+        },
+        {
+          "clip": "/audio/bc7c8449357cdc6ee06eee8b.mp3",
+          "seconds": 2.424,
+          "words": 5
+        },
+        {
+          "clip": "/audio/ac32af7bc466b306c4de913f.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/f7647b9691f6a9d3c624fda6.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/0ceccd61fac61f7836426591.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/763c027fb4a08967ad0aad05.mp3",
+          "seconds": 2.88,
+          "words": 7
+        },
+        {
+          "clip": "/audio/767ccc01e00e98b1d03c9708.mp3",
+          "seconds": 3.12,
+          "words": 7
+        },
+        {
+          "clip": "/audio/b00d878dfcf350b70de57fb2.mp3",
+          "seconds": 22.104,
+          "words": 0
+        },
+        {
+          "clip": "/audio/aa9fc17125659c3ef3609a1a.mp3",
+          "seconds": 2.232,
+          "words": 5
+        },
+        {
+          "clip": "/audio/e6f35ccab253c4c4422f5945.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/7100af35ca4f2b0b34ce1a88.mp3",
+          "seconds": 2.304,
+          "words": 4
+        },
+        {
+          "clip": "/audio/500799318476030863ea92e4.mp3",
+          "seconds": 2.472,
+          "words": 6
+        },
+        {
+          "clip": "/audio/066135181cd1fe6d039b474d.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/5dbdd9aeac1621e13d7e9f9a.mp3",
+          "seconds": 2.424,
+          "words": 5
+        },
+        {
+          "clip": "/audio/4e4946788eeea17c7c7bd954.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/6abe76c0ac5e1ec31539a4bd.mp3",
+          "seconds": 2.016,
+          "words": 5
+        },
+        {
+          "clip": "/audio/1457c80ea7f077e1b6fa20de.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/1ee503488bb1f11525135f43.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/690e080cae059f6284c68ec9.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/a1516d76f572a1eba2088ca6.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/3a76d691c2fd96e8d4fd0387.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/9326fd4bd2754c73b7513ebc.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/61d67f80431b2053f27a5794.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/4ad7ed6ebdf600e3c0bcb7c8.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/c42858cb7e0a52d17ac11c14.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/d818a9f51780ed1440be8bf2.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/32f0a239a66022c1bbbd6ccd.mp3",
+          "seconds": 3.144,
+          "words": 8
+        },
+        {
+          "clip": "/audio/6c7bd191e22bade6a26cc5aa.mp3",
+          "seconds": 3.048,
+          "words": 7
+        },
+        {
+          "clip": "/audio/38303a827d0191e4479bc4e0.mp3",
+          "seconds": 21.576,
+          "words": 0
+        },
+        {
+          "clip": "/audio/4c6a0021cf1aef42a3f03143.mp3",
+          "seconds": 2.28,
+          "words": 6
+        },
+        {
+          "clip": "/audio/0c73a2ffe26f96360a357975.mp3",
+          "seconds": 2.208,
+          "words": 5
+        },
+        {
+          "clip": "/audio/f42757afe58f523667f59906.mp3",
+          "seconds": 1.872,
+          "words": 5
+        },
+        {
+          "clip": "/audio/9aeaa24ed3210eabfc2d8b66.mp3",
+          "seconds": 2.04,
+          "words": 6
+        },
+        {
+          "clip": "/audio/cbbe462b2988cac0e31ee52e.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/a36bfdf3421ed0a35ceb5401.mp3",
+          "seconds": 1.968,
+          "words": 3
+        },
+        {
+          "clip": "/audio/0dfa313599866cc399542f89.mp3",
+          "seconds": 1.872,
+          "words": 3
+        },
+        {
+          "clip": "/audio/12234a5fa7b457a3192701b1.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/20f78432c289871f1c03e154.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/86a4d1942e773ff6cb57f1cb.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/258996157d430c2c8d3e0138.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/8d1065eed653a8e954554135.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/a650697880f7319012d06879.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/1166c5c70cbff41dea355ef5.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/3391a332133467e52d1830e1.mp3",
+          "seconds": 2.4,
+          "words": 6
+        },
+        {
+          "clip": "/audio/5f65d50efb94c90eea82efdb.mp3",
+          "seconds": 3.216,
+          "words": 6
+        },
+        {
+          "clip": "/audio/f55584280fbd00bc234f6e76.mp3",
+          "seconds": 1.872,
+          "words": 1
+        },
+        {
+          "clip": "/audio/64904641225062600e0317f1.mp3",
+          "seconds": 19.344,
+          "words": 0
+        },
+        {
+          "clip": "/audio/382f530f0e196dde0339eb2a.mp3",
+          "seconds": 3.216,
+          "words": 6
+        },
+        {
+          "clip": "/audio/96bcad91fce72e84f00ec4bd.mp3",
+          "seconds": 3.864,
+          "words": 8
+        },
+        {
+          "clip": "/audio/fc52e876bc1460f97ead8438.mp3",
+          "seconds": 2.424,
+          "words": 6
+        },
+        {
+          "clip": "/audio/3011eaec771de77d34794d7e.mp3",
+          "seconds": 4.296,
+          "words": 8
+        },
+        {
+          "clip": "/audio/6a742184db88e710a58a11ed.mp3",
+          "seconds": 3.192,
+          "words": 5
+        },
+        {
+          "clip": "/audio/7ed99faea41d00baae7868db.mp3",
+          "seconds": 1.872,
+          "words": 2
+        },
+        {
+          "clip": "/audio/b83fc7f1e1b481546d94ecbc.mp3",
+          "seconds": 3.5526458333333335,
+          "words": 0
+        }
+      ],
+      "playback": [
+        {
+          "speed": 1,
+          "wordHighlights": true,
+          "pauseFreeze": true,
+          "resume": true,
+          "replay": true,
+          "navigationStops": true
+        },
+        {
+          "speed": 0.85,
+          "wordHighlights": true,
+          "pauseFreeze": true,
+          "resume": true,
+          "replay": true,
+          "navigationStops": true
+        }
+      ],
+      "limitations": [
+        "Arabic and Bengali explanation clips use whole-phrase highlighting; no reliable word timings",
+        "Human review of synthetic pronunciation and Arabic recitation remains unverified",
+        "Mobile/PC viewport tests run in Edge; physical devices unverified"
+      ],
+      "passed": true,
+      "arabic": {
+        "hashVerified": true,
+        "nativePlayback": true,
+        "wholePhraseHighlight": true
+      },
+      "nonOverlap": true
+    },
+    "story-flow": {
+      "passed": true,
+      "stories": 24,
+      "sentenceScenes": 89,
+      "meaningClipsDecoded": 108,
+      "checks": [
+        "story text, narration and voices preserved",
+        "one unfamiliar word at its first use, with English then Bengali audio",
+        "too means also",
+        "Replay and Skip to story work",
+        "one sentence and matching scene, with optional audio and Previous/Next",
+        "sentence position survives browser close",
+        "full paragraph precedes blanks",
+        "completion records practice only",
+        "one blank question at a time and answers survive reload",
+        "all existing stories and blanks work",
+        "other stage progress preserved",
+        "390x844, 320x640 and 320x568 controls fit",
+        "200% text can scroll without clipping",
+        "no script errors or external runtime requests"
+      ]
+    },
+    "home-spelling": {
+      "checks": [
+        "Aa actual case clip highlights Big A and small a; playback pauses and resumes",
+        "All 26 actual case sources and 52 spelling intro clips decoded with same-stream word timings; original other audio mappings preserved",
+        "Normal and slower playback; both p letters separately; Q with U and X in box highlight correctly",
+        "Replay, manual Previous/Next, stop old audio, quiet Home and Continue",
+        "Saved family answers, writing strokes, -at reading and old story position continue; legacy lessons retained",
+        "320×568, 390×844 and 1366×900 layouts; no horizontal overflow; primary controls visible",
+        "All original 24 stories and 9 short-word lessons remain unchanged; added stories are checked separately"
+      ],
+      "speeds": [
+        {
+          "rate": 1,
+          "correctOrder": true,
+          "repeatedLetters": true,
+          "introHeadingAndWord": true,
+          "pauseResume": true
+        },
+        {
+          "rate": 0.85,
+          "correctOrder": true,
+          "repeatedLetters": true,
+          "introHeadingAndWord": true,
+          "pauseResume": true
+        }
+      ],
+      "unverified": [
+        "Pronunciation by human listening",
+        "Physical mobile devices"
+      ]
+    },
+    "home-continuation": {
+      "passed": true,
+      "checks": [
+        "Saved -at reading step 17 reopens twice",
+        "Saved Stories blank phase and answer preserved",
+        "Bb actual complete spelling queue and both l highlights",
+        "Older letter practice plays new Big S, small s clip and both case highlights",
+        "Home stops every audio source"
+      ]
+    }
+  },
+  "limitations": [
+    "English and Bengali synthetic pronunciation and the Arabic recording have not had a human listening review",
+    "Touch tests use browser simulation; physical devices and other browsers are unverified",
+    "Arabic and Bengali explanation recordings have no reliable word timestamps; whole phrase or note highlights",
+    "Opening optional replay details or enlarging text may require scrolling"
+  ]
+}

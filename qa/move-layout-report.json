@@ -1,0 +1,1140 @@
+{
+  "passed": true,
+  "states": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-in-out",
+      "text": "Put the ball in the box.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-in-out",
+      "text": "Take the ball out of the box.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-in-out",
+      "text": "Put the pen in the pocket.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-in-out",
+      "text": "Take the pen out of the pocket.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-on-under",
+      "text": "Put the ball on the chair.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-on-under",
+      "text": "Put the ball under the chair.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-on-under",
+      "text": "Put the book on the table.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-on-under",
+      "text": "Put the book under the table.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-beside",
+      "text": "Put the ball beside the box.",
+      "bottom": 520.578125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-beside",
+      "text": "Put the pen beside the book.",
+      "bottom": 520.578125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-beside",
+      "text": "Put the toy car beside the chair.",
+      "bottom": 520.578125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the ball in front of the chair.",
+      "bottom": 531.953125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the ball behind the chair.",
+      "bottom": 531.953125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the toy car in front of the box.",
+      "bottom": 555.46875
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the toy car behind the box.",
+      "bottom": 531.953125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-between",
+      "text": "Put the ball between the two boxes.",
+      "bottom": 544.09375
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-between",
+      "text": "Put the pen between the two books.",
+      "bottom": 544.09375
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-between",
+      "text": "Put the toy car between the chair and the table.",
+      "bottom": 544.09375
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-above-below",
+      "text": "Move the balloon above the table.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-above-below",
+      "text": "Move the balloon below the table.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-above-below",
+      "text": "Move the star above the cloud.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-above-below",
+      "text": "Move the star below the cloud.",
+      "bottom": 517.390625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-near-far",
+      "text": "Put the ball near the tree.",
+      "bottom": 520.578125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-near-far",
+      "text": "Put the ball far from the tree.",
+      "bottom": 520.578125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-near-far",
+      "text": "Put the toy car near the house.",
+      "bottom": 520.578125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-near-far",
+      "text": "Put the toy car far from the house.",
+      "bottom": 544.09375
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-into-out",
+      "text": "Move the toy car into the garage.",
+      "bottom": 526.765625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-into-out",
+      "text": "Move the toy car out of the garage.",
+      "bottom": 550.28125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-into-out",
+      "text": "Move the ball into the box.",
+      "bottom": 526.765625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-into-out",
+      "text": "Move the ball out of the box.",
+      "bottom": 526.765625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-over-through",
+      "text": "Move the ball over the low wall.",
+      "bottom": 511.171875
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-over-through",
+      "text": "Move the ball through the hoop.",
+      "bottom": 526.765625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-over-through",
+      "text": "Move the toy car through the tunnel.",
+      "bottom": 550.28125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-across-around",
+      "text": "Move the toy car across the bridge.",
+      "bottom": 550.28125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-across-around",
+      "text": "Move the toy car around the tree.",
+      "bottom": 526.765625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-across-around",
+      "text": "Move the boat across the pond.",
+      "bottom": 526.765625
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-two-steps",
+      "text": "Take the ball out of the box.",
+      "bottom": 531.953125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-two-steps",
+      "text": "Put it under the chair.",
+      "bottom": 531.953125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-two-steps",
+      "text": "Put the book on the table.",
+      "bottom": 531.953125
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-two-steps",
+      "text": "Put the pen beside the book.",
+      "bottom": 550.734375
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-two-steps",
+      "text": "Move the toy car out of the garage.",
+      "bottom": 564.84375
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "lesson": "move-two-steps",
+      "text": "Put it behind the box.",
+      "bottom": 531.953125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-in-out",
+      "text": "Put the ball in the box.",
+      "bottom": 722.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-in-out",
+      "text": "Take the ball out of the box.",
+      "bottom": 722.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-in-out",
+      "text": "Put the pen in the pocket.",
+      "bottom": 722.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-in-out",
+      "text": "Take the pen out of the pocket.",
+      "bottom": 722.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-on-under",
+      "text": "Put the ball on the chair.",
+      "bottom": 722.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-on-under",
+      "text": "Put the ball under the chair.",
+      "bottom": 722.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-on-under",
+      "text": "Put the book on the table.",
+      "bottom": 722.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-on-under",
+      "text": "Put the book under the table.",
+      "bottom": 722.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-beside",
+      "text": "Put the ball beside the box.",
+      "bottom": 724.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-beside",
+      "text": "Put the pen beside the book.",
+      "bottom": 724.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-beside",
+      "text": "Put the toy car beside the chair.",
+      "bottom": 724.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the ball in front of the chair.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the ball behind the chair.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the toy car in front of the box.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the toy car behind the box.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-between",
+      "text": "Put the ball between the two boxes.",
+      "bottom": 724.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-between",
+      "text": "Put the pen between the two books.",
+      "bottom": 724.6875
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-between",
+      "text": "Put the toy car between the chair and the table.",
+      "bottom": 751.5625
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-above-below",
+      "text": "Move the balloon above the table.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-above-below",
+      "text": "Move the balloon below the table.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-above-below",
+      "text": "Move the star above the cloud.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-above-below",
+      "text": "Move the star below the cloud.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-near-far",
+      "text": "Put the ball near the tree.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-near-far",
+      "text": "Put the ball far from the tree.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-near-far",
+      "text": "Put the toy car near the house.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-near-far",
+      "text": "Put the toy car far from the house.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-into-out",
+      "text": "Move the toy car into the garage.",
+      "bottom": 756.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-into-out",
+      "text": "Move the toy car out of the garage.",
+      "bottom": 751.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-into-out",
+      "text": "Move the ball into the box.",
+      "bottom": 756.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-into-out",
+      "text": "Move the ball out of the box.",
+      "bottom": 751.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-over-through",
+      "text": "Move the ball over the low wall.",
+      "bottom": 751.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-over-through",
+      "text": "Move the ball through the hoop.",
+      "bottom": 756.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-over-through",
+      "text": "Move the toy car through the tunnel.",
+      "bottom": 756.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-across-around",
+      "text": "Move the toy car across the bridge.",
+      "bottom": 751.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-across-around",
+      "text": "Move the toy car around the tree.",
+      "bottom": 756.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-across-around",
+      "text": "Move the boat across the pond.",
+      "bottom": 751.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-two-steps",
+      "text": "Take the ball out of the box.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-two-steps",
+      "text": "Put it under the chair.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-two-steps",
+      "text": "Put the book on the table.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-two-steps",
+      "text": "Put the pen beside the book.",
+      "bottom": 746.4375
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-two-steps",
+      "text": "Move the toy car out of the garage.",
+      "bottom": 751.28125
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "lesson": "move-two-steps",
+      "text": "Put it behind the box.",
+      "bottom": 744.4375
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-in-out",
+      "text": "Put the ball in the box.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-in-out",
+      "text": "Take the ball out of the box.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-in-out",
+      "text": "Put the pen in the pocket.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-in-out",
+      "text": "Take the pen out of the pocket.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-on-under",
+      "text": "Put the ball on the chair.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-on-under",
+      "text": "Put the ball under the chair.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-on-under",
+      "text": "Put the book on the table.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-on-under",
+      "text": "Put the book under the table.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-beside",
+      "text": "Put the ball beside the box.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-beside",
+      "text": "Put the pen beside the book.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-beside",
+      "text": "Put the toy car beside the chair.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the ball in front of the chair.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the ball behind the chair.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the toy car in front of the box.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-front-behind",
+      "text": "Put the toy car behind the box.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-between",
+      "text": "Put the ball between the two boxes.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-between",
+      "text": "Put the pen between the two books.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-between",
+      "text": "Put the toy car between the chair and the table.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-above-below",
+      "text": "Move the balloon above the table.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-above-below",
+      "text": "Move the balloon below the table.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-above-below",
+      "text": "Move the star above the cloud.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-above-below",
+      "text": "Move the star below the cloud.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-near-far",
+      "text": "Put the ball near the tree.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-near-far",
+      "text": "Put the ball far from the tree.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-near-far",
+      "text": "Put the toy car near the house.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-near-far",
+      "text": "Put the toy car far from the house.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-into-out",
+      "text": "Move the toy car into the garage.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-into-out",
+      "text": "Move the toy car out of the garage.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-into-out",
+      "text": "Move the ball into the box.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-into-out",
+      "text": "Move the ball out of the box.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-over-through",
+      "text": "Move the ball over the low wall.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-over-through",
+      "text": "Move the ball through the hoop.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-over-through",
+      "text": "Move the toy car through the tunnel.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-across-around",
+      "text": "Move the toy car across the bridge.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-across-around",
+      "text": "Move the toy car around the tree.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-across-around",
+      "text": "Move the boat across the pond.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-two-steps",
+      "text": "Take the ball out of the box.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-two-steps",
+      "text": "Put it under the chair.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-two-steps",
+      "text": "Put the book on the table.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-two-steps",
+      "text": "Put the pen beside the book.",
+      "bottom": 850.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-two-steps",
+      "text": "Move the toy car out of the garage.",
+      "bottom": 881.765625
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "lesson": "move-two-steps",
+      "text": "Put it behind the box.",
+      "bottom": 850.765625
+    }
+  ],
+  "outside": []
+}

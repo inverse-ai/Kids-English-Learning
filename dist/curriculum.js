@@ -1,5 +1,7 @@
+import {normalizeMove} from './move-data.js';
 import {normalizeFamilyProgress} from './family-data.js';
 import {normalizeLearning} from './stage-data.js';
+import {normalizeValuesLearning} from './values-stories.js';
 export const letters = {
  a:{word:'ant',picture:'🐜',sound:'Open your mouth for the short a in ant. Keep it short.'},
  b:{word:'ball',picture:'⚽',sound:'Close your lips, then release a short b, as in ball. Avoid adding “uh”.'},
@@ -127,6 +129,7 @@ export function normalizeProgress(raw) {
   if (valid.has(raw?.currentLesson?.[key]) && result.inProgress[key][raw.currentLesson[key]]) result.currentLesson[key] = raw.currentLesson[key];
  }
  result.learning=normalizeLearning(raw?.learning);
+ Object.assign(result.learning,normalizeValuesLearning(raw?.learning),normalizeMove(raw?.learning));
  result.lastActivity=raw?.lastActivity;
  return result;
 }

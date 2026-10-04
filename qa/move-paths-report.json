@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "id": "move-into-out",
+      "tasks": 7
+    },
+    {
+      "id": "move-over-through",
+      "tasks": 6
+    },
+    {
+      "id": "move-across-around",
+      "tasks": 6
+    }
+  ],
+  "twoStepGroups": 3,
+  "checks": [
+    "Static test gate passed before path verification",
+    "Ten movement instructions and nine practice tasks completed",
+    "Route validation rejects final-position-only, wrong and incomplete paths",
+    "Route tolerance accepts small sensible deviations",
+    "Accessible route choices go through the same geometric validation",
+    "Final review unlocked only after all ten lessons practised",
+    "All three two-step groups preserve order and offer full/individual replay"
+  ]
+}

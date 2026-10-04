@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "id": "move-in-out",
+      "tasks": 7,
+      "practices": 3
+    },
+    {
+      "id": "move-on-under",
+      "tasks": 7,
+      "practices": 3
+    },
+    {
+      "id": "move-beside",
+      "tasks": 6,
+      "practices": 3
+    },
+    {
+      "id": "move-front-behind",
+      "tasks": 7,
+      "practices": 3
+    },
+    {
+      "id": "move-between",
+      "tasks": 6,
+      "practices": 3
+    },
+    {
+      "id": "move-above-below",
+      "tasks": 7,
+      "practices": 3
+    },
+    {
+      "id": "move-near-far",
+      "tasks": 7,
+      "practices": 3
+    }
+  ],
+  "checks": [
+    "Homepage separate card, no age gate",
+    "Seven static lessons completed",
+    "Objects and contrasting meanings taught before tasks",
+    "All placement zone centers have correct acceptance",
+    "Spoken feedback, repeated-error demonstration and assisted records",
+    "Three practice tasks per lesson",
+    "Two-step review remains locked until all individual lessons are practised"
+  ]
+}

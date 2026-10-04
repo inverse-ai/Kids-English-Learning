@@ -47,7 +47,7 @@ function select(part,metadata,index){
  if(text){
   const sentences=[...document.querySelectorAll('[data-spoken-text]')].filter(element=>(element.dataset.spokenText===text||part.allowPrefix&&element.dataset.spokenText.startsWith(text))&&(part.line===undefined||Number(element.dataset.line)===part.line));
   if(!metadata||index<0)return metadata?[]:sentences;
-  const cue=metadata.words[index];return sentences.flatMap(element=>[...element.querySelectorAll('.spoken-word')].filter(word=>Number(word.dataset.from)<cue.to&&Number(word.dataset.to)>cue.from));
+  const original=metadata.words[index],offset=part.textOffset||0,cue={from:original.from+offset,to:original.to+offset};return sentences.flatMap(element=>[...element.querySelectorAll('.spoken-word')].filter(word=>Number(word.dataset.from)<cue.to&&Number(word.dataset.to)>cue.from));
  }
  if(key.startsWith('story-meaning:'))return [document.querySelector('.story-helper-meaning')];
  if(key.startsWith('word:')){

@@ -1,0 +1,847 @@
+{
+  "checks": [
+    "Mouse dragging; actual spoken praise then completed-action description",
+    "Touch dragging through browser pointer events",
+    "Keyboard placement alternative",
+    "Mouse path crossing over wall; straight floor shortcut rejected",
+    "Home, reopen and continue a saved partial route",
+    "Keyboard route alternative",
+    "Normal and slower recorded instruction playback; actual word timings; pause freezes; Home stops and clears",
+    "Reduced motion follows the same route validation without animated travel",
+    "Two-step full and individual actual recordings; word highlighting uses the correct sentence offset"
+  ],
+  "audio": [
+    {
+      "clip": "/audio/393abee819b7af2e008f3b4a.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/e3eb956568df4fd0a994c069.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/13cf9e288baa8df2eedb3deb.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/94b6fd77460cacc6256b2ee9.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/e01ebe95bd6bfc5e3650c99e.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/2a6e38bf8bc37cb1c83303ed.mp3",
+      "seconds": 2.04
+    },
+    {
+      "clip": "/audio/7ba5c2973e4cde8cb9abf7a8.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/d424b57396b6923923afff04.mp3",
+      "seconds": 3.36
+    },
+    {
+      "clip": "/audio/b65ed3e2127c0734d66394dc.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/581603b8edee0bbfeea977e9.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/6d8689691534889ea775b7c1.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/241f13f7085bd88b4a4c1f77.mp3",
+      "seconds": 2.664
+    },
+    {
+      "clip": "/audio/c3e3996efc2da32abdd5498e.mp3",
+      "seconds": 2.184
+    },
+    {
+      "clip": "/audio/69f48b19d35d2270da8ce9fc.mp3",
+      "seconds": 2.472
+    },
+    {
+      "clip": "/audio/2db98cecdbed1da62819b45e.mp3",
+      "seconds": 2.208
+    },
+    {
+      "clip": "/audio/497eb12c7f6189a7fddee94f.mp3",
+      "seconds": 2.568
+    },
+    {
+      "clip": "/audio/ff2da8dd9a0308fd7a4ecf6c.mp3",
+      "seconds": 3.672
+    },
+    {
+      "clip": "/audio/00a9f5f4cd3d9a3a7a838d7c.mp3",
+      "seconds": 2.616
+    },
+    {
+      "clip": "/audio/2db48667562d886d9a0665ac.mp3",
+      "seconds": 2.304
+    },
+    {
+      "clip": "/audio/72d39be23c633b74a2aeee64.mp3",
+      "seconds": 2.28
+    },
+    {
+      "clip": "/audio/1f66710ccd6502c08fc5a90e.mp3",
+      "seconds": 2.664
+    },
+    {
+      "clip": "/audio/41a88153ee211ea0da5dd717.mp3",
+      "seconds": 2.64
+    },
+    {
+      "clip": "/audio/ade8951a0a1af2e7acc3e171.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/9b4fde000c00be74c0c78bd8.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/f1322ffc2f6ae58184bb9ce5.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/387e9df915fc9ff607212d8a.mp3",
+      "seconds": 2.352
+    },
+    {
+      "clip": "/audio/f734e3fe0239eda90a722ea7.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/8efabf5404878650ec9716a4.mp3",
+      "seconds": 2.448
+    },
+    {
+      "clip": "/audio/00235d7124cf281de44c3555.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/88de2ce0cc5d8ca5598d4c15.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/cafea39981c1f90983f93b4e.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/97a2d334fa4ab52ff0cf8e63.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/b8172e72fa97bcfc96c29ab0.mp3",
+      "seconds": 2.112
+    },
+    {
+      "clip": "/audio/4b7aa40e19ba45801cae5c1b.mp3",
+      "seconds": 3.192
+    },
+    {
+      "clip": "/audio/d5ae7d4c1a4a6681dce94584.mp3",
+      "seconds": 2.16
+    },
+    {
+      "clip": "/audio/e273dfac7659c48ac0f47e97.mp3",
+      "seconds": 2.328
+    },
+    {
+      "clip": "/audio/d7bb1c6f75898c2f018ecdec.mp3",
+      "seconds": 2.352
+    },
+    {
+      "clip": "/audio/9a6b8be85673ce56ee0170e8.mp3",
+      "seconds": 2.28
+    },
+    {
+      "clip": "/audio/d1aa06aaa8bfb2a6b477b074.mp3",
+      "seconds": 2.28
+    },
+    {
+      "clip": "/audio/19477f1573a08435f5e9ce11.mp3",
+      "seconds": 2.208
+    },
+    {
+      "clip": "/audio/609adc75adddb9e00420bf28.mp3",
+      "seconds": 2.448
+    },
+    {
+      "clip": "/audio/ca285902ecab868a1a9c85f1.mp3",
+      "seconds": 2.4
+    },
+    {
+      "clip": "/audio/e4c7957f09b8d6c8e0f0d374.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/2d8cc9f11a3c669b34de09fe.mp3",
+      "seconds": 2.736
+    },
+    {
+      "clip": "/audio/86cbbaedfdc40b18db153af8.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/118c5c08a78e5ec7e970254f.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/1d381edfd7a54c4af3fd39c5.mp3",
+      "seconds": 2.616
+    },
+    {
+      "clip": "/audio/04a5fa2746401b4e0c11a280.mp3",
+      "seconds": 3.816
+    },
+    {
+      "clip": "/audio/16cbba182b17f0d51a81cb32.mp3",
+      "seconds": 2.64
+    },
+    {
+      "clip": "/audio/7e2b3d60df7b305f8649603e.mp3",
+      "seconds": 2.496
+    },
+    {
+      "clip": "/audio/7dc1b648dfd199c4eaeeb062.mp3",
+      "seconds": 2.472
+    },
+    {
+      "clip": "/audio/745321955fbbdcc941e6fc94.mp3",
+      "seconds": 2.76
+    },
+    {
+      "clip": "/audio/e4b78231ed21bc83ff5673c0.mp3",
+      "seconds": 2.856
+    },
+    {
+      "clip": "/audio/698fd9671a92e808130c4f73.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/57e5d09d7d464b2754fb0805.mp3",
+      "seconds": 3.432
+    },
+    {
+      "clip": "/audio/a945b882d548d18efc9206b6.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/ecb7624ddb4d53056dbbac85.mp3",
+      "seconds": 5.52
+    },
+    {
+      "clip": "/audio/332c7f5c69cbc263455c8714.mp3",
+      "seconds": 2.664
+    },
+    {
+      "clip": "/audio/d0bfb6f0e8caef25dcd6bd81.mp3",
+      "seconds": 3.912
+    },
+    {
+      "clip": "/audio/28a4691e6baac90f6c27310d.mp3",
+      "seconds": 2.64
+    },
+    {
+      "clip": "/audio/f8fb9fa80539fbeeaf1ac21e.mp3",
+      "seconds": 2.424
+    },
+    {
+      "clip": "/audio/62947fb9ee232099ee78e71a.mp3",
+      "seconds": 4.848
+    },
+    {
+      "clip": "/audio/0706eb162922b6011f4a891c.mp3",
+      "seconds": 2.496
+    },
+    {
+      "clip": "/audio/9f7a4a19bd2673f423e20571.mp3",
+      "seconds": 3.12
+    },
+    {
+      "clip": "/audio/8f591aeb8d3e559f37c363d5.mp3",
+      "seconds": 3.048
+    },
+    {
+      "clip": "/audio/c13057b4794b8d13775ed878.mp3",
+      "seconds": 2.856
+    },
+    {
+      "clip": "/audio/920f30e04cced70c031ebfb5.mp3",
+      "seconds": 2.88
+    },
+    {
+      "clip": "/audio/86ef115ed723bb110339cf29.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/4b33b0b1f32a1f6d40748da9.mp3",
+      "seconds": 3.96
+    },
+    {
+      "clip": "/audio/8f896aec8d9be70173770db4.mp3",
+      "seconds": 2.976
+    },
+    {
+      "clip": "/audio/ddb58bfe2bb582855191fdae.mp3",
+      "seconds": 3.528
+    },
+    {
+      "clip": "/audio/54a733ac5e29633e7f97fca8.mp3",
+      "seconds": 2.976
+    },
+    {
+      "clip": "/audio/f04764c054a3ae4d651d39c5.mp3",
+      "seconds": 2.808
+    },
+    {
+      "clip": "/audio/cc2ea6bcca3ce32adc436b3f.mp3",
+      "seconds": 2.736
+    },
+    {
+      "clip": "/audio/cb82c63098373f02b5927676.mp3",
+      "seconds": 3.576
+    },
+    {
+      "clip": "/audio/0146483a100d14a64737ff1e.mp3",
+      "seconds": 3.456
+    },
+    {
+      "clip": "/audio/601fdfc9bbd5345e2280295c.mp3",
+      "seconds": 1.272
+    },
+    {
+      "clip": "/audio/03fd2df13122f571331f0e8e.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/4a03245227a9fd63ad27d0d9.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/eef708c4bf0665f1415c3d03.mp3",
+      "seconds": 4.488
+    },
+    {
+      "clip": "/audio/fafdb263536d74faf6a58337.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/77fa95db645d14d17b1911e0.mp3",
+      "seconds": 1.92
+    },
+    {
+      "clip": "/audio/815b812ca7284eafafc5de2b.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/039b695eb3739aa4b079f04e.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/5e0d23405f0eef8fa3d5bd92.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/952821b7a28a2d6048abdd91.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/4bd1f8b8fc5aee460a696279.mp3",
+      "seconds": 2.736
+    },
+    {
+      "clip": "/audio/135320be8730e40fc5136932.mp3",
+      "seconds": 4.248
+    },
+    {
+      "clip": "/audio/18daff24a44a6371f36d5879.mp3",
+      "seconds": 2.688
+    },
+    {
+      "clip": "/audio/58dfc199092004bf890f9148.mp3",
+      "seconds": 2.784
+    },
+    {
+      "clip": "/audio/3f59f49a7660c0a5c10bf657.mp3",
+      "seconds": 2.568
+    },
+    {
+      "clip": "/audio/a93e4676c6add982280ccab2.mp3",
+      "seconds": 2.736
+    },
+    {
+      "clip": "/audio/d60abe8f3af33b22e4f25443.mp3",
+      "seconds": 2.712
+    },
+    {
+      "clip": "/audio/f1c41c12901641b1e1d85f6e.mp3",
+      "seconds": 2.592
+    },
+    {
+      "clip": "/audio/ec5d4f7953e78a37a93c929f.mp3",
+      "seconds": 2.688
+    },
+    {
+      "clip": "/audio/f3a1f071b162b9f4b704999f.mp3",
+      "seconds": 2.64
+    },
+    {
+      "clip": "/audio/3b61e6b030d0f9cf40a0f44c.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/9b2ddd35c720685e4b4a4cad.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/405e14ff52abc2bd768a6543.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/e9bc487b89c9421734b762b5.mp3",
+      "seconds": 3.792
+    },
+    {
+      "clip": "/audio/6d358f2725ecb3ad2dcada2c.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/020af5fb05eb558972801cea.mp3",
+      "seconds": 4.44
+    },
+    {
+      "clip": "/audio/709948d123fef14c7e4189c1.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/3e48044f4a14050db899c949.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/be4654c5d501a74840862ea3.mp3",
+      "seconds": 2.304
+    },
+    {
+      "clip": "/audio/4a13944f7c56f426a8e7bd13.mp3",
+      "seconds": 2.736
+    },
+    {
+      "clip": "/audio/715e3a10ec715eb20f1c02d7.mp3",
+      "seconds": 2.328
+    },
+    {
+      "clip": "/audio/7bb60116a25f7a4f95cf2fc2.mp3",
+      "seconds": 2.568
+    },
+    {
+      "clip": "/audio/af7ebe23d05cd269e93fb126.mp3",
+      "seconds": 3.096
+    },
+    {
+      "clip": "/audio/46003c0ff8507a00c9448f84.mp3",
+      "seconds": 2.592
+    },
+    {
+      "clip": "/audio/71443fea3b960b61bd5e2170.mp3",
+      "seconds": 2.592
+    },
+    {
+      "clip": "/audio/3d86d41db51aa60a2ba96a5c.mp3",
+      "seconds": 2.688
+    },
+    {
+      "clip": "/audio/8a22dfbc3dede136f4678d49.mp3",
+      "seconds": 2.952
+    },
+    {
+      "clip": "/audio/0c55792c30600025fef730a0.mp3",
+      "seconds": 2.952
+    },
+    {
+      "clip": "/audio/5353f526fc39f5774a22feff.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/04af401d1890fff286797733.mp3",
+      "seconds": 2.736
+    },
+    {
+      "clip": "/audio/da34f379914dabeeb9c986bd.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/529eff2d2ed12d909848fbf9.mp3",
+      "seconds": 3.768
+    },
+    {
+      "clip": "/audio/4b54cd9af62607bf94ef5aca.mp3",
+      "seconds": 2.952
+    },
+    {
+      "clip": "/audio/e0d6f1348411ff5c6642c802.mp3",
+      "seconds": 5.304
+    },
+    {
+      "clip": "/audio/a5b470cc91342bb124f82331.mp3",
+      "seconds": 2.904
+    },
+    {
+      "clip": "/audio/c4b9d6e738e733ac79573cc9.mp3",
+      "seconds": 3.072
+    },
+    {
+      "clip": "/audio/6de3c8d2994121ac06844cc1.mp3",
+      "seconds": 3.024
+    },
+    {
+      "clip": "/audio/75d1bf6fad29586b7b048784.mp3",
+      "seconds": 2.472
+    },
+    {
+      "clip": "/audio/8ef33756944903089719e840.mp3",
+      "seconds": 2.52
+    },
+    {
+      "clip": "/audio/e6cdb34e641d4b6417651ae6.mp3",
+      "seconds": 2.568
+    },
+    {
+      "clip": "/audio/1f2c46d64bb5c09343d2fdac.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/e7f60a4602c04d45b8c9cf32.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/cb710c3c4de47124450af4fd.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/6876478b0316a71b8b42d444.mp3",
+      "seconds": 3.504
+    },
+    {
+      "clip": "/audio/a0f4e5adf936040dd665b43f.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/81b31f3b245c0ae926137adc.mp3",
+      "seconds": 2.112
+    },
+    {
+      "clip": "/audio/8615730063d81a00e22042c9.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/259cfb2586f88d8b3756ae87.mp3",
+      "seconds": 2.952
+    },
+    {
+      "clip": "/audio/dee94cc7f38c0e98e03e38a1.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/a93bfff4435e2e77844c3879.mp3",
+      "seconds": 2.328
+    },
+    {
+      "clip": "/audio/2121c88f517ed2dfa24c526f.mp3",
+      "seconds": 2.76
+    },
+    {
+      "clip": "/audio/5cfe3ec69e4e034c52b620bb.mp3",
+      "seconds": 3.984
+    },
+    {
+      "clip": "/audio/37a9cc4db0a0a447b558f2c9.mp3",
+      "seconds": 2.784
+    },
+    {
+      "clip": "/audio/ab979ec02ce34393c04eb85d.mp3",
+      "seconds": 2.352
+    },
+    {
+      "clip": "/audio/89f18354b1c880c8fdaee52a.mp3",
+      "seconds": 3.792
+    },
+    {
+      "clip": "/audio/6c56eba943b9d246235d7f10.mp3",
+      "seconds": 2.424
+    },
+    {
+      "clip": "/audio/7a4e09987001630f47bad326.mp3",
+      "seconds": 2.688
+    },
+    {
+      "clip": "/audio/7ede62477ab8e83090ab9e67.mp3",
+      "seconds": 2.76
+    },
+    {
+      "clip": "/audio/ab11d1adbbaba69570f330e8.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/b9479d9e27b2e2803bf89f9f.mp3",
+      "seconds": 2.976
+    },
+    {
+      "clip": "/audio/91cb264a1eac60cd05da7dd3.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/3f6ed9d4b34eba48a893e266.mp3",
+      "seconds": 3.672
+    },
+    {
+      "clip": "/audio/7d170b3a19e8b00c69e3f597.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/a0cadbef1e66c61a91092e80.mp3",
+      "seconds": 3.48
+    },
+    {
+      "clip": "/audio/325e66e3473a43786a5cbf11.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/887a87ca236cc6d081b32150.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/3653e0f6bea93a51cc8a7673.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/f2423270773278eb886524b9.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/e470366c22c8348984b39c53.mp3",
+      "seconds": 2.88
+    },
+    {
+      "clip": "/audio/e02a48848990ec6604552531.mp3",
+      "seconds": 4.752
+    },
+    {
+      "clip": "/audio/a9fdfbf04c3e21d736fc42c1.mp3",
+      "seconds": 2.928
+    },
+    {
+      "clip": "/audio/4f218e9403018b214fd389d2.mp3",
+      "seconds": 2.736
+    },
+    {
+      "clip": "/audio/638f79a4a631a713ed50b78b.mp3",
+      "seconds": 3.696
+    },
+    {
+      "clip": "/audio/af613d17c21749b98a8a3919.mp3",
+      "seconds": 2.76
+    },
+    {
+      "clip": "/audio/ea9a5d025551ae7528dfb0bd.mp3",
+      "seconds": 2.52
+    },
+    {
+      "clip": "/audio/89e50ab0c43a7d2ffec9b235.mp3",
+      "seconds": 2.688
+    },
+    {
+      "clip": "/audio/508e61f615364a890f8e8bd7.mp3",
+      "seconds": 4.368
+    },
+    {
+      "clip": "/audio/ea0c5c1251f814d62df4969e.mp3",
+      "seconds": 1.944
+    },
+    {
+      "clip": "/audio/403091b3acaa0b04fcb92854.mp3",
+      "seconds": 4.656
+    },
+    {
+      "clip": "/audio/c00b24275b865782c97f1107.mp3",
+      "seconds": 5.232
+    },
+    {
+      "clip": "/audio/62d6b1aca4412481c13497ea.mp3",
+      "seconds": 2.256
+    },
+    {
+      "clip": "/audio/71b7c5fbe9f8dd16ba474137.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/0b4e71ddc5bd919d79e5d658.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/a7f0c5f8924ebb9215672e12.mp3",
+      "seconds": 3.96
+    },
+    {
+      "clip": "/audio/91a6c173ea277d2b41395be8.mp3",
+      "seconds": 2.976
+    },
+    {
+      "clip": "/audio/bf1899d03f5026f6face860f.mp3",
+      "seconds": 3.888
+    },
+    {
+      "clip": "/audio/526631f5e4605787b8699120.mp3",
+      "seconds": 1.872
+    },
+    {
+      "clip": "/audio/3a50a86cf3deca0e1ed42cad.mp3",
+      "seconds": 2.4
+    }
+  ],
+  "layouts": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "text": "Listen · Replay",
+          "bottom": 248.640625,
+          "height": 46
+        },
+        {
+          "text": "Pause",
+          "bottom": 248.640625,
+          "height": 46
+        },
+        {
+          "text": "1 · In front",
+          "bottom": 481.953125,
+          "height": 46
+        },
+        {
+          "text": "2 · Behind",
+          "bottom": 481.953125,
+          "height": 46
+        },
+        {
+          "text": "3 · Beside",
+          "bottom": 481.953125,
+          "height": 46
+        },
+        {
+          "text": "← Previous",
+          "bottom": 531.953125,
+          "height": 46
+        },
+        {
+          "text": "Watch again",
+          "bottom": 531.953125,
+          "height": 46
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "text": "Listen · Replay",
+          "bottom": 370.125,
+          "height": 46
+        },
+        {
+          "text": "Pause",
+          "bottom": 370.125,
+          "height": 46
+        },
+        {
+          "text": "1 · In front",
+          "bottom": 690.4375,
+          "height": 46
+        },
+        {
+          "text": "2 · Behind",
+          "bottom": 690.4375,
+          "height": 46
+        },
+        {
+          "text": "3 · Beside",
+          "bottom": 690.4375,
+          "height": 46
+        },
+        {
+          "text": "← Previous",
+          "bottom": 744.4375,
+          "height": 46
+        },
+        {
+          "text": "Watch again",
+          "bottom": 744.4375,
+          "height": 46
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "controls": [
+        {
+          "text": "Listen · Replay",
+          "bottom": 423.375,
+          "height": 47
+        },
+        {
+          "text": "Pause",
+          "bottom": 423.375,
+          "height": 47
+        },
+        {
+          "text": "1 · In front",
+          "bottom": 793.765625,
+          "height": 46
+        },
+        {
+          "text": "2 · Behind",
+          "bottom": 793.765625,
+          "height": 46
+        },
+        {
+          "text": "3 · Beside",
+          "bottom": 793.765625,
+          "height": 46
+        },
+        {
+          "text": "← Previous",
+          "bottom": 850.765625,
+          "height": 47
+        },
+        {
+          "text": "Watch again",
+          "bottom": 850.765625,
+          "height": 47
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Synthetic recordings have not had a human listening review",
+    "Touch and responsive tests are browser simulations, not physical-device checks"
+  ]
+}
