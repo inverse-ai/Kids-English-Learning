@@ -1,0 +1,812 @@
+[
+  {
+    "key": "word:cat",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:cat",
+    "duration": 2.136,
+    "audible": true
+  },
+  {
+    "key": "approx:cat",
+    "duration": 3.792,
+    "audible": true
+  },
+  {
+    "key": "word:hat",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:hat",
+    "duration": 2.112,
+    "audible": true
+  },
+  {
+    "key": "approx:hat",
+    "duration": 3.816,
+    "audible": true
+  },
+  {
+    "key": "word:mat",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:mat",
+    "duration": 2.088,
+    "audible": true
+  },
+  {
+    "key": "approx:mat",
+    "duration": 3.816,
+    "audible": true
+  },
+  {
+    "key": "word:rat",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:rat",
+    "duration": 2.208,
+    "audible": true
+  },
+  {
+    "key": "approx:rat",
+    "duration": 4.008,
+    "audible": true
+  },
+  {
+    "key": "word:bat",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:bat",
+    "duration": 2.496,
+    "audible": true
+  },
+  {
+    "key": "approx:bat",
+    "duration": 3.816,
+    "audible": true
+  },
+  {
+    "key": "word:pat",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:pat",
+    "duration": 2.88,
+    "audible": true
+  },
+  {
+    "key": "approx:pat",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:sat",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:sat",
+    "duration": 2.352,
+    "audible": true
+  },
+  {
+    "key": "approx:sat",
+    "duration": 3.888,
+    "audible": true
+  },
+  {
+    "key": "word:fat",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:fat",
+    "duration": 2.16,
+    "audible": true
+  },
+  {
+    "key": "approx:fat",
+    "duration": 3.84,
+    "audible": true
+  },
+  {
+    "key": "word:can",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:can",
+    "duration": 2.52,
+    "audible": true
+  },
+  {
+    "key": "approx:can",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:man",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:man",
+    "duration": 2.904,
+    "audible": true
+  },
+  {
+    "key": "approx:man",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:pan",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:pan",
+    "duration": 2.376,
+    "audible": true
+  },
+  {
+    "key": "approx:pan",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:fan",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:fan",
+    "duration": 2.184,
+    "audible": true
+  },
+  {
+    "key": "approx:fan",
+    "duration": 3.84,
+    "audible": true
+  },
+  {
+    "key": "word:van",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:van",
+    "duration": 2.904,
+    "audible": true
+  },
+  {
+    "key": "approx:van",
+    "duration": 3.816,
+    "audible": true
+  },
+  {
+    "key": "word:ran",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:ran",
+    "duration": 2.448,
+    "audible": true
+  },
+  {
+    "key": "approx:ran",
+    "duration": 3.936,
+    "audible": true
+  },
+  {
+    "key": "word:pig",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:pig",
+    "duration": 2.04,
+    "audible": true
+  },
+  {
+    "key": "approx:pig",
+    "duration": 3.624,
+    "audible": true
+  },
+  {
+    "key": "word:big",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:big",
+    "duration": 1.968,
+    "audible": true
+  },
+  {
+    "key": "approx:big",
+    "duration": 3.696,
+    "audible": true
+  },
+  {
+    "key": "word:dig",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:dig",
+    "duration": 2.4,
+    "audible": true
+  },
+  {
+    "key": "approx:dig",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:wig",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:wig",
+    "duration": 2.256,
+    "audible": true
+  },
+  {
+    "key": "approx:wig",
+    "duration": 3.72,
+    "audible": true
+  },
+  {
+    "key": "word:hop",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:hop",
+    "duration": 2.712,
+    "audible": true
+  },
+  {
+    "key": "approx:hop",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:mop",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:mop",
+    "duration": 2.76,
+    "audible": true
+  },
+  {
+    "key": "approx:mop",
+    "duration": 3.648,
+    "audible": true
+  },
+  {
+    "key": "word:top",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:top",
+    "duration": 2.064,
+    "audible": true
+  },
+  {
+    "key": "approx:top",
+    "duration": 3.6,
+    "audible": true
+  },
+  {
+    "key": "word:pop",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:pop",
+    "duration": 2.256,
+    "audible": true
+  },
+  {
+    "key": "approx:pop",
+    "duration": 3.528,
+    "audible": true
+  },
+  {
+    "key": "word:sun",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:sun",
+    "duration": 2.28,
+    "audible": true
+  },
+  {
+    "key": "approx:sun",
+    "duration": 3.888,
+    "audible": true
+  },
+  {
+    "key": "word:run",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:run",
+    "duration": 2.28,
+    "audible": true
+  },
+  {
+    "key": "approx:run",
+    "duration": 3.84,
+    "audible": true
+  },
+  {
+    "key": "word:bun",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:bun",
+    "duration": 2.664,
+    "audible": true
+  },
+  {
+    "key": "approx:bun",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:fun",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:fun",
+    "duration": 2.136,
+    "audible": true
+  },
+  {
+    "key": "approx:fun",
+    "duration": 3.84,
+    "audible": true
+  },
+  {
+    "key": "word:gun",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:gun",
+    "duration": 3.984,
+    "audible": true
+  },
+  {
+    "key": "approx:gun",
+    "duration": 3.84,
+    "audible": true
+  },
+  {
+    "key": "word:hen",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:hen",
+    "duration": 2.16,
+    "audible": true
+  },
+  {
+    "key": "approx:hen",
+    "duration": 3.768,
+    "audible": true
+  },
+  {
+    "key": "word:pen",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:pen",
+    "duration": 2.064,
+    "audible": true
+  },
+  {
+    "key": "approx:pen",
+    "duration": 3.72,
+    "audible": true
+  },
+  {
+    "key": "word:ten",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:ten",
+    "duration": 1.992,
+    "audible": true
+  },
+  {
+    "key": "approx:ten",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:den",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:den",
+    "duration": 3.36,
+    "audible": true
+  },
+  {
+    "key": "approx:den",
+    "duration": 3.816,
+    "audible": true
+  },
+  {
+    "key": "word:pin",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:pin",
+    "duration": 1.992,
+    "audible": true
+  },
+  {
+    "key": "approx:pin",
+    "duration": 3.72,
+    "audible": true
+  },
+  {
+    "key": "word:tin",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:tin",
+    "duration": 2.52,
+    "audible": true
+  },
+  {
+    "key": "approx:tin",
+    "duration": 3.72,
+    "audible": true
+  },
+  {
+    "key": "word:fin",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:fin",
+    "duration": 2.544,
+    "audible": true
+  },
+  {
+    "key": "approx:fin",
+    "duration": 3.888,
+    "audible": true
+  },
+  {
+    "key": "word:bin",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:bin",
+    "duration": 2.808,
+    "audible": true
+  },
+  {
+    "key": "approx:bin",
+    "duration": 3.792,
+    "audible": true
+  },
+  {
+    "key": "word:cap",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:cap",
+    "duration": 2.472,
+    "audible": true
+  },
+  {
+    "key": "approx:cap",
+    "duration": 3.696,
+    "audible": true
+  },
+  {
+    "key": "word:map",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:map",
+    "duration": 2.376,
+    "audible": true
+  },
+  {
+    "key": "approx:map",
+    "duration": 3.72,
+    "audible": true
+  },
+  {
+    "key": "word:tap",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:tap",
+    "duration": 2.304,
+    "audible": true
+  },
+  {
+    "key": "approx:tap",
+    "duration": 3.696,
+    "audible": true
+  },
+  {
+    "key": "word:nap",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:nap",
+    "duration": 2.76,
+    "audible": true
+  },
+  {
+    "key": "approx:nap",
+    "duration": 3.792,
+    "audible": true
+  },
+  {
+    "key": "word:dog",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:dog",
+    "duration": 2.136,
+    "audible": true
+  },
+  {
+    "key": "approx:dog",
+    "duration": 3.696,
+    "audible": true
+  },
+  {
+    "key": "word:log",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:log",
+    "duration": 2.688,
+    "audible": true
+  },
+  {
+    "key": "approx:log",
+    "duration": 3.72,
+    "audible": true
+  },
+  {
+    "key": "word:fog",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:fog",
+    "duration": 2.256,
+    "audible": true
+  },
+  {
+    "key": "approx:fog",
+    "duration": 3.792,
+    "audible": true
+  },
+  {
+    "key": "word:jog",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:jog",
+    "duration": 2.544,
+    "audible": true
+  },
+  {
+    "key": "approx:jog",
+    "duration": 3.768,
+    "audible": true
+  },
+  {
+    "key": "word:bug",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:bug",
+    "duration": 2.448,
+    "audible": true
+  },
+  {
+    "key": "approx:bug",
+    "duration": 3.72,
+    "audible": true
+  },
+  {
+    "key": "word:mug",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:mug",
+    "duration": 2.544,
+    "audible": true
+  },
+  {
+    "key": "approx:mug",
+    "duration": 3.744,
+    "audible": true
+  },
+  {
+    "key": "word:rug",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:rug",
+    "duration": 2.568,
+    "audible": true
+  },
+  {
+    "key": "approx:rug",
+    "duration": 3.792,
+    "audible": true
+  },
+  {
+    "key": "word:hug",
+    "duration": 1.872,
+    "audible": true
+  },
+  {
+    "key": "meaning:hug",
+    "duration": 2.496,
+    "audible": true
+  },
+  {
+    "key": "approx:hug",
+    "duration": 3.792,
+    "audible": true
+  },
+  {
+    "key": "sound:a",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:b",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:c",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:d",
+    "duration": 0.4580208333333333,
+    "audible": true
+  },
+  {
+    "key": "sound:e",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:f",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:g",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:h",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:i",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:j",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:l",
+    "duration": 0.6380208333333334,
+    "audible": true
+  },
+  {
+    "key": "sound:m",
+    "duration": 0.6480208333333334,
+    "audible": true
+  },
+  {
+    "key": "sound:n",
+    "duration": 0.7080208333333333,
+    "audible": true
+  },
+  {
+    "key": "sound:o",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:p",
+    "duration": 0.3119166666666667,
+    "audible": true
+  },
+  {
+    "key": "sound:r",
+    "duration": 0.5780208333333333,
+    "audible": true
+  },
+  {
+    "key": "sound:s",
+    "duration": 0.7280208333333333,
+    "audible": true
+  },
+  {
+    "key": "sound:t",
+    "duration": 0.42802083333333335,
+    "audible": true
+  },
+  {
+    "key": "sound:u",
+    "duration": 0.2580208333333333,
+    "audible": true
+  },
+  {
+    "key": "sound:v",
+    "duration": 0.6880208333333333,
+    "audible": true
+  },
+  {
+    "key": "sound:w",
+    "duration": 0.4480208333333333,
+    "audible": true
+  }
+]

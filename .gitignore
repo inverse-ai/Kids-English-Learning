@@ -1,0 +1,8 @@
+node_modules/
+server.log
+server-error.log
+qa/*.png
+.sites-runtime/
+.audio-tools/
+dist/audio/*.part
+qa/*.mp3

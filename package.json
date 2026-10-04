@@ -1,0 +1,16 @@
+{
+  "name": "little-english",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check dist/app.js && node --check dist/curriculum.js && node --check dist/lesson-audio.js && node --check dist/recorded-speech.js && node --check dist/family-data.js && node --check dist/family-lessons.js && node --check dist/family-speech.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

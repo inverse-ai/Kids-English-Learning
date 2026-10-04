@@ -1,0 +1,6 @@
+{
+  "voice": "en-US-JennyNeural",
+  "rate": "-8%",
+  "generator": "edge-tts 7.2.8",
+  "clips": 134
+}

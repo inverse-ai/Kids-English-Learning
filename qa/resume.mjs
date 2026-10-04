@@ -1,0 +1,83 @@
+import {chromium,expect} from '@playwright/test';
+import assert from 'node:assert/strict';
+import {mkdtemp} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {normalizeProgress,normalizeCheckpoint} from '../dist/curriculum.js';
+const old={profile:'big',completed:{little:['letters-pin'],big:['words-9']},voice:'test-voice',last:{little:'2026-09-21'}};
+assert.deepEqual(normalizeProgress(old).completed,old.completed);
+assert.equal(normalizeProgress(old).voice,'test-voice');
+assert.equal(normalizeCheckpoint('little',{lessonId:'words-1',step:0}),null);
+assert.equal(normalizeCheckpoint('big',{lessonId:'words-1',step:100}),null);
+assert.deepEqual(normalizeCheckpoint('big',{lessonId:'words-1',step:3,tiles:['ca','','t'],placed:[0]}).tiles,[]);
+assert.deepEqual(normalizeCheckpoint('big',{lessonId:'words-1',step:3,tiles:['c','a','t'],placed:[0,0]}).placed,[]);
+const profileDir=await mkdtemp(join(tmpdir(),'little-english-resume-'));
+let context,page;
+const errors=[];
+async function open(){context=await chromium.launchPersistentContext(profileDir,{channel:'msedge',headless:true,viewport:{width:1280,height:900}});page=context.pages()[0];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://localhost:4174/');}
+async function reopen(){await context.close();await open();}
+async function home(){await page.getByRole('button',{name:'← Learning path',exact:true}).click();}
+async function continueLesson(){await page.getByRole('button',{name:'Continue lesson →',exact:true}).click();}
+try{
+ await open();
+ await page.evaluate(value=>localStorage.setItem('little-english-v1',JSON.stringify(value)),{...old,profile:'little'});await page.reload();
+ await expect(page.getByText('1 of 9 lessons explored')).toBeVisible();
+ await page.getByRole('button',{name:'Start lesson →',exact:true}).click();
+ for(let i=0;i<3;i++)await page.getByRole('button',{name:'Next →',exact:true}).click();
+ await page.getByRole('button',{name:'Lowercase s',exact:true}).click();
+ await reopen();
+ await expect(page.getByText('1 of 9 lessons explored')).toBeVisible();
+ await expect(page.getByText('Lesson 1 · Activity 4 of 10',{exact:true})).toBeVisible();
+ await continueLesson();await expect(page.getByRole('button',{name:'Next →',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Next →',exact:true}).click();
+ await page.getByRole('button',{name:/Lowercase (?!a$)/}).first().click();
+ await home();
+ await page.getByRole('button',{name:/Word Adventurer Age 6/}).click();
+ await page.getByRole('button',{name:'Start lesson →',exact:true}).click();
+ for(let i=0;i<3;i++)await page.getByRole('button',{name:'Let’s try →',exact:true}).click();
+ await page.getByRole('button',{name:'Letter c',exact:true}).click();
+ await page.getByRole('button',{name:'Letter a',exact:true}).click();
+ const tileOrder=await page.locator('.tile').allTextContents();
+ await reopen();await continueLesson();
+ await expect(page.getByRole('heading',{name:'Can you build the word?',exact:true})).toBeVisible();
+ assert.deepEqual(await page.locator('.tile').allTextContents(),tileOrder);
+ await expect(page.locator('.slots')).toHaveAttribute('aria-label','Your word: ca');
+ await expect(page.getByRole('button',{name:'Next →',exact:true})).toHaveCount(0);
+ await page.getByRole('button',{name:'Letter t',exact:true}).click();
+ await reopen();await continueLesson();
+ await expect(page.locator('.slots')).toHaveAttribute('aria-label','Your word: cat');
+ await expect(page.getByRole('button',{name:'Next →',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Next →',exact:true}).click();
+ await page.getByRole('button',{name:'Letter a',exact:true}).click();
+ await page.getByRole('button',{name:'Try the letters again',exact:true}).click();
+ await reopen();await continueLesson();
+ await expect(page.locator('.slots')).toHaveAttribute('aria-label','Your word: empty');
+ await home();
+ await page.getByRole('button',{name:/^Lesson 2:/}).click();await page.getByRole('button',{name:'Let’s try →',exact:true}).click();
+ await home();await page.getByRole('button',{name:/^Lesson 1:/}).click();
+ await expect(page.locator('.lesson-meta')).toContainText('Activity 5 of 11');
+ await home();await page.getByRole('button',{name:/Little Explorer Age 5/}).click();await continueLesson();
+ await expect(page.getByRole('heading',{name:'Find the little A.',exact:true})).toBeVisible();
+ await expect(page.locator('#feedback')).toContainText('Good try');
+ for(const c of ['a','t']){await page.getByRole('button',{name:`Lowercase ${c}`,exact:true}).click();await page.getByRole('button',{name:'Next →',exact:true}).click();}
+ const bounds=await page.locator('canvas').boundingBox();await page.mouse.move(bounds.x+40,bounds.y+40);await page.mouse.down();await page.mouse.move(bounds.x+100,bounds.y+100,{steps:8});await page.mouse.up();
+ await reopen();await continueLesson();
+ assert(await page.locator('canvas').evaluate(c=>c.getContext('2d').getImageData(0,0,c.width,c.height).data.some(v=>v>0)));
+ await page.getByRole('button',{name:'Clear drawing',exact:true}).click();
+ await reopen();await continueLesson();
+ assert(!(await page.locator('canvas').evaluate(c=>c.getContext('2d').getImageData(0,0,c.width,c.height).data.some(v=>v>0))));
+ for(let i=0;i<3;i++)await page.getByRole('button',{name:'We practised →',exact:true}).click();
+ await page.getByRole('button',{name:'We tried it! Finish ★',exact:true}).click();
+ await reopen();
+ await expect(page.getByText('2 of 9 lessons explored')).toBeVisible();
+ await expect(page.getByRole('button',{name:'Continue lesson →',exact:true})).toHaveCount(0);
+ const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('little-english-v1')));
+ assert.deepEqual(saved.completed,{little:['letters-pin','letters-sat'],big:['words-9']});
+ assert(!saved.inProgress.little['letters-sat']);
+ assert(saved.inProgress.big['words-1']);assert(saved.inProgress.big['words-2']);
+ await page.getByRole('button',{name:/Word Adventurer Age 6/}).click();
+ await page.screenshot({path:'qa/resume-home.png',fullPage:true});
+ await continueLesson();await page.screenshot({path:'qa/resume-activity.png',fullPage:true});
+ assert.deepEqual(errors,[]);
+ console.log('PASS: actual browser close/reopen preserves completed lessons, both learners, partial and solved answers, tile order, retries, separate unfinished lessons, and drawings. Completed lessons clear only their own checkpoint.');
+}finally{if(context)await context.close();}

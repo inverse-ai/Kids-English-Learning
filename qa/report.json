@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checks": [
+    "27 lesson data sets valid",
+    "26 letters introduced exactly once",
+    "incorrect answers allow retry and cannot advance",
+    "drawing and clearing work",
+    "both first lessons completed through the UI",
+    "progress persists after reload and stays separate",
+    "alphabet has all 26 letters",
+    "parent guide and voice controls render",
+    "390px mobile layouts do not overflow",
+    "no page errors or external page requests"
+  ],
+  "speech": {
+    "supported": true,
+    "voices": [
+      {
+        "name": "Microsoft David - English (United States)",
+        "lang": "en-US"
+      },
+      {
+        "name": "Microsoft Mark - English (United States)",
+        "lang": "en-US"
+      },
+      {
+        "name": "Microsoft Zira - English (United States)",
+        "lang": "en-US"
+      }
+    ]
+  },
+  "webMcpAvailable": false
+}
