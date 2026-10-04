@@ -13,8 +13,8 @@ export function createStoryFlow({getProgress,save,isSaved,render,status,play,sto
  const intro=()=>storyIntroductions(story(),progress().line,learning())[0];
  function listen(parts){status('Listening…');play(parts);}
  function speakIntro(){const word=intro();if(word)listen([{key:'word:'+word.word},{key:'story-meaning:'+word.word.toLowerCase()}]);}
- function prepareSentence(){
-  const p=progress();p.phase=!p.skipIntro&&intro()?'helper':'sentence';p.mode='read';save();render();if(p.phase==='helper')speakIntro();
+ function prepareSentence(quiet=false){
+  const p=progress();p.phase=!p.skipIntro&&intro()?'helper':'sentence';p.mode='read';save();render();if(p.phase==='helper'&&!quiet)speakIntro();
  }
  function paragraph(blanks=false){
   const s=story(),p=progress();
@@ -47,11 +47,12 @@ export function createStoryFlow({getProgress,save,isSaved,render,status,play,sto
  }
  return {
   html,
-  open(id){
-   if(!stories.some(s=>s.id===id))return;stop();selected=id;learning().storyCurrent=id;
+  open(id,quiet=false){
+   if(!stories.some(s=>s.id===id))return;stop();selected=id;learning().storyCurrent=id;const existing=learning().stories[id];
    learning().stories[id]??={mode:'read',phase:'sentence',line:0,skipIntro:false,blank:0,answers:story().blanks.map(()=>null),done:false};
    progress().gapAttempts??=story().blanks.map(()=>emptyAttempt());progress().assisted??=false;
-   if(['sentence','helper'].includes(progress().phase))prepareSentence();else{save();render();}
+   if(quiet&&existing){if(progress().phase==='helper'&&!intro())progress().phase='sentence';save();render();}
+   else if(['sentence','helper'].includes(progress().phase))prepareSentence(quiet);else{save();render();}
   },
   handle(data){
    const s=story(),p=progress();if(!s||!p)return;

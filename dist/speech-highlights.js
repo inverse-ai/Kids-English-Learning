@@ -29,16 +29,17 @@ function select(part,metadata,index){
  if(part.spellingIntro){
   if(!metadata||index<0)return [];
   const token=metadata.text.slice(metadata.words[index].from,metadata.words[index].to).replace(/[.,!?]/g,'').toLowerCase(),example=document.querySelector('.spelling-example[data-example="'+part.example+'"]');
-  if(token===part.introLetter||part.introLetter==='q'&&token==='u')return [example?.querySelector('[data-letter-index="'+part.introWord.indexOf(token)+'"]')];
+  if(token===part.introLetter)return [document.querySelector('.spelling-letter-heading [data-case="upper"]'),...(part.introLetter==='x'?[example?.querySelector('[data-letter-index="'+part.introWord.lastIndexOf('x')+'"]')]:[])];
+  if(part.introLetter==='q'&&token==='u')return [example?.querySelector('[data-letter-index="'+part.introWord.indexOf('u')+'"]')];
   return token===part.introWord?[example?.querySelector('.spelling-word')]:[];
  }
  if(part.legacyLetter&&metadata&&index>=0){const token=metadata.text.slice(metadata.words[index].from,metadata.words[index].to).toLowerCase();if(token===part.legacyLetter)return [document.querySelector('.big-letter [data-case="upper"]')];return [...document.querySelectorAll('.flash-word')].filter(element=>element.textContent.toLowerCase()===token);}
- if(part.caseLetter){return index<0?[]:[document.querySelector('.letter-display [data-case="'+(index<2?'upper':index>=3?'lower':'none')+'"]')];}
+ if(part.caseLetter){return index<0?[]:[document.querySelector((part.caseTarget||'.letter-display')+' [data-case="'+(index<2?'upper':'lower')+'"]')];}
  if(part.letterName){
   const token=index>=0?metadata.text.slice(metadata.words[index].from,metadata.words[index].to).toLowerCase():'';
-  if(token===part.letterName)return [document.querySelector('.letter-display [data-case="upper"]')];
+  if(token===part.letterName)return [document.querySelector((part.legacyExample?'.big-letter':'.letter-display')+' [data-case="upper"]')];
   if(part.letterName==='q'&&token==='u')return [document.querySelector('.letter-note [data-letter="u"]')];
-  return token===part.exampleWord?[document.querySelector('.letter-example[data-example="'+part.example+'"] b')]:[];
+  return token===part.exampleWord?[document.querySelector(part.legacyExample?'.flash-word,.activity h2':'.letter-example[data-example="'+part.example+'"] b')]:[];
  }
  if(part.letterSound)return [document.querySelector('.letter-display [data-case="lower"]'),...(part.letterSound==='q'?[document.querySelector('.letter-note [data-letter="u"]')]:[])];
  if(part.target)return [...document.querySelectorAll(part.target)];

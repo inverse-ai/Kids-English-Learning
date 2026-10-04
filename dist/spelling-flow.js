@@ -1,5 +1,5 @@
-import {alphabet,alphabetExampleText} from './stage-data.js';
-import {spellingParts} from './spelling-data.js';
+import {alphabet} from './stage-data.js';
+import {spellingParts,spellingIntroText} from './spelling-data.js';
 import {playStageSequence,stopStageAudio,toggleStagePause,stageAudioState} from './stage-audio.js';
 
 const button=(label,action,attributes='',classes='')=>'<button class="btn '+classes+'" data-action="stages-spelling-'+action+'" '+attributes+'>'+label+'</button>';
@@ -18,7 +18,7 @@ export function createSpellingFlow({getProgress,save,isSaved,render,status,pictu
   const parts=spellingParts(progress.letter).slice(start).flatMap((part,index)=>{
    const position=start+index,word=alphabet[progress.letter].examples[part.example];
    const spoken={...part,checkpoint:position,...(speed===1?{key:'spelling-brisk-'+part.key,...(!part.wholeWord?{pauseAfter:55}:{})}:{})};
-   return speed===1&&part.letterIndex===0?[{key:'alphabet-example:'+letter+':'+word,spellingIntro:true,introLetter:letter,introWord:word,example:part.example,phase:alphabetExampleText(letter,word),checkpoint:position,pauseAfter:180},spoken]:[spoken];
+   return part.letterIndex===0?[{key:'spelling-intro:'+letter+':'+word,spellingIntro:true,introLetter:letter,introWord:word,example:part.example,phase:spellingIntroText(letter,word),checkpoint:position,pauseAfter:180},spoken]:[spoken];
   });
   playStageSequence(parts,{speed,onPart:(part)=>{
    progress.position=part.checkpoint;save();clearHighlights();
@@ -40,9 +40,9 @@ export function createSpellingFlow({getProgress,save,isSaved,render,status,pictu
  }
  function html(){
   const progress=state(),a=alphabet[progress.letter];
-  return '<section class="activity spelling-player"><div class="eyebrow">Words · Suggested age 5+</div><h1>Spelling practice</h1><p class="spelling-guide"><b>'+label()+' picture words</b> · Say the letter names.</p><div class="spelling-examples">'+a.examples.map((word,example)=>'<div class="spelling-example" data-example="'+example+'">'+picture(word)+'<p class="spelling-word" aria-label="'+word+'">'+[...word].map((letter,i)=>'<span class="spelling-letter" data-letter-index="'+i+'" aria-hidden="true">'+letter+'</span>').join('')+'</p></div>').join('')+'</div><div class="spelling-controls">'+button('Replay','replay','','primary')+button('Pause','pause','disabled aria-pressed="false"')+'</div><p id="spelling-phase" class="spelling-phase" role="status">Ready to spell</p><p id="audio-status" class="status"></p><div class="spelling-paging">'+button('← Previous','next','data-index="'+(progress.letter-1)+'" '+(progress.letter===0?'disabled':''))+'<span>'+(progress.letter+1)+' / 26</span>'+button('Next →','next','data-index="'+(progress.letter+1)+'" '+(progress.letter===25?'disabled':''))+'</div><div class="spelling-reading">'+button('Sound blending lessons →','blend')+'</div><p class="spelling-saved"><span id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</span></p></section>';
+  return '<section class="activity spelling-player"><div class="eyebrow">Words · Suggested age 5+</div><h1>Spelling practice</h1><p class="spelling-guide">Say the letter names.</p><div class="spelling-letter-heading" aria-label="'+label()+'"><span data-case="upper">'+a.letter.toUpperCase()+'</span><span data-case="lower">'+a.letter+'</span></div><div class="spelling-examples">'+a.examples.map((word,example)=>'<div class="spelling-example" data-example="'+example+'">'+picture(word)+'<p class="spelling-word" aria-label="'+word+'">'+[...word].map((letter,i)=>'<span class="spelling-letter" data-letter-index="'+i+'" aria-hidden="true">'+letter+'</span>').join('')+'</p></div>').join('')+'</div><div class="spelling-controls">'+button('Replay','replay','','primary')+button('Pause','pause','disabled aria-pressed="false"')+'</div><p id="spelling-phase" class="spelling-phase" role="status">Ready to spell</p><p id="audio-status" class="status"></p><div class="spelling-paging">'+button('← Previous','next','data-index="'+(progress.letter-1)+'" '+(progress.letter===0?'disabled':''))+'<span>'+(progress.letter+1)+' / 26</span>'+button('Next →','next','data-index="'+(progress.letter+1)+'" '+(progress.letter===25?'disabled':''))+'</div><div class="spelling-reading">'+button('Sound blending lessons →','blend')+'</div><p class="spelling-saved"><span id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</span></p></section>';
  }
- return {intro,html,clear,open(){render();play();},handle(data){
+ return {intro,html,clear,open(autoplay=true){render();if(autoplay)play();},handle(data){
   const action=data.action.replace('stages-spelling-','');
   if(action==='replay')play(true);
   else if(action==='pause')toggleStagePause();

@@ -1,0 +1,31 @@
+{
+  "checks": [
+    "Aa actual case clip highlights Big A and small a; playback pauses and resumes",
+    "All 26 actual case sources and 52 spelling intro clips decoded with same-stream word timings; original other audio mappings preserved",
+    "Normal and slower playback; both p letters separately; Q with U and X in box highlight correctly",
+    "Replay, manual Previous/Next, stop old audio, quiet Home and Continue",
+    "Saved family answers, writing strokes, -at reading and old story position continue; legacy lessons retained",
+    "320×568, 390×844 and 1366×900 layouts; no horizontal overflow; primary controls visible",
+    "No new stories; all 24 stories and 9 short-word lessons remain"
+  ],
+  "speeds": [
+    {
+      "rate": 1,
+      "correctOrder": true,
+      "repeatedLetters": true,
+      "introHeadingAndWord": true,
+      "pauseResume": true
+    },
+    {
+      "rate": 0.85,
+      "correctOrder": true,
+      "repeatedLetters": true,
+      "introHeadingAndWord": true,
+      "pauseResume": true
+    }
+  ],
+  "unverified": [
+    "Pronunciation by human listening",
+    "Physical mobile devices"
+  ]
+}

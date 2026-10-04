@@ -127,5 +127,6 @@ export function normalizeProgress(raw) {
   if (valid.has(raw?.currentLesson?.[key]) && result.inProgress[key][raw.currentLesson[key]]) result.currentLesson[key] = raw.currentLesson[key];
  }
  result.learning=normalizeLearning(raw?.learning);
+ result.lastActivity=raw?.lastActivity;
  return result;
 }

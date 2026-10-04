@@ -175,6 +175,13 @@ export function createFamilyLessons({getProgress,save,render,onHome,getSpeed,onS
   return navigation(true)+'<section class="activity"><div class="complete-star" aria-hidden="true">🌟</div><div class="eyebrow">Picture round complete</div><h1>You built little words!</h1><p class="lead">We practised '+session.round.items.join(', ')+'. Your round star is saved.</p><div class="family-complete-pictures">'+session.round.items.map(w=>'<div>'+picture(w)+colouredWord(w)+'</div>').join('')+'</div><p class="muted">Try one word with a toy or something at home. This is a good time for a break.</p><div class="activity-actions">'+btn('Back to this family','back','','primary')+(next?btn('Try the next round →','start','data-round="'+next.id+'"'):'')+'</div></section>';
  }
  return {
+  snapshot(){return page==='reading'?{kind:'family',page:'reading'}:page==='writing'?{kind:'family',page:'writing',word:writing.word}:page==='lesson'?{kind:'family',page:'lesson',round:session.round.id}:['board','complete','writing-complete'].includes(page)?{kind:'family',page:'board',family:familyId}:null;},
+  openResume(route){
+   if(route.page==='reading'){this.handle({action:'family-reading-continue'});return;}
+   if(route.page==='writing'){startWriting(route.word);return;}
+   if(route.page==='lesson'){start(route.round,true);return;}
+   this.handle({action:'family-open',family:route.family});
+  },
   showLibrary(){stopAudio();page='library';},
   checkpoint,
    html(){return page==='reading'?reading.html():page==='writing'?writingView():page==='writing-complete'?writingComplete():page==='board'?board():page==='lesson'?lesson():page==='complete'?complete():library();},

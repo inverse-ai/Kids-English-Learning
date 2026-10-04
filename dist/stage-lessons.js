@@ -45,7 +45,7 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
   const a=alphabet[letterIndex];
   state().letter=letterIndex;save();
   audioParts([
-   {key:'alphabet-case:'+a.letter,caseLetter:a.letter,phase:'Uppercase and lowercase: '+a.letter.toUpperCase()+a.letter},
+   {key:'alphabet-case:'+a.letter,caseLetter:a.letter,phase:'Big and small: '+a.letter.toUpperCase()+a.letter},
    ...a.examples.flatMap((word,i)=>[
     {key:'alphabet-example:'+a.letter+':'+word,letterName:a.letter,exampleWord:word,example:i,phase:'Listen: '+word},
     ...[1,2,3].map(repeat=>({key:'sound:'+a.sound,letterSound:a.letter,example:i,phase:'Letter sound · '+repeat+' of 3'})),
@@ -55,7 +55,7 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
  }
  function openLetter(index,autoplay=true){
   if(!Number.isInteger(index)||index<0||index>=alphabet.length)return;
-  stop();stage='letters';page='home';letterIndex=index;exampleIndex=0;phase='Ready';render();if(autoplay)playLetter();
+  stop();stage='letters';page='home';letterIndex=index;state().letter=index;exampleIndex=0;phase='Ready';save();render();if(autoplay)playLetter();
  }
  function legacyCards(which,indices){
   const p=getLegacy(),lessons=profiles[which].lessons;
@@ -70,10 +70,17 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
  function helperCards(keys){
   return '<div class="helper-grid">'+keys.map(key=>{const h=supportingWords[key.toLowerCase()]||supportingWords[key];return '<div class="helper-card"><b>'+esc(key)+'</b>'+(h?'<p lang="bn">'+esc(h.meaning)+'</p><p>'+esc(h.help)+'</p>':'<p>Meet this word with a grown-up before reading.</p>')+button('Hear '+esc(key),'audio','data-key="word:'+esc(key)+'"')+'</div>';}).join('')+'</div>';
  }
- function wordsHome(showSpelling=true){
-  const current=wordLessons.find(l=>l.id===state().wordCurrent),resuming=current&&state().words[current.id]&&!state().words[current.id].done;
-  const recommended=resuming?current:wordLessons.find(l=>!state().words[l.id]?.done)||wordLessons[0];
-  return '<section class="intro"><div><div class="eyebrow">Words · Suggested age 5+</div><h1>Sounds become words.</h1><p class="muted">Spell with letter names, then blend sounds to read phrases and sentences.</p></div></section>'+(showSpelling?spellingFlow.intro():button('Spelling practice →','spelling-open'))+'<section class="blend-intro" id="word-blending"><div>'+stagePicture('sat',true)+'<div><h2>Start with s–a–t.</h2>'+sounds('sat')+'<p>Say the sounds, slide them together, then say sat.</p></div></div>'+button('Hear the blend','blend','data-word="sat"','primary')+'</section><p id="audio-status" class="status"></p><div class="resume-strip"><span>'+esc(recommended.word)+' · Your next short word</span>'+button((resuming?'Continue ':'Start with ')+recommended.word+' →','word-open','data-id="'+recommended.id+'"','primary')+'</div><div class="word-path">'+wordLessons.map((l,i)=>'<button class="word-path-card" data-action="stages-word-open" data-id="'+l.id+'">'+stagePicture(l.word,true)+'<b>'+l.word+'</b><small>'+(state().words[l.id]?.done?'Practised ✓':'Word '+(i+1))+'</small></button>').join('')+'</div><section class="stage-existing"><h2>Picture word families</h2><p>All your picture rounds, Bangla help, word building and saved writing are here.</p>'+button('Explore picture words →','families','','primary')+'</section><details class="stage-practice"><summary>More word practice: build, listen, read and talk</summary>'+legacyCards('big',profiles.big.lessons.map((_,i)=>i).filter(i=>i<15))+'</details>';
+ function wordsHome(){
+  return '<section class="intro"><div><div class="eyebrow">Words · Suggested age 5+</div><h1>Words, one little step at a time.</h1><p class="muted">Choose what you want to practise.</p></div></section><div class="words-menu">'+[
+   ['Spell picture words','Letter names, then the whole word.','spelling-open','apple'],
+   ['Build & read words','Blend sounds and explore picture families.','build-open','cat'],
+   ['Read little sentences','Short phrases, sentences and the -at story.','sentences-open','mat']
+  ].map(([title,detail,action,word])=>'<button class="words-menu-card" data-action="stages-'+action+'">'+stagePicture(word,true)+'<span><b>'+title+'</b><small>'+detail+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>';
+ }
+ function wordLibrary(sentences=false){
+  return '<div class="lesson-head">'+button('← Words','back')+'</div><section class="intro"><div><div class="eyebrow">Words · Suggested age 5+</div><h1>'+(sentences?'Read little sentences.':'Build & read words.')+'</h1><p class="muted">'+(sentences?'Meet helping words, read a phrase, then a picture sentence.':'Start with familiar sounds. Blend them, build words, and practise writing.')+'</p></div></section>'+
+   '<section class="stage-existing"><h2>'+(sentences?'The -at family: sentences & a story':'Picture word families')+'</h2><p>'+(sentences?'Follow the existing cat, mat, hat and rat reading path.':'Your picture rounds, Bangla help and saved writing are here.')+'</p>'+button(sentences?'Read sentences & a story →':'Explore picture families →',sentences?'family-reading':'families','','primary')+'</section><h2>'+(sentences?'Little sentence lessons':'Blend short words')+'</h2><div class="word-path">'+wordLessons.map(l=>'<button class="word-path-card" data-action="stages-word-open" data-id="'+l.id+'">'+stagePicture(l.word,true)+'<b>'+esc(sentences?l.phrase:l.word)+'</b><small>'+(state().words[l.id]?.done?'Practised ✓':sentences?esc(l.sentence):'Hear & blend')+'</small></button>').join('')+'</div>'+
+   '<details class="stage-practice"><summary>More word practice: build, listen, read and talk</summary>'+legacyCards('big',profiles.big.lessons.map((_,i)=>i).filter(i=>i<15))+'</details>';
  }
  function wordView(){
   const l=wordLessons.find(x=>x.id===wordId),p=state().words[wordId],correct=p.answer===l.word;
@@ -97,17 +104,37 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
 
  return {
   stage:()=>stage,
-  setStage(value){if(!stageInfo[value])return;stop();stage=value;page='home';},
+  snapshot(){return page==='spelling'?{kind:'stage',page:'spelling'}:page==='word'?{kind:'stage',page:'word',id:wordId}:page==='story'?{kind:'stage',page:'story',id:state().storyCurrent}:page==='pattern'?{kind:'stage',page:'pattern',id:storyId}:stage==='letters'?{kind:'stage',page:'letter',index:letterIndex}:null;},
+  openResume(route){
+   stop();
+   if(route.page==='letter'){openLetter(route.index,false);return;}
+   stage=['story','pattern'].includes(route.page)?'stories':'words';page=route.page;
+   if(page==='spelling'){spellingFlow.open(false);return;}
+   if(page==='story'){storyFlow.open(route.id,true);return;}
+   if(page==='word'){wordId=route.id;state().wordCurrent=wordId;state().words[wordId]??={step:0,answer:null,done:false};}
+   if(page==='pattern')storyId=route.id;
+   save();render();
+  },
+  narrateLegacyLetter(letter,word){
+   const a=alphabet.find(a=>a.letter===letter);if(!a)return;
+   audioParts([{key:'alphabet-case:'+letter,caseLetter:letter,caseTarget:'.big-letter'},
+    {key:'alphabet-example:'+letter+':'+word,letterName:letter,exampleWord:word,legacyExample:true},
+    ...[1,2,3].map(()=>({key:'sound:'+a.sound,target:'.big-letter [data-case="lower"]'})),
+    {key:'word:'+word,target:'.flash-word,.activity h2'}]);
+  },
+  setStage(value){if(!stageInfo[value])return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';}},
   reset(){openLetter(0,false);},
   stop,
-  html(){return page==='spelling'?spellingFlow.html():page==='blending'?wordsHome(false):page==='word'?wordView():page==='story'?storyView():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
+  html(){return page==='spelling'?spellingFlow.html():page==='blending'?wordLibrary():page==='sentences'?wordLibrary(true):page==='word'?wordView():page==='story'?storyView():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
   handle(data){
    const action=data.action.replace('stages-','');
    if(action==='letter-start')playLetter();
    else if(action==='letter-next')openLetter(Number(data.index));
    else if(action==='pause')toggleStagePause();
    else if(action==='spelling-open'){stop();page='spelling';spellingFlow.open();}
-   else if(action==='spelling-blend'){stop();page='blending';render();}
+   else if(action==='build-open'||action==='spelling-blend'){stop();page='blending';render();}
+   else if(action==='sentences-open'){stop();page='sentences';render();}
+   else if(action==='family-reading'){stop();onFamily(true);}
    else if(action.startsWith('spelling-'))spellingFlow.handle(data);
    else if(action==='audio')audioParts([{key:data.key,part:data.part===undefined?undefined:Number(data.part)}]);
    else if(action==='blend')audioParts([...data.word].map((c,i)=>({key:'sound:'+c,part:i})).concat({key:'word:'+data.word}));

@@ -10,3 +10,5 @@ export function spellingParts(index){
   {key:'word:'+word,target:'.spelling-example[data-example="'+example+'"] .spelling-word',example,wholeWord:true,phase:word,pauseAfter:600}
  ]);
 }
+
+export const spellingIntroText=(letter,word)=>letter==='x'?'X in '+word+'.':letter==='q'?'Q with U for '+word+'.':letter.toUpperCase()+' is for '+word+'.';
