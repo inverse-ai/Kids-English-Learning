@@ -36,6 +36,8 @@ export function restoreProfile(p,f){
  const joined=merge(old,d);joined.practice.history=[...new Map(history.map(x=>[x.id,x])).values()].sort((a,b)=>a.at-b.at).slice(-2000);joined.practice.fluency=[...new Map(rounds.map(x=>[x.id,x])).values()].sort((a,b)=>a.at-b.at).slice(-100);
  // Whole existing activity records win; never mix a remote step with local answers/drawing.
  for(const name of ['stories','valueStories','words','move'])joined.learning[name]={...d.learning[name],...old.learning[name]};
+ if(old.learning.letterMatching?.started){joined.learning.letterMatching=clone(old.learning.letterMatching);joined.learning.letterMatching.rounds={...d.learning.letterMatching?.rounds,...old.learning.letterMatching.rounds};}
+ if(old.learning.alphabetReading?.started){joined.learning.alphabetReading=clone(old.learning.alphabetReading);joined.learning.alphabetReading.heard=[...new Set([...old.learning.alphabetReading.heard,...(d.learning.alphabetReading?.heard||[])])];}
  if(old.lastActivity){joined.lastActivity=clone(old.lastActivity);if(old.lastActivity.page==='letter')joined.learning.letter=old.learning.letter;if(old.lastActivity.page==='spelling')joined.learning.spelling=clone(old.learning.spelling);}
  joined.pictureFamilies.inProgress={...d.pictureFamilies.inProgress,...old.pictureFamilies.inProgress};joined.pictureFamilies.writing.drafts={...d.pictureFamilies.writing.drafts,...old.pictureFamilies.writing.drafts};
  if(old.pictureFamilies.reading.at.started)joined.pictureFamilies.reading.at=clone(old.pictureFamilies.reading.at);

@@ -12,7 +12,7 @@ const report={decoded:[],playback:[],limitations:['Arabic and Bengali explanatio
 const act=a=>page.locator('[data-action="stages-value-story-'+a+'"]');
 async function seed(s,type,speed=1){const step=valueSteps(s).findIndex(p=>p.type===type);await page.evaluate(({s,step,speed})=>localStorage.setItem('little-english-v1',JSON.stringify({audioSpeed:speed,lastActivity:{kind:'stage',page:'value-story',id:s.id},learning:{valueCurrent:s.id,valueStories:{[s.id]:{step}}}})),{s:{id:s.id},step,speed});await page.reload();await page.locator('[data-action=continue-home]').click();}
 try{
- await page.goto('http://localhost:4174');
+ await page.addInitScript(()=>localStorage.setItem('little-english-opening-audio-v1',JSON.stringify({version:1,enabled:false})));await page.goto('http://localhost:4174');
  for(const clip of new Set([...valueAudioSpecs.map(s=>stageSpeech[s.key]),stageSpeech['value-refuge-arabic']])){
   assert(clip);const bytes=await readFile('dist'+clip),seconds=await page.evaluate(async b64=>{const ctx=new AudioContext(),b=await ctx.decodeAudioData(Uint8Array.from(atob(b64),c=>c.charCodeAt(0)).buffer);await ctx.close();return b.duration;},bytes.toString('base64'));
   assert(seconds>0);const timing=audioTimings[clip];if(timing)for(const cue of timing.words){assert(cue.start>=0&&cue.end>=cue.start&&cue.end<=seconds+.08,clip);assert(cue.from<cue.to&&cue.to<=timing.text.length);}

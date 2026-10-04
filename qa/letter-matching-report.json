@@ -1,0 +1,469 @@
+{
+  "rounds": [
+    {
+      "width": 390,
+      "id": "letter-pairs-1",
+      "letters": [
+        "a",
+        "s"
+      ],
+      "method": "touch drag",
+      "lines": 2
+    },
+    {
+      "width": 390,
+      "id": "letter-pairs-2",
+      "letters": [
+        "m",
+        "t"
+      ],
+      "method": "touch drag",
+      "lines": 2
+    },
+    {
+      "width": 390,
+      "id": "letter-pairs-3",
+      "letters": [
+        "f",
+        "e",
+        "n"
+      ],
+      "method": "touch drag",
+      "lines": 3
+    },
+    {
+      "width": 390,
+      "id": "letter-pairs-4",
+      "letters": [
+        "h",
+        "o",
+        "r"
+      ],
+      "method": "touch drag",
+      "lines": 3
+    },
+    {
+      "width": 390,
+      "id": "letter-pairs-5",
+      "letters": [
+        "c",
+        "u",
+        "k",
+        "v"
+      ],
+      "method": "touch drag",
+      "lines": 4
+    },
+    {
+      "width": 390,
+      "id": "letter-pairs-6",
+      "letters": [
+        "w",
+        "x",
+        "z",
+        "y"
+      ],
+      "method": "touch drag",
+      "lines": 4
+    },
+    {
+      "width": 390,
+      "id": "letter-pairs-7",
+      "letters": [
+        "b",
+        "l",
+        "i",
+        "j"
+      ],
+      "method": "touch drag",
+      "lines": 4
+    },
+    {
+      "width": 390,
+      "id": "letter-pairs-8",
+      "letters": [
+        "d",
+        "p",
+        "q",
+        "g"
+      ],
+      "method": "touch drag",
+      "lines": 4
+    },
+    {
+      "width": 1366,
+      "id": "letter-pairs-1",
+      "letters": [
+        "a",
+        "s"
+      ],
+      "method": "mouse drag",
+      "lines": 2
+    },
+    {
+      "width": 1366,
+      "id": "letter-pairs-2",
+      "letters": [
+        "m",
+        "t"
+      ],
+      "method": "mouse drag",
+      "lines": 2
+    },
+    {
+      "width": 1366,
+      "id": "letter-pairs-3",
+      "letters": [
+        "f",
+        "e",
+        "n"
+      ],
+      "method": "mouse drag",
+      "lines": 3
+    },
+    {
+      "width": 1366,
+      "id": "letter-pairs-4",
+      "letters": [
+        "h",
+        "o",
+        "r"
+      ],
+      "method": "mouse drag",
+      "lines": 3
+    },
+    {
+      "width": 1366,
+      "id": "letter-pairs-5",
+      "letters": [
+        "c",
+        "u",
+        "k",
+        "v"
+      ],
+      "method": "mouse drag",
+      "lines": 4
+    },
+    {
+      "width": 1366,
+      "id": "letter-pairs-6",
+      "letters": [
+        "w",
+        "x",
+        "z",
+        "y"
+      ],
+      "method": "mouse drag",
+      "lines": 4
+    },
+    {
+      "width": 1366,
+      "id": "letter-pairs-7",
+      "letters": [
+        "b",
+        "l",
+        "i",
+        "j"
+      ],
+      "method": "mouse drag",
+      "lines": 4
+    },
+    {
+      "width": 1366,
+      "id": "letter-pairs-8",
+      "letters": [
+        "d",
+        "p",
+        "q",
+        "g"
+      ],
+      "method": "mouse drag",
+      "lines": 4
+    }
+  ],
+  "layouts": [
+    {
+      "label": "intro 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 0 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 1 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 2 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 3 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 4 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 5 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 6 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 7 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "resize 320",
+      "width": 320,
+      "scroll": 320,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "enlarged 320",
+      "width": 320,
+      "scroll": 320,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "resize 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "enlarged 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "resize 768",
+      "width": 768,
+      "scroll": 768,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "enlarged 768",
+      "width": 768,
+      "scroll": 768,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "intro 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 0 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 1 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 2 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 3 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 4 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 5 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 6 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "round 7 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "resize 320",
+      "width": 320,
+      "scroll": 320,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "enlarged 320",
+      "width": 320,
+      "scroll": 320,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "resize 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "enlarged 390",
+      "width": 390,
+      "scroll": 390,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "resize 768",
+      "width": 768,
+      "scroll": 768,
+      "small": [],
+      "clipped": []
+    },
+    {
+      "label": "enlarged 768",
+      "width": 768,
+      "scroll": 768,
+      "small": [],
+      "clipped": []
+    }
+  ],
+  "checks": [
+    "A–Z appears exactly once in 8 gradual rounds; import validation, old-file compatibility, profile separation and restored partial connections",
+    "390px: wrong/repeated wrong/correct assisted feedback, selection tap not scored, saved line restored and Home stops playback",
+    "390px: missed pair returns when due; independent review advances approximately 3 days without resetting main completion",
+    "390px: keyboard matches, Previous keeps results, fresh big profile and little profile help/position isolation",
+    "1366px: wrong/repeated wrong/correct assisted feedback, selection tap not scored, saved line restored and Home stops playback",
+    "1366px: missed pair returns when due; independent review advances approximately 3 days without resetting main completion",
+    "1366px: keyboard matches, Previous keeps results, fresh big profile and little profile help/position isolation",
+    "All 26 name and sound keys resolve original assets; Q uses qu, X uses x"
+  ],
+  "audio": [
+    {
+      "width": 390,
+      "speed": 1,
+      "clip": "alphabet-case:a",
+      "pauseResume": true,
+      "caseHighlights": true
+    },
+    {
+      "width": 390,
+      "speed": 0.85,
+      "clip": "alphabet-case:a",
+      "pauseResume": true,
+      "caseHighlights": true
+    },
+    {
+      "width": 390,
+      "letter": "x",
+      "name": true,
+      "sound": "x",
+      "highlight": true,
+      "overlap": false
+    },
+    {
+      "width": 390,
+      "letter": "q",
+      "name": true,
+      "sound": "qu",
+      "highlight": true,
+      "overlap": false
+    },
+    {
+      "width": 1366,
+      "speed": 1,
+      "clip": "alphabet-case:a",
+      "pauseResume": true,
+      "caseHighlights": true
+    },
+    {
+      "width": 1366,
+      "speed": 0.85,
+      "clip": "alphabet-case:a",
+      "pauseResume": true,
+      "caseHighlights": true
+    },
+    {
+      "width": 1366,
+      "letter": "x",
+      "name": true,
+      "sound": "x",
+      "highlight": true,
+      "overlap": false
+    },
+    {
+      "width": 1366,
+      "letter": "q",
+      "name": true,
+      "sound": "qu",
+      "highlight": true,
+      "overlap": false
+    }
+  ],
+  "passed": true
+}

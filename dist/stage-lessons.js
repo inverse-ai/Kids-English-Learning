@@ -1,3 +1,5 @@
+import {createLetterMatching} from './letter-match.js';
+import {createAlphabetReading} from './alphabet-reading.js';
 import {createMoveFlow} from './move-flow.js';
 import {valuesStories,valuesOrder} from './values-stories.js';
 import {createValueStoryFlow} from './values-flow.js';
@@ -23,14 +25,16 @@ const sounds=word=>'<div class="stage-blend" aria-label="Blend '+esc(word)+'">'+
 export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getProgress,getLegacy,save,isSaved,render,onLegacy,onFamily,onStatus,getSpeed}){
  let stage='letters',page='home',letterIndex=0,wordId=null,storyId=null,exampleIndex=0,phase='Ready',activeStoryLine=-1;
  const state=()=>getProgress();
+ const letterMatching=createLetterMatching({getProgress,getPractice:()=>getLegacy().practice,onAttempt,save,render,play:audioParts,stop});
  const status=message=>onStatus(message);
+ const alphabetReading=createAlphabetReading({getProgress,getSpeed,save,status});
  const storyFlow=createStoryFlow({onAttempt,onStoryFinish,getProgress,save,isSaved,render,status,play:audioParts,stop,picture:stagePicture});
  const moveFlow=createMoveFlow({getProgress,save,isSaved,render,play:audioParts,stop});
  const valueFlow=createValueStoryFlow({onAttempt,onStoryFinish,getProgress,save,isSaved,render,status,play:audioParts,stop});
  const newStories=valuesStories.filter(s=>!stories.some(old=>old.sentences.join(' ')===s.sentences.join(' '))).sort((a,b)=>valuesOrder.indexOf(a.id)-valuesOrder.indexOf(b.id));
  const spellingFlow=createSpellingFlow({getProgress:()=>state().spelling,save,isSaved,render,status,picture:stagePicture,getSpeed});
  const saveLabel=()=>'<span id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</span>';
- function stop(){moveFlow.cancel();stopStageAudio();spellingFlow.clear();status('');activeStoryLine=-1;}
+ function stop(){alphabetReading.cancel();letterMatching.cancel();moveFlow.cancel();stopStageAudio();spellingFlow.clear();status('');activeStoryLine=-1;}
  function audioParts(parts,onEnd=()=>{}){
   playStageSequence(parts,{speed:getSpeed(),onPart:part=>{
    if(part.example!==undefined){exampleIndex=part.example;phase=part.phase;}
@@ -70,7 +74,8 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
  }
  function lettersHome(){
   const a=alphabet[letterIndex];
-  return '<section class="stage-letter activity"><div class="eyebrow">Letters · Suggested age 4+</div><h1>Say hello to '+a.letter.toUpperCase()+a.letter+'.</h1><p class="muted">Hear the name, the sound, and two picture words.</p><div class="big-letter letter-display"><span data-case="upper">'+a.letter.toUpperCase()+'</span><span data-case="lower">'+a.letter+'</span></div><div class="letter-examples">'+a.examples.map((word,i)=>'<div class="letter-example" data-example="'+i+'">'+stagePicture(word)+'<b>'+word+'</b></div>').join('')+'</div><p class="letter-note">'+esc(a.note).replace('with u:', 'with <span data-letter="u">u</span>:')+'</p><div class="activity-actions">'+button('Start','letter-start','','primary')+button('Replay','letter-start')+button('Pause','pause','disabled aria-pressed="false"')+'</div><p id="letter-phase" class="letter-phase" role="status">'+esc(phase)+'</p><p id="audio-status" class="status"></p><div class="letter-paging">'+button('← Previous','letter-next','data-index="'+(letterIndex-1)+'" '+(letterIndex===0?'disabled':''))+ '<span>'+ (letterIndex+1)+' / 26</span>'+button('Next →','letter-next','data-index="'+(letterIndex+1)+'" '+(letterIndex===25?'disabled':''))+'</div><p class="small muted">Stay here and practise. Only Next changes to the next letter.</p></section>'+
+  const gameEntry='<button class="letter-match-entry" data-action="stages-match-open"><span aria-hidden="true">A ↔ a</span><span><b>Big and small letters</b><small>'+(state().letterMatching?.started?'Continue matching pairs':'Draw a line or tap to match')+'</small></span><span aria-hidden="true">→</span></button>'+(letterMatching.dueCount()?'<div class="practice-entry">'+button('Review missed pairs · '+letterMatching.dueCount(),'match-review')+'</div>':'');
+  return gameEntry+'<section class="stage-letter activity"><div class="eyebrow">Letters · Suggested age 4+</div><h1>Say hello to '+a.letter.toUpperCase()+a.letter+'.</h1><p class="muted">Hear the name, the sound, and two picture words.</p><div class="big-letter letter-display"><span data-case="upper">'+a.letter.toUpperCase()+'</span><span data-case="lower">'+a.letter+'</span></div><div class="letter-examples">'+a.examples.map((word,i)=>'<div class="letter-example" data-example="'+i+'">'+stagePicture(word)+'<b>'+word+'</b></div>').join('')+'</div><p class="letter-note">'+esc(a.note).replace('with u:', 'with <span data-letter="u">u</span>:')+'</p><div class="activity-actions">'+button('Start','letter-start','','primary')+button('Replay','letter-start')+button('Pause','pause','disabled aria-pressed="false"')+'</div><p id="letter-phase" class="letter-phase" role="status">'+esc(phase)+'</p><p id="audio-status" class="status"></p><div class="letter-paging">'+button('← Previous','letter-next','data-index="'+(letterIndex-1)+'" '+(letterIndex===0?'disabled':''))+ '<span>'+ (letterIndex+1)+' / 26</span>'+button('Next →','letter-next','data-index="'+(letterIndex+1)+'" '+(letterIndex===25?'disabled':''))+'</div><p class="small muted">Stay here and practise. Only Next changes to the next letter.</p></section>'+
    (state().letter!==letterIndex?'<div class="resume-strip"><span>Your saved letter is '+alphabet[state().letter].letter.toUpperCase()+alphabet[state().letter].letter+'.</span>'+button('Continue that letter →','letter-next','data-index="'+state().letter+'"')+'</div>':'')+
    '<details class="stage-practice"><summary>Choose a letter · '+state().lettersDone.length+' explored</summary><div class="letter-grid">'+alphabet.map((a,i)=>'<button data-action="stages-letter-next" data-index="'+i+'" aria-label="Open '+a.letter.toUpperCase()+a.letter+'">'+a.letter.toUpperCase()+a.letter+(state().lettersDone.includes(a.letter)?'<small>✓</small>':'')+'</button>').join('')+'</div></details><details class="stage-practice"><summary>More letter practice: matching, writing and talking</summary>'+legacyCards('little',profiles.little.lessons.map((_,i)=>i))+'</details>';
  }
@@ -95,7 +100,7 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
   if(p.step===0){body='<div class="eyebrow">1 · Hear & blend</div><h1>Meet '+l.word+'.</h1>'+stagePicture(l.word)+sounds(l.word)+'<p class="lead">'+esc(l.tip)+'</p>'+button('Hear the blend','blend','data-word="'+l.word+'"','primary')+'<div class="activity-actions">'+button('Learn the helping words →','word-next','','primary')+'</div>';}
   else if(p.step===1){body='<div class="eyebrow">2 · Helping words</div><h1>A few words to help you read.</h1><p class="muted">Meet these before reading the sentence. Listen and say them together.</p>'+helperCards(l.helpers)+'<div class="activity-actions">'+button('Read a short phrase →','word-next','','primary')+'</div>';}
   else if(p.step===2){body='<div class="eyebrow">3 · A short phrase</div><h1>Put words together.</h1>'+stagePicture(l.word)+'<p class="sentence">'+esc(l.phrase)+'</p>'+button('Hear the phrase','audio','data-key="text:'+esc(l.phrase)+'"')+'<div class="activity-actions">'+button('Try the sentence →','word-next','','primary')+'</div>';}
-  else{body='<div class="eyebrow">4 · Complete & read</div><h1>Finish the picture sentence.</h1>'+stagePicture(l.word)+'<p class="sentence completed-sentence" role="status">'+esc(correct?l.sentence:l.blank)+'</p><div class="choices sentence-choices">'+l.choices.map(w=>'<button class="choice word-choice '+(p.answer===w?(correct?'correct':'retry'):'')+'" data-action="stages-word-answer" data-word="'+w+'" '+(correct?'disabled':'')+'>'+w+'</button>').join('')+'</div><p class="feedback" role="status">'+(correct?'You did it! Now read the whole sentence aloud.':p.answer?'Good try. Look at the picture and try again.':'Choose one word.')+'</p>'+(correct?button('Hear the whole sentence','audio','data-key="text:'+esc(l.sentence)+'"')+'<div class="activity-actions">'+button('I read the sentence ✓','word-finish','','primary')+'</div>':'');}
+  else{body='<div class="eyebrow">4 · Complete & read</div><h1>Finish the picture sentence.</h1>'+stagePicture(l.word)+'<p class="sentence completed-sentence" role="status">'+esc(correct?l.sentence:l.blank)+'</p><div class="choices sentence-choices">'+l.choices.map(w=>'<button class="choice word-choice '+(p.answer&&w===l.word?'correct':p.answer===w?'retry':'')+'" data-action="stages-word-answer" data-word="'+w+'" '+(correct?'disabled':'')+'>'+w+'</button>').join('')+'</div><p class="feedback" role="status">'+(correct?'You did it! Now read the whole sentence aloud.':p.answer?'Thank you for trying. The answer is '+l.word+'. '+l.tip:'Choose one word.')+'</p>'+(correct?button('Hear the whole sentence','audio','data-key="text:'+esc(l.sentence)+'"')+'<div class="activity-actions">'+button('I read the sentence ✓','word-finish','','primary')+'</div>':'');}
   return '<div class="lesson-head">'+button('← Words','back')+'<span class="lesson-meta">'+(state().words[wordId]?.done?'Practised · ':'')+saveLabel()+'</span></div><section class="activity stage-word">'+body+button('Pause','pause','disabled aria-pressed="false"')+'<p id="audio-status" class="status"></p></section>';
  }
  function storiesHome(){
@@ -111,11 +116,13 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
 
  return {
   stage:()=>stage,
-  bind(){if(page==='move-lesson')moveFlow.bind();},
-  snapshot(){return page==='move-lesson'?{kind:'stage',page:'move-lesson',id:state().moveCurrent}:page==='spelling'?{kind:'stage',page:'spelling'}:page==='word'?{kind:'stage',page:'word',id:wordId}:page==='value-story'?{kind:'stage',page:'value-story',id:state().valueCurrent}:page==='story'?{kind:'stage',page:'story',id:state().storyCurrent}:page==='pattern'?{kind:'stage',page:'pattern',id:storyId}:stage==='letters'?{kind:'stage',page:'letter',index:letterIndex}:null;},
+  bind(){if(page==='move-lesson')moveFlow.bind();if(page==='letter-match')letterMatching.bind();if(page==='alphabet')alphabetReading.bind();},
+  snapshot(){return page==='alphabet'?{kind:'stage',page:'alphabet'}:page==='letter-match'?{kind:'stage',page:'letter-match'}:page==='move-lesson'?{kind:'stage',page:'move-lesson',id:state().moveCurrent}:page==='spelling'?{kind:'stage',page:'spelling'}:page==='word'?{kind:'stage',page:'word',id:wordId}:page==='value-story'?{kind:'stage',page:'value-story',id:state().valueCurrent}:page==='story'?{kind:'stage',page:'story',id:state().storyCurrent}:page==='pattern'?{kind:'stage',page:'pattern',id:storyId}:stage==='letters'?{kind:'stage',page:'letter',index:letterIndex}:null;},
   openResume(route){
    stop();
    if(route.page==='letter'){openLetter(route.index,false);return;}
+   if(route.page==='alphabet'){stage='letters';page='alphabet';alphabetReading.prepare();save();render();return;}
+   if(route.page==='letter-match'){stage='letters';page='letter-match';letterMatching.open();return;}
    stage=route.page==='move-lesson'?'move':['story','pattern','value-story'].includes(route.page)?'stories':'words';page=route.page;
    if(page==='move-lesson'){moveFlow.open(route.id);return;}
    if(page==='spelling'){spellingFlow.open(false);return;}
@@ -132,13 +139,17 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
     ...[1,2,3].map(()=>({key:'sound:'+a.sound,target:'.big-letter [data-case="lower"]'})),
     {key:'word:'+word,target:'.flash-word,.activity h2'}]);
   },
-  setStage(value){if(!stageInfo[value]&&value!=='move')return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';}},
+  setStage(value){if(!stageInfo[value]&&value!=='move')return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';page='alphabet';alphabetReading.prepare();}},
   reset(){openLetter(0,false);},
   stop,
-  html(){return page==='move-lesson'?moveFlow.html():stage==='move'?moveFlow.home():page==='spelling'?spellingFlow.html():page==='blending'?wordLibrary():page==='sentences'?wordLibrary(true):page==='word'?wordView():page==='story'?storyView():page==='value-story'?valueFlow.html():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
+  html(){return page==='alphabet'?alphabetReading.html():page==='letter-match'?letterMatching.html():page==='move-lesson'?moveFlow.html():stage==='move'?moveFlow.home():page==='spelling'?spellingFlow.html():page==='blending'?wordLibrary():page==='sentences'?wordLibrary(true):page==='word'?wordView():page==='story'?storyView():page==='value-story'?valueFlow.html():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
   handle(data){
    const action=data.action.replace('stages-','');
-   if(action==='move-open'){stop();stage='move';page='move-lesson';moveFlow.open(data.id);}
+   if(action==='alphabet-next'){openLetter(state().letter,false);return;}
+   if(action.startsWith('alphabet-')){alphabetReading.handle(data);return;}
+   if(action==='match-open'||action==='match-review'){stop();stage='letters';page='letter-match';letterMatching.open();if(action==='match-review')letterMatching.handle({action:'stages-match-review'});}
+   else if(action.startsWith('match-')){if(action==='match-back'){stop();page='home';render();}else letterMatching.handle(data);}
+   else if(action==='move-open'){stop();stage='move';page='move-lesson';moveFlow.open(data.id);}
    else if(action.startsWith('move-')){if(action==='move-back'){stop();page='home';render();}else moveFlow.handle(data);}
    else if(action==='value-story-open'){if(!newStories.some(s=>s.id===data.id))return;stop();page='value-story';valueFlow.open(data.id);}
    else if(action.startsWith('value-story-')){if(action==='value-story-home'){stop();page='home';render();}else valueFlow.handle(data);}
@@ -161,7 +172,7 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
    }else if(action==='word-next'){const p=state().words[wordId];if(p&&p.step<3){stop();p.step++;save();render();}}
    else if(action==='word-answer'){
     const l=wordLessons.find(l=>l.id===wordId),p=state().words[wordId];if(!l||p.step!==3||p.answer===l.word||!l.choices.includes(data.word))return;
-    onAttempt('word:'+l.word,data.word===l.word,p.answer!==null);p.answer=data.word;save();render(false);
+    onAttempt('word:'+l.word,data.word===l.word,p.answer!==null);p.answer=data.word;save();render(false);if(data.word!==l.word)audioParts([...l.word].map(c=>({key:'sound:'+c})).concat({key:'word:'+l.word}));
    }else if(action==='word-finish'){
     const l=wordLessons.find(l=>l.id===wordId),p=state().words[wordId];if(!l||p.answer!==l.word)return;
     p.done=true;save();status(isSaved()?'Sentence practice saved. Read it again, or return to Words.':'Read the sentence again. Progress could not be saved yet.');

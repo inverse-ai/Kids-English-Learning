@@ -23,9 +23,9 @@ async function layout(width,enlarged){
  report.layouts.push({width,enlarged,...result});if(!enlarged&&[390,1366].includes(width))await page.screenshot({path:'qa/home-refresh-'+width+'.png',fullPage:true});
 }
 try{
- await page.goto('http://localhost:4174');await action('start-home').click();await expect(page.locator('h1')).toContainText('Aa');await action('home').first().click();await expect(action('continue-home')).toContainText('Letters · Aa');
+ await page.addInitScript(()=>localStorage.setItem('little-english-opening-audio-v1',JSON.stringify({version:1,enabled:false})));await page.goto('http://localhost:4174');await action('start-home').click();await expect(page.locator('h1')).toContainText('Read the alphabet');await action('stages-alphabet-next').click();await expect(page.locator('h1')).toContainText('Aa');await action('home').first().click();await expect(action('continue-home')).toContainText('Letters · Aa');
  for(const width of [320,390,768,1366])for(const enlarged of [false,true])await layout(width,enlarged);
- report.checks.push('Four distinct palettes, five fully contained vector illustrations, 56px buttons, no horizontal overflow at 320/390/768/1366px and 200% text','New-learner Start opens Aa; returning Home preserves position without audio');
+ report.checks.push('Four distinct palettes, five fully contained vector illustrations, 56px buttons, no horizontal overflow at 320/390/768/1366px and 200% text','New-learner Start opens alphabet reading then Aa; returning Home preserves position without audio');
  // Keep resume destinations and both profile records intact.
  const p=hydrateProfiles(null);p.learning.letter=1;p.lastActivity={kind:'stage',page:'letter',index:1};syncProfile(p,'little');selectProfile(p,'big');p.lastActivity={kind:'stage',page:'story',id:'pig-pen'};p.learning.stories['pig-pen']={phase:'blanks',line:1,blank:0,answers:['sit'],done:false};syncProfile(p,'big');selectProfile(p,'little');
  await page.evaluate(p=>localStorage.setItem('little-english-v1',JSON.stringify(p)),p);await page.reload();await expect(action('continue-home')).toContainText('Bb');await action('continue-home').click();await expect(page.locator('h1')).toContainText('Bb');await action('home').first().click();
@@ -34,7 +34,7 @@ try{
  for(const stage of ['letters','words','stories','move']){await page.locator('.home-stage[data-stage="'+stage+'"]').click();await expect(page.locator('.app-home')).toHaveCount(0);await action('home').first().click();await expect(page.locator('.app-home')).toBeVisible();}
  report.checks.push('All four section cards retain their existing destinations');
  // Compare a lesson against the pre-refresh stylesheet, not just Home.
- await page.setViewportSize({width:390,height:844});await page.locator('.home-stage[data-stage=letters]').click();
+ await page.setViewportSize({width:390,height:844});await page.locator('.home-stage[data-stage=letters]').click();await action('stages-alphabet-next').click();
  const metrics=()=>page.evaluate(()=>['.topbar','.stage-nav','.letter-player','h1','.letter-paging'].map(s=>{const e=document.querySelector(s);if(!e)return null;const c=getComputedStyle(e),b=e.getBoundingClientRect();return{s,color:c.color,background:c.backgroundColor,font:c.fontSize,width:b.width,height:b.height};}));
  const current=await metrics(),oldCss=execFileSync('git',['show','HEAD:dist/style.css'],{encoding:'utf8'});await page.route('**/style.css',route=>route.fulfill({contentType:'text/css',body:oldCss}));await page.reload();await action('continue-home').click();assert.deepEqual(await metrics(),current);report.checks.push('Letter lesson layout, typography and colors match the pre-refresh stylesheet');
  assert.deepEqual(errors,[]);report.passed=true;await writeFile('qa/home-design-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({passed:true,layouts:report.layouts.length,checks:report.checks}));

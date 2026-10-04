@@ -1,3 +1,5 @@
+import {normalizeLetterMatching} from './letter-match-data.js';
+import {normalizeAlphabetReading} from './alphabet-reading-data.js';
 export const stageInfo={letters:{title:'Letters',age:'4+',hint:'Meet a letter, hear its sound.'},words:{title:'Words',age:'5+',hint:'Blend sounds. Read little sentences.'},stories:{title:'Stories',age:'6+',hint:'Read connected sentences and stories.'}};
 export const alphabetCaseText=letter=>'Big '+letter.toUpperCase()+', small '+letter+'.';
 export const alphabetExampleText=(letter,word)=>letter==='x'?'X at the end of '+word+'.':letter==='q'?'Q with U for '+word+'.':letter.toUpperCase()+' for '+word+'.';
@@ -79,5 +81,7 @@ export function normalizeLearning(raw){
  }
  if(validWords.has(raw?.wordCurrent))result.wordCurrent=raw.wordCurrent;
  if(validStories.has(raw?.storyCurrent))result.storyCurrent=raw.storyCurrent;
+ if(raw?.letterMatching&&typeof raw.letterMatching==='object')result.letterMatching=normalizeLetterMatching(raw.letterMatching);
+ if(raw?.alphabetReading&&typeof raw.alphabetReading==='object')result.alphabetReading=normalizeAlphabetReading(raw.alphabetReading);
  return result;
 }

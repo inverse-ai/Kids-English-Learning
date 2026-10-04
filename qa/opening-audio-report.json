@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Default on, real opening playback, lesson waits for ending, Stop, no restart during page navigation, persistent off/on control",
+    "Blocked autoplay shows Tap to begin; first learning tap plays opening once before lesson; no overlapping audio"
+  ],
+  "humanListeningVerified": false,
+  "decoded": {
+    "duration": 7.08,
+    "audible": true
+  },
+  "passed": true,
+  "limitations": [
+    "Arabic pronunciation, ordinary tone and perceived similarity to Sonia require fluent human listening; synthetic Arabic uses Zariyah rather than an English voice"
+  ]
+}

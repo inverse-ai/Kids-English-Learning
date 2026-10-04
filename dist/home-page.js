@@ -9,6 +9,8 @@ export function validResume(r){
  if(r.kind==='stage'){
   if(r.page==='letter'&&Number.isInteger(r.index)&&alphabet[r.index])return {kind:r.kind,page:r.page,index:r.index};
   if(r.page==='spelling')return {kind:r.kind,page:r.page};
+  if(r.page==='letter-match')return {kind:r.kind,page:r.page};
+  if(r.page==='alphabet')return {kind:r.kind,page:r.page};
   const lists={word:wordLessons,story:stories,pattern:patternLessons,'value-story':valuesStories,'move-lesson':allMoveLessons};
   if(lists[r.page]?.some(x=>x.id===r.id))return {kind:r.kind,page:r.page,id:r.id};
  }
@@ -33,6 +35,8 @@ export function priorResume(p){
  if(p.learning.spelling.letter||p.learning.spelling.position||p.learning.spelling.done.length)return {kind:'stage',page:'spelling'};
  if(p.learning.words[p.learning.wordCurrent])return validResume({kind:'stage',page:'word',id:p.learning.wordCurrent});
  if(p.learning.letter||p.learning.lettersDone.length)return {kind:'stage',page:'letter',index:p.learning.letter};
+ if(p.learning.letterMatching?.started)return {kind:'stage',page:'letter-match'};
+ if(p.learning.alphabetReading?.started)return {kind:'stage',page:'alphabet'};
  if(p.pictureFamilies.lastFamily)return validResume({kind:'family',page:'board',family:p.pictureFamilies.lastFamily});
  const completed=p.completed[p.profile].at(-1);if(completed)return validResume({kind:'legacy',profile:p.profile,id:completed});
  return null;
@@ -41,6 +45,8 @@ export function resumeName(r,p){
  if(r.kind==='legacy')return profiles[r.profile].lessons.find(x=>x.id===r.id).title;
  if(r.kind==='family')return r.page==='reading'?'The -at family · Read sentences & a story':r.page==='writing'?'Write '+r.word:r.page==='lesson'?'The -'+familyRounds.find(x=>x.id===r.round).family+' family · Round '+familyRounds.find(x=>x.id===r.round).number:'The -'+r.family+' word family';
  if(r.page==='spelling'){const a=alphabet[p.learning.spelling.letter];return 'Spell picture words · '+a.letter.toUpperCase()+a.letter;}
+ if(r.page==='letter-match')return 'Big and small letters · '+(p.learning.letterMatching?.phase==='review'?'Review':'Round '+((p.learning.letterMatching?.round||0)+1));
+ if(r.page==='alphabet')return 'Letters · Read the alphabet';
  if(r.page==='letter'){const a=alphabet[r.index];return 'Letters · '+a.letter.toUpperCase()+a.letter;}
  return ({word:wordLessons,story:stories,pattern:patternLessons,'value-story':valuesStories,'move-lesson':allMoveLessons})[r.page].find(x=>x.id===r.id).title||'Read '+wordLessons.find(x=>x.id===r.id)?.word;
 }
@@ -76,5 +82,5 @@ const sectionArt={
 };
 export function homePage(resume,p,esc){
  const cards=[['letters','Letters','4+','Meet letters & sounds'],['words','Words','5+','Spell, build & read'],['stories','Stories','6+','Read little stories'],['move','Listen & Move','','Listen and move objects']];
- return '<section class="app-home"><div class="home-welcome"><div class="home-welcome-copy"><span class="home-hello">Hello, little explorer!</span><h1>Little English</h1><p>Big discoveries. <br>One little step at a time.</p><button class="btn primary home-continue" data-action="'+(resume?'continue-home':'start-home')+'"><span class="home-continue-title">'+(resume?'Continue':'Start learning')+' <span aria-hidden="true">→</span></span><span class="home-continue-lesson">'+(resume?esc(resumeName(resume,p)):'Letters · Aa')+'</span></button></div>'+welcome+'</div><h2 class="home-section-title">What shall we explore?</h2><div class="home-stages">'+cards.map(([id,title,age,caption])=>'<button class="home-stage home-'+id+'" data-action="stage" data-stage="'+id+'"><span class="home-stage-art" aria-hidden="true">'+sectionArt[id]+'</span><span class="home-stage-copy"><b>'+title+'</b><small>'+caption+'</small><em>'+(age?'Suggested age '+age:'All ages welcome')+'</em></span><span class="home-stage-arrow" aria-hidden="true">→</span></button>').join('')+'</div><p class="home-guidance">Start wherever you feel ready. Ages are a guide.</p></section>';
+ return '<section class="app-home"><div class="home-welcome"><div class="home-welcome-copy"><span class="home-hello">Hello, little explorer!</span><h1>Little English</h1><p>Big discoveries. <br>One little step at a time.</p><button class="btn primary home-continue" data-action="'+(resume?'continue-home':'start-home')+'"><span class="home-continue-title">'+(resume?'Continue':'Start learning')+' <span aria-hidden="true">→</span></span><span class="home-continue-lesson">'+(resume?esc(resumeName(resume,p)):'Letters · A–Z')+'</span></button></div>'+welcome+'</div><h2 class="home-section-title">What shall we explore?</h2><div class="home-stages">'+cards.map(([id,title,age,caption])=>'<button class="home-stage home-'+id+'" data-action="stage" data-stage="'+id+'"><span class="home-stage-art" aria-hidden="true">'+sectionArt[id]+'</span><span class="home-stage-copy"><b>'+title+'</b><small>'+caption+'</small><em>'+(age?'Suggested age '+age:'All ages welcome')+'</em></span><span class="home-stage-arrow" aria-hidden="true">→</span></button>').join('')+'</div><p class="home-guidance">Start wherever you feel ready. Ages are a guide.</p></section>';
 }

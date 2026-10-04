@@ -1,0 +1,497 @@
+{
+  "layouts": [
+    {
+      "label": "letter",
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "label": "spelling",
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "label": "short-word",
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "label": "family",
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "label": "story-gaps",
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "label": "value-gaps",
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "label": "at-reading",
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "label": "move",
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "label": "letter",
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "label": "spelling",
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "label": "short-word",
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "label": "family",
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "label": "story-gaps",
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "label": "value-gaps",
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "label": "at-reading",
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "label": "move",
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "label": "letter",
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "label": "spelling",
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "label": "short-word",
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "label": "family",
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "label": "story-gaps",
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "label": "value-gaps",
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "label": "at-reading",
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "label": "move",
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "label": "letter",
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "label": "spelling",
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "label": "short-word",
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "label": "family",
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "label": "story-gaps",
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "label": "value-gaps",
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "label": "at-reading",
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "label": "move",
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "label": "letter",
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "label": "spelling",
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "label": "short-word",
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "label": "family",
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "label": "story-gaps",
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "label": "value-gaps",
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "label": "at-reading",
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "label": "move",
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "label": "letter",
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "label": "spelling",
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "label": "short-word",
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "label": "family",
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "label": "story-gaps",
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "label": "value-gaps",
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "label": "at-reading",
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "label": "move",
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "label": "letter",
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "label": "spelling",
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "label": "short-word",
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "label": "family",
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "label": "story-gaps",
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "label": "value-gaps",
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "label": "at-reading",
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "label": "move",
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "label": "letter",
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "label": "spelling",
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "label": "short-word",
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "label": "family",
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "label": "story-gaps",
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "label": "value-gaps",
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "label": "at-reading",
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "label": "move",
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "label": "letter",
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "label": "spelling",
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "label": "short-word",
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "label": "family",
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "label": "story-gaps",
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "label": "value-gaps",
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "label": "at-reading",
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "label": "move",
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "label": "letter",
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "label": "spelling",
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "label": "short-word",
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "label": "family",
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "label": "story-gaps",
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "label": "value-gaps",
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "label": "at-reading",
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "label": "move",
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "label": "letter",
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "label": "spelling",
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "label": "short-word",
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "label": "family",
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "label": "story-gaps",
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "label": "value-gaps",
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "label": "at-reading",
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "label": "move",
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "label": "letter",
+      "width": 1366,
+      "enlarged": true
+    },
+    {
+      "label": "spelling",
+      "width": 1366,
+      "enlarged": true
+    },
+    {
+      "label": "short-word",
+      "width": 1366,
+      "enlarged": true
+    },
+    {
+      "label": "family",
+      "width": 1366,
+      "enlarged": true
+    },
+    {
+      "label": "story-gaps",
+      "width": 1366,
+      "enlarged": true
+    },
+    {
+      "label": "value-gaps",
+      "width": 1366,
+      "enlarged": true
+    },
+    {
+      "label": "at-reading",
+      "width": 1366,
+      "enlarged": true
+    },
+    {
+      "label": "move",
+      "width": 1366,
+      "enlarged": true
+    }
+  ],
+  "checks": [
+    "Older word sentence now shows correct choice and phonics hint, preserves retry and records assisted completion",
+    "Picture-family wrong answer highlights the correct picture-word and demonstrates existing sound blending",
+    "Often missed explicitly groups Letters, Words and Story questions; the other profile has its own empty history",
+    "Keyboard focus visible; Enter/Space open reading and make real letter matches; native setting is labelled and keyboard-operable",
+    "Playable move object remains in screen-reader tree and supports equivalent keyboard selection/placement",
+    "Parent-facing wording already uses your child; supplied fictional stories retain their characters and exact text"
+  ],
+  "passed": true,
+  "limitations": [
+    "Browser touch emulation rather than physical hardware",
+    "Screen-reader accessibility tree and labels checked; real assistive-technology listening remains unverified"
+  ]
+}

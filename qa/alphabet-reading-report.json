@@ -1,0 +1,77 @@
+{
+  "checks": [
+    "Autoplay works when allowed; blocked autoplay exposes explicit Listen to all; saved reading position resumes without resetting other lessons",
+    "Ordered A–Z pairs; individual tap and Replay read one English name only; changing screens stops audio and clears highlights",
+    "Phone touch emulation, tablet and desktop; 200% text, no horizontal overflow or clipped letters; controls and pairs at least 56px",
+    "Matching and retained letter examples follow alphabet reading; profile isolation and versioned export/import preserve partial reading"
+  ],
+  "layouts": [
+    {
+      "width": 320,
+      "enlarged": false
+    },
+    {
+      "width": 320,
+      "enlarged": true
+    },
+    {
+      "width": 360,
+      "enlarged": false
+    },
+    {
+      "width": 360,
+      "enlarged": true
+    },
+    {
+      "width": 390,
+      "enlarged": false
+    },
+    {
+      "width": 390,
+      "enlarged": true
+    },
+    {
+      "width": 430,
+      "enlarged": false
+    },
+    {
+      "width": 430,
+      "enlarged": true
+    },
+    {
+      "width": 768,
+      "enlarged": false
+    },
+    {
+      "width": 768,
+      "enlarged": true
+    },
+    {
+      "width": 1366,
+      "enlarged": false
+    },
+    {
+      "width": 1366,
+      "enlarged": true
+    }
+  ],
+  "speeds": [
+    {
+      "speed": 1,
+      "all26": true,
+      "actualHighlights": true,
+      "pauseResume": true,
+      "followVisible": true
+    },
+    {
+      "speed": 0.85,
+      "all26": true,
+      "actualHighlights": true
+    }
+  ],
+  "passed": true,
+  "unverified": [
+    "Physical phone and tablet hardware",
+    "Independent human pronunciation review of reused English recordings"
+  ]
+}
