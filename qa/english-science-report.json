@@ -1,0 +1,2910 @@
+{
+  "lessons": [
+    {
+      "id": "science-sunlight",
+      "title": "Plants Need Sunlight",
+      "words": [
+        {
+          "word": "plant",
+          "meaning": "গাছ"
+        },
+        {
+          "word": "sunlight",
+          "meaning": "সূর্যের আলো"
+        },
+        {
+          "word": "cover",
+          "meaning": "ঢেকে রাখা"
+        },
+        {
+          "word": "pale",
+          "meaning": "ফ্যাকাশে"
+        }
+      ],
+      "questions": 1
+    },
+    {
+      "id": "science-rain",
+      "title": "Where Does Rain Come From?",
+      "words": [
+        {
+          "word": "river",
+          "meaning": "নদী"
+        },
+        {
+          "word": "warm",
+          "meaning": "গরম করা"
+        },
+        {
+          "word": "water vapour",
+          "meaning": "পানির অদৃশ্য গ্যাসীয় রূপ"
+        },
+        {
+          "word": "cool",
+          "meaning": "ঠান্ডা হওয়া"
+        },
+        {
+          "word": "cloud",
+          "meaning": "মেঘ"
+        },
+        {
+          "word": "rain",
+          "meaning": "বৃষ্টি"
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "science-body",
+      "title": "Our Body Helpers",
+      "words": [
+        {
+          "word": "brain",
+          "meaning": "মস্তিষ্ক"
+        },
+        {
+          "word": "heart",
+          "meaning": "হৃৎপিণ্ড"
+        },
+        {
+          "word": "lungs",
+          "meaning": "ফুসফুস"
+        },
+        {
+          "word": "stomach",
+          "meaning": "পাকস্থলী"
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "science-senses",
+      "title": "Our Five Senses",
+      "words": [
+        {
+          "word": "see",
+          "meaning": "দেখি"
+        },
+        {
+          "word": "hear",
+          "meaning": "শুনি"
+        },
+        {
+          "word": "smell",
+          "meaning": "গন্ধ পাই"
+        },
+        {
+          "word": "taste",
+          "meaning": "স্বাদ নিই"
+        },
+        {
+          "word": "touch",
+          "meaning": "স্পর্শ করি"
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "science-homes",
+      "title": "Animal Homes",
+      "words": [
+        {
+          "word": "nest",
+          "meaning": "পাখির বাসা"
+        },
+        {
+          "word": "pond",
+          "meaning": "পুকুর"
+        },
+        {
+          "word": "farm",
+          "meaning": "খামার"
+        },
+        {
+          "word": "forest",
+          "meaning": "বন"
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "science-day-night",
+      "title": "Day and Night",
+      "words": [
+        {
+          "word": "Earth",
+          "meaning": "পৃথিবী"
+        },
+        {
+          "word": "turn",
+          "meaning": "ঘোরা"
+        },
+        {
+          "word": "day",
+          "meaning": "দিন"
+        },
+        {
+          "word": "night",
+          "meaning": "রাত"
+        }
+      ],
+      "questions": 1
+    },
+    {
+      "id": "science-float",
+      "title": "Float or Sink?",
+      "words": [
+        {
+          "word": "float",
+          "meaning": "পানির ওপরে ভেসে থাকা"
+        },
+        {
+          "word": "sink",
+          "meaning": "পানির নিচে ডুবে যাওয়া"
+        },
+        {
+          "word": "wooden block",
+          "meaning": "কাঠের টুকরা"
+        },
+        {
+          "word": "steel key",
+          "meaning": "ইস্পাতের চাবি"
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "science-push-pull",
+      "title": "Push and Pull",
+      "words": [
+        {
+          "word": "push",
+          "meaning": "ঠেলা"
+        },
+        {
+          "word": "pull",
+          "meaning": "টানা"
+        },
+        {
+          "word": "toy",
+          "meaning": "খেলনা"
+        },
+        {
+          "word": "wagon",
+          "meaning": "টেনে নেওয়া ছোট গাড়ি"
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "science-magnet",
+      "title": "A Magnet Can Pull",
+      "words": [
+        {
+          "word": "magnet",
+          "meaning": "চুম্বক"
+        },
+        {
+          "word": "metal",
+          "meaning": "ধাতু"
+        },
+        {
+          "word": "steel",
+          "meaning": "ইস্পাত"
+        },
+        {
+          "word": "aluminium",
+          "meaning": "অ্যালুমিনিয়াম"
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "science-switch",
+      "title": "A Switch Turns the Light On",
+      "words": [
+        {
+          "word": "switch",
+          "meaning": "সুইচ"
+        },
+        {
+          "word": "lamp",
+          "meaning": "বাতি"
+        },
+        {
+          "word": "on",
+          "meaning": "চালু"
+        },
+        {
+          "word": "off",
+          "meaning": "বন্ধ"
+        }
+      ],
+      "questions": 2
+    }
+  ],
+  "questions": [
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-sunlight",
+      "question": "green",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-rain",
+      "question": "warms",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-rain",
+      "question": "falls",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-body",
+      "question": "breathe",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-body",
+      "question": "blood",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-senses",
+      "question": "hear",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-senses",
+      "question": "taste",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-homes",
+      "question": "frog",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-homes",
+      "question": "cow",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-day-night",
+      "question": "day",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-float",
+      "question": "floated",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-float",
+      "question": "sank",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-push-pull",
+      "question": "push",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-push-pull",
+      "question": "pull",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-magnet",
+      "question": "pulls",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-magnet",
+      "question": "metal",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-switch",
+      "question": "on",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-switch",
+      "question": "control",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-sunlight",
+      "question": "green",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-rain",
+      "question": "warms",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-rain",
+      "question": "falls",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-body",
+      "question": "breathe",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-body",
+      "question": "blood",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-senses",
+      "question": "hear",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-senses",
+      "question": "taste",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-homes",
+      "question": "frog",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-homes",
+      "question": "cow",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-day-night",
+      "question": "day",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-float",
+      "question": "floated",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-float",
+      "question": "sank",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-push-pull",
+      "question": "push",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-push-pull",
+      "question": "pull",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-magnet",
+      "question": "pulls",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-magnet",
+      "question": "metal",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-switch",
+      "question": "on",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-switch",
+      "question": "control",
+      "assisted": true,
+      "retainedOnPrevious": true
+    }
+  ],
+  "experiments": [
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-sunlight",
+      "action": "days",
+      "option": "later",
+      "scene": "plants-reveal"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-body",
+      "action": "organs",
+      "option": "brain",
+      "scene": "body-brain"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-body",
+      "action": "organs",
+      "option": "heart",
+      "scene": "body-heart"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-body",
+      "action": "organs",
+      "option": "lungs",
+      "scene": "body-lungs"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-body",
+      "action": "organs",
+      "option": "stomach",
+      "scene": "body-stomach"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-day-night",
+      "action": "turn",
+      "option": "night",
+      "scene": "earth-turn"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-float",
+      "action": "water-test",
+      "option": "wood",
+      "scene": "float-wood"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-float",
+      "action": "water-test",
+      "option": "key",
+      "scene": "float-key"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-float",
+      "action": "water-test",
+      "option": "ball",
+      "scene": "float-ball"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-push-pull",
+      "action": "push",
+      "option": "push",
+      "scene": "push-toy"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-push-pull",
+      "action": "pull",
+      "option": "pull",
+      "scene": "pull-wagon"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-magnet",
+      "action": "magnet-test",
+      "option": "clip",
+      "scene": "magnet-clip"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-magnet",
+      "action": "magnet-test",
+      "option": "wood",
+      "scene": "magnet-wood"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-magnet",
+      "action": "magnet-test",
+      "option": "foil",
+      "scene": "magnet-foil"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-switch",
+      "action": "switch",
+      "option": "on",
+      "scene": "lamp-on"
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "science-switch",
+      "action": "switch",
+      "option": "off",
+      "scene": "lamp-off"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-sunlight",
+      "action": "days",
+      "option": "later",
+      "scene": "plants-reveal"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-body",
+      "action": "organs",
+      "option": "brain",
+      "scene": "body-brain"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-body",
+      "action": "organs",
+      "option": "heart",
+      "scene": "body-heart"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-body",
+      "action": "organs",
+      "option": "lungs",
+      "scene": "body-lungs"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-body",
+      "action": "organs",
+      "option": "stomach",
+      "scene": "body-stomach"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-day-night",
+      "action": "turn",
+      "option": "night",
+      "scene": "earth-turn"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-float",
+      "action": "water-test",
+      "option": "wood",
+      "scene": "float-wood"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-float",
+      "action": "water-test",
+      "option": "key",
+      "scene": "float-key"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-float",
+      "action": "water-test",
+      "option": "ball",
+      "scene": "float-ball"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-push-pull",
+      "action": "push",
+      "option": "push",
+      "scene": "push-toy"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-push-pull",
+      "action": "pull",
+      "option": "pull",
+      "scene": "pull-wagon"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-magnet",
+      "action": "magnet-test",
+      "option": "clip",
+      "scene": "magnet-clip"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-magnet",
+      "action": "magnet-test",
+      "option": "wood",
+      "scene": "magnet-wood"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-magnet",
+      "action": "magnet-test",
+      "option": "foil",
+      "scene": "magnet-foil"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-switch",
+      "action": "switch",
+      "option": "on",
+      "scene": "lamp-on"
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "science-switch",
+      "action": "switch",
+      "option": "off",
+      "scene": "lamp-off"
+    }
+  ],
+  "layouts": [
+    {
+      "label": "home 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "library 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "word 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "experiment 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "revealed sentence 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "question 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "wrong answer 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "recap 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "finish 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "parents 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "home 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "library 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "word 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "experiment 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "revealed sentence 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "question 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "wrong answer 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "recap 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "finish 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "parents 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "home 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "library 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "word 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "experiment 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "revealed sentence 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "question 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "wrong answer 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "recap 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "finish 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "parents 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "home 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "library 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "word 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "experiment 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "revealed sentence 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "question 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "wrong answer 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "recap 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "finish 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "parents 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "home 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "library 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "word 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "experiment 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "revealed sentence 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "question 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "wrong answer 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "recap 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "finish 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "parents 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "home 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "library 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "word 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "experiment 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "revealed sentence 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "question 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "wrong answer 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "recap 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "finish 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "parents 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "home 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "library 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "word 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "experiment 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "revealed sentence 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "question 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "wrong answer 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "recap 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "finish 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "parents 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "home 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "library 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "word 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "experiment 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "revealed sentence 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "question 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "wrong answer 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "recap 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "finish 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "parents 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "home 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "library 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "word 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "experiment 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "revealed sentence 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "question 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "wrong answer 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "recap 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "finish 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "parents 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "home 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "library 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "word 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "experiment 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "revealed sentence 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "question 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "wrong answer 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "recap 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "finish 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "parents 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "home 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "library 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "word 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "experiment 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "revealed sentence 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "question 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "wrong answer 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "recap 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "finish 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "parents 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "home 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "library 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "word 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "experiment 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "revealed sentence 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "question 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "wrong answer 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "recap 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "finish 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "parents 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    }
+  ],
+  "audio": [
+    {
+      "key": "science-word:plant",
+      "clip": "/audio/0e32474f4333a1e4e5589b92.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A plant.",
+      "clip": "/audio/78204b346b4b01a43fc71348.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "science-word:sunlight",
+      "clip": "/audio/a4deb3025382a49835b5f864.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Sunlight helps plants grow.",
+      "clip": "/audio/77abb449399f4012baaffb81.mp3",
+      "duration": 2.664,
+      "cues": 4
+    },
+    {
+      "key": "science-word:cover",
+      "clip": "/audio/89552190415d80446c4c729c.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A bowl covers the grass.",
+      "clip": "/audio/f015ec6adab6010a36c7b5a5.mp3",
+      "duration": 2.352,
+      "cues": 5
+    },
+    {
+      "key": "science-word:pale",
+      "clip": "/audio/040fe40ebf53d9a7e1d702b1.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The grass is pale.",
+      "clip": "/audio/129510c3d27c1bb24c23a274.mp3",
+      "duration": 1.944,
+      "cues": 4
+    },
+    {
+      "key": "text:Both patches get the same water.",
+      "clip": "/audio/ded745aeaa3e333629f11ab4.mp3",
+      "duration": 2.856,
+      "cues": 6
+    },
+    {
+      "key": "text:A bowl blocks the sunlight.",
+      "clip": "/audio/5793307bf86d1e0a401c6ea0.mp3",
+      "duration": 2.496,
+      "cues": 5
+    },
+    {
+      "key": "text:Watch what happens over several days.",
+      "clip": "/audio/5e3f406a372b8a8d6f50c579.mp3",
+      "duration": 3.12,
+      "cues": 6
+    },
+    {
+      "key": "text:After several days, the covered grass is pale and weak.",
+      "clip": "/audio/cbd83929b8e96fe843c572af.mp3",
+      "duration": 4.584,
+      "cues": 10
+    },
+    {
+      "key": "text:Plants need sunlight to grow.",
+      "clip": "/audio/481b4073e69929ec5db9291b.mp3",
+      "duration": 2.712,
+      "cues": 5
+    },
+    {
+      "key": "text:Which grass stayed green?",
+      "clip": "/audio/d225860284702dfa9f99f2a0.mp3",
+      "duration": 2.328,
+      "cues": 4
+    },
+    {
+      "key": "science-feedback:science:science-sunlight:green",
+      "clip": "/audio/2763d33d1087acd8b2b9fb65.mp3",
+      "duration": 3.864,
+      "cues": 7
+    },
+    {
+      "key": "science-hint:science:science-sunlight:green",
+      "clip": "/audio/f5dc78c206b4c5663a9fa295.mp3",
+      "duration": 8.184,
+      "cues": 17
+    },
+    {
+      "key": "science-demo:science:science-sunlight:green",
+      "clip": "/audio/3f295defbab15e8d157fca48.mp3",
+      "duration": 6.144,
+      "cues": 11
+    },
+    {
+      "key": "science-word:river",
+      "clip": "/audio/6c01b675e5f43f65311fd158.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Water flows in a river.",
+      "clip": "/audio/a339eee84076589db849702f.mp3",
+      "duration": 2.4,
+      "cues": 5
+    },
+    {
+      "key": "science-word:warm",
+      "clip": "/audio/96acc694303c27f61d873da8.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The Sun warms the water.",
+      "clip": "/audio/e9bead3921c6c559e6fc1928.mp3",
+      "duration": 2.352,
+      "cues": 5
+    },
+    {
+      "key": "science-word:water vapour",
+      "clip": "/audio/1f808b6a38d0207a7f0a7bc3.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:Water vapour is invisible.",
+      "clip": "/audio/79ae816ead50221a481b55eb.mp3",
+      "duration": 2.712,
+      "cues": 4
+    },
+    {
+      "key": "science-word:cool",
+      "clip": "/audio/82b172a4fff12c02f1310152.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Water vapour cools.",
+      "clip": "/audio/6206ca27e399655aa6a674cd.mp3",
+      "duration": 2.112,
+      "cues": 3
+    },
+    {
+      "key": "science-word:cloud",
+      "clip": "/audio/5e0d23405f0eef8fa3d5bd92.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A cloud has tiny water drops.",
+      "clip": "/audio/4acf494fe3941e40b7355bad.mp3",
+      "duration": 2.976,
+      "cues": 6
+    },
+    {
+      "key": "science-word:rain",
+      "clip": "/audio/5c7ea63217fb1c6bd11d2cd3.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Rain falls.",
+      "clip": "/audio/9675e5dddaed53617b069bf5.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:Rain fills the river.",
+      "clip": "/audio/f75f3fac333c994c16f0b39f.mp3",
+      "duration": 2.136,
+      "cues": 4
+    },
+    {
+      "key": "text:Water vapour rises.",
+      "clip": "/audio/63f0f919c794ff4a5c0ab82c.mp3",
+      "duration": 2.328,
+      "cues": 3
+    },
+    {
+      "key": "text:It cools and forms tiny drops in clouds.",
+      "clip": "/audio/5f4f834acf3f9c9286d7e31c.mp3",
+      "duration": 3.864,
+      "cues": 8
+    },
+    {
+      "key": "text:Then rain falls.",
+      "clip": "/audio/629b8f2ae96b79aab721b63d.mp3",
+      "duration": 1.968,
+      "cues": 3
+    },
+    {
+      "key": "text:What warms the water?",
+      "clip": "/audio/2d217c40bbc38a42fbe2306c.mp3",
+      "duration": 2.088,
+      "cues": 4
+    },
+    {
+      "key": "science-feedback:science:science-rain:warms",
+      "clip": "/audio/9255f0a0e744160d9e9951bb.mp3",
+      "duration": 3.216,
+      "cues": 6
+    },
+    {
+      "key": "science-hint:science:science-rain:warms",
+      "clip": "/audio/f95478425b5d3f98cccf75b3.mp3",
+      "duration": 4.776,
+      "cues": 11
+    },
+    {
+      "key": "science-demo:science:science-rain:warms",
+      "clip": "/audio/d380638deccdf57606399046.mp3",
+      "duration": 5.496,
+      "cues": 10
+    },
+    {
+      "key": "text:What falls from these clouds?",
+      "clip": "/audio/7cf00cbe502f786144bf1617.mp3",
+      "duration": 2.616,
+      "cues": 5
+    },
+    {
+      "key": "science-feedback:science:science-rain:falls",
+      "clip": "/audio/49fa38588fee1e79b58b7bca.mp3",
+      "duration": 3.384,
+      "cues": 6
+    },
+    {
+      "key": "science-hint:science:science-rain:falls",
+      "clip": "/audio/f26deca8302a201836ea742a.mp3",
+      "duration": 6.816,
+      "cues": 16
+    },
+    {
+      "key": "science-demo:science:science-rain:falls",
+      "clip": "/audio/b9000c9bef9bd988c9942b56.mp3",
+      "duration": 5.688,
+      "cues": 10
+    },
+    {
+      "key": "science-word:brain",
+      "clip": "/audio/fb6348d7bf14fc94f410f633.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The brain helps us think.",
+      "clip": "/audio/6fa0af8cab342f009ee629f3.mp3",
+      "duration": 2.328,
+      "cues": 5
+    },
+    {
+      "key": "science-word:heart",
+      "clip": "/audio/bd993e64ed8364f1bcccc305.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The heart pumps blood.",
+      "clip": "/audio/dee3b56f73a417b9ff0a91a7.mp3",
+      "duration": 1.992,
+      "cues": 4
+    },
+    {
+      "key": "science-word:lungs",
+      "clip": "/audio/50e3243e44b572c84846c12f.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The lungs help us breathe.",
+      "clip": "/audio/ad5949aea75c03b1cd97742b.mp3",
+      "duration": 2.352,
+      "cues": 5
+    },
+    {
+      "key": "science-word:stomach",
+      "clip": "/audio/a0f36269ee91c5c5e7441862.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The stomach helps break down food.",
+      "clip": "/audio/d6ce6bb93a10854ee9a0f3fe.mp3",
+      "duration": 2.928,
+      "cues": 6
+    },
+    {
+      "key": "text:Meet our body helpers.",
+      "clip": "/audio/fd82547164b6f099cd3ea719.mp3",
+      "duration": 2.28,
+      "cues": 4
+    },
+    {
+      "key": "text:Our body helpers work together.",
+      "clip": "/audio/6f0de7db87bae9ba6b4a33c7.mp3",
+      "duration": 2.856,
+      "cues": 5
+    },
+    {
+      "key": "text:Which helpers help us breathe?",
+      "clip": "/audio/32f675c6be139e441c2bf6ab.mp3",
+      "duration": 2.568,
+      "cues": 5
+    },
+    {
+      "key": "science-feedback:science:science-body:breathe",
+      "clip": "/audio/38e90201e9f6e3ec092f3abb.mp3",
+      "duration": 3.216,
+      "cues": 6
+    },
+    {
+      "key": "science-hint:science:science-body:breathe",
+      "clip": "/audio/efa59a8a3f789990c0c8acd6.mp3",
+      "duration": 6.816,
+      "cues": 16
+    },
+    {
+      "key": "science-demo:science:science-body:breathe",
+      "clip": "/audio/fd81004005c58d7687959f2a.mp3",
+      "duration": 5.496,
+      "cues": 10
+    },
+    {
+      "key": "text:Which helper pumps blood?",
+      "clip": "/audio/54134db0069110d8b69cdde1.mp3",
+      "duration": 2.352,
+      "cues": 4
+    },
+    {
+      "key": "science-feedback:science:science-body:blood",
+      "clip": "/audio/b81667175b7dcce87ca152e8.mp3",
+      "duration": 2.856,
+      "cues": 5
+    },
+    {
+      "key": "science-hint:science:science-body:blood",
+      "clip": "/audio/682999c30096fde0096f679c.mp3",
+      "duration": 6.264,
+      "cues": 15
+    },
+    {
+      "key": "science-demo:science:science-body:blood",
+      "clip": "/audio/c3f13941959e344bdbda17c7.mp3",
+      "duration": 5.136,
+      "cues": 9
+    },
+    {
+      "key": "science-word:see",
+      "clip": "/audio/36a3aa800d0c1ec4076d25ee.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:We see with our eyes.",
+      "clip": "/audio/0fa1d963a8c85307db30e59d.mp3",
+      "duration": 2.16,
+      "cues": 5
+    },
+    {
+      "key": "science-word:hear",
+      "clip": "/audio/8e0632015aa47d6b1a2a3809.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:We hear with our ears.",
+      "clip": "/audio/a5f05974bd558566d5c9716e.mp3",
+      "duration": 2.208,
+      "cues": 5
+    },
+    {
+      "key": "science-word:smell",
+      "clip": "/audio/1ef29f35b33197e043a47683.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:We smell with our nose.",
+      "clip": "/audio/d8daa1aba6594c4fc145c160.mp3",
+      "duration": 2.28,
+      "cues": 5
+    },
+    {
+      "key": "science-word:taste",
+      "clip": "/audio/eeeaf2171f9071d4baabb892.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:We taste with our tongue.",
+      "clip": "/audio/1fca0b4a5297933ee0c6fc8d.mp3",
+      "duration": 2.16,
+      "cues": 5
+    },
+    {
+      "key": "science-word:touch",
+      "clip": "/audio/d72b12629b1c6d649d696188.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:We feel a soft toy with our skin.",
+      "clip": "/audio/8e7bc726a47e7ba7887a2fa6.mp3",
+      "duration": 2.856,
+      "cues": 8
+    },
+    {
+      "key": "text:Our senses help us explore.",
+      "clip": "/audio/137fe6d74cc936b6ed1b71e6.mp3",
+      "duration": 2.736,
+      "cues": 5
+    },
+    {
+      "key": "text:What do we hear with?",
+      "clip": "/audio/b3ca4294202ec8b0d4974e0e.mp3",
+      "duration": 1.896,
+      "cues": 5
+    },
+    {
+      "key": "science-feedback:science:science-senses:hear",
+      "clip": "/audio/7076f036fd8c16ed8d8b9c28.mp3",
+      "duration": 3.096,
+      "cues": 6
+    },
+    {
+      "key": "science-hint:science:science-senses:hear",
+      "clip": "/audio/6b6eb4ad37c023784bfde5be.mp3",
+      "duration": 6.336,
+      "cues": 15
+    },
+    {
+      "key": "science-demo:science:science-senses:hear",
+      "clip": "/audio/0402e84513c183b9b1aac778.mp3",
+      "duration": 5.376,
+      "cues": 10
+    },
+    {
+      "key": "text:What do we taste with?",
+      "clip": "/audio/6a2fcde1d39ff4a0613cef4b.mp3",
+      "duration": 2.04,
+      "cues": 5
+    },
+    {
+      "key": "science-feedback:science:science-senses:taste",
+      "clip": "/audio/68e782d2031e8a9d7a8bac97.mp3",
+      "duration": 3.048,
+      "cues": 6
+    },
+    {
+      "key": "science-hint:science:science-senses:taste",
+      "clip": "/audio/c70ddb57593595b4552dd251.mp3",
+      "duration": 6.864,
+      "cues": 16
+    },
+    {
+      "key": "science-demo:science:science-senses:taste",
+      "clip": "/audio/b88f7fc029c17ff18a636abe.mp3",
+      "duration": 5.328,
+      "cues": 10
+    },
+    {
+      "key": "science-word:nest",
+      "clip": "/audio/cd80aa34e6a545464f76d92f.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A bird rests in a nest.",
+      "clip": "/audio/d6cc014ecd99163a3dd2d30a.mp3",
+      "duration": 2.424,
+      "cues": 6
+    },
+    {
+      "key": "science-word:pond",
+      "clip": "/audio/3653e0f6bea93a51cc8a7673.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A frog lives by a pond.",
+      "clip": "/audio/ecc96bece647af15ec01749d.mp3",
+      "duration": 2.4,
+      "cues": 6
+    },
+    {
+      "key": "science-word:farm",
+      "clip": "/audio/86e72abbf634595fca50a63d.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A cow lives on a farm.",
+      "clip": "/audio/fa3fa902634066396776bcb9.mp3",
+      "duration": 2.184,
+      "cues": 6
+    },
+    {
+      "key": "science-word:forest",
+      "clip": "/audio/f117ae19fd46fa97868b80eb.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A deer lives in a forest.",
+      "clip": "/audio/84d0c4810d49734f024afdef.mp3",
+      "duration": 2.424,
+      "cues": 6
+    },
+    {
+      "key": "text:Animals live in different places.",
+      "clip": "/audio/40efbedc6ab2be547280ee20.mp3",
+      "duration": 2.928,
+      "cues": 5
+    },
+    {
+      "key": "text:Which home did we show for the frog?",
+      "clip": "/audio/ecfdc1c242a86a7ce32e89a0.mp3",
+      "duration": 2.808,
+      "cues": 8
+    },
+    {
+      "key": "science-feedback:science:science-homes:frog",
+      "clip": "/audio/6ed532c0867d1907aea67fc0.mp3",
+      "duration": 3.528,
+      "cues": 8
+    },
+    {
+      "key": "science-hint:science:science-homes:frog",
+      "clip": "/audio/05826376b1ca7fd20f2f853e.mp3",
+      "duration": 7.632,
+      "cues": 18
+    },
+    {
+      "key": "science-demo:science:science-homes:frog",
+      "clip": "/audio/d08598c5c3838e21a8e5ee44.mp3",
+      "duration": 5.784,
+      "cues": 12
+    },
+    {
+      "key": "text:Which home did we show for the cow?",
+      "clip": "/audio/bf16170e529d8a1b6cd5db7b.mp3",
+      "duration": 2.736,
+      "cues": 8
+    },
+    {
+      "key": "science-feedback:science:science-homes:cow",
+      "clip": "/audio/3f123923e1fc42195927eddf.mp3",
+      "duration": 3.312,
+      "cues": 8
+    },
+    {
+      "key": "science-hint:science:science-homes:cow",
+      "clip": "/audio/bbe3ed3c6a4089e707c2165a.mp3",
+      "duration": 5.952,
+      "cues": 14
+    },
+    {
+      "key": "science-demo:science:science-homes:cow",
+      "clip": "/audio/70a97a9c41b1610bbe8ba0ae.mp3",
+      "duration": 5.592,
+      "cues": 12
+    },
+    {
+      "key": "science-word:Earth",
+      "clip": "/audio/2dcfe2864655189843e1b467.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Earth is our home.",
+      "clip": "/audio/a7bfba459b27b933dbce5b75.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "science-word:turn",
+      "clip": "/audio/431b6103b5152421e139931f.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Earth turns.",
+      "clip": "/audio/e2a60fb37b1ac8074142eb0e.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "science-word:day",
+      "clip": "/audio/349e829787372d645ebe8481.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:It is day here.",
+      "clip": "/audio/d62f2bc810651bbfd87907d4.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "science-word:night",
+      "clip": "/audio/c417f763ecd8978849cfdd92.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:It is night here.",
+      "clip": "/audio/f5e119e5138c8ef0bbe74581.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "text:The Sun lights our day.",
+      "clip": "/audio/d422a848ec24be07044721f0.mp3",
+      "duration": 2.16,
+      "cues": 5
+    },
+    {
+      "key": "text:This place turns away from the Sun.",
+      "clip": "/audio/c6dedbafd9f7dd49d068d7ec.mp3",
+      "duration": 2.976,
+      "cues": 6
+    },
+    {
+      "key": "text:Which place has daylight?",
+      "clip": "/audio/79c73ccb5226a8a200305971.mp3",
+      "duration": 2.28,
+      "cues": 3
+    },
+    {
+      "key": "science-feedback:science:science-day-night:day",
+      "clip": "/audio/0b6b8b1f28c4de790a643772.mp3",
+      "duration": 4.056,
+      "cues": 7
+    },
+    {
+      "key": "science-hint:science:science-day-night:day",
+      "clip": "/audio/12ba2fd21a9eb98d3bf10929.mp3",
+      "duration": 6.936,
+      "cues": 16
+    },
+    {
+      "key": "science-demo:science:science-day-night:day",
+      "clip": "/audio/5d29c28e48d950c2349fe07e.mp3",
+      "duration": 6.288,
+      "cues": 11
+    },
+    {
+      "key": "science-word:float",
+      "clip": "/audio/dfb6b900b619b185cfbb9765.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The wooden block floats.",
+      "clip": "/audio/c5ca153498d8cd7e1379752b.mp3",
+      "duration": 2.184,
+      "cues": 4
+    },
+    {
+      "key": "science-word:sink",
+      "clip": "/audio/e3855001b4871b1839294ba3.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The steel key sinks.",
+      "clip": "/audio/b21d5ad1b887b0111eaf0004.mp3",
+      "duration": 2.208,
+      "cues": 4
+    },
+    {
+      "key": "science-word:wooden block",
+      "clip": "/audio/d89e7fcafd2ea628ec18c196.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:A wooden block.",
+      "clip": "/audio/a0e8172f45d79fbdea143a9b.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "science-word:steel key",
+      "clip": "/audio/d10e6a99dd0481c97a24132f.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:A solid steel key.",
+      "clip": "/audio/f62aa2235779a8f8e56f4155.mp3",
+      "duration": 2.136,
+      "cues": 4
+    },
+    {
+      "key": "text:Put an object in the water.",
+      "clip": "/audio/53821728b6b9703864bd4a22.mp3",
+      "duration": 2.448,
+      "cues": 6
+    },
+    {
+      "key": "text:The sealed plastic ball floats.",
+      "clip": "/audio/93106e05f2f789add75d0f55.mp3",
+      "duration": 2.88,
+      "cues": 5
+    },
+    {
+      "key": "text:Some things float.",
+      "clip": "/audio/c469581d16ab655ac14ebf75.mp3",
+      "duration": 1.944,
+      "cues": 3
+    },
+    {
+      "key": "text:Some things sink.",
+      "clip": "/audio/f87919afd9f69d2c0fcb1232.mp3",
+      "duration": 1.896,
+      "cues": 3
+    },
+    {
+      "key": "text:Some things float and some things sink.",
+      "clip": "/audio/1c9b328dd0a602e89e2b1236.mp3",
+      "duration": 3.096,
+      "cues": 7
+    },
+    {
+      "key": "text:Which object floated in our test?",
+      "clip": "/audio/e470cf460a8d522fbbc76d40.mp3",
+      "duration": 3.024,
+      "cues": 6
+    },
+    {
+      "key": "science-feedback:science:science-float:floated",
+      "clip": "/audio/7d877bc7e316dfd298bde68b.mp3",
+      "duration": 3.144,
+      "cues": 5
+    },
+    {
+      "key": "science-hint:science:science-float:floated",
+      "clip": "/audio/3fe6263d59365fb67a7e7891.mp3",
+      "duration": 7.872,
+      "cues": 18
+    },
+    {
+      "key": "science-demo:science:science-float:floated",
+      "clip": "/audio/a47c793cb15fd6ead95d25e7.mp3",
+      "duration": 5.4,
+      "cues": 9
+    },
+    {
+      "key": "text:Which object sank in our test?",
+      "clip": "/audio/86a76d7b7d6ed2406497aa60.mp3",
+      "duration": 2.808,
+      "cues": 6
+    },
+    {
+      "key": "science-feedback:science:science-float:sank",
+      "clip": "/audio/c63a8a75d699bb640a03beab.mp3",
+      "duration": 3.48,
+      "cues": 6
+    },
+    {
+      "key": "science-hint:science:science-float:sank",
+      "clip": "/audio/1939e78bd7a0bf795287dcfe.mp3",
+      "duration": 4.968,
+      "cues": 14
+    },
+    {
+      "key": "science-demo:science:science-float:sank",
+      "clip": "/audio/df3f90fe041a51dddfcc480f.mp3",
+      "duration": 5.736,
+      "cues": 10
+    },
+    {
+      "key": "science-word:push",
+      "clip": "/audio/988370ae9999f26dc43e4a0d.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:I can push.",
+      "clip": "/audio/838fee12d5e091dff79e4e74.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "science-word:pull",
+      "clip": "/audio/174a518bf48b6b87cc8c5e80.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:I can pull.",
+      "clip": "/audio/150ac92690335ee66b64a2e4.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "science-word:toy",
+      "clip": "/audio/3fa5851ed25811a82455fb62.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A toy car.",
+      "clip": "/audio/118c5c08a78e5ec7e970254f.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "science-word:wagon",
+      "clip": "/audio/2b6fa86d27a016f6e0d8a5df.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A wagon.",
+      "clip": "/audio/b22a464f09c102b95a280995.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:I push the toy away.",
+      "clip": "/audio/325f9a0d55d283d6dda3f100.mp3",
+      "duration": 2.064,
+      "cues": 5
+    },
+    {
+      "key": "text:I pull the wagon closer.",
+      "clip": "/audio/800eaefa798f6b336c91931c.mp3",
+      "duration": 2.304,
+      "cues": 5
+    },
+    {
+      "key": "text:I can push and pull.",
+      "clip": "/audio/573005fc248cc49c773f599e.mp3",
+      "duration": 2.016,
+      "cues": 5
+    },
+    {
+      "key": "text:Which picture shows a push?",
+      "clip": "/audio/a80f6f50fef32962e97c6675.mp3",
+      "duration": 2.544,
+      "cues": 5
+    },
+    {
+      "key": "science-feedback:science:science-push-pull:push",
+      "clip": "/audio/c6fddb8d4e42345e09ecb3c2.mp3",
+      "duration": 3.072,
+      "cues": 6
+    },
+    {
+      "key": "science-hint:science:science-push-pull:push",
+      "clip": "/audio/e831b5776b500a0095024e14.mp3",
+      "duration": 7.752,
+      "cues": 19
+    },
+    {
+      "key": "science-demo:science:science-push-pull:push",
+      "clip": "/audio/a1634af68cf900c8b1bb43be.mp3",
+      "duration": 5.4,
+      "cues": 10
+    },
+    {
+      "key": "text:Which picture shows a pull?",
+      "clip": "/audio/e34f282552126f859c973f47.mp3",
+      "duration": 2.448,
+      "cues": 5
+    },
+    {
+      "key": "science-feedback:science:science-push-pull:pull",
+      "clip": "/audio/8d5044eba8c1a62ae0191c6f.mp3",
+      "duration": 3.36,
+      "cues": 6
+    },
+    {
+      "key": "science-hint:science:science-push-pull:pull",
+      "clip": "/audio/afcf060af0ad273f55e93810.mp3",
+      "duration": 5.688,
+      "cues": 14
+    },
+    {
+      "key": "science-demo:science:science-push-pull:pull",
+      "clip": "/audio/c961e2a0eb717a8cd42d3075.mp3",
+      "duration": 5.688,
+      "cues": 10
+    },
+    {
+      "key": "science-word:magnet",
+      "clip": "/audio/9bcf72f63ed3e42e908567be.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A magnet.",
+      "clip": "/audio/b2c5c1446a1e942d104210fd.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "science-word:metal",
+      "clip": "/audio/555715fc4bde2b24858f2c71.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:This paper clip is steel.",
+      "clip": "/audio/7abe28cdb04375a9d403c69f.mp3",
+      "duration": 2.472,
+      "cues": 5
+    },
+    {
+      "key": "science-word:steel",
+      "clip": "/audio/42d87194e5c54fccbe24b68a.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A plain steel paper clip.",
+      "clip": "/audio/438a5c562146d55833abb9af.mp3",
+      "duration": 2.568,
+      "cues": 5
+    },
+    {
+      "key": "science-word:aluminium",
+      "clip": "/audio/799d1e0db3d36290cbd0cc5a.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Aluminium foil is a metal.",
+      "clip": "/audio/e3d1d4d737578749d53b9797.mp3",
+      "duration": 2.808,
+      "cues": 5
+    },
+    {
+      "key": "text:Test an object with the magnet.",
+      "clip": "/audio/190675ebd0c69cf082f43d7c.mp3",
+      "duration": 2.784,
+      "cues": 6
+    },
+    {
+      "key": "text:The magnet pulls the steel paper clip.",
+      "clip": "/audio/0713f733b4df8f328a454ba6.mp3",
+      "duration": 3.288,
+      "cues": 7
+    },
+    {
+      "key": "text:The magnet does not pull the wooden block.",
+      "clip": "/audio/3df9bfce18a4f02eba16956b.mp3",
+      "duration": 3.264,
+      "cues": 8
+    },
+    {
+      "key": "text:The magnet does not pull the aluminium foil.",
+      "clip": "/audio/7aa34596324a64955a3c420d.mp3",
+      "duration": 3.672,
+      "cues": 8
+    },
+    {
+      "key": "text:A magnet can pull some metal things.",
+      "clip": "/audio/08516593114be0626036301b.mp3",
+      "duration": 3.12,
+      "cues": 7
+    },
+    {
+      "key": "text:It does not pull every metal thing.",
+      "clip": "/audio/55a96c6220fa3e04e7b333e0.mp3",
+      "duration": 2.904,
+      "cues": 7
+    },
+    {
+      "key": "text:Which object did our magnet pull?",
+      "clip": "/audio/9c57577e2a5132df0df35b9d.mp3",
+      "duration": 2.952,
+      "cues": 6
+    },
+    {
+      "key": "science-feedback:science:science-magnet:pulls",
+      "clip": "/audio/2abe372b94c366f801d3b1a9.mp3",
+      "duration": 4.08,
+      "cues": 8
+    },
+    {
+      "key": "science-hint:science:science-magnet:pulls",
+      "clip": "/audio/eaa2b5cba4e67313a957b0fc.mp3",
+      "duration": 8.592,
+      "cues": 18
+    },
+    {
+      "key": "science-demo:science:science-magnet:pulls",
+      "clip": "/audio/390fd7b63a2b42b7d6acd2c8.mp3",
+      "duration": 6.336,
+      "cues": 12
+    },
+    {
+      "key": "text:Which metal did our magnet not pull?",
+      "clip": "/audio/2408752a1faf96364a002cf8.mp3",
+      "duration": 3.12,
+      "cues": 7
+    },
+    {
+      "key": "science-feedback:science:science-magnet:metal",
+      "clip": "/audio/c174e98d03b4c0f35111db6a.mp3",
+      "duration": 7.344,
+      "cues": 14
+    },
+    {
+      "key": "science-hint:science:science-magnet:metal",
+      "clip": "/audio/57b4c4bebc296eef8b1ac673.mp3",
+      "duration": 6.768,
+      "cues": 16
+    },
+    {
+      "key": "science-demo:science:science-magnet:metal",
+      "clip": "/audio/291449df37736622a4e926a4.mp3",
+      "duration": 9.624,
+      "cues": 18
+    },
+    {
+      "key": "science-word:switch",
+      "clip": "/audio/c32f28680c0bc1f9ce29ad0f.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A switch.",
+      "clip": "/audio/e83a86ca5a2f29472099db7f.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "science-word:lamp",
+      "clip": "/audio/d1c27b1e9708a5e904a3a34a.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A lamp.",
+      "clip": "/audio/938fb1f7df5d7ef47f3b9b67.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "science-word:on",
+      "clip": "/audio/f1322ffc2f6ae58184bb9ce5.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The light is on.",
+      "clip": "/audio/e1148ef76771a0cd86f59ff6.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "science-word:off",
+      "clip": "/audio/e3f0fe4f4f5fa84a4c2b57fe.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The light is off.",
+      "clip": "/audio/00c066874ef2dccf9ced48cc.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "text:Tap our pretend switch.",
+      "clip": "/audio/445e4097fdbe6916a93ff207.mp3",
+      "duration": 2.352,
+      "cues": 4
+    },
+    {
+      "key": "text:A switch turns the light on and off.",
+      "clip": "/audio/eb3cb64dae87b6354331f13b.mp3",
+      "duration": 2.88,
+      "cues": 8
+    },
+    {
+      "key": "text:Which lamp is on?",
+      "clip": "/audio/2c4f0c153467eda162e01c77.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "science-feedback:science:science-switch:on",
+      "clip": "/audio/887a5c8558181ff0275e0253.mp3",
+      "duration": 4.368,
+      "cues": 8
+    },
+    {
+      "key": "science-hint:science:science-switch:on",
+      "clip": "/audio/de7602fd419bc8e9009bb3a3.mp3",
+      "duration": 5.064,
+      "cues": 13
+    },
+    {
+      "key": "science-demo:science:science-switch:on",
+      "clip": "/audio/3344b0a09ec92b31ac0405c9.mp3",
+      "duration": 6.648,
+      "cues": 12
+    },
+    {
+      "key": "text:What turns our lamp on and off?",
+      "clip": "/audio/cc55fdaad45d10973a0ff514.mp3",
+      "duration": 2.736,
+      "cues": 7
+    },
+    {
+      "key": "science-feedback:science:science-switch:control",
+      "clip": "/audio/cc1e4c18d6ca97756c9dc2d4.mp3",
+      "duration": 3.792,
+      "cues": 9
+    },
+    {
+      "key": "science-hint:science:science-switch:control",
+      "clip": "/audio/bff18a79122788219c391cd4.mp3",
+      "duration": 5.088,
+      "cues": 12
+    },
+    {
+      "key": "science-demo:science:science-switch:control",
+      "clip": "/audio/faf0b92b534ccef1b8c8692e.mp3",
+      "duration": 6.096,
+      "cues": 13
+    }
+  ],
+  "checks": [
+    "Ten stable lessons; every vocabulary scene, contextual Bangla meaning and unique supported question validated",
+    "Old progress/export shape retained; separate profiles, validated export/restore and additive restoration preserve existing work",
+    "Missed science questions use existing 1/3/7/14-day intervals; assisted recall returns in one day",
+    "Actual bowl reveal, Earth turn, objects entering water, push/pull and magnetic attraction animate and stop; replay restarts; lamp switch changes glow; reduced motion shows final state",
+    "Same initial green patches and opaque cover; invisible vapour arrows separate from cloud droplets; aluminium stays still; pull rope connects to the wagon",
+    "All ten complete lesson flows, all experiment options and all 18 questions tested with touch-capable phone and mouse desktop",
+    "Shown correct answer, useful spoken hint, easier assisted retry, manual Next and preserved Previous work",
+    "Home/reload Continue restores selected experiment and visited options; profile-specific reports and due picture review work",
+    "Every science recording decodes with real word timestamps; normal/slower playback, Pause/Resume, Replay, non-overlap and navigation cancellation tested; prior audio mappings unchanged",
+    "Keyboard Enter/Space and labelled SVG scenes work"
+  ],
+  "passed": true,
+  "limitations": [
+    "Browser playback and timing checked, but human-perceived English pronunciation, clarity and teaching tone require a parent listening check.",
+    "Touch tests use Edge emulation, not physical iOS/Android hardware.",
+    "Science Bangla meanings are written hints; no new Bangla recording is claimed."
+  ]
+}
