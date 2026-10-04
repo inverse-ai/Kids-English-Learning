@@ -91,7 +91,7 @@ try{
   }
   assert.equal(await phase(),'finish');assert.equal((await data()).learning.valueStories[s.id].star,false);
   await act('finish').click();const p=(await data()).learning.valueStories[s.id];assert(p.star&&p.done&&p.assisted);assert.equal(Object.values(p.answers).length,7);
-  await page.locator('[data-action=stages-story-back]').click();flows.push({id:s.id,title:s.title,sentences:s.sentences.length,vocabulary:s.vocabulary.length,assisted:true});
+  await page.locator('[data-action=practice-back]').click();await page.locator('[data-action=stages-story-back]').click();flows.push({id:s.id,title:s.title,sentences:s.sentences.length,vocabulary:s.vocabulary.length,assisted:true});
  }
  const final=await data();assert.deepEqual(final.completed,normalized.completed);assert.deepEqual(final.pictureFamilies,normalized.pictureFamilies);assert.deepEqual(final.learning.stories,normalized.learning.stories);assert.deepEqual(final.learning.spelling,normalized.learning.spelling);
  for(const spec of valueAudioSpecs.filter(a=>a.key.startsWith('value-note:'))){

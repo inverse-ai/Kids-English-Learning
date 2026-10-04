@@ -1,0 +1,49 @@
+{
+  "decoded": 1616,
+  "timings": 912,
+  "playback": [
+    {
+      "kind": "word",
+      "speed": 1,
+      "correctClip": true,
+      "pauseResume": true
+    },
+    {
+      "kind": "meaning",
+      "speed": 1,
+      "correctClip": true,
+      "pauseResume": true
+    },
+    {
+      "kind": "approx",
+      "speed": 1,
+      "correctClip": true,
+      "pauseResume": true
+    },
+    {
+      "kind": "word",
+      "speed": 0.85,
+      "correctClip": true,
+      "pauseResume": true
+    },
+    {
+      "kind": "meaning",
+      "speed": 0.85,
+      "correctClip": true,
+      "pauseResume": true
+    },
+    {
+      "kind": "approx",
+      "speed": 0.85,
+      "correctClip": true,
+      "pauseResume": true
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Decoding and playback cannot establish human-perceived clarity or accent accuracy",
+    "A parent should listen to English names, isolated phonics (especially vowels, Q and X), brisk/slower spelling, all Bangla meanings/pronunciation helpers and Bengali story explanations",
+    "Arabic refuge audio is preserved and provenance/hash checked by values-audio; human Arabic pronunciation review remains needed",
+    "No recordings were replaced or generated in this change"
+  ]
+}

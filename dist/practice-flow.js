@@ -1,0 +1,47 @@
+import {familyWords} from './family-data.js';
+import {pictureSymbols} from './stage-data.js';
+import {stageClip} from './stage-audio.js';
+import {alphabet} from './stage-data.js';
+import {items,comprehension,dueItems,recordAttempt} from './practice-data.js';
+import {storyScene} from './story-scenes.js';
+import {valueScene} from './values-scenes.js';
+import {stories} from './stage-data.js';
+import {valuesStories} from './values-stories.js';
+const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const btn=(label,action,extra='')=>'<button class="btn" data-action="practice-'+action+'" '+extra+'>'+label+'</button>';
+export function createPracticeFlow({getProgress,save,render,stop,play,picture,onReturn}){
+ let mode='review',queue=[],index=0,answer=null,wrong=0,assisted=false,started=null,finished=false;
+ const p=()=>getProgress(),item=()=>items[queue[index]];
+ function pauseClock(){if(started!==null&&p().round){p().round.elapsed+=(performance.now()-started)/1000;started=null;save();}}
+ function open(kind,id){pauseClock();stop();mode=kind;index=0;answer=null;wrong=0;assisted=false;finished=kind==='fluency'&&!!p().round&&p().round.index===p().round.words.length;if(kind==='story')queue=['story:'+id];if(kind==='review')queue=dueItems(p()).slice(0,5);render();}
+ function scene(q){const s=(q.value?valuesStories:stories).find(s=>s.id===q.storyId);return s?(q.value?valueScene(s,q.line):storyScene(s,q.line)):'';}
+ function wordKey(word){if(stageClip('word:'+word))return 'word:'+word;if(stageClip('legacy:'+word))return 'legacy:'+word;const v=valuesStories.flatMap(s=>s.vocabulary).find(v=>v.word.toLowerCase()===word);return 'value-word:'+v?.word;}
+ function listen(q=item()){if(!q)return;stop();const s=q.kind==='story'?(q.value?valuesStories:stories).find(s=>s.id===q.storyId):null;play(q.kind==='story'?(s.sentences.includes(q.evidence)?[q.evidence]:s.sentences).map(text=>({key:'text:'+text})):q.kind==='letter'?[{key:'name:'+q.answer},{key:'sound:'+alphabet.find(a=>a.letter===q.answer).sound}]:[{key:wordKey(q.answer)}]);}
+ function html(){
+  let content='';
+  if(mode==='fluency'){
+   const r=p().round;
+   if(finished)content='<h1>A little reading practice</h1><p>✓ '+r.correct+' of '+r.words.length+' read without help.</p><p>'+Math.round(r.elapsed)+' seconds of active practice. Take your time; this is your own practice history.</p>'+btn('Finish','round-finish');
+   else if(!r)content='<h1>Read familiar words</h1><p>Choose words your child already knows. A parent listens and marks each attempt. There is no speech recognition or speed target.</p><p>Use this short set only if it is familiar: cat, mat, hat, rat, sat.</p>'+btn('These are familiar · Start','round-start')+btn('Back to learning','back');
+   else content='<h1>Read at your own pace</h1><p>Word '+(r.index+1)+' of '+r.words.length+'</p><p class="fluency-word">'+esc(r.words[r.index])+'</p><p>A parent listens, then chooses:</p>'+btn(started===null?'Begin / Resume':'Pause','clock')+'<div class="practice-choices">'+btn('Read without help ✓','round-correct',started===null?'disabled':'')+btn('Read with help','round-help',started===null?'disabled':'')+'</div>'+btn('Hear word','round-audio')+'<p>No countdown. Pauses and time away from this page are excluded.</p>';
+  }else if(!queue.length||index>=queue.length)content='<h1>'+ (mode==='story'?'Story question practised':'A little review')+'</h1><p>✓ '+(queue.length?'Thank you for trying. Keep reading together.':'Nothing is due yet. Missed items return tomorrow, then after successful recall in about 3 and 7 days.')+'</p>'+btn('Back to learning','back');
+  else{const q=item(),correct=answer===q.answer;content='<p class="eyebrow">'+(mode==='story'?'About the story':'A little review · '+(index+1)+' of '+queue.length)+'</p><h1>'+esc(q.prompt)+'</h1>'+(q.kind==='story'?scene(q):q.kind==='letter'?'<p class="big-letter">'+q.answer.toUpperCase()+'</p>':familyWords[q.answer]||pictureSymbols[q.answer]?picture(q.answer):'')+'<div class="practice-choices">'+q.choices.map(w=>'<button class="choice" data-action="practice-answer" data-value="'+esc(w)+'" '+(correct?'disabled':'')+'>'+((q.kind==='story'&&/^(cat|pig|hen|ball|cup|hat|bun|apple|bird|ant|truck|bike|towel|flower|pencil|box)$/.test(w))?picture(w):'')+'<span>'+esc(w)+'</span></button>').join('')+'</div><p class="feedback" role="status">'+(correct?'✓ You found it. Read it together.':answer?'Thank you for trying. '+(q.kind==='story'?'Remember: '+q.evidence:'This is '+q.answer+'. Look at it, then try again.'):'Choose one answer. Audio is optional.')+'</p>'+(answer&&!correct?'<p class="practice-demo">'+(wrong>=2?'Let’s try with help. ':'')+'The answer is <b>'+esc(q.answer)+'</b>. '+(q.kind==='story'?esc(q.evidence):'Match '+esc(q.answer)+' with '+esc(q.answer)+'.')+'</p>':'')+'<div class="activity-actions">'+btn(q.kind==='story'?'Hear story sentence · Replay':'Hear answer · Replay','audio')+btn('Pause','pause','disabled aria-pressed="false"')+(correct?btn('Next →','next'):'')+btn('Stop','stop')+'</div>';}
+  return '<section class="activity practice-player">'+content+((mode!=='fluency'&&queue.length&&index<queue.length)?btn('Back to learning','back'):'')+'<p id="audio-status" class="status" role="status"></p></section>';
+ }
+ function handle(d){const a=d.action.replace('practice-','');
+  if(a==='back'){pauseClock();stop();onReturn();}
+  else if(a==='stop'){pauseClock();stop();}
+  else if(a==='audio')listen();
+  else if(a==='answer'){const q=item();if(!q||answer===q.answer||!q.choices.includes(d.value))return;const correct=d.value===q.answer;recordAttempt(p(),q.id,correct,assisted);answer=d.value;if(!correct){wrong++;assisted=true;}save();render(false);if(!correct)listen(q);}
+  else if(a==='next'){if(answer!==item()?.answer)return;stop();index++;answer=null;wrong=0;assisted=false;render();}
+  else if(a==='round-start'){p().round={words:['cat','mat','hat','rat','sat'],index:0,correct:0,elapsed:0};started=performance.now();save();render();}
+  else if(a==='clock'){if(started===null)started=performance.now();else pauseClock();render(false);}
+  else if(a==='round-audio'){const w=p().round?.words[p().round.index];if(w){pauseClock();stop();play([{key:'word:'+w}]);render(false);}}
+  else if(a==='round-correct'||a==='round-help'){const r=p().round;if(!r||started===null||r.index>=r.words.length)return;pauseClock();const correct=a==='round-correct';if(correct)r.correct++;recordAttempt(p(),'word:'+r.words[r.index],correct,!correct);r.index++;if(r.index===r.words.length){p().fluency.push({id:crypto.randomUUID(),at:Date.now(),seconds:r.elapsed,words:[...r.words],correct:r.correct});p().fluency=p().fluency.slice(-100);finished=true;}else started=performance.now();save();render();}
+  else if(a==='round-finish'){p().round=null;save();onReturn();}
+ }
+ function report(){const pr=p(),due=dueItems(pr),history=pr.history,frequent=Object.entries(pr.items).filter(([id])=>history.filter(x=>x.item===id).length>=3).filter(([,r])=>r.misses>=2).sort((a,b)=>b[1].misses-a[1].misses);
+  return '<section class="side-card"><h2>This profile’s practice report</h2><p>'+history.length+' recorded attempts. Older lesson stars are kept, but cannot tell us which answers were missed.</p><h3>Often missed</h3>'+(frequent.length?'<ul>'+frequent.slice(0,10).map(([id,r])=>'<li>'+esc(items[id].label)+' · '+r.misses+' missed or helped attempts. '+(items[id].kind==='letter'?'Match big and little letters, then hear the sound.':items[id].kind==='story'?'Read the matching story sentence together.':'Hear, blend and build this word together.')+'</li>').join('')+'</ul>':'<p>Not enough repeated history yet to identify a weak area. Try two or three short practices on different days.</p>')+'<h3>Due for review</h3><p>'+ (due.length?due.map(id=>esc(items[id].label)).join(' · '):'No items due today.')+'</p>'+btn('Practise due items','open-review')+'<details><summary>Practice history</summary><ul>'+history.slice(-30).reverse().map(e=>'<li>'+esc(new Date(e.at).toLocaleDateString())+' · '+esc(items[e.item].label)+' · '+(e.assisted?'with help':e.correct?'remembered':'try again')+'</li>').join('')+'</ul></details><h3>Familiar word rounds</h3><p>A parent marks reading. Timing is descriptive, not a measure of independent mastery. Compare only this profile’s own rounds.</p>'+btn('Read familiar words','open-fluency')+(pr.fluency.length?'<table><caption>This profile’s rounds</caption><thead><tr><th>Date</th><th>Without help</th><th>Active time</th></tr></thead><tbody>'+pr.fluency.slice(-10).map(r=>'<tr><td>'+esc(new Date(r.at).toLocaleDateString())+'</td><td>'+r.correct+'/'+r.words.length+'</td><td>'+Math.round(r.seconds)+' s</td></tr>').join('')+'</tbody></table>':'<p>No rounds recorded yet.</p>')+'</section>';
+ }
+ return {open,html,handle,report,pauseClock,storyButton:id=>btn('A question about the story','open-story','data-id="'+esc(id)+'"'),dueButton:()=>dueItems(p()).length?btn('A little review · '+dueItems(p()).length+' due','open-review'):''};
+}

@@ -1,0 +1,1038 @@
+{
+  "tasks": [
+    {
+      "width": 390,
+      "lesson": "move-in-out",
+      "instruction": "Put the ball in the box.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-in-out",
+      "instruction": "Take the ball out of the box.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-in-out",
+      "instruction": "Put the pen in the pocket.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-in-out",
+      "instruction": "Take the pen out of the pocket.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-in-out",
+      "instruction": "Put the ball in the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-in-out",
+      "instruction": "Take the ball out of the box.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-in-out",
+      "instruction": "Put the pen in the pocket.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-on-under",
+      "instruction": "Put the ball on the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-on-under",
+      "instruction": "Put the ball under the chair.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-on-under",
+      "instruction": "Put the book on the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-on-under",
+      "instruction": "Put the book under the table.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-on-under",
+      "instruction": "Put the ball on the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-on-under",
+      "instruction": "Put the ball under the chair.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-on-under",
+      "instruction": "Put the book on the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-beside",
+      "instruction": "Put the ball beside the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-beside",
+      "instruction": "Put the pen beside the book.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-beside",
+      "instruction": "Put the toy car beside the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-beside",
+      "instruction": "Put the ball beside the box.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-beside",
+      "instruction": "Put the pen beside the book.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-beside",
+      "instruction": "Put the toy car beside the chair.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-front-behind",
+      "instruction": "Put the ball in front of the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-front-behind",
+      "instruction": "Put the ball behind the chair.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-front-behind",
+      "instruction": "Put the toy car in front of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-front-behind",
+      "instruction": "Put the toy car behind the box.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-front-behind",
+      "instruction": "Put the ball in front of the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-front-behind",
+      "instruction": "Put the ball behind the chair.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-front-behind",
+      "instruction": "Put the toy car in front of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-between",
+      "instruction": "Put the ball between the two boxes.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-between",
+      "instruction": "Put the pen between the two books.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-between",
+      "instruction": "Put the toy car between the chair and the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-between",
+      "instruction": "Put the ball between the two boxes.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-between",
+      "instruction": "Put the pen between the two books.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-between",
+      "instruction": "Put the toy car between the chair and the table.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-above-below",
+      "instruction": "Move the balloon above the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-above-below",
+      "instruction": "Move the balloon below the table.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-above-below",
+      "instruction": "Move the star above the cloud.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-above-below",
+      "instruction": "Move the star below the cloud.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-above-below",
+      "instruction": "Move the balloon above the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-above-below",
+      "instruction": "Move the balloon below the table.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-above-below",
+      "instruction": "Move the star above the cloud.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-near-far",
+      "instruction": "Put the ball near the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-near-far",
+      "instruction": "Put the ball far from the tree.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-near-far",
+      "instruction": "Put the toy car near the house.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-near-far",
+      "instruction": "Put the toy car far from the house.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-near-far",
+      "instruction": "Put the ball near the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-near-far",
+      "instruction": "Put the ball far from the tree.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-near-far",
+      "instruction": "Put the toy car near the house.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-into-out",
+      "instruction": "Move the toy car into the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-into-out",
+      "instruction": "Move the toy car out of the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-into-out",
+      "instruction": "Move the ball into the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-into-out",
+      "instruction": "Move the ball out of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-into-out",
+      "instruction": "Move the toy car into the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-into-out",
+      "instruction": "Move the toy car out of the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-into-out",
+      "instruction": "Move the ball into the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-over-through",
+      "instruction": "Move the ball over the low wall.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-over-through",
+      "instruction": "Move the ball through the hoop.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-over-through",
+      "instruction": "Move the toy car through the tunnel.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-over-through",
+      "instruction": "Move the ball over the low wall.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-over-through",
+      "instruction": "Move the ball through the hoop.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-over-through",
+      "instruction": "Move the toy car through the tunnel.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-across-around",
+      "instruction": "Move the toy car across the bridge.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-across-around",
+      "instruction": "Move the toy car around the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-across-around",
+      "instruction": "Move the boat across the pond.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-across-around",
+      "instruction": "Move the toy car across the bridge.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-across-around",
+      "instruction": "Move the toy car around the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-across-around",
+      "instruction": "Move the boat across the pond.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-two-steps",
+      "instruction": "Take the ball out of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-two-steps",
+      "instruction": "Put it under the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-two-steps",
+      "instruction": "Put the book on the table.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-two-steps",
+      "instruction": "Put the pen beside the book.",
+      "method": "tap",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-two-steps",
+      "instruction": "Move the toy car out of the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 390,
+      "lesson": "move-two-steps",
+      "instruction": "Put it behind the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-in-out",
+      "instruction": "Put the ball in the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-in-out",
+      "instruction": "Take the ball out of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-in-out",
+      "instruction": "Put the pen in the pocket.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-in-out",
+      "instruction": "Take the pen out of the pocket.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-in-out",
+      "instruction": "Put the ball in the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-in-out",
+      "instruction": "Take the ball out of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-in-out",
+      "instruction": "Put the pen in the pocket.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-on-under",
+      "instruction": "Put the ball on the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-on-under",
+      "instruction": "Put the ball under the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-on-under",
+      "instruction": "Put the book on the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-on-under",
+      "instruction": "Put the book under the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-on-under",
+      "instruction": "Put the ball on the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-on-under",
+      "instruction": "Put the ball under the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-on-under",
+      "instruction": "Put the book on the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-beside",
+      "instruction": "Put the ball beside the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-beside",
+      "instruction": "Put the pen beside the book.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-beside",
+      "instruction": "Put the toy car beside the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-beside",
+      "instruction": "Put the ball beside the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-beside",
+      "instruction": "Put the pen beside the book.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-beside",
+      "instruction": "Put the toy car beside the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-front-behind",
+      "instruction": "Put the ball in front of the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-front-behind",
+      "instruction": "Put the ball behind the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-front-behind",
+      "instruction": "Put the toy car in front of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-front-behind",
+      "instruction": "Put the toy car behind the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-front-behind",
+      "instruction": "Put the ball in front of the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-front-behind",
+      "instruction": "Put the ball behind the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-front-behind",
+      "instruction": "Put the toy car in front of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-between",
+      "instruction": "Put the ball between the two boxes.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-between",
+      "instruction": "Put the pen between the two books.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-between",
+      "instruction": "Put the toy car between the chair and the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-between",
+      "instruction": "Put the ball between the two boxes.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-between",
+      "instruction": "Put the pen between the two books.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-between",
+      "instruction": "Put the toy car between the chair and the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-above-below",
+      "instruction": "Move the balloon above the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-above-below",
+      "instruction": "Move the balloon below the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-above-below",
+      "instruction": "Move the star above the cloud.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-above-below",
+      "instruction": "Move the star below the cloud.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-above-below",
+      "instruction": "Move the balloon above the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-above-below",
+      "instruction": "Move the balloon below the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-above-below",
+      "instruction": "Move the star above the cloud.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-near-far",
+      "instruction": "Put the ball near the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-near-far",
+      "instruction": "Put the ball far from the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-near-far",
+      "instruction": "Put the toy car near the house.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-near-far",
+      "instruction": "Put the toy car far from the house.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-near-far",
+      "instruction": "Put the ball near the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-near-far",
+      "instruction": "Put the ball far from the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-near-far",
+      "instruction": "Put the toy car near the house.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-into-out",
+      "instruction": "Move the toy car into the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-into-out",
+      "instruction": "Move the toy car out of the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-into-out",
+      "instruction": "Move the ball into the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-into-out",
+      "instruction": "Move the ball out of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-into-out",
+      "instruction": "Move the toy car into the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-into-out",
+      "instruction": "Move the toy car out of the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-into-out",
+      "instruction": "Move the ball into the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-over-through",
+      "instruction": "Move the ball over the low wall.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-over-through",
+      "instruction": "Move the ball through the hoop.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-over-through",
+      "instruction": "Move the toy car through the tunnel.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-over-through",
+      "instruction": "Move the ball over the low wall.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-over-through",
+      "instruction": "Move the ball through the hoop.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-over-through",
+      "instruction": "Move the toy car through the tunnel.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-across-around",
+      "instruction": "Move the toy car across the bridge.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-across-around",
+      "instruction": "Move the toy car around the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-across-around",
+      "instruction": "Move the boat across the pond.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-across-around",
+      "instruction": "Move the toy car across the bridge.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-across-around",
+      "instruction": "Move the toy car around the tree.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-across-around",
+      "instruction": "Move the boat across the pond.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-two-steps",
+      "instruction": "Take the ball out of the box.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-two-steps",
+      "instruction": "Put it under the chair.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-two-steps",
+      "instruction": "Put the book on the table.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-two-steps",
+      "instruction": "Put the pen beside the book.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-two-steps",
+      "instruction": "Move the toy car out of the garage.",
+      "method": "drag",
+      "saved": true
+    },
+    {
+      "width": 1366,
+      "lesson": "move-two-steps",
+      "instruction": "Put it behind the box.",
+      "method": "drag",
+      "saved": true
+    }
+  ],
+  "tapSequence": true,
+  "demo": true,
+  "layouts": [
+    {
+      "width": 390,
+      "noHorizontalOverflow": true,
+      "fullSequenceSaved": true
+    },
+    {
+      "width": 1366,
+      "noHorizontalOverflow": true,
+      "fullSequenceSaved": true
+    }
+  ],
+  "checks": [
+    "Real touch and mouse pointer drags complete every position and movement path",
+    "Ball selection is not counted as a wrong answer; ball then actual box tap works",
+    "Every instruction and three practice tasks, plus all two-step groups, complete in sequence",
+    "Success snaps to target, spoken feedback, Next waits, per-instruction results persist",
+    "Demonstrations and child attempts use responsive SVG objects, never a flat bitmap",
+    "Reload restores completed lesson state"
+  ],
+  "passed": true,
+  "limitations": [
+    "Touch events simulated in Edge; physical phone testing remains needed"
+  ]
+}

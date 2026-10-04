@@ -1,0 +1,552 @@
+{
+  "checks": [
+    "Migration retains separate legacy paths and assigns former shared stage work only to selected profile",
+    "All stage/family/review storage isolated by profile",
+    "Versioned file roundtrip, additive conflict handling, duplicate history prevention",
+    "Reject unsupported versions, unknown IDs, invalid answers/dates and unsafe keys before mutation",
+    "1/3/7/14/30 day intervals; mistakes and assisted answers restart review after 1 day",
+    "Browser profile switch isolates Aa/Bb position and Continue; actual download and validated import preview work",
+    "Wrong match reveals correct lowercase, useful pair hint, no false success; assisted retry recorded",
+    "All 47 story comprehension prompts, three choices, evidence, hints, retries and per-profile missed review records",
+    "Due items return, sufficient repeated history identifies practice area, timed rounds pause/Home/resume excludes inactive time, observed correct totals persist"
+  ],
+  "comprehension": [
+    {
+      "id": "story:hen-sun",
+      "prompt": "Who was in the sun?",
+      "answer": "hen",
+      "supported": true
+    },
+    {
+      "id": "story:pig-pen",
+      "prompt": "Who was in the pen?",
+      "answer": "pig",
+      "supported": true
+    },
+    {
+      "id": "story:red-bag",
+      "prompt": "What was in the bag?",
+      "answer": "pen",
+      "supported": true
+    },
+    {
+      "id": "story:dog-log",
+      "prompt": "What was the dog on?",
+      "answer": "log",
+      "supported": true
+    },
+    {
+      "id": "story:bun-cup",
+      "prompt": "What did Mum have?",
+      "answer": "bun",
+      "supported": true
+    },
+    {
+      "id": "story:cat-rat",
+      "prompt": "What was the cat on?",
+      "answer": "mat",
+      "supported": true
+    },
+    {
+      "id": "story:map-tap",
+      "prompt": "What was the map on?",
+      "answer": "mat",
+      "supported": true
+    },
+    {
+      "id": "story:bus-stop",
+      "prompt": "What colour was the bus?",
+      "answer": "red",
+      "supported": true
+    },
+    {
+      "id": "story:fish-shop",
+      "prompt": "What could the man get for his tank?",
+      "answer": "fish",
+      "supported": true
+    },
+    {
+      "id": "story:little-ship",
+      "prompt": "What was by the ship?",
+      "answer": "fish",
+      "supported": true
+    },
+    {
+      "id": "story:shell-gift",
+      "prompt": "What was in the child’s hand?",
+      "answer": "shell",
+      "supported": true
+    },
+    {
+      "id": "story:shed-cat",
+      "prompt": "Where did the cat run?",
+      "answer": "shed",
+      "supported": true
+    },
+    {
+      "id": "story:chip-lunch",
+      "prompt": "What was on the dish too?",
+      "answer": "Fish",
+      "supported": true
+    },
+    {
+      "id": "story:chin-chat",
+      "prompt": "Where did Dad have a spot?",
+      "answer": "chin",
+      "supported": true
+    },
+    {
+      "id": "story:chick-run",
+      "prompt": "Who was with the hen?",
+      "answer": "chick",
+      "supported": true
+    },
+    {
+      "id": "story:bench-rest",
+      "prompt": "Where did they sit?",
+      "answer": "bench",
+      "supported": true
+    },
+    {
+      "id": "story:rain-snail",
+      "prompt": "What was on the path?",
+      "answer": "snail",
+      "supported": true
+    },
+    {
+      "id": "story:train-trip",
+      "prompt": "What did they wait for?",
+      "answer": "train",
+      "supported": true
+    },
+    {
+      "id": "story:cat-tail",
+      "prompt": "What did the cat have?",
+      "answer": "tail",
+      "supported": true
+    },
+    {
+      "id": "story:rain-paint",
+      "prompt": "What did the child paint on a page?",
+      "answer": "rain",
+      "supported": true
+    },
+    {
+      "id": "story:sea-seat",
+      "prompt": "What did the child see on the beach?",
+      "answer": "shell",
+      "supported": true
+    },
+    {
+      "id": "story:leaf-tree",
+      "prompt": "What fell from the tree?",
+      "answer": "leaf",
+      "supported": true
+    },
+    {
+      "id": "story:peach-meal",
+      "prompt": "What did they each eat a piece of?",
+      "answer": "peach",
+      "supported": true
+    },
+    {
+      "id": "story:beach-clean",
+      "prompt": "Where did Dad and the child put the bag?",
+      "answer": "bin",
+      "supported": true
+    },
+    {
+      "id": "story:values-bismillah-bite",
+      "prompt": "What was on the plate?",
+      "answer": "bun",
+      "supported": true
+    },
+    {
+      "id": "story:values-smile-friend",
+      "prompt": "What did the children play with?",
+      "answer": "ball",
+      "supported": true
+    },
+    {
+      "id": "story:values-water-cat",
+      "prompt": "Who drank the water?",
+      "answer": "cat",
+      "supported": true
+    },
+    {
+      "id": "story:values-salam-door",
+      "prompt": "Who was at the door?",
+      "answer": "Dad",
+      "supported": true
+    },
+    {
+      "id": "story:values-two-dates",
+      "prompt": "How many dates did the child have at first?",
+      "answer": "two",
+      "supported": true
+    },
+    {
+      "id": "story:values-prayer-mat",
+      "prompt": "What did the little brother bring?",
+      "answer": "towel",
+      "supported": true
+    },
+    {
+      "id": "story:values-red-cup",
+      "prompt": "What did they use to wipe up the water?",
+      "answer": "cloth",
+      "supported": true
+    },
+    {
+      "id": "story:values-quiet-surprise",
+      "prompt": "What did the child put neatly together?",
+      "answer": "shoes",
+      "supported": true
+    },
+    {
+      "id": "story:values-thank-you",
+      "prompt": "What did Dad cut?",
+      "answer": "apple",
+      "supported": true
+    },
+    {
+      "id": "story:values-clear-path",
+      "prompt": "Who moved the twig aside?",
+      "answer": "Dad",
+      "supported": true
+    },
+    {
+      "id": "story:values-little-bird",
+      "prompt": "Who took a drink?",
+      "answer": "bird",
+      "supported": true
+    },
+    {
+      "id": "story:values-come-in",
+      "prompt": "What did the child show Mum?",
+      "answer": "drawing",
+      "supported": true
+    },
+    {
+      "id": "story:values-fallen-blocks",
+      "prompt": "What did they build again?",
+      "answer": "tower",
+      "supported": true
+    },
+    {
+      "id": "story:values-turns-bike",
+      "prompt": "What did the children ride?",
+      "answer": "bike",
+      "supported": true
+    },
+    {
+      "id": "story:values-guest-date",
+      "prompt": "What did they bring their guest?",
+      "answer": "date",
+      "supported": true
+    },
+    {
+      "id": "story:values-lost-pencil",
+      "prompt": "What did the child find?",
+      "answer": "pencil",
+      "supported": true
+    },
+    {
+      "id": "story:values-little-gift",
+      "prompt": "What did the child draw?",
+      "answer": "flower",
+      "supported": true
+    },
+    {
+      "id": "story:values-busy-ant",
+      "prompt": "Who carried a tiny crumb?",
+      "answer": "ant",
+      "supported": true
+    },
+    {
+      "id": "story:values-ready-prayer",
+      "prompt": "Where did the child put the toys?",
+      "answer": "box",
+      "supported": true
+    },
+    {
+      "id": "story:values-dua-mum",
+      "prompt": "What did the child bring Mum?",
+      "answer": "water",
+      "supported": true
+    },
+    {
+      "id": "story:values-brother-friend",
+      "prompt": "What did the brothers build together?",
+      "answer": "tower",
+      "supported": true
+    },
+    {
+      "id": "story:values-not-hit-back",
+      "prompt": "Who helped the children?",
+      "answer": "Mum",
+      "supported": true
+    },
+    {
+      "id": "story:values-brothers-truck",
+      "prompt": "What toy did the brothers share?",
+      "answer": "truck",
+      "supported": true
+    }
+  ],
+  "layouts": [
+    {
+      "label": "home 390 false",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "letters 390 false",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "words 390 false",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "spelling 390 false",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "stories 390 false",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "parents 390 false",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "home 390 true",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "letters 390 true",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "words 390 true",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "spelling 390 true",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "stories 390 true",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "parents 390 true",
+      "width": 390,
+      "scroll": 390,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "home 768 false",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "letters 768 false",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "words 768 false",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "spelling 768 false",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "stories 768 false",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "parents 768 false",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "home 768 true",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "letters 768 true",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "words 768 true",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "spelling 768 true",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "stories 768 true",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "parents 768 true",
+      "width": 768,
+      "scroll": 768,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "home 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "letters 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "words 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "spelling 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "stories 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "parents 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "home 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "letters 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "words 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "spelling 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "stories 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    },
+    {
+      "label": "parents 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "short": [],
+      "clipped": []
+    }
+  ],
+  "passed": true
+}

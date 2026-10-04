@@ -42,7 +42,7 @@ export function layoutMove(t,movement=false){
  }else if(pos==='between'){
   const pair=t.anchor==='two boxes'?['box','box']:t.anchor==='two books'?['book','book']:['chair','table'];anchors=pair.map((name,i)=>({name,x:i===0?205:455,y:225,scale:name==='table'?.75:.72}));zones=[{label:'Middle space',point:[330,260]},{label:'Outside, left',point:[90,260]},{label:'Outside, right',point:[560,260]}];valid=[0];
  }else if(['near','far from'].includes(pos)){
-  anchors=[{name:t.anchor,x:455,y:215}];zones=[{label:'Close area',point:[408,288]},{label:'Far area',point:[105,280]},{label:'Middle area',point:[255,280]}];valid=[pos==='near'?0:1];
+  anchors=[{name:t.anchor,x:455,y:215}];zones=[{label:'Close area',point:[408,288]},{label:'Far area',point:[105,280]},{label:'Middle area',point:[255,280]}];valid=[pos==='near'?0:1];start=zones[pos==='near'?1:0].point;
  }else if(pos==='out of'){valid=[1];start=t.anchor==='pocket'?[340,152]:[340,195];}
  if(t.anchor==='pocket'){zones[0].point=[340,152];}
  if(t.extra)anchors.push({name:t.extra,x:505,y:225,scale:.65});
@@ -78,6 +78,6 @@ export function moveScene(t,layout,point=layout.start,{movement=false,showRoute=
  const flags=movement?'<g fill="#2f5c67" font-size="15"><text x="'+layout.start[0]+'" y="'+(layout.start[1]-43)+'" text-anchor="middle">Start</text><text x="'+layout.paths[0].points.at(-1)[0]+'" y="'+(layout.paths[0].points.at(-1)[1]+43)+'" text-anchor="middle">Finish</text></g>':'';
  const occluded=['in','into','behind'].includes(t.position)||(t.position==='out of'&&point[0]>265);
  const occlusion=occluded?(t.position==='behind'?anchor:t.anchor==='box'?'<path d="M260 165V260L340 293 420 260V165L340 200Z" fill="#f8b55e" '+outline+'/>':t.anchor==='pocket'?'<path d="M270 145H410V275L340 300 270 275Z" fill="#68acee" '+outline+'/>':t.position==='behind'?anchor:''):'';
- return '<svg id="move-scene" class="move-scene" viewBox="0 0 600 360" role="img" aria-label="'+t.object+' and '+t.anchor+'"><rect width="600" height="360" rx="18" fill="#e8f7ff"/><path d="M0 145 600 145V360H0Z" fill="#fff0d5"/><path d="M0 360 285 145M600 360 315 145M0 270H600M0 195H600" stroke="#e3cfb2" stroke-width="2"/>'+anchor+zones+route+(path.length?'<polyline points="'+line(path)+'" fill="none" stroke="#c38b42" stroke-width="3"/>':'')+flags+object+'<g pointer-events="none">'+occlusion+'</g></svg>';
+ return '<svg id="move-scene" class="move-scene" viewBox="0 0 600 360" role="'+(interactive?'group':'img')+'" aria-label="'+t.object+' and '+t.anchor+'"><rect width="600" height="360" rx="18" fill="#e8f7ff"/><path d="M0 145 600 145V360H0Z" fill="#fff0d5"/><path d="M0 360 285 145M600 360 315 145M0 270H600M0 195H600" stroke="#e3cfb2" stroke-width="2"/>'+anchor+zones+route+(path.length?'<polyline points="'+line(path)+'" fill="none" stroke="#c38b42" stroke-width="3"/>':'')+flags+object+'<g pointer-events="none">'+occlusion+'</g></svg>';
 }
 export function routePicture(points){return '<svg viewBox="0 0 600 360" aria-hidden="true"><polyline points="'+line(points)+'" fill="none" stroke="#476d88" stroke-width="12"/><circle cx="'+points[0][0]+'" cy="'+points[0][1]+'" r="17" fill="#76a995"/><circle cx="'+points.at(-1)[0]+'" cy="'+points.at(-1)[1]+'" r="17" fill="#dab967"/></svg>';}

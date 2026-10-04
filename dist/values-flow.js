@@ -4,7 +4,7 @@ const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const btn=(label,action,attributes='',kind='')=>'<button class="btn '+kind+'" data-action="stages-value-story-'+action+'" '+attributes+'>'+label+'</button>';
 const pause=()=>'<button class="btn story-pause" data-action="stages-pause" disabled aria-pressed="false">Pause</button>';
 const arabic=()=>'<div class="refuge-phrase"><p lang="ar" dir="rtl">'+refugeArabic+'</p><p lang="bn">'+refugeMeaning+'</p>'+btn('Listen & repeat Arabic','refuge')+btn('Stop','stop')+'<small>Listen together. This phrase is never scored.</small></div>';
-export function createValueStoryFlow({getProgress,save,isSaved,render,status,play,stop}){
+export function createValueStoryFlow({onAttempt=()=>{},onStoryFinish=()=>{},getProgress,save,isSaved,render,status,play,stop}){
  let selected=null;
  const state=()=>getProgress(),story=()=>valuesStories.find(s=>s.id===selected),progress=()=>state().valueStories[selected],step=()=>valueSteps(story())[progress().step];
  const speak=parts=>{status('Listening…');play(parts);};
@@ -34,7 +34,7 @@ export function createValueStoryFlow({getProgress,save,isSaved,render,status,pla
    if(recall)body+='<div class="story-listen">'+btn('Hear story sentence · Replay','sentence-audio')+pause()+'</div>';
    body+=choices(q);canNext=correct;
   }else if(st.type==='complete'){
-   heading='Your complete story';body=paragraph()+(s.id==='values-brother-friend'?arabic():'')+'<div class="story-listen">'+btn('Hear paragraph · Replay','paragraph-audio')+pause()+'</div><p class="story-feedback">Read together or try reading aloud. Audio is optional.</p>';
+   heading='Your complete story';body='<button class="btn" data-action="practice-open-story" data-id="'+s.id+'">A question about the story</button>'+paragraph()+(s.id==='values-brother-friend'?arabic():'')+'<div class="story-listen">'+btn('Hear paragraph · Replay','paragraph-audio')+pause()+'</div><p class="story-feedback">Read together or try reading aloud. Audio is optional.</p>';
   }else{
    heading='Story practice complete';body='<div class="value-star" role="img" aria-label="One completion star">'+(p.star?'★':'☆')+'</div><p class="story-feedback">'+(p.star?'You practised this story!':'Tap to mark this practice complete.')+'</p><p class="muted">'+(p.assisted?'Completed with help. ':'')+'A star records practice, not independent reading mastery.</p><div class="story-controls">'+(p.star?'<button class="btn primary" data-action="stages-story-back">Return to Stories →</button>':btn('I practised this story ★','finish','','primary'))+'</div>';canNext=false;
   }
@@ -59,7 +59,7 @@ export function createValueStoryFlow({getProgress,save,isSaved,render,status,pla
   else if(action==='hint'){const q=question();speak([{key:'story-hint:'+q.hint,target:'.story-gap-hint'}]);}
   else if(action==='demonstrate')demonstrate(question());
   else if(action==='retry'){const q=question(),a=attempt(q);stop();a.helpOpen=false;a.easier=true;a.assisted=true;p.assisted=true;p.answers[q.id]=null;save();render();speak([{key:'value-instruction:retry'}]);}
-  else if(action==='answer'&&['sentence-gap','paragraph-gaps','play'].includes(st.type)){const q=question(),a=attempt(q);if(complete(q)||a.helpOpen||!q.choices.includes(data.word))return;stop();a.attempts++;if(a.firstChoice===null){a.firstChoice=data.word;a.firstCorrect=data.word===q.word;}p.answers[q.id]=data.word;if(data.word!==q.word){a.wrong++;a.assisted=true;p.assisted=true;if(a.wrong>=2){a.demonstrated=true;a.helpOpen=true;}save();render(false);if(a.helpOpen)demonstrate(q);else speak([{key:'story-hint:'+q.hint,target:'.story-gap-hint'}]);}else{save();render(false);speak([{key:'value-praise'},{key:'at-tone:success'}]);document.querySelector('.story-controls .primary')?.focus({preventScroll:true});}}
-  else if(action==='finish'&&st.type==='finish'){stop();p.star=true;p.done=true;if(!p.completed.includes(p.step))p.completed.push(p.step);save();render(false);speak([{key:'value-praise'},{key:'at-tone:success'}]);}
+  else if(action==='answer'&&['sentence-gap','paragraph-gaps','play'].includes(st.type)){const q=question(),a=attempt(q);if(complete(q)||a.helpOpen||!q.choices.includes(data.word))return;stop();a.attempts++;if(a.firstChoice===null){a.firstChoice=data.word;a.firstCorrect=data.word===q.word;}onAttempt('word:'+q.word,data.word===q.word,a.assisted);p.answers[q.id]=data.word;if(data.word!==q.word){a.wrong++;a.assisted=true;p.assisted=true;if(a.wrong>=2){a.demonstrated=true;a.helpOpen=true;}save();render(false);if(a.helpOpen)demonstrate(q);else speak([{key:'story-hint:'+q.hint,target:'.story-gap-hint'}]);}else{save();render(false);speak([{key:'value-praise'},{key:'at-tone:success'}]);document.querySelector('.story-controls .primary')?.focus({preventScroll:true});}}
+  else if(action==='finish'&&st.type==='finish'){stop();p.star=true;p.done=true;if(!p.completed.includes(p.step))p.completed.push(p.step);save();render(false);onStoryFinish(s.id);}
  }};
 }

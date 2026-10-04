@@ -16,7 +16,7 @@ function readingText(text,filledWord=null,blank=false,line){
  }
  return '<span class="at-reading-text" '+(line===undefined?'':'data-line="'+line+'" ')+'data-spoken-text="'+esc(text)+'">'+html+esc(text.slice(cursor))+'</span>';
 }
-export function createAtReading({getProgress,save,render,status,onBack,getSpeed,picture,isSaved}){
+export function createAtReading({onAttempt=()=>{},getProgress,save,render,status,onBack,getSpeed,picture,isSaved}){
  const p=()=>getProgress(),step=()=>atSteps[p().step];
  function stop(){stopStageAudio();stopLessonAudio();status('');}
  function sync(){const audio=stageAudioState();document.querySelectorAll('[data-action="family-reading-pause"]').forEach(control=>{control.disabled=!audio.playing;control.textContent=audio.paused?'Resume':'Pause';control.setAttribute('aria-pressed',String(audio.paused));});}
@@ -102,7 +102,7 @@ export function createAtReading({getProgress,save,render,status,onBack,getSpeed,
  function choose(choice){
   const s=step();if(!isAtQuestion(s)||!s.choices.includes(choice))return;const a=answerState();if(a.correct||a.helpOpen)return;
   stop();a.attempts++;if(a.assisted||a.easier)a.assistedAttempts++;a.choice=choice;if(a.firstChoice===null){a.firstChoice=choice;a.firstAttemptCorrect=choice===s.answer;}
-  a.correct=choice===s.answer;
+  onAttempt('word:'+s.word,choice===s.answer,a.assisted);a.correct=choice===s.answer;
   if(a.correct){if(!p().completed.includes(s.id))p().completed.push(s.id);save();render(false);document.querySelector('[data-action="family-reading-next"]')?.focus({preventScroll:true});say([{key:'at-say:praise'},{key:'at-tone:success',pauseAfter:0}]);}
   else{
    a.incorrect++;a.assisted=true;if(!p().wordsNeedingPractice.includes(s.word))p().wordsNeedingPractice.push(s.word);

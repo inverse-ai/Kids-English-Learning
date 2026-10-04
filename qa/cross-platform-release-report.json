@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-04",
+  "changes": [
+    "Listen & Move: existing recorded sentence audio labelled Hear instruction · Replay, word cue highlighting, Pause/Resume and individual/full two-step replay",
+    "Every Listen & Move object supports real mouse/touch dragging, selection taps and accessible placement or route controls; correct actions snap into place and save progress",
+    "Gender-neutral parent text, larger mobile text and controls, wrapping navigation and layouts at enlarged text sizes",
+    "Helpful Find a match retry feedback shows the correct pair without marking an incorrect answer successful",
+    "Separate little/big stage, family, review and history records; conservative migration and validated versioned export/restore",
+    "Per-profile spaced review, questions for all 47 existing stories, optional parent-observed familiar-word fluency and parent practice reports",
+    "Same website and codebase gain a PWA manifest, install guidance, offline shell and explicit update controls"
+  ],
+  "verification": {
+    "listenAndMove": "144 completed tasks across 390px touch emulation and 1366px desktop; all static, route and two-step lessons; saved completion after reopening",
+    "moveInteractionChecks": "Selection taps, drag paths, keyboard/tap alternatives, shortcut rejection, hints, demonstrations, assisted attempts, normal/reduced motion, audio pause/highlight and full/individual two-step replay",
+    "profilesAndPractice": "Migration, profile isolation, actual export download, import validation/preview, conservative conflict handling, scheduling and parent history checked",
+    "comprehension": "All 47 prompts exercised with incorrect/correct choices and assisted retry records",
+    "layouts": "36 representative home/stage/parent layouts at 390, 768 and 1366px, normal and 200% text; no horizontal overflow or clipped controls, minimum 56px button hit areas",
+    "audio": "1616 existing files decoded; 912 timing records checked; actual English/Bangla playback and Pause/Resume checked at normal and slower speed",
+    "pwa": "Headless Edge reports no installability errors; prompt wiring, real offline shell/lesson/cached audio and service-worker update with retained progress checked",
+    "regressions": "Original alphabet/spelling, 24 reading stories, 23 values lessons, saved writing and family work checked",
+    "reports": [
+      "qa/move-playable-report.json",
+      "qa/move-interactions-report.json",
+      "qa/profiles-practice-report.json",
+      "qa/audio-catalog-report.json",
+      "qa/pwa-report.json",
+      "qa/home-spelling-report.json",
+      "qa/story-flow-report.json"
+    ]
+  },
+  "progressPolicy": {
+    "cloudSync": false,
+    "reason": "The existing static site has no suitable authenticated backend for secure child-profile sync",
+    "restoreRequirement": "A parent must keep an exported progress file to restore after browser data is cleared. Browser storage and PWA installation are not backups.",
+    "migration": "Former shared stage work belongs only to the previously active profile. Existing separate legacy paths remain intact; an original pre-migration local copy is retained where possible.",
+    "import": "Validate before mutation; restore missing work and union completion/history without silently replacing conflicting existing activity state"
+  },
+  "limitations": [
+    "Physical Android/iPhone/iPad Home Screen installation and OS-level touch behaviour were not verified; viewport and touch tests used headless Edge",
+    "Human pronunciation and clarity need parent listening: English names and phonics, especially vowels/Q/X, brisk and slower spelling, Bangla meanings/pronunciation helpers and story explanations; Arabic phrase needs a competent Arabic listener",
+    "Arabic phrase and Bengali explanation use whole-phrase highlighting where reliable individual word cues are unavailable",
+    "Offline audio includes previously played clips only, with a 300-clip cache limit",
+    "Short screens and enlarged text may require vertical scrolling; no unintended horizontal scrolling was found",
+    "Fluency correctness is parent-observed, not automatic speech recognition or independent-reading mastery",
+    "No App Store or Play Store publication; no new or replaced recordings"
+  ]
+}

@@ -716,39 +716,39 @@
       },
       "controls": [
         {
-          "text": "Listen · Replay",
-          "bottom": 248.640625,
-          "height": 46
+          "text": "Hear instruction · Replay",
+          "bottom": 290.515625,
+          "height": 56
         },
         {
           "text": "Pause",
-          "bottom": 248.640625,
-          "height": 46
+          "bottom": 290.515625,
+          "height": 56
         },
         {
           "text": "1 · In front",
-          "bottom": 481.953125,
-          "height": 46
+          "bottom": 590.109375,
+          "height": 59.59375
         },
         {
           "text": "2 · Behind",
-          "bottom": 481.953125,
-          "height": 46
+          "bottom": 590.109375,
+          "height": 59.59375
         },
         {
           "text": "3 · Beside",
-          "bottom": 481.953125,
-          "height": 46
+          "bottom": 590.109375,
+          "height": 59.59375
         },
         {
           "text": "← Previous",
-          "bottom": 531.953125,
-          "height": 46
+          "bottom": 650.109375,
+          "height": 56
         },
         {
           "text": "Watch again",
-          "bottom": 531.953125,
-          "height": 46
+          "bottom": 650.109375,
+          "height": 56
         }
       ]
     },
@@ -759,39 +759,39 @@
       },
       "controls": [
         {
-          "text": "Listen · Replay",
-          "bottom": 370.125,
-          "height": 46
+          "text": "Hear instruction · Replay",
+          "bottom": 436.875,
+          "height": 56
         },
         {
           "text": "Pause",
-          "bottom": 370.125,
-          "height": 46
+          "bottom": 436.875,
+          "height": 56
         },
         {
           "text": "1 · In front",
-          "bottom": 690.4375,
-          "height": 46
+          "bottom": 766.46875,
+          "height": 56
         },
         {
           "text": "2 · Behind",
-          "bottom": 690.4375,
-          "height": 46
+          "bottom": 766.46875,
+          "height": 56
         },
         {
           "text": "3 · Beside",
-          "bottom": 690.4375,
-          "height": 46
+          "bottom": 766.46875,
+          "height": 56
         },
         {
           "text": "← Previous",
-          "bottom": 744.4375,
-          "height": 46
+          "bottom": 830.46875,
+          "height": 56
         },
         {
           "text": "Watch again",
-          "bottom": 744.4375,
-          "height": 46
+          "bottom": 830.46875,
+          "height": 56
         }
       ]
     },
@@ -802,39 +802,39 @@
       },
       "controls": [
         {
-          "text": "Listen · Replay",
-          "bottom": 423.375,
-          "height": 47
+          "text": "Hear instruction · Replay",
+          "bottom": 440.375,
+          "height": 56
         },
         {
           "text": "Pause",
-          "bottom": 423.375,
-          "height": 47
+          "bottom": 440.375,
+          "height": 56
         },
         {
           "text": "1 · In front",
-          "bottom": 793.765625,
-          "height": 46
+          "bottom": 820.765625,
+          "height": 56
         },
         {
           "text": "2 · Behind",
-          "bottom": 793.765625,
-          "height": 46
+          "bottom": 820.765625,
+          "height": 56
         },
         {
           "text": "3 · Beside",
-          "bottom": 793.765625,
-          "height": 46
+          "bottom": 820.765625,
+          "height": 56
         },
         {
           "text": "← Previous",
-          "bottom": 850.765625,
-          "height": 47
+          "bottom": 886.765625,
+          "height": 56
         },
         {
           "text": "Watch again",
-          "bottom": 850.765625,
-          "height": 47
+          "bottom": 886.765625,
+          "height": 56
         }
       ]
     }

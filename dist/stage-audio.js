@@ -1,10 +1,11 @@
 import {stageSpeech} from './stage-speech.js';
+import {recordedSpeech} from './recorded-speech.js';
 import {familySpeech} from './family-speech.js';
 import {stopLessonAudio} from './lesson-audio.js';
 import {watchAudioHighlights,clearSpeechHighlights} from './speech-highlights.js';
 let stopHighlights=()=>{};
 let ticket=0,current=null,queue=[],position=0,paused=false,playing=false,callbacks={},timer=null,waitUntil=0,remainingWait=0;
-export function stageClip(key){return stageSpeech[key]||familySpeech[key];}
+export function stageClip(key){return stageSpeech[key]||familySpeech[key]||(key.startsWith('legacy:')?recordedSpeech[key.slice(7)]:undefined);}
 export function stopStageAudio(){
  stopHighlights();stopHighlights=()=>{};clearSpeechHighlights();
  ticket++;clearTimeout(timer);timer=null;waitUntil=0;remainingWait=0;paused=false;playing=false;queue=[];

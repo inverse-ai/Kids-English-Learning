@@ -20,13 +20,13 @@ export function stagePicture(word,small=false){
 }
 const sounds=word=>'<div class="stage-blend" aria-label="Blend '+esc(word)+'">'+[...word].map((c,i)=>'<button class="sound-chip" data-action="stages-audio" data-key="sound:'+c+'" data-part="'+i+'">'+c+'</button>').join('<span aria-hidden="true">–</span>')+'<span aria-hidden="true">→</span><b>'+word+'</b></div>';
 
-export function createStageLessons({getProgress,getLegacy,save,isSaved,render,onLegacy,onFamily,onStatus,getSpeed}){
+export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getProgress,getLegacy,save,isSaved,render,onLegacy,onFamily,onStatus,getSpeed}){
  let stage='letters',page='home',letterIndex=0,wordId=null,storyId=null,exampleIndex=0,phase='Ready',activeStoryLine=-1;
  const state=()=>getProgress();
  const status=message=>onStatus(message);
- const storyFlow=createStoryFlow({getProgress,save,isSaved,render,status,play:audioParts,stop,picture:stagePicture});
+ const storyFlow=createStoryFlow({onAttempt,onStoryFinish,getProgress,save,isSaved,render,status,play:audioParts,stop,picture:stagePicture});
  const moveFlow=createMoveFlow({getProgress,save,isSaved,render,play:audioParts,stop});
- const valueFlow=createValueStoryFlow({getProgress,save,isSaved,render,status,play:audioParts,stop});
+ const valueFlow=createValueStoryFlow({onAttempt,onStoryFinish,getProgress,save,isSaved,render,status,play:audioParts,stop});
  const newStories=valuesStories.filter(s=>!stories.some(old=>old.sentences.join(' ')===s.sentences.join(' '))).sort((a,b)=>valuesOrder.indexOf(a.id)-valuesOrder.indexOf(b.id));
  const spellingFlow=createSpellingFlow({getProgress:()=>state().spelling,save,isSaved,render,status,picture:stagePicture,getSpeed});
  const saveLabel=()=>'<span id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</span>';
@@ -161,7 +161,7 @@ export function createStageLessons({getProgress,getLegacy,save,isSaved,render,on
    }else if(action==='word-next'){const p=state().words[wordId];if(p&&p.step<3){stop();p.step++;save();render();}}
    else if(action==='word-answer'){
     const l=wordLessons.find(l=>l.id===wordId),p=state().words[wordId];if(!l||p.step!==3||p.answer===l.word||!l.choices.includes(data.word))return;
-    p.answer=data.word;save();render(false);
+    onAttempt('word:'+l.word,data.word===l.word,p.answer!==null);p.answer=data.word;save();render(false);
    }else if(action==='word-finish'){
     const l=wordLessons.find(l=>l.id===wordId),p=state().words[wordId];if(!l||p.answer!==l.word)return;
     p.done=true;save();status(isSaved()?'Sentence practice saved. Read it again, or return to Words.':'Read the sentence again. Progress could not be saved yet.');

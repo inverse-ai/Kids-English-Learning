@@ -5,7 +5,7 @@
     "Normal and slower playback; both p letters separately; Q with U and X in box highlight correctly",
     "Replay, manual Previous/Next, stop old audio, quiet Home and Continue",
     "Saved family answers, writing strokes, -at reading and old story position continue; legacy lessons retained",
-    "320×568, 390×844 and 1366×900 layouts; no horizontal overflow; primary controls visible",
+    "320×568, 390×844 and 1366×900 layouts; no horizontal overflow; primary controls reachable by vertical scrolling with 56px targets",
     "All original 24 stories and 9 short-word lessons remain unchanged; added stories are checked separately"
   ],
   "speeds": [

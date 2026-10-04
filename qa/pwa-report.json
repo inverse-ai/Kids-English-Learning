@@ -1,0 +1,29 @@
+{
+  "installability": {
+    "browser": "Edge Chromium",
+    "errors": [],
+    "manifest": true
+  },
+  "installButton": {
+    "promptWiring": true,
+    "syntheticEvent": true
+  },
+  "offline": {
+    "shell": true,
+    "lesson": true,
+    "progress": true,
+    "playedAudio": true
+  },
+  "update": {
+    "newVersionActive": true,
+    "oldShellRemoved": true,
+    "audioRetained": true,
+    "profilesPreserved": true
+  },
+  "passed": true,
+  "limitations": [
+    "Headless Edge verifies installability and prompt integration, not a physical Home Screen installation",
+    "Android browser UI and iOS/iPadOS Safari Add to Home Screen require physical-device testing",
+    "Existing URL is preserved; website and PWA share the same shipped sources"
+  ]
+}
