@@ -1,0 +1,2419 @@
+{
+  "lessons": [
+    {
+      "id": "math-flowers",
+      "title": "Flowers in the Garden",
+      "words": [
+        "flower",
+        "one",
+        "two",
+        "three",
+        "count",
+        "how many"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-birds",
+      "title": "Birds in the Tree",
+      "words": [
+        "bird",
+        "tree",
+        "in"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-total-flowers",
+      "title": "Total Flowers",
+      "words": [
+        "red",
+        "yellow",
+        "five",
+        "add",
+        "plus",
+        "altogether",
+        "total",
+        "equals"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-bird-away",
+      "title": "One Bird Flies Away",
+      "words": [
+        "take away",
+        "minus",
+        "left",
+        "flies away"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-cake",
+      "title": "Share the Cake",
+      "words": [
+        "cake",
+        "brothers",
+        "share",
+        "divide",
+        "equally",
+        "among",
+        "each",
+        "piece"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-baskets",
+      "title": "Apples in Baskets",
+      "words": [
+        "apple",
+        "basket",
+        "group",
+        "each",
+        "times",
+        "six"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-shapes",
+      "title": "Shape Hunt",
+      "words": [
+        "circle",
+        "square",
+        "triangle",
+        "rectangle",
+        "side",
+        "corner"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-ribbon",
+      "title": "The Long Ribbon",
+      "words": [
+        "ribbon",
+        "blue",
+        "red",
+        "long",
+        "short",
+        "longer",
+        "shorter",
+        "measure",
+        "ruler"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-cups",
+      "title": "Fill the Cups",
+      "words": [
+        "cup",
+        "water",
+        "blue",
+        "orange",
+        "full",
+        "empty",
+        "more",
+        "less"
+      ],
+      "questions": 1,
+      "optionalLaterWords": []
+    },
+    {
+      "id": "math-shop",
+      "title": "At the Little Shop",
+      "words": [
+        "mango",
+        "banana",
+        "price",
+        "costs",
+        "taka",
+        "pay",
+        "eight",
+        "altogether"
+      ],
+      "questions": 1,
+      "optionalLaterWords": [
+        "ten",
+        "change"
+      ]
+    },
+    {
+      "id": "math-clock",
+      "title": "The Playtime Clock",
+      "words": [
+        "clock",
+        "hour",
+        "o’clock"
+      ],
+      "questions": 1,
+      "optionalLaterWords": [
+        "minute",
+        "half past"
+      ]
+    },
+    {
+      "id": "math-chart",
+      "title": "The Sticker Chart",
+      "words": [
+        "sticker",
+        "chart",
+        "most",
+        "fewest",
+        "how many more"
+      ],
+      "questions": 2,
+      "optionalLaterWords": []
+    }
+  ],
+  "questions": [
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-flowers",
+      "question": "count",
+      "answer": "3",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-birds",
+      "question": "count",
+      "answer": "3",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-total-flowers",
+      "question": "total",
+      "answer": "5",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-bird-away",
+      "question": "left",
+      "answer": "2",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-cake",
+      "question": "each",
+      "answer": "1",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-baskets",
+      "question": "total",
+      "answer": "6",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-shapes",
+      "question": "sides",
+      "answer": "triangle",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-ribbon",
+      "question": "longer",
+      "answer": "blue",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-cups",
+      "question": "more",
+      "answer": "blue",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-shop",
+      "question": "total",
+      "answer": "8",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-shop",
+      "question": "change",
+      "answer": "2",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-clock",
+      "question": "time",
+      "answer": "3",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-clock",
+      "question": "half",
+      "answer": "half",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-chart",
+      "question": "most",
+      "answer": "bird",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 390,
+      "touch": true,
+      "lesson": "math-chart",
+      "question": "more",
+      "answer": "1",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-flowers",
+      "question": "count",
+      "answer": "3",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-birds",
+      "question": "count",
+      "answer": "3",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-total-flowers",
+      "question": "total",
+      "answer": "5",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-bird-away",
+      "question": "left",
+      "answer": "2",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-cake",
+      "question": "each",
+      "answer": "1",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-baskets",
+      "question": "total",
+      "answer": "6",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-shapes",
+      "question": "sides",
+      "answer": "triangle",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-ribbon",
+      "question": "longer",
+      "answer": "blue",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-cups",
+      "question": "more",
+      "answer": "blue",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-shop",
+      "question": "total",
+      "answer": "8",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-shop",
+      "question": "change",
+      "answer": "2",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-clock",
+      "question": "time",
+      "answer": "3",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-clock",
+      "question": "half",
+      "answer": "half",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-chart",
+      "question": "most",
+      "answer": "bird",
+      "assisted": true,
+      "retainedOnPrevious": true
+    },
+    {
+      "width": 1366,
+      "touch": false,
+      "lesson": "math-chart",
+      "question": "more",
+      "answer": "1",
+      "assisted": true,
+      "retainedOnPrevious": true
+    }
+  ],
+  "layouts": [
+    {
+      "label": "home 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "math library 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "vocabulary 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "sentence 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "question 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "helped retry 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "parents 320 false",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "home 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "math library 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "vocabulary 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "sentence 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "question 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "helped retry 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "parents 320 true",
+      "width": 320,
+      "scroll": 320,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "home 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "math library 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "vocabulary 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "sentence 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "question 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "helped retry 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "parents 360 false",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "home 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "math library 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "vocabulary 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "sentence 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "question 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "helped retry 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "parents 360 true",
+      "width": 360,
+      "scroll": 360,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "home 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "math library 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "vocabulary 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "sentence 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "question 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "helped retry 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "parents 390 false",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "home 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "math library 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "vocabulary 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "sentence 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "question 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "helped retry 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "parents 390 true",
+      "width": 390,
+      "scroll": 390,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "home 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "math library 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "vocabulary 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "sentence 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "question 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "helped retry 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "parents 430 false",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "home 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "math library 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "vocabulary 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "sentence 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "question 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "helped retry 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "parents 430 true",
+      "width": 430,
+      "scroll": 430,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "home 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "math library 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "vocabulary 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "sentence 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "question 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "helped retry 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "parents 768 false",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "home 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "math library 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "vocabulary 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "sentence 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "question 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "helped retry 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "parents 768 true",
+      "width": 768,
+      "scroll": 768,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "home 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "math library 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 16
+    },
+    {
+      "label": "vocabulary 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "sentence 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "question 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "helped retry 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "parents 1366 false",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 13.6
+    },
+    {
+      "label": "home 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 20
+    },
+    {
+      "label": "math library 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 32
+    },
+    {
+      "label": "vocabulary 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "sentence 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "question 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "helped retry 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    },
+    {
+      "label": "parents 1366 true",
+      "width": 1366,
+      "scroll": 1366,
+      "bad": [],
+      "clipped": [],
+      "minText": 27.2
+    }
+  ],
+  "audio": [
+    {
+      "key": "math-word:flower",
+      "clip": "/audio/ab0d2009f93dd60959635e30.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:One flower.",
+      "clip": "/audio/513081e9296993117be42e49.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:one",
+      "clip": "/audio/d9c136aef34bb4fc426240ee.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "math-word:two",
+      "clip": "/audio/05b3b49fe733f409805f107e.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Two flowers.",
+      "clip": "/audio/aeb50a8fa89bd591def2a5f7.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:three",
+      "clip": "/audio/280ffd63692d61c72d7d572c.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Three flowers.",
+      "clip": "/audio/9bbfca1431b1191aa7d5e392.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:count",
+      "clip": "/audio/eb2f1e6cb04a0488b9c4456e.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Count the flowers.",
+      "clip": "/audio/f219190ee8c494c88e10826f.mp3",
+      "duration": 1.896,
+      "cues": 3
+    },
+    {
+      "key": "math-word:how many",
+      "clip": "/audio/1294777a37b8fe372f7e45d7.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:How many flowers?",
+      "clip": "/audio/b46d7a767b9c534b9825eaca.mp3",
+      "duration": 1.944,
+      "cues": 3
+    },
+    {
+      "key": "math-word:bird",
+      "clip": "/audio/8daaa74fa932d62f6e92f34c.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A bird.",
+      "clip": "/audio/90d4a2dd1062c0cc2dacb36d.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:tree",
+      "clip": "/audio/3b61e6b030d0f9cf40a0f44c.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A tree.",
+      "clip": "/audio/9b2ddd35c720685e4b4a4cad.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:in",
+      "clip": "/audio/e01ebe95bd6bfc5e3650c99e.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A bird is in the tree.",
+      "clip": "/audio/e1ae34540063c9fd7861ebb0.mp3",
+      "duration": 2.112,
+      "cues": 6
+    },
+    {
+      "key": "math-word:red",
+      "clip": "/audio/c88e1e272259ce83abc8e8d4.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Two red flowers.",
+      "clip": "/audio/3d54406db233640d65a9a2ea.mp3",
+      "duration": 2.016,
+      "cues": 3
+    },
+    {
+      "key": "math-word:yellow",
+      "clip": "/audio/f45abf8f9ad767f25dfa3057.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Three yellow flowers.",
+      "clip": "/audio/85b01c771f7f2a8071dd4e78.mp3",
+      "duration": 2.16,
+      "cues": 3
+    },
+    {
+      "key": "math-word:five",
+      "clip": "/audio/26982d4405988bdca87f694a.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Five flowers.",
+      "clip": "/audio/f9cc66a6b0c2e86ac57a2447.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:add",
+      "clip": "/audio/639d88c9257a356b02cb92a6.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Add two flowers and three flowers.",
+      "clip": "/audio/142aebe18d8945908bf62303.mp3",
+      "duration": 3.048,
+      "cues": 6
+    },
+    {
+      "key": "math-word:plus",
+      "clip": "/audio/916f9738d912c81d6f28a0f8.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Two plus three equals five.",
+      "clip": "/audio/96b0a00317548427dc6da245.mp3",
+      "duration": 2.808,
+      "cues": 5
+    },
+    {
+      "key": "math-word:altogether",
+      "clip": "/audio/c1abd100b62b378a15555a9e.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:There are five flowers altogether.",
+      "clip": "/audio/289ac95f664ce749b25d4141.mp3",
+      "duration": 2.808,
+      "cues": 5
+    },
+    {
+      "key": "math-word:total",
+      "clip": "/audio/4f26d59b3f0e02e94429cbd3.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The total is five flowers.",
+      "clip": "/audio/f66c0c477b9181e02e8daedc.mp3",
+      "duration": 2.712,
+      "cues": 5
+    },
+    {
+      "key": "math-word:equals",
+      "clip": "/audio/839531c8236dd2ec1e9ce007.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "math-word:take away",
+      "clip": "/audio/3a50749439a134e8ce900011.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:Take away one bird.",
+      "clip": "/audio/eef7d684e4e6c3986bd2b82e.mp3",
+      "duration": 2.112,
+      "cues": 4
+    },
+    {
+      "key": "math-word:minus",
+      "clip": "/audio/cd1f6397863f913a80fbf8e4.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Three minus one equals two.",
+      "clip": "/audio/8fff7e1f5d5fb9580e732436.mp3",
+      "duration": 2.856,
+      "cues": 5
+    },
+    {
+      "key": "math-word:left",
+      "clip": "/audio/66b96e914b7d934bc2025150.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Two birds are left.",
+      "clip": "/audio/fd8e64eaabf5421ecd862eb2.mp3",
+      "duration": 2.112,
+      "cues": 4
+    },
+    {
+      "key": "math-word:flies away",
+      "clip": "/audio/0d4186b823700713838cefec.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:One bird flies away.",
+      "clip": "/audio/42164461aefe19a1c46a073a.mp3",
+      "duration": 2.256,
+      "cues": 4
+    },
+    {
+      "key": "math-word:cake",
+      "clip": "/audio/2b623260923f02b542b45c34.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Here is one cake.",
+      "clip": "/audio/de786d1d4c745fd26bedbe65.mp3",
+      "duration": 1.968,
+      "cues": 4
+    },
+    {
+      "key": "math-word:brothers",
+      "clip": "/audio/1166c5c70cbff41dea355ef5.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Three brothers.",
+      "clip": "/audio/601475b85e2fde77619553cb.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:share",
+      "clip": "/audio/c66800659467053061931ead.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Share the cake.",
+      "clip": "/audio/7d1dce12912e126ea094a18d.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "math-word:divide",
+      "clip": "/audio/b36d5e869bd9dc4f8faadda3.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Divide the cake into three equal pieces.",
+      "clip": "/audio/9253b46c0226032136c5d2f7.mp3",
+      "duration": 3.6,
+      "cues": 7
+    },
+    {
+      "key": "math-word:equally",
+      "clip": "/audio/928e33861df9b0684f62fae3.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Share the cake equally.",
+      "clip": "/audio/cc29b5090ebf63363772707a.mp3",
+      "duration": 2.088,
+      "cues": 4
+    },
+    {
+      "key": "math-word:among",
+      "clip": "/audio/0854662baa83abda3b744eb3.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Share among the three brothers.",
+      "clip": "/audio/b9687f480269ed54d00625cc.mp3",
+      "duration": 2.592,
+      "cues": 5
+    },
+    {
+      "key": "math-word:each",
+      "clip": "/audio/ac5e4cae20b91d8f07756317.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Each brother gets one piece.",
+      "clip": "/audio/d8b99f41e27bbf4b0c9449b5.mp3",
+      "duration": 2.52,
+      "cues": 5
+    },
+    {
+      "key": "math-word:piece",
+      "clip": "/audio/c94be7fb027e2d3b43998d5d.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:One piece of cake.",
+      "clip": "/audio/d96e837adee42e79e5e6fa5a.mp3",
+      "duration": 1.944,
+      "cues": 4
+    },
+    {
+      "key": "math-word:apple",
+      "clip": "/audio/c13009d00730e6760b35416d.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Two apples.",
+      "clip": "/audio/1043fd68c6d6274c0b2810b2.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:basket",
+      "clip": "/audio/f01558f8ac07326c242e0d8d.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:One basket.",
+      "clip": "/audio/f7a6089e09575164345ae63d.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:group",
+      "clip": "/audio/a5809c453f75a28aec652efe.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A group of two apples.",
+      "clip": "/audio/d7754f6ff9eeea555cba440d.mp3",
+      "duration": 2.232,
+      "cues": 5
+    },
+    {
+      "key": "math-word:times",
+      "clip": "/audio/c8f48e438394295571ed115d.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Three times two equals six.",
+      "clip": "/audio/578bd54854ab5f7b815aea50.mp3",
+      "duration": 2.928,
+      "cues": 5
+    },
+    {
+      "key": "math-word:six",
+      "clip": "/audio/6f4a81adde443ea895520ecb.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:There are six apples altogether.",
+      "clip": "/audio/5f7ed83ef9adf2c14d5bab66.mp3",
+      "duration": 2.784,
+      "cues": 5
+    },
+    {
+      "key": "math-word:circle",
+      "clip": "/audio/96e4aff22b97bcc1cfd92cd8.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A circle.",
+      "clip": "/audio/d18e50b198119fa04484ce7f.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:square",
+      "clip": "/audio/5a1daf19b44fcd7e868a2147.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A square.",
+      "clip": "/audio/d4c98967b412904c7cb2f27a.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:triangle",
+      "clip": "/audio/6481d63805ddfffece2d237f.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A triangle.",
+      "clip": "/audio/5de058f5816fdcb89d870904.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:rectangle",
+      "clip": "/audio/76cb38b203163e1723cbe990.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A rectangle.",
+      "clip": "/audio/25a11c327d3dd1931773edd4.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:side",
+      "clip": "/audio/00e6e624fa2bd6861c9db24e.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A triangle has three sides.",
+      "clip": "/audio/b4807e6400b60ede93023a8c.mp3",
+      "duration": 2.736,
+      "cues": 5
+    },
+    {
+      "key": "math-word:corner",
+      "clip": "/audio/85df730d93051a7a696aeb87.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A triangle has three corners.",
+      "clip": "/audio/6c22c07b06732b673f81a4ca.mp3",
+      "duration": 2.808,
+      "cues": 5
+    },
+    {
+      "key": "math-word:ribbon",
+      "clip": "/audio/260e3e36b9bdcbadd4cd15f7.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A blue ribbon.",
+      "clip": "/audio/f005ab3a342cfb5356fcbe9f.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "math-word:blue",
+      "clip": "/audio/c9a7277acd3713c92fc8a852.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The blue ribbon is longer.",
+      "clip": "/audio/f7f267d746847469dc25dc7e.mp3",
+      "duration": 2.352,
+      "cues": 5
+    },
+    {
+      "key": "math-word:long",
+      "clip": "/audio/e81982a1ef538aac527deb99.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A long ribbon.",
+      "clip": "/audio/062a579c4b07bdd67d3e16f3.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "math-word:short",
+      "clip": "/audio/7f37f3e9e88f20429485459f.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A short ribbon.",
+      "clip": "/audio/b844bffd912be7b819dd1e48.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "math-word:longer",
+      "clip": "/audio/8cbf58587257acd5205085d1.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "math-word:shorter",
+      "clip": "/audio/ec82a00945a344d63c3b3817.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The red ribbon is shorter.",
+      "clip": "/audio/2ee9ea3ce7149d811a961cbe.mp3",
+      "duration": 2.328,
+      "cues": 5
+    },
+    {
+      "key": "math-word:measure",
+      "clip": "/audio/28d15b74019253b4a24604ed.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Let’s measure the ribbon.",
+      "clip": "/audio/9d54f4eabb3be1412f29f5de.mp3",
+      "duration": 2.04,
+      "cues": 4
+    },
+    {
+      "key": "math-word:ruler",
+      "clip": "/audio/c9451306f419e8d492efe5b1.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Start at zero on the ruler.",
+      "clip": "/audio/6ff40014162ea7178d32c4b9.mp3",
+      "duration": 2.712,
+      "cues": 6
+    },
+    {
+      "key": "math-word:cup",
+      "clip": "/audio/9fdbf926e6cefad0cb175bf9.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A cup.",
+      "clip": "/audio/9f17dc5cececf40991f897de.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:water",
+      "clip": "/audio/50fd645bdedc0f0bc6a7f309.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Water in a cup.",
+      "clip": "/audio/541befcec0bb15c8d2e9c402.mp3",
+      "duration": 1.944,
+      "cues": 4
+    },
+    {
+      "key": "math-word:full",
+      "clip": "/audio/d3624cdaa1af15f86d95b416.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The cup is full.",
+      "clip": "/audio/6b4d0f4ca1dd4351940a74e7.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "math-word:empty",
+      "clip": "/audio/5b4c4791f0aad91a8f12efac.mp3",
+      "duration": 1.2,
+      "cues": 1
+    },
+    {
+      "key": "text:The cup is empty.",
+      "clip": "/audio/4f61059fbeb82169b4011671.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "math-word:more",
+      "clip": "/audio/279b7995a7d343cccd54882b.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The blue cup has more water.",
+      "clip": "/audio/d493883389f561512bda6bcc.mp3",
+      "duration": 2.52,
+      "cues": 6
+    },
+    {
+      "key": "math-word:less",
+      "clip": "/audio/dd0f949244e60c1c22b12fb3.mp3",
+      "duration": 1.152,
+      "cues": 1
+    },
+    {
+      "key": "text:The orange cup has less water.",
+      "clip": "/audio/2815fc168ad3cbc742ce1e2a.mp3",
+      "duration": 2.784,
+      "cues": 6
+    },
+    {
+      "key": "math-word:orange",
+      "clip": "/audio/e70ff3869cf824615520c07e.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "math-word:mango",
+      "clip": "/audio/4e310c8846abecfd9e883492.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A mango.",
+      "clip": "/audio/fa67a02a3b792eaccbc62573.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:banana",
+      "clip": "/audio/70f57bbf1261c0610efe0b3f.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:A banana.",
+      "clip": "/audio/8fe75d09c29918929c8bebed.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:price",
+      "clip": "/audio/90e44a4142d888f6aca61e19.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The price is five taka.",
+      "clip": "/audio/392564a3fc9919756f7d09a1.mp3",
+      "duration": 2.568,
+      "cues": 5
+    },
+    {
+      "key": "math-word:costs",
+      "clip": "/audio/3d436f52c9c57148efc998db.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The mango costs five taka.",
+      "clip": "/audio/d7bad11c88a5d3dc38cb9bb7.mp3",
+      "duration": 2.856,
+      "cues": 5
+    },
+    {
+      "key": "math-word:taka",
+      "clip": "/audio/dc1c8758877136345cc54c8b.mp3",
+      "duration": 1.32,
+      "cues": 1
+    },
+    {
+      "key": "text:Five taka.",
+      "clip": "/audio/9139fe443d0fd70b9a1ca1a5.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:pay",
+      "clip": "/audio/9e19cc3c7dc0da2a18d6ef9e.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Pay eight taka for the fruit.",
+      "clip": "/audio/049a4c9b052116e7ba30a451.mp3",
+      "duration": 2.712,
+      "cues": 6
+    },
+    {
+      "key": "math-word:eight",
+      "clip": "/audio/4c7ff999d45e661cda8f22af.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Eight taka.",
+      "clip": "/audio/c9309a12ddf7c39f857fcf2f.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:change",
+      "clip": "/audio/317e68eda5db96f3d4fdba4a.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Pay ten taka. Get two taka in change.",
+      "clip": "/audio/2ed3df31ae582cfea34f500e.mp3",
+      "duration": 4.56,
+      "cues": 8
+    },
+    {
+      "key": "math-word:ten",
+      "clip": "/audio/e85e0e6daa811dcb2bde6757.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Pay ten taka.",
+      "clip": "/audio/3aff886340937a600677380b.mp3",
+      "duration": 1.944,
+      "cues": 3
+    },
+    {
+      "key": "math-word:clock",
+      "clip": "/audio/e2b120848900e7d05bdb437b.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Look at the clock.",
+      "clip": "/audio/192190571b231aab565c5ccf.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "math-word:hour",
+      "clip": "/audio/6ebea5b0236f14610b7a1356.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The short hand shows the hour.",
+      "clip": "/audio/406271783b4cbf13ce4e7fe3.mp3",
+      "duration": 2.592,
+      "cues": 6
+    },
+    {
+      "key": "math-word:o’clock",
+      "clip": "/audio/07b92702e9ae66cf0b10c820.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:It is three o’clock.",
+      "clip": "/audio/24115caf78c1fa05b132c68b.mp3",
+      "duration": 1.968,
+      "cues": 4
+    },
+    {
+      "key": "math-word:minute",
+      "clip": "/audio/df242200b9bf59785461977d.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The long hand shows the minutes.",
+      "clip": "/audio/133beb975448cdf5b2672b8d.mp3",
+      "duration": 2.712,
+      "cues": 6
+    },
+    {
+      "key": "math-word:half past",
+      "clip": "/audio/a5df95eac5fe5e4e005e6b3b.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "text:It is half past three.",
+      "clip": "/audio/7ce3502789cc07a5f4c24707.mp3",
+      "duration": 2.232,
+      "cues": 5
+    },
+    {
+      "key": "math-word:sticker",
+      "clip": "/audio/2630aeaf27188f3d60594633.mp3",
+      "duration": 1.32,
+      "cues": 1
+    },
+    {
+      "key": "text:Three stickers.",
+      "clip": "/audio/6704afca7933fa655d1c7dac.mp3",
+      "duration": 1.872,
+      "cues": 2
+    },
+    {
+      "key": "math-word:chart",
+      "clip": "/audio/128d184f5b93550f14ebe693.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:Look at the sticker chart.",
+      "clip": "/audio/b4a9c558abe0a2263d074f0f.mp3",
+      "duration": 2.184,
+      "cues": 5
+    },
+    {
+      "key": "math-word:most",
+      "clip": "/audio/7fcfdc42cae1ecc8f1f1f6ff.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The bird has the most stickers.",
+      "clip": "/audio/eedc477196b75d16917f0b75.mp3",
+      "duration": 2.568,
+      "cues": 6
+    },
+    {
+      "key": "math-word:fewest",
+      "clip": "/audio/388467ae72e209b5b71cebe4.mp3",
+      "duration": 1.872,
+      "cues": 1
+    },
+    {
+      "key": "text:The flower has the fewest stickers.",
+      "clip": "/audio/e9ebaceab50eb8f6a78e4fdb.mp3",
+      "duration": 2.952,
+      "cues": 6
+    },
+    {
+      "key": "math-word:how many more",
+      "clip": "/audio/7236dd16ea82f296ab5155ec.mp3",
+      "duration": 1.872,
+      "cues": 3
+    },
+    {
+      "key": "text:How many more stickers does the bird have?",
+      "clip": "/audio/822187bde12fae809229b952.mp3",
+      "duration": 3.096,
+      "cues": 8
+    },
+    {
+      "key": "text:How many birds are in the tree?",
+      "clip": "/audio/8939a79f3b8be8a483de445f.mp3",
+      "duration": 2.568,
+      "cues": 7
+    },
+    {
+      "key": "text:How many flowers are there altogether?",
+      "clip": "/audio/d3efe0f9f1495a1c050d91a3.mp3",
+      "duration": 2.976,
+      "cues": 6
+    },
+    {
+      "key": "text:There are three birds.",
+      "clip": "/audio/6747a07c23cb0afa54bdcab1.mp3",
+      "duration": 1.968,
+      "cues": 4
+    },
+    {
+      "key": "text:How many birds are left?",
+      "clip": "/audio/827b166343c02b807e83063d.mp3",
+      "duration": 2.328,
+      "cues": 5
+    },
+    {
+      "key": "text:Share the cake equally among the three brothers.",
+      "clip": "/audio/592b26bd604a1d63782eef47.mp3",
+      "duration": 3.624,
+      "cues": 8
+    },
+    {
+      "key": "text:Two apples in each basket.",
+      "clip": "/audio/4716f3d2e6fc58e9ba6feedc.mp3",
+      "duration": 2.688,
+      "cues": 5
+    },
+    {
+      "key": "text:There are three baskets.",
+      "clip": "/audio/daf3231c424e5a226c0cbcb4.mp3",
+      "duration": 2.16,
+      "cues": 4
+    },
+    {
+      "key": "text:How many apples are there altogether?",
+      "clip": "/audio/4775d9242f5ef03a6a3da440.mp3",
+      "duration": 3.024,
+      "cues": 6
+    },
+    {
+      "key": "text:Find the triangle.",
+      "clip": "/audio/1a4739063d5998d42c69ff9f.mp3",
+      "duration": 2.064,
+      "cues": 3
+    },
+    {
+      "key": "text:Which cup has more water?",
+      "clip": "/audio/59722ddc844406d4a239fc63.mp3",
+      "duration": 2.352,
+      "cues": 5
+    },
+    {
+      "key": "text:The banana costs three taka.",
+      "clip": "/audio/7ffab7b8b82949fc73a0d6f4.mp3",
+      "duration": 2.904,
+      "cues": 5
+    },
+    {
+      "key": "text:How much do they cost altogether?",
+      "clip": "/audio/995ecc3ba98974f847012e72.mp3",
+      "duration": 2.808,
+      "cues": 6
+    },
+    {
+      "key": "text:The fruit costs eight taka.",
+      "clip": "/audio/2864426e28da8fb8dff54302.mp3",
+      "duration": 2.664,
+      "cues": 5
+    },
+    {
+      "key": "text:The bird has three stickers.",
+      "clip": "/audio/8f07d879351ddaac2f111584.mp3",
+      "duration": 2.448,
+      "cues": 5
+    },
+    {
+      "key": "text:The flower has two stickers.",
+      "clip": "/audio/0eafdb33e96cd3f8c4128103.mp3",
+      "duration": 2.592,
+      "cues": 5
+    },
+    {
+      "key": "text:Which has the most?",
+      "clip": "/audio/387bdd7cb561e949f6c3ccd4.mp3",
+      "duration": 1.968,
+      "cues": 4
+    },
+    {
+      "key": "math-feedback:math:math-flowers:count",
+      "clip": "/audio/9958ca66394a43403fc060c5.mp3",
+      "duration": 2.976,
+      "cues": 5
+    },
+    {
+      "key": "math-hint:math:math-flowers:count",
+      "clip": "/audio/b3ef41132f20783a7aab737d.mp3",
+      "duration": 6.744,
+      "cues": 12
+    },
+    {
+      "key": "math-demo:math:math-flowers:count",
+      "clip": "/audio/5a88647756d3234ac0527d08.mp3",
+      "duration": 7.248,
+      "cues": 13
+    },
+    {
+      "key": "math-feedback:math:math-birds:count",
+      "clip": "/audio/236669e402962604bce4d045.mp3",
+      "duration": 3.288,
+      "cues": 7
+    },
+    {
+      "key": "math-hint:math:math-birds:count",
+      "clip": "/audio/487f118f1c007a6443baf3dd.mp3",
+      "duration": 6.6,
+      "cues": 13
+    },
+    {
+      "key": "math-demo:math:math-birds:count",
+      "clip": "/audio/c96e8d884f89ff4025c459ee.mp3",
+      "duration": 7.56,
+      "cues": 15
+    },
+    {
+      "key": "math-feedback:math:math-total-flowers:total",
+      "clip": "/audio/00e5fe46f0801bf390c07f5c.mp3",
+      "duration": 5.352,
+      "cues": 8
+    },
+    {
+      "key": "math-hint:math:math-total-flowers:total",
+      "clip": "/audio/c50faf929b08fe6d52f32991.mp3",
+      "duration": 6.648,
+      "cues": 14
+    },
+    {
+      "key": "math-demo:math:math-total-flowers:total",
+      "clip": "/audio/9b525a8db8002da51a2b22b0.mp3",
+      "duration": 9.576,
+      "cues": 16
+    },
+    {
+      "key": "math-feedback:math:math-bird-away:left",
+      "clip": "/audio/126e57d2828f9a61178d3fec.mp3",
+      "duration": 3,
+      "cues": 5
+    },
+    {
+      "key": "math-hint:math:math-bird-away:left",
+      "clip": "/audio/364b37a84bd783e49abf6a36.mp3",
+      "duration": 6.84,
+      "cues": 16
+    },
+    {
+      "key": "math-demo:math:math-bird-away:left",
+      "clip": "/audio/200c3c29847cb6831e8804f1.mp3",
+      "duration": 7.128,
+      "cues": 13
+    },
+    {
+      "key": "text:How many pieces does each brother get?",
+      "clip": "/audio/826669a194cc372b446a5063.mp3",
+      "duration": 3.144,
+      "cues": 7
+    },
+    {
+      "key": "math-feedback:math:math-cake:each",
+      "clip": "/audio/663b6be79648997ddb6aaac0.mp3",
+      "duration": 5.64,
+      "cues": 12
+    },
+    {
+      "key": "math-hint:math:math-cake:each",
+      "clip": "/audio/279137eac72321e57aa98a6e.mp3",
+      "duration": 6.792,
+      "cues": 16
+    },
+    {
+      "key": "math-demo:math:math-cake:each",
+      "clip": "/audio/80c51e86294af539413d9f24.mp3",
+      "duration": 9.912,
+      "cues": 20
+    },
+    {
+      "key": "math-feedback:math:math-baskets:total",
+      "clip": "/audio/81439016f5d6baf7c33fb1a5.mp3",
+      "duration": 5.544,
+      "cues": 9
+    },
+    {
+      "key": "math-hint:math:math-baskets:total",
+      "clip": "/audio/749f53f7b4ef0071470fee3c.mp3",
+      "duration": 8.232,
+      "cues": 16
+    },
+    {
+      "key": "math-demo:math:math-baskets:total",
+      "clip": "/audio/3f9aea591a39e8a2af181767.mp3",
+      "duration": 9.864,
+      "cues": 17
+    },
+    {
+      "key": "text:Which shape has three sides?",
+      "clip": "/audio/48828d4a02e5919691858867.mp3",
+      "duration": 2.568,
+      "cues": 5
+    },
+    {
+      "key": "math-feedback:math:math-shapes:sides",
+      "clip": "/audio/10544c72c208ea3ec2cb15f8.mp3",
+      "duration": 3.624,
+      "cues": 6
+    },
+    {
+      "key": "math-hint:math:math-shapes:sides",
+      "clip": "/audio/b0f14c6f38ec1450e1ca6ae6.mp3",
+      "duration": 9.864,
+      "cues": 20
+    },
+    {
+      "key": "math-demo:math:math-shapes:sides",
+      "clip": "/audio/a1142de0aa52588266e6fe86.mp3",
+      "duration": 8.16,
+      "cues": 14
+    },
+    {
+      "key": "text:Which ribbon is longer?",
+      "clip": "/audio/18c4ccea7bf81b145ec7b5c7.mp3",
+      "duration": 2.16,
+      "cues": 4
+    },
+    {
+      "key": "math-feedback:math:math-ribbon:longer",
+      "clip": "/audio/f46987b4a7026c63c52211cf.mp3",
+      "duration": 3.216,
+      "cues": 6
+    },
+    {
+      "key": "math-hint:math:math-ribbon:longer",
+      "clip": "/audio/e0d79ce3536f2dbef5e0f9c6.mp3",
+      "duration": 7.44,
+      "cues": 16
+    },
+    {
+      "key": "math-demo:math:math-ribbon:longer",
+      "clip": "/audio/b618db1a05c82d9ddbcebc09.mp3",
+      "duration": 7.8,
+      "cues": 15
+    },
+    {
+      "key": "math-feedback:math:math-cups:more",
+      "clip": "/audio/5a678c7ed7601b1f440bf4f0.mp3",
+      "duration": 3.408,
+      "cues": 7
+    },
+    {
+      "key": "math-hint:math:math-cups:more",
+      "clip": "/audio/169d3a059d1356c67f8ee012.mp3",
+      "duration": 7.296,
+      "cues": 18
+    },
+    {
+      "key": "math-demo:math:math-cups:more",
+      "clip": "/audio/9d8fa733ef4e32b5ea320be4.mp3",
+      "duration": 7.896,
+      "cues": 16
+    },
+    {
+      "key": "math-feedback:math:math-shop:total",
+      "clip": "/audio/74bad735f2b7045f9256966d.mp3",
+      "duration": 5.28,
+      "cues": 8
+    },
+    {
+      "key": "math-hint:math:math-shop:total",
+      "clip": "/audio/8c961cd3435ea2dc0a0fdda6.mp3",
+      "duration": 8.904,
+      "cues": 21
+    },
+    {
+      "key": "math-demo:math:math-shop:total",
+      "clip": "/audio/70aa1f2a376cf2765051a880.mp3",
+      "duration": 9.36,
+      "cues": 16
+    },
+    {
+      "key": "text:How much change do you get?",
+      "clip": "/audio/6b8a00c313d525d657259aca.mp3",
+      "duration": 2.424,
+      "cues": 6
+    },
+    {
+      "key": "math-feedback:math:math-shop:change",
+      "clip": "/audio/780bc90c776a2d5fae305f0f.mp3",
+      "duration": 5.904,
+      "cues": 10
+    },
+    {
+      "key": "math-hint:math:math-shop:change",
+      "clip": "/audio/84c47ff530b805ad35524426.mp3",
+      "duration": 7.224,
+      "cues": 17
+    },
+    {
+      "key": "math-demo:math:math-shop:change",
+      "clip": "/audio/61af59e99455f9d007345133.mp3",
+      "duration": 10.056,
+      "cues": 18
+    },
+    {
+      "key": "text:What time is it?",
+      "clip": "/audio/2623f28a9964db815a528167.mp3",
+      "duration": 1.872,
+      "cues": 4
+    },
+    {
+      "key": "math-feedback:math:math-clock:time",
+      "clip": "/audio/2deb29c46c2bfb1aac7d28d1.mp3",
+      "duration": 2.856,
+      "cues": 5
+    },
+    {
+      "key": "math-hint:math:math-clock:time",
+      "clip": "/audio/8e5d4b1e5be5db78fccc0224.mp3",
+      "duration": 6.984,
+      "cues": 16
+    },
+    {
+      "key": "math-demo:math:math-clock:time",
+      "clip": "/audio/8e5e8404932f51d64c17b061.mp3",
+      "duration": 7.56,
+      "cues": 14
+    },
+    {
+      "key": "text:Which clock shows half past three?",
+      "clip": "/audio/ab0d6890ac58c80a256c1a11.mp3",
+      "duration": 2.976,
+      "cues": 6
+    },
+    {
+      "key": "math-feedback:math:math-clock:half",
+      "clip": "/audio/0c5cd9ffebbdae7205a64b86.mp3",
+      "duration": 8.88,
+      "cues": 19
+    },
+    {
+      "key": "math-hint:math:math-clock:half",
+      "clip": "/audio/2316f9fa60affe7d52dbded8.mp3",
+      "duration": 6.816,
+      "cues": 19
+    },
+    {
+      "key": "math-demo:math:math-clock:half",
+      "clip": "/audio/f6851eba431e0876c4190ee9.mp3",
+      "duration": 13.896,
+      "cues": 29
+    },
+    {
+      "key": "math-feedback:math:math-chart:most",
+      "clip": "/audio/8993126867c764f4aca6c2d1.mp3",
+      "duration": 5.064,
+      "cues": 11
+    },
+    {
+      "key": "math-hint:math:math-chart:most",
+      "clip": "/audio/0b56fe95557afa2747f3b92a.mp3",
+      "duration": 7.464,
+      "cues": 19
+    },
+    {
+      "key": "math-demo:math:math-chart:most",
+      "clip": "/audio/aa21d923844c41cbec8e6267.mp3",
+      "duration": 9.288,
+      "cues": 19
+    },
+    {
+      "key": "math-feedback:math:math-chart:more",
+      "clip": "/audio/727fc95297152925568caaea.mp3",
+      "duration": 5.328,
+      "cues": 9
+    },
+    {
+      "key": "math-hint:math:math-chart:more",
+      "clip": "/audio/6b69d0b716761c501ffe804c.mp3",
+      "duration": 7.32,
+      "cues": 16
+    },
+    {
+      "key": "math-demo:math:math-chart:more",
+      "clip": "/audio/441c33195425dbd09e24147d.mp3",
+      "duration": 9.552,
+      "cues": 17
+    },
+    {
+      "key": "text:Count and choose.",
+      "clip": "/audio/d3ef47df6a629834e8182fcf.mp3",
+      "duration": 1.896,
+      "cues": 3
+    }
+  ],
+  "checks": [
+    "12 stable lessons in requested order; 13 core questions and 2 optional later questions",
+    "Old progress and export shape stay compatible; profile isolation, validated roundtrip and additive restore preserve current positions",
+    "Missed maths questions use existing 1/3/7/14-day review; helped recall returns in 1 day",
+    "Visible counts and arithmetic agree: 2+3=5, 3−1=2, three equal 120° cake pieces, 3×2=6, ৳5+৳3=৳8 and ৳10−৳8=৳2",
+    "Aligned ribbons and ruler zero, identical-size clear cups, correct 3:00 and 3:30 hands, chart 3 vs 2 with one extra",
+    "All 12 full core flows plus both optional follow-ups completed using touch-capable phone and mouse desktop browsers",
+    "Specific hint, shown correct answer, two-choice helped retry, visible completed answer and manual Next; Previous retains answers",
+    "Home/reload Continue, per-profile parent reports, introduced-word skip without false completion, actual maths review all work",
+    "Join/fly/share/pour/clock actions stop after one animation; reduced motion preserves final reading scene",
+    "Every maths vocabulary, sentence, question, hint and explanation clip decodes with recorded word timestamps; all prior audio mappings unchanged",
+    "Actual normal/slower MP3 playback, moving word highlight, paused highlight, Replay, Home and Next cancellation verified; vocabulary highlights whole word"
+  ],
+  "passed": true,
+  "limitations": [
+    "Audio was decoded and played by browser tests, but human-perceived pronunciation, clarity and teaching tone have not been listened to by the agent. Parent listening check is required.",
+    "Touch checks use Edge touch emulation, not physical iOS/Android devices.",
+    "Optional Bangla help is written; no new Bengali maths recording is claimed."
+  ]
+}

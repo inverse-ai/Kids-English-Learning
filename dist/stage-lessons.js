@@ -1,4 +1,5 @@
 import {createLetterMatching} from './letter-match.js';
+import {createMathFlow} from './math-flow.js';
 import {createAlphabetReading} from './alphabet-reading.js';
 import {createMoveFlow} from './move-flow.js';
 import {valuesStories,valuesOrder} from './values-stories.js';
@@ -29,12 +30,13 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
  const status=message=>onStatus(message);
  const alphabetReading=createAlphabetReading({getProgress,getSpeed,save,status});
  const storyFlow=createStoryFlow({onAttempt,onStoryFinish,getProgress,save,isSaved,render,status,play:audioParts,stop,picture:stagePicture});
+ const mathFlow=createMathFlow({getProgress,save,isSaved,render,play:audioParts,stop,onAttempt});
  const moveFlow=createMoveFlow({getProgress,save,isSaved,render,play:audioParts,stop});
  const valueFlow=createValueStoryFlow({onAttempt,onStoryFinish,getProgress,save,isSaved,render,status,play:audioParts,stop});
  const newStories=valuesStories.filter(s=>!stories.some(old=>old.sentences.join(' ')===s.sentences.join(' '))).sort((a,b)=>valuesOrder.indexOf(a.id)-valuesOrder.indexOf(b.id));
  const spellingFlow=createSpellingFlow({getProgress:()=>state().spelling,save,isSaved,render,status,picture:stagePicture,getSpeed});
  const saveLabel=()=>'<span id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</span>';
- function stop(){alphabetReading.cancel();letterMatching.cancel();moveFlow.cancel();stopStageAudio();spellingFlow.clear();status('');activeStoryLine=-1;}
+ function stop(){mathFlow.cancel();alphabetReading.cancel();letterMatching.cancel();moveFlow.cancel();stopStageAudio();spellingFlow.clear();status('');activeStoryLine=-1;}
  function audioParts(parts,onEnd=()=>{}){
   playStageSequence(parts,{speed:getSpeed(),onPart:part=>{
    if(part.example!==undefined){exampleIndex=part.example;phase=part.phase;}
@@ -116,10 +118,11 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
 
  return {
   stage:()=>stage,
-  bind(){if(page==='move-lesson')moveFlow.bind();if(page==='letter-match')letterMatching.bind();if(page==='alphabet')alphabetReading.bind();},
-  snapshot(){return page==='alphabet'?{kind:'stage',page:'alphabet'}:page==='letter-match'?{kind:'stage',page:'letter-match'}:page==='move-lesson'?{kind:'stage',page:'move-lesson',id:state().moveCurrent}:page==='spelling'?{kind:'stage',page:'spelling'}:page==='word'?{kind:'stage',page:'word',id:wordId}:page==='value-story'?{kind:'stage',page:'value-story',id:state().valueCurrent}:page==='story'?{kind:'stage',page:'story',id:state().storyCurrent}:page==='pattern'?{kind:'stage',page:'pattern',id:storyId}:stage==='letters'?{kind:'stage',page:'letter',index:letterIndex}:null;},
+  bind(){if(page==='math-lesson')mathFlow.bind();if(page==='move-lesson')moveFlow.bind();if(page==='letter-match')letterMatching.bind();if(page==='alphabet')alphabetReading.bind();},
+  snapshot(){return page==='math-lesson'?{kind:'stage',page:'math-lesson',id:state().math.current}:page==='alphabet'?{kind:'stage',page:'alphabet'}:page==='letter-match'?{kind:'stage',page:'letter-match'}:page==='move-lesson'?{kind:'stage',page:'move-lesson',id:state().moveCurrent}:page==='spelling'?{kind:'stage',page:'spelling'}:page==='word'?{kind:'stage',page:'word',id:wordId}:page==='value-story'?{kind:'stage',page:'value-story',id:state().valueCurrent}:page==='story'?{kind:'stage',page:'story',id:state().storyCurrent}:page==='pattern'?{kind:'stage',page:'pattern',id:storyId}:stage==='letters'?{kind:'stage',page:'letter',index:letterIndex}:null;},
   openResume(route){
    stop();
+   if(route.page==='math-lesson'){stage='math';page='math-lesson';mathFlow.open(route.id);return;}
    if(route.page==='letter'){openLetter(route.index,false);return;}
    if(route.page==='alphabet'){stage='letters';page='alphabet';alphabetReading.prepare();save();render();return;}
    if(route.page==='letter-match'){stage='letters';page='letter-match';letterMatching.open();return;}
@@ -139,12 +142,15 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
     ...[1,2,3].map(()=>({key:'sound:'+a.sound,target:'.big-letter [data-case="lower"]'})),
     {key:'word:'+word,target:'.flash-word,.activity h2'}]);
   },
-  setStage(value){if(!stageInfo[value]&&value!=='move')return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';page='alphabet';alphabetReading.prepare();}},
+  setStage(value){if(!stageInfo[value]&&!['move','math'].includes(value))return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';page='alphabet';alphabetReading.prepare();}},
   reset(){openLetter(0,false);},
   stop,
-  html(){return page==='alphabet'?alphabetReading.html():page==='letter-match'?letterMatching.html():page==='move-lesson'?moveFlow.html():stage==='move'?moveFlow.home():page==='spelling'?spellingFlow.html():page==='blending'?wordLibrary():page==='sentences'?wordLibrary(true):page==='word'?wordView():page==='story'?storyView():page==='value-story'?valueFlow.html():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
+  parentMathReport:()=>mathFlow.parentReport(),
+  html(){return page==='math-lesson'?mathFlow.html():stage==='math'?mathFlow.home():page==='alphabet'?alphabetReading.html():page==='letter-match'?letterMatching.html():page==='move-lesson'?moveFlow.html():stage==='move'?moveFlow.home():page==='spelling'?spellingFlow.html():page==='blending'?wordLibrary():page==='sentences'?wordLibrary(true):page==='word'?wordView():page==='story'?storyView():page==='value-story'?valueFlow.html():page==='pattern'?patternView():stage==='letters'?lettersHome():stage==='words'?wordsHome():storiesHome();},
   handle(data){
    const action=data.action.replace('stages-','');
+   if(action==='math-open'){stop();stage='math';page='math-lesson';mathFlow.open(data.id);return;}
+   if(action.startsWith('math-')){if(action==='math-back'){stop();stage='math';page='home';save();render();}else mathFlow.handle(data);return;}
    if(action==='alphabet-next'){openLetter(state().letter,false);return;}
    if(action.startsWith('alphabet-')){alphabetReading.handle(data);return;}
    if(action==='match-open'||action==='match-review'){stop();stage='letters';page='letter-match';letterMatching.open();if(action==='match-review')letterMatching.handle({action:'stages-match-review'});}

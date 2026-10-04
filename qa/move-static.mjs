@@ -9,7 +9,7 @@ const act=a=>page.locator('[data-action="stages-move-'+a+'"]');
 const data=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('little-english-v1')));
 const records=[];
 try{
- await page.goto('http://localhost:4174');await expect(page.locator('.home-stage')).toHaveCount(4);await page.locator('.home-move').click();await expect(page.locator('.move-library button')).toHaveCount(11);await expect(page.locator('[data-id=move-two-steps]')).toBeDisabled();
+ await page.goto('http://localhost:4174');await expect(page.locator('.home-stage')).toHaveCount(5);await page.locator('.home-move').click();await expect(page.locator('.move-library button')).toHaveCount(11);await expect(page.locator('[data-id=move-two-steps]')).toBeDisabled();
  for(const l of moveLessons.slice(0,7)){
   await page.locator('[data-action=stages-move-open][data-id="'+l.id+'"]').click();
   for(const v of moveVocabulary(l)){await expect(page.locator('.move-player h1')).toHaveText(v.word);await act('vocab-next').click();}
