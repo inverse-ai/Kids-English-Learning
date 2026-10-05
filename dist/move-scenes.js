@@ -1,16 +1,19 @@
+import {finishIllustration,groundShadow} from './illustration-style.js';
 // World coordinates keep acceptance areas consistent across screen sizes.
 // Front/back use the near/far floor plane and occlusion, never just left/right.
-const outline='stroke="#45527d" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
+const outline='stroke="#41526a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
 export function moveObject(name){const art={
- ball:'<circle r="22" fill="#ffca36" '+outline+'/><path d="M-22 0H22M0-22Q-17 0 0 22M0-22Q17 0 0 22" stroke="#fff8da" stroke-width="3" fill="none"/>',
- pen:'<path d="M-5-24H5V16L0 25-5 16Z" fill="#487fea" '+outline+'/><path d="M-5-14H5" stroke="#c3e5ff" stroke-width="4"/>',
- book:'<path d="M-28-15H28V19H-28Z" fill="#53c59c" '+outline+'/><path d="M-24 16H27M-20-15V16" stroke="#e8fff0" stroke-width="3"/>',
- 'toy car':'<path d="M-29 0-18-12H12L24 0H31V13H-31V0Z" fill="#f16d8d" '+outline+'/><path d="M-16-8H8L17 0H-21Z" fill="#c2f0ff"/><circle cx="-19" cy="14" r="7" fill="#45527d"/><circle cx="20" cy="14" r="7" fill="#45527d"/>',
+ ball:'<circle r="22" fill="#ffca36" '+outline+'/><path d="M-22 0H22M0-22Q-17 0 0 22M0-22Q17 0 0 22" stroke="#fff8da" stroke-width="3" fill="none"/><path d="M-15-12q6-5 11-5" stroke="#ffffff" stroke-width="3" fill="none"/>',
+ pen:'<path d="M-5-24H5V16L0 25-5 16Z" fill="#487fea" '+outline+'/><path d="M-5-14H5" stroke="#c3e5ff" stroke-width="4"/><path d="M2-21H8V-7" stroke="#d9ebf9" stroke-width="2" fill="none"/>',
+ book:'<path d="M-28-15H28V19H-28Z" fill="#53c59c" '+outline+'/><path d="M-24 16H27M-20-15V16" stroke="#e8fff0" stroke-width="3"/><path d="M-10-7H17m-27 7H9" stroke="#b7ecd4" stroke-width="2"/><path d="M-13 17H24" stroke="#749d8a" stroke-width="1.5"/>',
+ 'toy car':'<path d="M-29 0-18-12H12L24 0H31V13H-31V0Z" fill="#f16d8d" '+outline+'/><path d="M-16-8H8L17 0H-21Z" fill="#c2f0ff"/><path d="M0-8V0M-22 6H17" stroke="#a94e78" stroke-width="1.5"/><circle cx="-19" cy="14" r="7" fill="#45527d"/><circle cx="20" cy="14" r="7" fill="#45527d"/><circle cx="-19" cy="14" r="3" fill="#d6e6ef"/><circle cx="20" cy="14" r="3" fill="#d6e6ef"/>',
  balloon:'<ellipse cy="-8" rx="19" ry="24" fill="#b977e6" '+outline+'/><path d="M-4 17H4L0 12ZM0 18Q10 27 0 36" fill="#b977e6" stroke="#45527d" stroke-width="2"/>',
  star:'<path d="m0-27 8 18 20 2-15 14 5 20L0 16-18 27l5-20-15-14 20-2Z" fill="#ffce35" '+outline+'/>',
  boat:'<path d="M-32 6H32L17 23H-18Z" fill="#ee9560" '+outline+'/><path d="M0 7V-28L25 4H0Z" fill="#ffda53" '+outline+'/>'
  };if(art[name])return art[name];return anchorArt(name,0,0,.45);
 }
+export function moveVocabPicture(name){return finishIllustration('<svg class="move-vocab-art" viewBox="-75 -80 150 160" role="img" aria-label="'+name+'">'+moveObject(name)+'</svg>');}
+export function movePreview(task,movement=false){const l=layoutMove(task,movement),point=movement?l.paths[0].points.at(-1):l.zones[l.valid[0]].point;return moveScene(task,l,point,{movement,showRoute:movement}).replaceAll('id="move-scene"','').replaceAll('id="move-object"','');}
 function anchorArt(name,x=340,y=230,scale=1){
  const a={
  box:'<path d="m-80-50 80-33 80 33-80 35Z" fill="#ffd783" '+outline+'/><path d="m-73-49 73-28 73 28-73 29Z" fill="#b37c46"/><path d="M-80-50V45L0 78 80 45V-50L0-15Z" fill="#f8b55e" '+outline+'/><path d="M0-15V78" '+outline+'/>',
@@ -78,6 +81,6 @@ export function moveScene(t,layout,point=layout.start,{movement=false,showRoute=
  const flags=movement?'<g fill="#2f5c67" font-size="15"><text x="'+layout.start[0]+'" y="'+(layout.start[1]-43)+'" text-anchor="middle">Start</text><text x="'+layout.paths[0].points.at(-1)[0]+'" y="'+(layout.paths[0].points.at(-1)[1]+43)+'" text-anchor="middle">Finish</text></g>':'';
  const occluded=['in','into','behind'].includes(t.position)||(t.position==='out of'&&point[0]>265);
  const occlusion=occluded?(t.position==='behind'?anchor:t.anchor==='box'?'<path d="M260 165V260L340 293 420 260V165L340 200Z" fill="#f8b55e" '+outline+'/>':t.anchor==='pocket'?'<path d="M270 145H410V275L340 300 270 275Z" fill="#68acee" '+outline+'/>':t.position==='behind'?anchor:''):'';
- return '<svg id="move-scene" class="move-scene" viewBox="0 0 600 360" role="'+(interactive?'group':'img')+'" aria-label="'+t.object+' and '+t.anchor+'"><rect width="600" height="360" rx="18" fill="#e8f7ff"/><path d="M0 145 600 145V360H0Z" fill="#fff0d5"/><path d="M0 360 285 145M600 360 315 145M0 270H600M0 195H600" stroke="#e3cfb2" stroke-width="2"/>'+anchor+zones+route+(path.length?'<polyline points="'+line(path)+'" fill="none" stroke="#c38b42" stroke-width="3"/>':'')+flags+object+'<g pointer-events="none">'+occlusion+'</g></svg>';
+ return finishIllustration('<svg id="move-scene" class="move-scene" viewBox="0 0 600 360" role="'+(interactive?'group':'img')+'" aria-label="'+t.object+' and '+t.anchor+'"><rect width="600" height="360" rx="18" fill="#e8f7ff"/><path d="M0 145 600 145V360H0Z" fill="#fff0d5"/><path d="M0 360 285 145M600 360 315 145M0 270H600M0 195H600" stroke="#e3cfb2" stroke-width="2"/>'+anchor+zones+route+(path.length?'<polyline points="'+line(path)+'" fill="none" stroke="#c38b42" stroke-width="3"/>':'')+flags+object+'<g pointer-events="none">'+occlusion+'</g></svg>');
 }
-export function routePicture(points){return '<svg viewBox="0 0 600 360" aria-hidden="true"><polyline points="'+line(points)+'" fill="none" stroke="#476d88" stroke-width="12"/><circle cx="'+points[0][0]+'" cy="'+points[0][1]+'" r="17" fill="#76a995"/><circle cx="'+points.at(-1)[0]+'" cy="'+points.at(-1)[1]+'" r="17" fill="#dab967"/></svg>';}
+export function routePicture(points){return finishIllustration('<svg viewBox="0 0 600 360" aria-hidden="true"><polyline points="'+line(points)+'" fill="none" stroke="#476d88" stroke-width="12"/><circle cx="'+points[0][0]+'" cy="'+points[0][1]+'" r="17" fill="#76a995"/><circle cx="'+points.at(-1)[0]+'" cy="'+points.at(-1)[1]+'" r="17" fill="#dab967"/></svg>');}

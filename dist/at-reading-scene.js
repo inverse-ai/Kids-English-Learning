@@ -1,3 +1,4 @@
+import {finishIllustration,groundShadow} from './illustration-style.js';
 import {sceneSymbol} from './story-scenes.js';
 const esc=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels={cat:'Only a sitting cat.',mat:'Only a mat.',hat:'Only a hat.',rat:'Only a rat.','cat-mat':'A cat sitting on a mat. No hat or rat.','cat-hat':'A hat on the cat’s head. No mat or rat.','cat-mat-hat':'A cat sitting on a mat and wearing a hat. No rat.',complete:'A cat sitting on a mat and wearing a hat, with a rat on the same mat.'};
@@ -13,5 +14,5 @@ export function atScene(kind,small=false){
  }
  if(kind==='complete')add('rat',432,275,113,113,'mat');
  if(['hat','mat','rat'].includes(kind))add(kind,300,272,kind==='mat'?350:170,kind==='mat'?90:170);
- return '<svg class="at-scene '+(small?'small':'')+'" viewBox="'+(small?'170 70 260 230':'40 65 520 225')+'" role="img" aria-label="'+esc(labels[kind])+'"><title>'+esc(labels[kind])+'</title><rect width="600" height="300" rx="20" fill="#f7efdf"/><path d="M0 236h600v64H0Z" fill="#e5d6c1"/>'+objects.join('')+'</svg>';
+ return finishIllustration('<svg class="at-scene '+(small?'small':'')+'" viewBox="'+(small?'170 70 260 230':'40 65 520 225')+'" role="img" aria-label="'+esc(labels[kind])+'"><title>'+esc(labels[kind])+'</title><rect width="600" height="300" rx="20" fill="#f7efdf"/><path d="M0 236h600v64H0Z" fill="#e5d6c1"/>'+objects.join('')+'</svg>');
 }

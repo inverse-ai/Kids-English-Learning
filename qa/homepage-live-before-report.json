@@ -1,0 +1,40 @@
+{
+  "cards": [
+    {
+      "id": "letters",
+      "title": "Letters",
+      "display": "grid"
+    },
+    {
+      "id": "words",
+      "title": "Words",
+      "display": "grid"
+    },
+    {
+      "id": "stories",
+      "title": "Stories",
+      "display": "grid"
+    },
+    {
+      "id": "move",
+      "title": "Listen & Move",
+      "display": "grid"
+    },
+    {
+      "id": "math",
+      "title": "English for Math",
+      "display": "grid"
+    },
+    {
+      "id": "science",
+      "title": "English for Science",
+      "display": "grid"
+    }
+  ],
+  "dimensions": {
+    "viewport": 390,
+    "scroll": 390
+  },
+  "swVersion": "little-english-2026-10-05-gentle-opening-v1",
+  "errors": []
+}

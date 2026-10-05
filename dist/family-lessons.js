@@ -1,11 +1,12 @@
 import {pictureFamilies,familyWords,familyRounds,familyStages} from './family-data.js';
 import {playFamilyAudio} from './lesson-audio.js';
 import {createAtReading} from './at-reading.js';
+import {wordIllustration} from './word-art.js';
 
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const shuffle=items=>[...items].map(item=>({item,rank:Math.random()})).sort((a,b)=>a.rank-b.rank).map(x=>x.item);
 const btn=(label,action,data='',classes='')=>'<button class="btn '+classes+'" data-action="family-'+action+'" '+data+'>'+label+'</button>';
-const picture=word=>'<div class="family-picture picture-'+word+'" role="img" aria-label="'+escape(familyWords[word].description)+'"></div>';
+const picture=word=>wordIllustration(word,{className:'family-picture picture-'+word,description:familyWords[word].description});
 const colouredWord=word=>'<span class="family-word">'+word[0]+'<span class="family-ending">'+word.slice(1)+'</span></span>';
 const familyOf=id=>pictureFamilies.find(f=>f.id===id);
 const roundsFor=id=>familyRounds.filter(r=>r.family===id);

@@ -1,0 +1,10 @@
+const ink='#344b63';
+const path=(d,fill,stroke=ink,width=2.4)=>'<path d="'+d+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+width+'" stroke-linecap="round" stroke-linejoin="round"/>';
+const circle=(x,y,r,fill)=>'<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+fill+'"/>';
+const eyes=(x,y,gap=16)=>circle(x,y,2.8,ink)+circle(x+gap,y,2.8,ink)+circle(x-.6,y-.8,.8,'#ffffff')+circle(x+gap-.6,y-.8,.8,'#ffffff');
+export function childArt(pose='stand',color='#ef839d',adult=false,helmet=false){
+ const skin='#dda779',hair='#574338',sitting=['sit','bike','nap'].includes(pose),sad=['sad','hurt'].includes(pose),angry=pose==='angry';
+ const arms={reach:'M31 48 13 49 5 36M67 48 80 68',eat:'M31 48 15 31 34 29M67 48 81 67',clap:'M31 48 43 38M67 48 54 38',raise:'M31 48 16 29 17 5M67 48 79 68',hug:'M31 48 5 47M67 48 95 47',hold:'M31 48 12 55M67 48 87 54',knock:'M31 48 17 67M67 48 84 30',lift:'M31 48 17 65M67 48 84 66',hurt:'M31 48 40 63 65 51M67 48 77 66',wipe:'M31 48 15 80M67 48 84 80',roll:'M31 48 15 78M67 48 91 75',run:'M31 48 16 60 9 48M67 48 81 31',hop:'M31 48 15 28M67 48 82 30',stand:'M31 48 17 67M67 48 82 67'};
+ const legs=sitting?'M37 71 18 78 18 94M63 71 81 78 81 94':pose==='bump'?'M37 71 33 96M63 71 93 81':pose==='lift'||pose==='hop'?'M38 73 24 79 12 73M62 73 69 96':pose==='run'?'M37 70 22 85 7 85M63 70 74 86 91 79':'M37 71 34 94M63 71 66 94';
+ return path(legs,'none','#50658d',10)+path('M29 41q20-9 40 0l6 33q-26 8-51 0Z',color)+path('M38 40q12 12 24 0','none','#fff7de',3)+path(arms[pose]||arms.stand,'none',skin,7)+circle(50,25,21,skin)+circle(29,26,4,skin)+circle(71,26,4,skin)+path(adult?'M29 24Q24-9 52 2q26 1 22 28L62 14q-17 8-33 10Z':'M29 23Q24-4 53 3q28 2 21 27L62 14q-17 8-33 9Z',hair)+path('M38 12q10-6 17-4','none','#846253',2)+eyes(42,25,16)+circle(37,32,3.2,'#ef9388')+circle(63,32,3.2,'#ef9388')+path(sad?'M43 37q7-6 14 0':angry?'M42 34h16M37 17l9 3m9 0 9-3':'M43 34q7 7 14 0','none','#915951',1.8)+(helmet||pose==='bike'?path('M26 18Q26-5 51-4 75-3 76 18Z','#f6c34b')+path('M29 20 42 39h17l14-19','none',ink,2):'');
+}

@@ -1,0 +1,982 @@
+{
+  "url": "http://localhost:4174",
+  "sections": [
+    {
+      "id": "letters",
+      "title": "Letters",
+      "age": "4+",
+      "caption": "Meet letters & sounds"
+    },
+    {
+      "id": "words",
+      "title": "Words",
+      "age": "5+",
+      "caption": "Spell, build & read"
+    },
+    {
+      "id": "stories",
+      "title": "Stories",
+      "age": "6+",
+      "caption": "Read little stories"
+    },
+    {
+      "id": "move",
+      "title": "Listen & Move",
+      "age": "",
+      "caption": "Listen and move objects"
+    },
+    {
+      "id": "math",
+      "title": "English for Math",
+      "age": "",
+      "caption": "Count, share & explore"
+    },
+    {
+      "id": "science",
+      "title": "English for Science",
+      "age": "",
+      "caption": "Look, test & discover"
+    }
+  ],
+  "layouts": [
+    {
+      "label": "little home 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "little letters 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "little words 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "little stories 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "little move 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "little math 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "little science 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "big home 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "big letters 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "big words 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "big stories 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "big move 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "big math 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "big science 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "little home 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "little letters 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "little words 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "little stories 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "little move 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "little math 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "little science 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "big home 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "big letters 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "big words 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "big stories 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "big move 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "big math 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "big science 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "little home 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little letters 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little words 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little stories 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little move 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little math 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little science 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big home 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big letters 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big words 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big stories 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big move 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big math 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big science 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little home 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "little letters 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "little words 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "little stories 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "little move 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "little math 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "little science 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "big home 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "big letters 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "big words 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "big stories 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "big move 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "big math 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "big science 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "little home 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "little letters 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "little words 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "little stories 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "little move 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "little math 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "little science 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "big home 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "big letters 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "big words 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "big stories 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "big move 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "big math 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "big science 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "little home 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "little letters 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "little words 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "little stories 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "little move 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "little math 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "little science 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "big home 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "big letters 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "big words 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "big stories 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "big move 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "big math 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "big science 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    }
+  ],
+  "destinations": [
+    {
+      "profile": "little",
+      "width": 320,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 320,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 320,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 320,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 320,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 320,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 320,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 320,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 320,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 320,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 320,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 320,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 360,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 360,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 360,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 360,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 360,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 360,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 360,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 360,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 360,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 360,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 360,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 360,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 430,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 430,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 430,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 430,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 430,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 430,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 430,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 430,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 430,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 430,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 430,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 430,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 768,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 768,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 768,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 768,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 768,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 768,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 768,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 768,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 768,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 768,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 768,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 768,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 1366,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 1366,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 1366,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 1366,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 1366,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 1366,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 1366,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 1366,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 1366,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 1366,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 1366,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 1366,
+      "id": "science",
+      "works": true
+    }
+  ],
+  "passed": true
+}

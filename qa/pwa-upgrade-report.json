@@ -1,0 +1,18 @@
+{
+  "cause": {
+    "oldCommit": "b66e7c0",
+    "serverCommit": "4e61a5399144d93924dac017043ab26d102b4a2a",
+    "newWorkerWaiting": true,
+    "oldCardsStillDisplayed": 4
+  },
+  "fix": {
+    "cards": 6,
+    "automaticRefreshes": 1,
+    "bothProfilesPreserved": true,
+    "writingPreserved": true,
+    "historyPreserved": true,
+    "audioRetained": true,
+    "offlineMathAndScience": true
+  },
+  "passed": true
+}

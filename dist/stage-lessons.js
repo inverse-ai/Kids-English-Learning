@@ -1,4 +1,6 @@
+import {isLearningSection} from './section-registry.js';
 import {createLetterMatching} from './letter-match.js';
+import {wordIllustration} from './word-art.js';
 import {createScienceFlow} from './science-flow.js';
 import {createMathFlow} from './math-flow.js';
 import {createAlphabetReading} from './alphabet-reading.js';
@@ -7,7 +9,7 @@ import {valuesStories,valuesOrder} from './values-stories.js';
 import {createValueStoryFlow} from './values-flow.js';
 import {valueScene} from './values-scenes.js';
 import {storyScene} from './story-scenes.js';
-import {alphabet,stageInfo,wordLessons,supportingWords,stories,patternLessons,pictureSymbols} from './stage-data.js';
+import {alphabet,wordLessons,supportingWords,stories,patternLessons,pictureSymbols} from './stage-data.js';
 import {createStoryFlow} from './story-flow.js';
 import {createSpellingFlow} from './spelling-flow.js';
 import {familyWords} from './family-data.js';
@@ -15,12 +17,8 @@ import {profiles} from './curriculum.js';
 import {playStageSequence,toggleStagePause,stopStageAudio,stageAudioState} from './stage-audio.js';
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const button=(label,action,data='',classes='')=>'<button class="btn '+classes+'" data-action="stages-'+action+'" '+data+'>'+label+'</button>';
-const icons={igloo:'<path d="M14 85a46 46 0 0 1 92 0Z" fill="#dceefb" stroke="#446887" stroke-width="3"/><path d="M50 85V65a13 13 0 0 1 26 0v20" fill="#6087a9"/><path d="M20 64h80M31 45h57M47 25v20M36 45v19M82 45v19M24 65v20M95 65v20" fill="none" stroke="#91b7d2" stroke-width="2"/>',zip:'<rect x="20" y="12" width="80" height="96" rx="12" fill="#a2d9e7"/><path d="M60 13v95" stroke="#4b5d75" stroke-width="14"/><path d="M55 20h10m-10 10h10m-10 10h10m-10 10h10m-10 10h10m-10 10h10m-10 10h10m-10 10h10" stroke="#efdf75" stroke-width="4"/><rect x="46" y="42" width="28" height="22" rx="5" fill="#a8b9c9" stroke="#384f69"/><rect x="52" y="55" width="16" height="26" rx="4" fill="#e9f1f5" stroke="#384f69"/>',quilt:'<rect x="13" y="18" width="94" height="84" rx="7" fill="#f6c7d3" stroke="#9e6480" stroke-width="3"/><path d="M44 18v84m32-84v84M13 46h94M13 74h94" stroke="white" stroke-width="4"/><path d="m22 33 7-8 7 8-7 8Zm32 28 7-8 7 8-7 8Zm32 28 7-8 7 8-7 8Z" fill="#d75b83"/>',jug:'<path d="M72 35h14a19 19 0 0 1 0 39H73" fill="none" stroke="#58a4c6" stroke-width="10"/><path d="M25 23h49v63q0 18-24 18T25 86V38l-10-9Z" fill="#acdfea" stroke="#39728e" stroke-width="3"/><path d="M28 58h42v27q0 14-20 14T28 85Z" fill="#51accd"/>',yak:'<path d="M30 48Q8 26 23 16m59 32q25-22 10-32" fill="none" stroke="#c4a981" stroke-width="7"/><ellipse cx="61" cy="68" rx="43" ry="29" fill="#704532"/><path d="M25 88v18m24-14v14m29-14v14m17-20v20" stroke="#483126" stroke-width="9"/><path d="m20 77 6 17 8-10 10 11 9-9 10 8 11-7 10 5 12-11" fill="#563728"/><circle cx="29" cy="61" r="18" fill="#86573e"/><circle cx="23" cy="58" r="3" fill="#211b19"/><ellipse cx="20" cy="73" rx="13" ry="8" fill="#c19874"/>',jam:'<path d="M30 28h60v65q0 13-15 13H45q-15 0-15-13Z" fill="#df606f" stroke="#823746" stroke-width="3"/><rect x="26" y="17" width="68" height="17" rx="5" fill="#689bc3"/><rect x="36" y="48" width="48" height="36" rx="8" fill="#fff2d4"/><path d="M46 60q4-10 14-4 10-6 14 4-4 22-14 20-10 2-14-20Z" fill="#d94654"/><path d="m54 50 6 7 6-7" fill="none" stroke="#448354" stroke-width="4"/>'};
 export function stagePicture(word,small=false){
- const pictureWord=word==='sit'?'sat':word;
- if(familyWords[pictureWord])return '<div class="family-picture picture-'+pictureWord+' stage-picture '+(small?'mini':'')+'" role="img" aria-label="'+esc(familyWords[pictureWord].description)+'"></div>';
- if(icons[word])return '<svg class="stage-picture '+(small?'mini':'')+'" viewBox="0 0 120 120" role="img" aria-label="'+esc(word)+'">'+icons[word]+'</svg>';
- return '<div class="stage-picture symbol-picture '+(small?'mini':'')+'" role="img" aria-label="'+esc(word)+'">'+(pictureSymbols[word]||'📖')+'</div>';
+ return wordIllustration(word,{className:'stage-picture '+(familyWords[word]?'family-picture picture-'+word+' ':'')+(small?'mini':''),description:familyWords[word]?.description||word});
 }
 const sounds=word=>'<div class="stage-blend" aria-label="Blend '+esc(word)+'">'+[...word].map((c,i)=>'<button class="sound-chip" data-action="stages-audio" data-key="sound:'+c+'" data-part="'+i+'">'+c+'</button>').join('<span aria-hidden="true">–</span>')+'<span aria-hidden="true">→</span><b>'+word+'</b></div>';
 
@@ -110,7 +108,7 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
  function storiesHome(){
   const levels=['First connected sentences','Add sh and ch','Next: the ai vowel team','Then: the ea vowel team','New patterns · read with an adult','Longer sentences · read with an adult','More vocabulary & dialogue · read with an adult'];
   return '<section class="intro"><div><div class="eyebrow">Stories · Suggested age 6+</div><h1>Little stories to read.</h1><p class="muted">Start with familiar words. Add new patterns, then read longer paragraphs. Audio is always optional.</p></div></section>'+(state().valueCurrent?'<div class="resume-strip"><span>Pick up '+esc(valuesStories.find(s=>s.id===state().valueCurrent).title)+'.</span>'+button('Continue story →','value-story-open','data-id="'+state().valueCurrent+'"','primary')+'</div>':state().storyCurrent?'<div class="resume-strip"><span>Pick up '+esc(stories.find(s=>s.id===state().storyCurrent).title)+'.</span>'+button('Continue story →','story-open','data-id="'+state().storyCurrent+'"','primary')+'</div>':'')+
-   levels.map((label,level)=>'<section class="story-band"><h2>'+label+'</h2>'+(level>0&&level<4?'<div class="pattern-links">'+patternLessons.filter(p=>level===1?['sh','ch'].includes(p.id):p.id===(level===2?'ai':'ea')).map(p=>button('Meet '+p.id+(state().patterns.includes(p.id)?' ✓':''),'pattern','data-id="'+p.id+'"')).join('')+'</div>':'')+'<div class="story-grid">'+[...stories.filter(s=>s.level===level),...newStories.filter(s=>s.level===level)].map(s=>'<button class="story-card" data-action="'+(s.kind==='values'?'stages-value-story-open':'stages-story-open')+'" data-id="'+s.id+'"><div class="story-thumb">'+(s.kind==='values'?valueScene(s,0):s.id==='pig-pen'?storyScene(s,0):s.pictures.slice(0,2).map(w=>stagePicture(w,true)).join(''))+'</div><b>'+esc(s.title)+'</b><small>'+s.sentences.length+' connected sentences'+(s.kind==='values'?' · Assisted reading':'')+((s.kind==='values'?state().valueStories[s.id]?.done:state().stories[s.id]?.done)?' · Practised ✓':'')+'</small></button>').join('')+'</div></section>').join('')+'<details class="stage-practice"><summary>More pattern practice: sh, ch and ck</summary>'+legacyCards('big',[15,16,17])+'</details>';
+   levels.map((label,level)=>'<section class="story-band"><h2>'+label+'</h2>'+(level>0&&level<4?'<div class="pattern-links">'+patternLessons.filter(p=>level===1?['sh','ch'].includes(p.id):p.id===(level===2?'ai':'ea')).map(p=>button('Meet '+p.id+(state().patterns.includes(p.id)?' ✓':''),'pattern','data-id="'+p.id+'"')).join('')+'</div>':'')+'<div class="story-grid">'+[...stories.filter(s=>s.level===level),...newStories.filter(s=>s.level===level)].map(s=>'<button class="story-card" data-action="'+(s.kind==='values'?'stages-value-story-open':'stages-story-open')+'" data-id="'+s.id+'"><div class="story-thumb">'+(s.kind==='values'?valueScene(s,0):storyScene(s,0))+'</div><b>'+esc(s.title)+'</b><small>'+s.sentences.length+' connected sentences'+(s.kind==='values'?' · Assisted reading':'')+((s.kind==='values'?state().valueStories[s.id]?.done:state().stories[s.id]?.done)?' · Practised ✓':'')+'</small></button>').join('')+'</div></section>').join('')+'<details class="stage-practice"><summary>More pattern practice: sh, ch and ck</summary>'+legacyCards('big',[15,16,17])+'</details>';
  }
  function patternView(){
   const p=patternLessons.find(x=>x.id===storyId);
@@ -145,7 +143,7 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
     ...[1,2,3].map(()=>({key:'sound:'+a.sound,target:'.big-letter [data-case="lower"]'})),
     {key:'word:'+word,target:'.flash-word,.activity h2'}]);
   },
-  setStage(value){if(!stageInfo[value]&&!['move','math','science'].includes(value))return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';page='alphabet';alphabetReading.prepare();}},
+  setStage(value){if(!isLearningSection(value))return;stop();stage=value;page='home';if(stage==='letters'){letterIndex=state().letter;phase='Ready';page='alphabet';alphabetReading.prepare();}},
   reset(){openLetter(0,false);},
   stop,
   parentScienceReport:()=>scienceFlow.parentReport(),

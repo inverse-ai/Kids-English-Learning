@@ -12,11 +12,11 @@ export const pictureFamilies = [
  {id:'ug',words:['bug','mug','rug','hug'],sheet:'/pictures/family-ug.png',colour:'gold'}
 ];
 const definitions = {
- cat:['ক্যাট','বিড়াল','a cat'],hat:['হ্যাট','টুপি','a hat'],mat:['ম্যাট','মাদুর','a mat'],rat:['র‍্যাট','ইঁদুর','a rat'],bat:['ব্যাট','খেলার ব্যাট','a cricket bat'],pat:['প্যাট','আলতো করে আদর করা','a hand gently patting a cat'],sat:['স্যাট','বসেছিল','a boy who sat down'],fat:['ফ্যাট','মোটা','a round cat'],
- can:['ক্যান','টিনের কৌটা','a tin can'],man:['ম্যান','একজন পুরুষ মানুষ','a man'],pan:['প্যান','রান্নার প্যান','a frying pan'],fan:['ফ্যান','পাখা','an electric fan'],van:['ভ্যান','ছোট মালবাহী গাড়ি','a van'],ran:['র‍্যান','দৌড়েছিল','a boy who ran'],
+ cat:['ক্যাট','বিড়াল','a cat'],hat:['হ্যাট','টুপি','a hat'],mat:['ম্যাট','মাদুর','a mat'],rat:['র‍্যাট','ইঁদুর','a rat'],bat:['ব্যাট','খেলার ব্যাট','a cricket bat'],pat:['প্যাট','আলতো করে আদর করা','a hand gently patting a cat'],sat:['স্যাট','বসেছিল','a child who sat down'],fat:['ফ্যাট','মোটা','a round cat'],
+ can:['ক্যান','টিনের কৌটা','a tin can'],man:['ম্যান','একজন পুরুষ মানুষ','a man'],pan:['প্যান','রান্নার প্যান','a frying pan'],fan:['ফ্যান','পাখা','an electric fan'],van:['ভ্যান','ছোট মালবাহী গাড়ি','a van'],ran:['র‍্যান','দৌড়েছিল','a child who ran'],
  pig:['পিগ','শূকর','a pig'],big:['বিগ','বড়','a big ball beside a small ball'],dig:['ডিগ','মাটি খোঁড়া','a child digging'],wig:['উইগ','পরচুলা','a wig'],
- hop:['হপ','এক পায়ে লাফ দেওয়া','a boy hopping on one foot'],mop:['মপ','মেঝে মোছার ঝাঁটা','a mop'],top:['টপ','লাটিম','a spinning top'],pop:['পপ','ফেটে যাওয়া','a bubble popping'],
- sun:['সান','সূর্য','the sun'],run:['রান','দৌড়ানো','a boy running'],bun:['বান','ছোট গোল রুটি','a bread bun'],fun:['ফান','মজা','children having fun'],gun:['গান','বন্দুক; ছবিতে খেলনা পানির পিস্তল','a toy water gun'],
+ hop:['হপ','এক পায়ে লাফ দেওয়া','a child hopping on one foot'],mop:['মপ','মেঝে মোছার ঝাঁটা','a mop'],top:['টপ','লাটিম','a spinning top'],pop:['পপ','ফেটে যাওয়া','a bubble popping'],
+ sun:['সান','সূর্য','the sun'],run:['রান','দৌড়ানো','a child running'],bun:['বান','ছোট গোল রুটি','a bread bun'],fun:['ফান','মজা','children having fun'],gun:['গান','বন্দুক; ছবিতে খেলনা পানির পিস্তল','a toy water gun'],
  hen:['হেন','মুরগি','a hen'],pen:['পেন','কলম','a pen'],ten:['টেন','দশ','ten stars'],den:['ডেন','বন্য প্রাণীর গুহা বা বাসা','a fox in its den'],
  pin:['পিন','পিন','a safety pin'],tin:['টিন','টিনের কৌটা','a tin can'],fin:['ফিন','মাছের পাখনা','a fish with a fin'],bin:['বিন','ময়লা ফেলার পাত্র','a rubbish bin'],
  cap:['ক্যাপ','ক্যাপ বা টুপি','a cap'],map:['ম্যাপ','মানচিত্র','a map'],tap:['ট্যাপ','পানির কল','a water tap'],nap:['ন্যাপ','অল্প সময়ের ঘুম','a child taking a nap'],

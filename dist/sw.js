@@ -1,13 +1,30 @@
 // Bump APP_VERSION whenever shipped shell/lesson sources change. Audio is immutable.
-const APP_VERSION='little-english-2026-10-05-gentle-opening-v1';
+const APP_VERSION='little-english-2026-10-05-all-sections-art-v2';
 const SHELL=APP_VERSION+'-shell',MEDIA='little-english-audio-v1';
 const FILES=['/','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png','/icons/maskable-512.png','/icons/apple-touch-icon.png','/style.css',...['app','curriculum','lesson-audio','recorded-speech','family-data','family-lessons','family-speech','stage-data','stage-lessons','stage-audio','stage-speech','story-flow','story-words','story-scenes','spelling-data','spelling-flow','speech-highlights','audio-timings','at-reading-data','at-reading-scene','at-reading','story-gaps','home-page','values-stories','values-scenes','values-flow','move-data','move-scenes','move-flow','practice-data','practice-flow','progress-store','pwa'].map(n=>'/'+n+'.js'),...['at','an','ig','op','un','en','in','ap','og','ug'].map(n=>'/pictures/family-'+n+'.png')];
 FILES.push('/letter-match.js','/letter-match-data.js');
 FILES.push('/science-data.js','/science-scenes.js','/science-flow.js');
 FILES.push('/math-data.js','/math-scenes.js','/math-flow.js');
 FILES.push('/alphabet-reading.js','/alphabet-reading-data.js','/opening-audio.js','/opening-audio-data.js');
-self.addEventListener('install',event=>{event.waitUntil(caches.open(SHELL).then(cache=>cache.addAll(FILES)));});
-self.addEventListener('activate',event=>{event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('little-english-')&&key!==SHELL&&key!==MEDIA)await caches.delete(key);await self.clients.claim();})());});
+FILES.push('/illustration-style.js','/word-art.js','/character-art.js','/value-object-art.js','/section-registry.js');
+self.addEventListener('install',event=>{event.waitUntil((async()=>{
+ const cache=await caches.open(SHELL);
+ // Fetch the complete new shell from the server, bypassing old HTTP caches.
+ // A failed install leaves the previous working shell active.
+ await cache.addAll(FILES.map(path=>new Request(path,{cache:'reload'})));
+ await self.skipWaiting();
+})());});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{
+ const oldShells=(await caches.keys()).filter(key=>key.startsWith('little-english-')&&key!==SHELL&&key!==MEDIA);
+ for(const key of oldShells)await caches.delete(key);
+ await self.clients.claim();
+ if(oldShells.length){
+  // Older app scripts cannot display the new update UI. Refresh those windows
+  // once; their existing pagehide handler saves unfinished work and stops audio.
+  // Do not await navigation: its fetch waits for this activation to finish.
+  for(const client of await self.clients.matchAll({type:'window'}))client.navigate(client.url).catch(()=>{});
+ }
+})());});
 self.addEventListener('message',event=>{if(event.data?.type==='ACTIVATE_UPDATE')self.skipWaiting();});
 self.addEventListener('fetch',event=>{
  const req=event.request,url=new URL(req.url);if(req.method!=='GET'||url.origin!==self.location.origin)return;

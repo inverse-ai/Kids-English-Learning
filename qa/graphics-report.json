@@ -1,0 +1,264 @@
+{
+  "vocabulary": 126,
+  "scenes": 379,
+  "layouts": [
+    {
+      "label": "Home 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "Aa 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "Spelling 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "stories library 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "move library 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "math library 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "science library 320",
+      "width": 320,
+      "scroll": 320,
+      "clipped": []
+    },
+    {
+      "label": "Home 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "Aa 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "Spelling 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "stories library 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "move library 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "math library 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "science library 360",
+      "width": 360,
+      "scroll": 360,
+      "clipped": []
+    },
+    {
+      "label": "Home 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "Aa 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "Spelling 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "stories library 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "move library 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "math library 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "science library 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "Home 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "Aa 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "Spelling 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "stories library 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "move library 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "math library 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "science library 430",
+      "width": 430,
+      "scroll": 430,
+      "clipped": []
+    },
+    {
+      "label": "Home 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "Aa 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "Spelling 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "stories library 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "move library 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "math library 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "science library 768",
+      "width": 768,
+      "scroll": 768,
+      "clipped": []
+    },
+    {
+      "label": "Home 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "Aa 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "Spelling 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "stories library 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "move library 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "math library 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    },
+    {
+      "label": "science library 1366",
+      "width": 1366,
+      "scroll": 1366,
+      "clipped": []
+    }
+  ],
+  "checks": [
+    "All alphabet, family and legacy vocabulary has drawn art; no emoji or unrelated picture fallback",
+    "Every story sentence, Math/Science scene and movement preview renders with valid, locally scoped gradients",
+    "All six sections fit at 320/360/390/430/768/1366px"
+  ],
+  "passed": true
+}
