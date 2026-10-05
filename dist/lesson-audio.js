@@ -1,5 +1,6 @@
 import {recordedSpeech} from './recorded-speech.js';
 import {familySpeech} from './family-speech.js';
+import {stageSpeech} from './stage-speech.js';
 import {watchAudioHighlights,watchSystemHighlights,clearSpeechHighlights} from './speech-highlights.js';
 let sequence = 0;
 let currentAudio = null;
@@ -99,7 +100,7 @@ export function playLessonAudio(text, {voice, speed = 1, preferRecordings = true
 export function playFamilyAudio(keys,{speed=1,onPart=()=>{},targets=[]},onStatus){
  stopLessonAudio();
  const ticket=sequence;
- const clips=keys.map(key=>familySpeech[key]);
+ const clips=keys.map(key=>familySpeech[key]||stageSpeech[key]);
  const report=(message,failed=false)=>{if(ticket===sequence){if(failed||message==='Ready to listen again.')lessonPlaying=false;syncLessonAudioControls();onStatus(message,failed);}};
  if(!clips.length||clips.some(clip=>!clip)){
   onPart(-1);report('This clip is unavailable. A parent can read the word or helper aloud.',true);return;

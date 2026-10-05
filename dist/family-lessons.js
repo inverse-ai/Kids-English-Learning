@@ -1,5 +1,8 @@
 import {pictureFamilies,familyWords,familyRounds,familyStages} from './family-data.js';
 import {playFamilyAudio} from './lesson-audio.js';
+import {familySpeech} from './family-speech.js';
+import {stageSpeech} from './stage-speech.js';
+import {mapFamilies,mapFamilyOf} from './word-family-maps.js';
 import {createAtReading} from './at-reading.js';
 import {wordIllustration} from './word-art.js';
 
@@ -8,7 +11,34 @@ const shuffle=items=>[...items].map(item=>({item,rank:Math.random()})).sort((a,b
 const btn=(label,action,data='',classes='')=>'<button class="btn '+classes+'" data-action="family-'+action+'" '+data+'>'+label+'</button>';
 const picture=word=>wordIllustration(word,{className:'family-picture picture-'+word,description:familyWords[word].description});
 const colouredWord=word=>'<span class="family-word">'+word[0]+'<span class="family-ending">'+word.slice(1)+'</span></span>';
-const familyOf=id=>pictureFamilies.find(f=>f.id===id);
+// Illustrated family map: the shared ending sits in the centre and every
+// lesson word is joined to it. Positions use classes (CSP blocks inline styles).
+const mapLayouts={narrow:{4:[30,32],5:[32,34],6:[35,34],8:[36,37]},wide:{4:[25,33],5:[40,33],6:[28,33],8:[29,37]}},mapPoint=(i,n,kind)=>{const a=-Math.PI/2+i*2*Math.PI/n,[rx,ry]=mapLayouts[kind][n]||[34,36];return {x:50+rx*Math.cos(a),y:50+ry*Math.sin(a)};};
+// A word's onset is everything before the family ending (b|all, sm|all, c|at).
+const onsetOf=(word,ending)=>word.slice(0,word.length-ending.length);
+const endingWord=(word,ending)=>'<span class="family-word">'+onsetOf(word,ending)+'<span class="family-ending">'+ending+'</span></span>';
+// Word details for both picture families and listen-and-look map families.
+const mapWord=(family,word)=>{if(family.info){const i=family.info[word];return {meaning:i.meaning,description:i.description,picture:i.picture};}return {meaning:familyWords[word].meaning.split(';')[0],description:familyWords[word].description,picture:'/pictures/words/'+word+'.webp'};};
+const mapPicture=(family,word,cls)=>{const w=mapWord(family,word);return w.picture?'<img class="'+cls+'" src="'+w.picture+'" alt="'+escape(w.description)+'" width="320" height="320" decoding="async">':'<span class="'+cls+' family-picture-pending" role="img" aria-label="Picture coming soon">'+escape(word)+'<small>picture coming soon</small></span>';};
+// A supplied chart is shown unchanged; invisible buttons over each picture and
+// the centre make it tappable. Hotspot positions are CSS classes (CSP).
+function posterMap(family){
+ return '<div class="family-poster-map" data-family="'+family.id+'"><img src="'+family.poster+'" alt="The -'+family.id+' word family chart: '+family.words.join(', ')+'" width="1024" height="1536" decoding="async">'+
+  '<button class="family-poster-spot spot-centre" data-action="family-ending" data-family="'+family.id+'" aria-label="Hear the -'+family.id+' ending"></button>'+
+  family.words.map(word=>'<button class="family-poster-spot spot-'+word+'" data-action="family-audio" data-kind="map" data-word="'+word+'" aria-label="Hear '+word+'"></button>').join('')+
+  '</div><p class="family-poster-download"><a class="btn" href="'+family.poster+'" download="'+family.id+'-word-family-poster.png">Download the -'+family.id+' poster to print</a></p>';
+}
+export function familyMap(family){
+ const n=family.words.length,end=family.id,lines=kind=>'<g class="family-map-'+kind+'">'+family.words.map((_,i)=>{const pt=mapPoint(i,n,kind);return '<line x1="50" y1="50" x2="'+pt.x.toFixed(2)+'" y2="'+pt.y.toFixed(2)+'"></line>';}).join('')+'</g>';
+ return '<div class="family-map theme-'+family.colour+'" data-count="'+n+'" data-ending="'+end+'" role="group" aria-label="The -'+end+' word family map: '+family.words.join(', ')+'">'+
+  '<svg class="family-map-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">'+lines('narrow')+lines('wide')+'</svg>'+
+  '<button class="family-map-centre" data-action="family-ending" data-family="'+end+'" aria-label="Hear the -'+end+' ending"><span class="family-ending">-'+end+'</span><small>Tap me</small></button>'+
+  family.words.map((word,i)=>'<button class="family-map-node" data-slot="'+i+'" data-action="family-audio" data-kind="map" data-word="'+word+'" aria-label="Hear '+word+'"><span class="family-map-onset" aria-hidden="true">'+onsetOf(word,end)+'</span>'+mapPicture(family,word,'family-map-picture')+endingWord(word,end)+'<span class="family-map-meaning" lang="bn">'+escape(mapWord(family,word).meaning)+'</span></button>').join('')+
+  '</div>'+
+  '<div class="family-blend-cards" role="group" aria-label="Build words from sounds">'+family.words.slice(0,3).map(word=>'<button class="family-blend-card" data-action="family-audio" data-kind="mapblend" data-word="'+word+'" aria-label="Hear '+onsetOf(word,end)+' and '+end+', '+word+'"><span class="family-blend-sum"><b>'+onsetOf(word,end)+'</b><i>+</i><span class="family-ending">'+end+'</span><i>=</i>'+endingWord(word,end)+'</span>'+mapPicture(family,word,'family-blend-picture')+'</button>').join('')+'</div>'+
+  (family.info&&family.words.some(w=>!family.info[w].picture)?'':'<p class="family-poster-download"><a class="btn" href="/pictures/posters/'+end+'.jpeg" download="'+end+'-word-family-poster.jpeg">Download the -'+end+' poster to print</a></p>');
+}
+const familyOf=id=>pictureFamilies.find(f=>f.id===id)||mapFamilyOf(id);
 const roundsFor=id=>familyRounds.filter(r=>r.family===id);
 const unfinishedRound=progress=>familyRounds.find(r=>r.id===progress.current&&progress.inProgress[r.id])||familyRounds.find(r=>progress.inProgress[r.id]);
 const unfinishedWriting=progress=>progress.writing.current||Object.keys(progress.writing.drafts)[0];
@@ -35,7 +65,18 @@ export function createFamilyLessons({onAttempt=()=>{},getProgress,save,render,on
   persist();
  }
  function status(message,failed){onStatus(message,failed);}
+ function mapAudio(word,kind){
+  const family=familyOf(familyId);if(!family||!family.words.includes(word))return;
+  const end=family.id,has=k=>!!(familySpeech[k]||stageSpeech[k]);
+  // Blend: first sound(s), the ending, then the whole word. Map families never
+  // spell their ending as single letters (a + l + l is not the -all sound).
+  const endKeys=has('ending:'+end)?['ending:'+end]:family.info?[]:[...end].map(c=>'sound:'+c);
+  const keys=kind==='map'?['word:'+word]:[...onsetOf(word,end)].map(c=>'sound:'+c).concat(endKeys,'word:'+word);
+  const target=kind==='map'?'.family-map-node[data-word="'+word+'"],.family-poster-spot.spot-'+word:'.family-blend-card[data-word="'+word+'"]';
+  playFamilyAudio(keys,{speed:getSpeed(),targets:keys.map(()=>target)},status);
+ }
  function audio(word,kind,index){
+  if(kind==='map'||kind==='mapblend'){mapAudio(word,kind);return;}
   if(!familyWords[word])return;
   const keys=kind==='blend'?[...word].map(c=>'sound:'+c).concat('word:'+word):
    kind==='first'?['sound:'+word[0]]:
@@ -49,6 +90,15 @@ export function createFamilyLessons({onAttempt=()=>{},getProgress,save,render,on
    if(message==='Ready to listen again.'||failed)document.querySelectorAll('.blend-sound').forEach(el=>el.classList.remove('playing'));
    status(message,failed);
   });
+ }
+ function endingSound(id){
+  const family=familyOf(id);if(!family)return;
+  // A recorded ending clip is used when present; otherwise the ending's own
+  // letter sounds are played in order (never an English TTS guess).
+  const recorded=familySpeech['ending:'+id]||stageSpeech['ending:'+id];
+  if(!recorded&&family.info){status('The -'+id+' sound is not recorded yet. Say “'+id+'” together.',true);return;}
+  const keys=recorded?['ending:'+id]:[...id].map(c=>'sound:'+c);
+  playFamilyAudio(keys,{speed:getSpeed(),targets:keys.map(()=>'.family-map-centre,.family-poster-spot.spot-centre')},status);
  }
  function listening(word,helpers=true){
   return '<div class="family-listening">'+btn('◖)) English word','audio','data-word="'+word+'" data-kind="word"','primary')+btn('◖)) Blend the sounds','audio','data-word="'+word+'" data-kind="blend"')+'</div>'+
@@ -68,16 +118,16 @@ export function createFamilyLessons({onAttempt=()=>{},getProgress,save,render,on
    reading.resume()+'<div class="family-library">'+pictureFamilies.map(f=>{
     const count=roundsDone(f.id,p),total=roundsFor(f.id).length;
     return '<button class="family-card theme-'+f.colour+'" data-action="family-open" data-family="'+f.id+'" aria-label="Explore the -'+f.id+' word family">'+picture(f.words[0])+'<span class="family-card-ending">-'+f.id+'</span><span>'+f.words.slice(0,3).join(' · ')+'</span><small>'+f.words.length+' picture words · '+count+'/'+total+' rounds '+(count===total?'★':'')+'</small></button>';
-   }).join('')+'</div><div class="family-parent-note"><b>Start together.</b> Knowing how to write letters is a good start. Help your child hear the sounds before asking them to read. Up to three new words are enough for one sitting.</div>';
+   }).join('')+mapFamilies.map(f=>'<button class="family-card theme-'+f.colour+'" data-action="family-open" data-family="'+f.id+'" aria-label="Explore the -'+f.id+' word family">'+(f.poster?'<img class="family-picture family-card-picture" src="'+f.poster+'" alt="" decoding="async">':mapPicture(f,f.words[0],'family-picture family-card-picture'))+'<span class="family-card-ending">-'+f.id+'</span><span>'+f.words.slice(0,3).join(' · ')+'</span><small>'+f.words.length+' picture words · listen & look</small></button>').join('')+'</div><div class="family-parent-note"><b>Start together.</b> Knowing how to write letters is a good start. Help your child hear the sounds before asking them to read. Up to three new words are enough for one sitting.</div>';
  }
  function board(){
   const family=familyOf(familyId),p=getProgress(),rounds=roundsFor(familyId);
-  return navigation(true)+'<section class="family-board theme-'+family.colour+'"><div class="eyebrow">Listen · Say · Build</div><h1>The <span class="family-ending">-'+family.id+'</span> word family</h1>'+(familyId==='at'?'<p class="lead">Different beginnings. The same ending.</p>'+reading.entry()+'<h2>Explore words</h2><p>Choose a picture to explore.</p>':'<p class="lead">Different beginnings. The same ending. Choose a picture to explore.</p>')+'<div class="family-board-layout"><div class="family-board-main"><div class="family-spotlight">'+picture(selected)+colouredWord(selected)+'</div>'+sounds(selected)+listening(selected)+'</div><div class="family-picker" role="group" aria-label="Picture words in the -'+family.id+' family">'+family.words.map(word=>'<button class="family-pick '+(word===selected?'selected':'')+'" data-action="family-word" data-word="'+word+'" aria-pressed="'+(word===selected)+'" aria-label="Explore '+word+'">'+picture(word)+colouredWord(word)+'</button>').join('')+'</div></div></section>'+
+  if(family.info)return navigation(true)+'<section class="family-board theme-'+family.colour+'"><div class="eyebrow">Listen · Look · Say</div><h1>The <span class="family-ending">-'+family.id+'</span> word family</h1><p class="lead family-map-lead">Different beginnings. The same ending. Tap the middle, then tap each picture.</p>'+(family.poster?posterMap(family):familyMap(family))+'<p class="family-explore-lead">The ending <b>-'+family.id+'</b> is one sound. Say the beginning, then “'+family.id+'”, then the whole word.</p></section><p id="audio-status" class="status"></p>';
+  return navigation(true)+'<section class="family-board theme-'+family.colour+'"><div class="eyebrow">Listen · Say · Build</div><h1>The <span class="family-ending">-'+family.id+'</span> word family</h1><p class="lead family-map-lead">Different beginnings. The same ending. Tap the middle, then tap each picture.</p>'+familyMap(family)+(familyId==='at'?reading.entry():'')+'<h2 class="family-explore-heading">Explore one word</h2><p class="family-explore-lead">Choose a picture to hear its sounds and Bangla help.</p>'+'<div class="family-board-layout"><div class="family-board-main"><div class="family-spotlight">'+picture(selected)+colouredWord(selected)+'</div>'+sounds(selected)+listening(selected)+'</div><div class="family-picker" role="group" aria-label="Picture words in the -'+family.id+' family">'+family.words.map(word=>'<button class="family-pick '+(word===selected?'selected':'')+'" data-action="family-word" data-word="'+word+'" aria-pressed="'+(word===selected)+'" aria-label="Explore '+word+'">'+picture(word)+colouredWord(word)+'</button>').join('')+'</div></div></section>'+
    '<section class="family-rounds"><div class="section-heading"><h2>Try a short lesson</h2><span>Up to three words at a time</span></div><div class="family-round-grid">'+rounds.map(round=>{
     const saved=p.inProgress[round.id],done=p.completed.includes(round.id);
     return '<button class="family-round" data-action="family-'+(saved?'resume':'start')+'" data-round="'+round.id+'"><span>ROUND '+round.number+' '+(done?'★':'')+'</span><b>'+round.items.join(' · ')+'</b><small>'+(saved?'Continue · Activity '+(saved.step+1):'Pictures → build → listen & find')+'</small></button>';
    }).join('')+'</div></section>'+
-   (family.poster?'<details class="family-poster"><summary>See your original picture chart</summary><img src="'+family.poster+'" alt="The supplied -'+family.id+' picture word-family chart" loading="lazy"></details>':'')+
    '<section class="family-writing-entry"><div><h2>From letters to a word</h2><p>Write one letter, then add the next. Try '+colouredWord(selected)+' on the pad or on paper.</p><p class="small muted">'+p.writing.completed.filter(w=>family.words.includes(w)).length+' of '+family.words.length+' words practised in writing</p></div>'+btn(p.writing.drafts[selected]?'Continue writing this word →':'Write this word →','write','data-word="'+selected+'"','primary')+'</section><p id="audio-status" class="status"></p>';
  }
  function prepare(){
@@ -221,6 +271,7 @@ export function createFamilyLessons({onAttempt=()=>{},getProgress,save,render,on
    }else if(action==='start')start(data.round);
    else if(action==='resume')start(data.round||unfinishedRound(p)?.id,true);
    else if(action==='audio')audio(data.word,data.kind,Number(data.index));
+   else if(action==='ending'&&page==='board')endingSound(familyId);
    else if(action==='tile'&&page==='lesson'&&familyStages(session.round)[session.step].type==='build'){
     const index=Number(data.index);
     if(!Number.isInteger(index)||index<0||index>=3||solved()||session.placed.includes(index))return;
