@@ -86,7 +86,7 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
  function helperCards(keys){
   return '<div class="helper-grid">'+keys.map(key=>{const h=supportingWords[key.toLowerCase()]||supportingWords[key];return '<div class="helper-card"><b>'+esc(key)+'</b>'+(h?'<p lang="bn">'+esc(h.meaning)+'</p><p>'+esc(h.help)+'</p>':'<p>Meet this word with a grown-up before reading.</p>')+button('Hear '+esc(key),'audio','data-key="word:'+esc(key)+'"')+'</div>';}).join('')+'</div>';
  }
- function stageMenu(cards){return '<div class="words-menu organised-menu">'+cards.map(([title,detail,action,art,theme],n)=>'<button class="words-menu-card theme-'+theme+'" data-action="stages-'+action+'"><em class="words-menu-number">'+(n+1)+'</em><span class="words-menu-art">'+art+'</span><span><b>'+title+'</b><small>'+detail+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>';}
+ function stageMenu(cards){return '<div class="words-menu organised-menu">'+cards.map(([title,detail,action,art,theme],n)=>'<button class="words-menu-card theme-'+theme+'" data-action="stages-'+action+'"><span class="words-menu-art">'+art+'</span><span><b>'+title+'</b><small>'+detail+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>';}
  const symbol=text=>'<span class="stage-menu-symbol" aria-hidden="true">'+text+'</span>';
  function lettersHome(){return '<section class="intro"><div><div class="eyebrow">Letters · Suggested age 4+</div><h1>Letters, one little step at a time.</h1><p>Choose reading, sounds, matching or writing. All activities are open.</p></div></section>'+stageMenu([
   ['Read A–Z','Read and hear the alphabet in order.','alphabet-open',symbol('A a'),'sky'],
