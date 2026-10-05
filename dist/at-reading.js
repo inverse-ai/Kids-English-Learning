@@ -74,7 +74,7 @@ export function createAtReading({onAttempt=()=>{},getProgress,save,render,status
   const heading=s.type==='paragraph-blank'?'Complete the story.':s.type==='picture'?'Which picture do you hear?':s.type==='letter'?'Find the first sound.':'Complete the sentence.';
   const content=s.type==='paragraph-blank'?paragraph(true):s.type==='picture'?'':s.type==='letter'?'<p class="at-sentence at-letter-gap">'+(a.choice||'_')+'at</p>':'<p class="at-sentence">'+readingText(text,a.correct?s.answer:null,true)+'</p>';
   const scene=s.scene?atScene(s.scene):'';
-  const choices='<div class="at-reading-choices" role="group" aria-label="Choose one answer">'+s.choices.map(choice=>'<button class="at-choice '+(a.choice===choice?(a.correct?'correct':'retry'):'')+'" data-action="family-reading-answer" data-choice="'+choice+'" '+(a.correct?'disabled':'')+' aria-label="'+(s.type==='picture'?'Choose the '+choice+' picture':choice)+'">'+(s.type==='picture'?atScene(choice,true):esc(choice))+'</button>').join('')+'</div>';
+  const choices='<div class="at-reading-choices" role="group" aria-label="Choose one answer">'+s.choices.map(choice=>'<button class="at-choice '+(a.choice===choice?(a.correct?'correct':'retry'):'')+'" data-action="family-reading-answer" data-choice="'+choice+'" aria-label="'+(s.type==='picture'?'Choose the '+choice+' picture':choice)+'">'+(s.type==='picture'?atScene(choice,true):esc(choice))+'</button>').join('')+'</div>';
   const feedback=a.correct?'✓ '+(s.type==='picture'?'Say the word together.':s.type==='letter'?'h–a–t → hat.':'Read the whole sentence.'):(a.choice?'Thank you for trying. The answer is '+s.answer+'. '+hint(s):s.type==='paragraph-blank'?'Choose a word for the yellow gap.':s.type==='letter'?'Choose h, c, or m.':'Choose one answer.');
   return '<h1>'+heading+'</h1>'+scene+content+(a.easier&&!a.correct?'<p class="at-easier">Use this word: <b>'+s.answer+'</b></p>':'')+choices+'<p class="at-feedback '+(!a.correct&&a.choice?'retry':'')+'" role="status">'+esc(feedback)+'</p>'+tools();
  }
@@ -100,7 +100,7 @@ export function createAtReading({onAttempt=()=>{},getProgress,save,render,status
  function open(review=false){stop();p().started=true;if(review)p().review=0;save();render();if(p().review===null&&isAtQuestion(step())&&!answerState().correct)read();}
  function change(index){if(!Number.isInteger(index)||index<0||index>=atSteps.length)return;stop();p().step=index;p().review=null;p().meaningOpen=false;save();render();if(isAtQuestion(step())&&!answerState().correct)read();}
  function choose(choice){
-  const s=step();if(!isAtQuestion(s)||!s.choices.includes(choice))return;const a=answerState();if(a.correct||a.helpOpen)return;
+  const s=step();if(!isAtQuestion(s)||!s.choices.includes(choice))return;const a=answerState();if(a.helpOpen)return;if(a.correct){say([{key:choice===s.answer?'at-say:praise':'at-say:retry'}]);return;}
   stop();a.attempts++;if(a.assisted||a.easier)a.assistedAttempts++;a.choice=choice;if(a.firstChoice===null){a.firstChoice=choice;a.firstAttemptCorrect=choice===s.answer;}
   onAttempt('word:'+s.word,choice===s.answer,a.assisted);a.correct=choice===s.answer;
   if(a.correct){if(!p().completed.includes(s.id))p().completed.push(s.id);save();render(false);document.querySelector('[data-action="family-reading-next"]')?.focus({preventScroll:true});say([{key:'at-say:praise'},{key:'at-tone:success',pauseAfter:0}]);}

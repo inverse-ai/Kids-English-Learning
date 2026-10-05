@@ -49,7 +49,9 @@ for(const s of stories)for(let line=0;line<s.sentences.length;line++)for(const e
 for(const id of playfulIds()){const l=playfulLesson(id);if(['math','science'].includes(l.section))continue;for(const st of l.steps){if(['finish','paragraph'].includes(st.type))continue;const t=st.vocabulary&&st.example?st.example:st.text;if(refuge.test(t))continue;add(t,l.section==='letters'&&st.meaning?st.meaning:banglaLines[t]);}}
 
 const has=k=>!!(stageSpeech[k]||familySpeech[k]||k==='value-refuge-prefix');
-const english=[...lines].filter(([en,v])=>!has(v.key)).map(([en])=>en);
+// Short spoken hints in the games (English only, no narration).
+const gameHints=['Tap a big letter first, then its little letter.','Tap a sound tile first, then a word space.','Pick an item first, then tap where it goes.','Tap an object first, then its group.','First pick the cat.','First pick the rat.'];
+const english=[...[...lines].filter(([en,v])=>!has(v.key)).map(([en])=>en),...gameHints.filter(t=>!has('text:'+t))];
 const bangla=[...new Set([...[...lines.values()].flatMap(v=>[...v.banglas]),...extraBangla])];
 const untranslated=[...lines].filter(([,v])=>!v.banglas.size).map(([en])=>en);
 const banglaMissing=bangla.filter(b=>!banglaSpeech[b]);

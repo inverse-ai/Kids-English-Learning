@@ -1,5 +1,12 @@
 {
- "english": [],
+ "english": [
+  "Tap a big letter first, then its little letter.",
+  "Tap a sound tile first, then a word space.",
+  "Pick an item first, then tap where it goes.",
+  "Tap an object first, then its group.",
+  "First pick the cat.",
+  "First pick the rat."
+ ],
  "bangla": [
   "ফুল",
   "একটি ফুল।",

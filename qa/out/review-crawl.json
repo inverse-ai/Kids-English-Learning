@@ -1,0 +1,50 @@
+{
+ "dead": [],
+ "errors": [],
+ "failed": [],
+ "overflow": [],
+ "noBack": [],
+ "stuck": [
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain letters stages-legacy ",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  },
+  {
+   "where": "plain move stages-move-open move-two-steps",
+   "msg": "open: page.click: Timeout 2500ms exceeded."
+  }
+ ],
+ "screens": 2403
+}

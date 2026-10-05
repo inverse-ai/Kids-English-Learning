@@ -56,7 +56,7 @@ export function createValueStoryFlow({onAttempt=()=>{},onStoryFinish=()=>{},getP
   else if(action==='vocab-next'&&st.type==='vocabulary'){const v=s.vocabulary[p.vocab],word=v.word.toLowerCase();stop();if(!p.wordsMet.includes(word))p.wordsMet.push(word);if(!state().valueWordsMet.includes(word))state().valueWordsMet.push(word);const next=s.vocabulary.findIndex((v,i)=>i>p.vocab&&(p.review||!known(v)));if(next>=0){p.vocab=next;save();render();}else if(p.review){p.step=p.reviewReturn;p.review=false;save();render();}else advance();}
   else if(action==='skip'&&st.type==='vocabulary'){stop();p.step=p.review?p.reviewReturn:1;p.review=false;save();render();}
   else if(action==='review'){stop();p.reviewReturn=p.step;p.step=0;p.review=true;p.vocab=0;save();render();}
-  else if(action==='previous'&&p.step>0){stop();p.step--;p.blank=0;save();render();}
+  else if(action==='previous'&&(p.step>0||p.blank>0)){stop();if(st.type==='paragraph-gaps'&&p.blank>0)p.blank--;else{p.step--;p.blank=0;}save();render();}
   else if(action==='next'){if(['sentence-gap','paragraph-gaps','play'].includes(st.type)){const q=question();if(!complete(q))return;if(st.type==='paragraph-gaps'&&p.blank===0){stop();p.blank=1;save();render();return;}}advance();}
   else if(action==='sentence-audio'){const line=st.line??question()?.line;if(line!==undefined)speak(sentenceParts(line));}
   else if(action==='paragraph-audio'&&st.type==='complete')speak(s.sentences.flatMap((_,line)=>sentenceParts(line,true)));
