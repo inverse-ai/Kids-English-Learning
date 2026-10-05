@@ -16,6 +16,8 @@ Jobs
           clips. Old files stay in dist/audio (nothing is deleted).
   letters Record 26 cheerful letter names ("A!", "B!") in a child's voice
           for the alphabet; they replace "The letter A" everywhere.
+  voices  Record the English lesson clips again in the two extra voices
+          (Maisie, a child; Ryan, a man) for the Settings page. Long job.
   bangla  Record every Bangla narration line listed in tools/narration-lines.json
           (written by `node tools/collect-narration-lines.mjs`) with
           bn-BD-NabanitaNeural and add them to dist/bangla-speech.js.
@@ -40,6 +42,8 @@ TIMINGS = DIST / 'audio-timings.js'
 RECORDED = DIST / 'recorded-speech.js'
 BANGLA = DIST / 'bangla-speech.js'
 LINES = ROOT / 'tools' / 'narration-lines.json'
+VOICES_FILE = DIST / 'voice-speech.js'
+FAMILY_SPEECH = DIST / 'family-speech.js'
 
 ENGLISH_VOICE, ENGLISH_RATE = 'en-GB-SoniaNeural', '-12%'
 BANGLA_VOICE, BANGLA_RATE = 'bn-BD-NabanitaNeural', '-8%'
@@ -191,6 +195,54 @@ async def job_letters(timings, speech):
     print('Letters job done: 26 cheerful letter names.', flush=True)
 
 
+# Extra lesson voices chosen on the Settings page. Sonia stays the default.
+EXTRA_VOICES = {'maisie': ('en-GB-MaisieNeural', '-5%'), 'ryan': ('en-GB-RyanNeural', '-10%')}
+# English clips that are re-recorded in each extra voice. Letter names, letter
+# sounds, spelling, Bangla and Arabic are never re-recorded.
+VOICE_PREFIXES = ('text', 'word', 'move', 'help', 'math-word', 'math-feedback', 'math-hint', 'math-demo',
+                  'science-word', 'science-feedback', 'science-demo', 'science-hint', 'value-word',
+                  'value-instruction', 'value-praise', 'value-refuge-prefix', 'story-hint', 'at-say', 'at-review-word')
+SUFFIX_IS_TEXT = ('text', 'word', 'move', 'math-word', 'science-word', 'value-word', 'story-hint', 'at-review-word')
+
+
+async def job_voices(timings, speech):
+    family = read_map(FAMILY_SPEECH)
+    voices = read_map(VOICES_FILE) or {}
+    jobs = []
+    for key, clip in list(speech.items()) + [(k, v) for k, v in family.items() if k.startswith('word:')]:
+        prefix = key.split(':', 1)[0]
+        if prefix not in VOICE_PREFIXES:
+            continue
+        text = (timings.get(clip) or {}).get('text') or (key.split(':', 1)[1] if prefix in SUFFIX_IS_TEXT and ':' in key else '')
+        if text:
+            jobs.append((key, text))
+    slots = asyncio.Semaphore(4)
+    failed = []
+
+    async def one(vid, voice, rate, key, text):
+        bucket = voices.setdefault(vid, {})
+        if bucket.get(key) and (DIST / bucket[key].lstrip('/')).exists():
+            return
+        try:
+            clip, timing = await record(text, voice, rate, slots, ' ' in text.strip())
+        except Exception as error:
+            failed.append(vid + ' ' + key)
+            print('  skipped:', vid, key, error, flush=True)
+            return
+        bucket[key] = clip
+        if timing:
+            timings[clip] = timing
+
+    for vid, (voice, rate) in EXTRA_VOICES.items():
+        print('Recording', len(jobs), 'lesson clips in', voice, '...', flush=True)
+        batch = [one(vid, voice, rate, k, tx) for k, tx in jobs]
+        for i in range(0, len(batch), 200):
+            await asyncio.gather(*batch[i:i + 200])
+            write_map(VOICES_FILE, 'voiceSpeech', voices, '// English lesson clips in the extra voices, keyed like stage-speech.js.\n// Filled by tools/generate-pending-audio.py voices\n')
+            print('  ', vid, min(i + 200, len(batch)), '/', len(batch), flush=True)
+    print('Voices job done:', {k: len(v) for k, v in voices.items()}, 'skipped', len(failed), flush=True)
+
+
 async def main(jobs):
     AUDIO.mkdir(parents=True, exist_ok=True)
     timings, speech = read_map(TIMINGS), read_map(SPEECH)
@@ -202,6 +254,8 @@ async def main(jobs):
         await job_bangla(timings, speech)
     if 'letters' in jobs:
         await job_letters(timings, speech)
+    if 'voices' in jobs:
+        await job_voices(timings, speech)
     write_map(SPEECH, 'stageSpeech', speech)
     TIMINGS.write_text('export const audioTimings=Object.freeze(' + json.dumps(timings, ensure_ascii=False, separators=(',', ':')) + ');\n', encoding='utf-8')
     print('Finished. Now run: npm run check, then bump APP_VERSION in dist/sw.js.', flush=True)
@@ -211,7 +265,7 @@ if __name__ == '__main__':
     args = set(sys.argv[1:]) or {'all'}
     if 'all' in args:
         args = {'voice', 'family', 'bangla', 'letters'}
-    unknown = args - {'voice', 'family', 'bangla', 'letters'}
+    unknown = args - {'voice', 'family', 'bangla', 'letters', 'voices'}
     if unknown:
         raise SystemExit('Unknown job: ' + ', '.join(sorted(unknown)))
     asyncio.run(main(args))

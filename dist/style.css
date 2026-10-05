@@ -455,3 +455,26 @@ img.family-card-picture{display:block;width:100%;max-width:160px;height:auto;asp
 .picture-tap:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 .family-lesson-picture.picture-tap{display:block}
 .family-letter.speech-highlight{background:#ffe27a!important;border-radius:6px;box-shadow:0 0 0 3px #ffe27a}
+/* Settings page */
+.screen-dim{position:fixed;inset:0;background:#000;pointer-events:none;z-index:9999;opacity:0;transition:opacity .2s}
+.settings-open{white-space:nowrap}
+.settings-page h1{margin-bottom:8px}
+.settings-card h2{display:flex;align-items:center;gap:8px}
+.settings-card>summary{font-weight:bold;cursor:pointer}
+.voice-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.voice-card{display:flex;flex-direction:column;gap:8px;border:2px solid var(--line);border-radius:20px;padding:12px;background:#fff}
+.voice-card.voice-sonia{background:#eef6ff;border-color:#b9d6f5}
+.voice-card.voice-maisie{background:#fff0f4;border-color:#f3bccb}
+.voice-card.voice-ryan{background:#eefaf1;border-color:#b5e0c0}
+.voice-card.is-chosen{border-color:#2e52df;box-shadow:0 0 0 3px #2e52df33}
+.voice-pick{display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:transparent;color:var(--ink);padding:6px;cursor:pointer;text-align:center}
+.voice-face{font-size:2.6rem;line-height:1}
+.voice-pick b{font-size:1.3rem}
+.voice-pick small{color:var(--muted)}
+.voice-pick em{font-size:.8rem;color:#a5730a;font-style:normal}
+.voice-check{font-style:normal;font-weight:bold;color:#2e52df}
+.settings-slider{display:flex;align-items:center;gap:12px;margin:12px 0}
+.settings-slider input[type=range]{flex:1;min-width:0;height:32px;accent-color:#2e52df}
+.settings-slider .btn{min-width:52px;font-size:1.4rem;padding:6px 12px}
+.settings-slider output{min-width:3.5em;text-align:right;font-weight:bold}
+@media(max-width:560px){.top-actions .settings-open{padding:8px 10px}}

@@ -2,13 +2,14 @@ import {stageSpeech} from './stage-speech.js';
 import {recordedSpeech} from './recorded-speech.js';
 import {familySpeech} from './family-speech.js';
 import {banglaSpeech} from './bangla-speech.js';
+import {voiceClip,trackAudio} from './app-settings.js';
 import {stopLessonAudio} from './lesson-audio.js';
 import {watchAudioHighlights,clearSpeechHighlights} from './speech-highlights.js';
 let stopHighlights=()=>{};
 let ticket=0,current=null,queue=[],position=0,paused=false,playing=false,callbacks={},timer=null,waitUntil=0,remainingWait=0;
 // Letter names: the cheerful child-voice letter (“A!”) once recorded, otherwise the older “The letter A” clip.
 export const letterNameKey=letter=>stageSpeech['letter-joy:'+letter]?'letter-joy:'+letter:'name:'+letter;
-export function stageClip(key){return stageSpeech[key]||familySpeech[key]||(key.startsWith('legacy:')?recordedSpeech[key.slice(7)]:key.startsWith('bn:')?banglaSpeech[key.slice(3)]:undefined);}
+export function stageClip(key){return voiceClip(key)||stageSpeech[key]||familySpeech[key]||(key.startsWith('legacy:')?recordedSpeech[key.slice(7)]:key.startsWith('bn:')?banglaSpeech[key.slice(3)]:undefined);}
 // Lets the narration bar notice when another control stops the audio.
 const stopListeners=new Set();export function onStageStop(listener){stopListeners.add(listener);}
 export function stopStageAudio(){stopListeners.forEach(f=>f());
@@ -28,7 +29,7 @@ export function playStageSequence(parts,{speed=1,onPart=()=>{},onActive=()=>{},o
   stopHighlights();stopHighlights=()=>{};
   if(position>=queue.length){playing=false;current=null;callbacks.onState(stageAudioState());callbacks.onEnd();return;}
   const part=queue[position],clip=stageClip(part.key);if(!clip){fail();return;}
-  const audio=new Audio(clip);current=audio;audio.playbackRate=speed;audio.preservesPitch=true;
+  const audio=trackAudio(new Audio(clip));current=audio;audio.playbackRate=speed;audio.preservesPitch=true;
   stopHighlights=watchAudioHighlights(audio,clip,part,active=>{if(version===ticket)callbacks.onActive(part,active);});
   audio.addEventListener('error',()=>fail(audio.error),{once:true});
   audio.addEventListener('ended',()=>{if(version!==ticket||!playing)return;current=null;position++;remainingWait=part.pauseAfter??180;waitUntil=performance.now()+remainingWait;timer=setTimeout(next,remainingWait);},{once:true});

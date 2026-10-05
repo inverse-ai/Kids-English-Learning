@@ -57,6 +57,16 @@ The alphabet used to say “The letter A, the letter B…”. Now it says just �
 
 Expected: `Letters job done: 26 cheerful letter names.` Until these exist the app keeps the old clips, so nothing breaks.
 
+## Step 3c — Two more lesson voices for the Settings page
+
+The app now has a ⚙ Settings page where a child can pick the lesson voice: Sonia (teacher, default), Maisie (child) or Ryan (man). Sonia's clips exist. This records about 2,700 English lesson clips in each of the two new voices (long job, can take an hour or more):
+
+```
+.audio-tools\Scripts\python tools\generate-pending-audio.py voices
+```
+
+It saves progress every 200 clips to `dist\voice-speech.js`, so if it stops, run the same command again and it continues. Expected last line: `Voices job done: {'maisie': ..., 'ryan': ...} skipped 0`. Bangla, Arabic, letter names and letter sounds are not re-recorded.
+
 ## Step 4 — Check, commit, push, publish
 
 ```

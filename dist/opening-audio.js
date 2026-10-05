@@ -1,4 +1,5 @@
 import {openingAudioSource} from './opening-audio-data.js';
+import {trackAudio} from './app-settings.js';
 const STORE='little-english-opening-audio-v1';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 export function createOpeningAudio(){
@@ -8,7 +9,7 @@ export function createOpeningAudio(){
  function html(){return state==='blocked'?'<p>Opening audio is ready. Your browser needs a tap to begin.</p>'+button('Tap to begin','begin')+button('Skip opening audio','stop'):state==='playing'?'<p>Opening audio · Arabic</p>'+button('Stop','stop'):notice?'<p role="status">'+notice+'</p>':'';}
  function update(){const el=document.querySelector('#opening-audio-notice');if(el){el.innerHTML=html();el.hidden=!el.innerHTML;}const input=document.querySelector('#opening-audio-enabled');if(input)input.checked=enabled;}
  function stop(){version++;if(audio){audio.pause();audio.removeAttribute('src');audio.load();audio=null;}state='done';notice='';resolve?.();resolve=null;update();}
- function start(){if(!enabled||state==='done'||state==='playing')return;const ticket=++version;audio=new Audio(openingAudioSource.clip);audio.playbackRate=1;audio.preservesPitch=true;state='playing';notice='';update();audio.addEventListener('ended',()=>{if(ticket===version)stop();},{once:true});audio.addEventListener('error',()=>{if(ticket!==version)return;stop();notice='Opening audio could not play. Lessons are still available.';update();},{once:true});try{audio.play().catch(()=>{if(ticket!==version)return;audio?.pause();audio=null;state='blocked';update();resolve?.();resolve=null;});}catch{state='blocked';update();resolve?.();resolve=null;}}
+ function start(){if(!enabled||state==='done'||state==='playing')return;const ticket=++version;audio=trackAudio(new Audio(openingAudioSource.clip));audio.playbackRate=1;audio.preservesPitch=true;state='playing';notice='';update();audio.addEventListener('ended',()=>{if(ticket===version)stop();},{once:true});audio.addEventListener('error',()=>{if(ticket!==version)return;stop();notice='Opening audio could not play. Lessons are still available.';update();},{once:true});try{audio.play().catch(()=>{if(ticket!==version)return;audio?.pause();audio=null;state='blocked';update();resolve?.();resolve=null;});}catch{state='blocked';update();resolve?.();resolve=null;}}
  async function beforeInteraction(action){
   if(action==='home'||action==='parents'||action==='opening-stop'){navigation++;stop();return true;}
   if(!enabled||state==='done'||state==='idle')return true;

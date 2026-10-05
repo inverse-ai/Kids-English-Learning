@@ -1,6 +1,7 @@
 import {recordedSpeech} from './recorded-speech.js';
 import {familySpeech} from './family-speech.js';
 import {stageSpeech} from './stage-speech.js';
+import {voiceClip,trackAudio,volume} from './app-settings.js';
 import {watchAudioHighlights,watchSystemHighlights,clearSpeechHighlights} from './speech-highlights.js';
 let sequence = 0;
 let currentAudio = null;
@@ -42,7 +43,7 @@ export function playLessonAudio(text, {voice, speed = 1, preferRecordings = true
    report('Audio is unavailable. Open the parent prompt and read it aloud together.', true);
    return;
   }
-  const spoken = new SpeechSynthesisUtterance(text);
+  const spoken = new SpeechSynthesisUtterance(text);spoken.volume=volume()/100;
   currentUtterance = spoken;
   spoken.voice = voice;
   spoken.lang = voice.lang;
@@ -68,7 +69,7 @@ export function playLessonAudio(text, {voice, speed = 1, preferRecordings = true
  };
  const recording = recordedSpeech[text];
  if (!recording || (!preferRecordings && voice)) { playSystem(); return; }
- const audio = new Audio(recording);
+ const audio = trackAudio(new Audio(recording));
  currentAudio = audio;
  audio.playbackRate = speed;
  audio.preservesPitch = true;
@@ -102,7 +103,7 @@ export function playLessonAudio(text, {voice, speed = 1, preferRecordings = true
 export function playFamilyAudio(keys,{speed=1,onPart=()=>{},targets=[]},onStatus){
  stopLessonAudio();startListeners.forEach(f=>f());
  const ticket=sequence;
- const clips=keys.map(key=>familySpeech[key]||stageSpeech[key]);
+ const clips=keys.map(key=>voiceClip(key)||familySpeech[key]||stageSpeech[key]);
  const report=(message,failed=false)=>{if(ticket===sequence){if(failed||message==='Ready to listen again.')lessonPlaying=false;syncLessonAudioControls();onStatus(message,failed);}};
  if(!clips.length||clips.some(clip=>!clip)){
   onPart(-1);report('This clip is unavailable. A parent can read the word or helper aloud.',true);return;
@@ -111,7 +112,7 @@ export function playFamilyAudio(keys,{speed=1,onPart=()=>{},targets=[]},onStatus
  lessonPlaying=true;
  function playPart(index){
   if(ticket!==sequence||failed||lessonPaused)return;resumePart=null;stopHighlights();
-  const audio=new Audio(clips[index]);
+  const audio=trackAudio(new Audio(clips[index]));
   currentAudio=audio;
   audio.playbackRate=speed;audio.preservesPitch=true;
   stopHighlights=watchAudioHighlights(audio,clips[index],{key:keys[index],target:targets[index]},active=>{if(ticket===sequence)onPart(active?index:-1);});
