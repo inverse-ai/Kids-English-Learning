@@ -412,3 +412,46 @@ img.family-card-picture{display:block;width:100%;max-width:160px;height:auto;asp
 .math-lesson-card.is-current{border-color:#2e52df;box-shadow:0 0 0 3px #dbe3ff;background:#f3f6ff}
 .math-lesson-card.is-done .lesson-number{background:#278653}
 .math-lesson-card.is-done{border-color:#9ccfb0}
+/* Story narration: Bangla paragraph under the English story, helper example sentence */
+.narration-bangla-paragraph{text-align:left;padding:16px 20px;background:#f6f8ff;border:1px solid var(--line);border-radius:18px;margin:-8px 0 18px;max-width:none;line-height:1.8}
+.narration-bangla-paragraph span.speech-highlight{background:#fff0b3!important;border-radius:6px}
+.story-helper-example{text-align:center;font-size:clamp(1.2rem,3.4vw,1.6rem);margin:14px auto 4px}
+.story-line.speech-highlight{background:#ffedac;border-radius:4px}
+/* Words menu: four coloured doors */
+.words-menu-card{position:relative;border-width:2px;background:var(--card-bg,#fff);border-color:var(--card-line,var(--line))}
+.words-menu-card.theme-sky{--card-bg:#eef6ff;--card-line:#b9d6f5;--card-ink:#2d6cb5}
+.words-menu-card.theme-rose{--card-bg:#fff0f4;--card-line:#f3bccb;--card-ink:#c2456b}
+.words-menu-card.theme-leaf{--card-bg:#eefaf1;--card-line:#b5e0c0;--card-ink:#2f8a4f}
+.words-menu-card.theme-sun{--card-bg:#fff8e6;--card-line:#f1d38b;--card-ink:#a5730a}
+.words-menu-card b{color:var(--card-ink,var(--ink))}
+.words-menu-card:hover{background:var(--card-bg,#f8faff);filter:brightness(.98);border-color:var(--card-ink,#8d9cda)}
+.words-menu-number{position:absolute;top:-10px;left:-10px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:bold;color:#fff;background:var(--card-ink,#2e52df);box-shadow:0 2px 6px #0002}
+.words-menu-art{display:flex;flex-shrink:0;align-items:center}
+.words-menu-art .stage-picture{width:62px;height:62px;margin:0;border:3px solid #fff;border-radius:16px;box-shadow:0 2px 6px #0001}
+.words-menu-art .stage-picture+.stage-picture{margin-left:-18px}
+/* Build & read words: colour bands by short vowel */
+.build-intro{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.build-progress{background:#fff;border:2px solid var(--line);border-radius:16px;padding:10px 16px;margin:0}
+.build-progress b{font-size:1.3rem;color:var(--blue)}
+.build-steps{display:flex;gap:8px;list-style:none;padding:0;margin:8px 0 22px;flex-wrap:wrap;justify-content:center}
+.build-steps li{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;font-weight:bold}
+.build-steps li b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff}
+.vowel-band{border-radius:22px;padding:16px 18px;margin:16px 0;background:var(--band-bg);border:2px solid var(--band-line)}
+.vowel-band.theme-rose{--band-bg:#fff0f4;--band-line:#f3bccb;--band-ink:#c2456b}
+.vowel-band.theme-leaf{--band-bg:#eefaf1;--band-line:#b5e0c0;--band-ink:#2f8a4f}
+.vowel-band.theme-grape{--band-bg:#f4efff;--band-line:#cfc0f2;--band-ink:#6a4cb8}
+.vowel-band.theme-sky{--band-bg:#eef6ff;--band-line:#b9d6f5;--band-ink:#2d6cb5}
+.vowel-band.theme-sun{--band-bg:#fff8e6;--band-line:#f1d38b;--band-ink:#a5730a}
+.vowel-band h2{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:var(--band-ink);font-size:1.25rem}
+.vowel-band h2 small{color:var(--muted);font-weight:normal;font-size:.9rem}
+.vowel-badge{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--band-ink);color:#fff;font-size:1.6rem}
+.vowel-words{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.vowel-band .word-path-card{border:2px solid var(--band-line)}
+.vowel-band .word-path-card b{color:var(--band-ink)}
+.build-family-link{text-align:center;margin:20px 0}
+/* Tap a picture: hear c – a – t, then cat */
+.picture-tap{display:block;margin:0 auto;border:0;background:transparent;padding:0;cursor:pointer;border-radius:22px}
+.picture-tap small{display:block;color:var(--blue);font-weight:bold;font-size:.85rem;margin-top:2px}
+.picture-tap:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.family-lesson-picture.picture-tap{display:block}
+.family-letter.speech-highlight{background:#ffe27a!important;border-radius:6px;box-shadow:0 0 0 3px #ffe27a}

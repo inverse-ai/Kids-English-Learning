@@ -1,5 +1,5 @@
 // Bump APP_VERSION whenever shipped shell/lesson sources change. Audio is immutable.
-const APP_VERSION='little-english-2026-10-05-narration-v27-audio';
+const APP_VERSION='little-english-2026-10-05-stories-v28';
 const SHELL=APP_VERSION+'-shell',MEDIA='little-english-audio-v1';
 const FILES=['/','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png','/icons/maskable-512.png','/icons/apple-touch-icon.png','/style.css',...['app','curriculum','lesson-audio','recorded-speech','family-data','family-lessons','family-speech','stage-data','stage-lessons','stage-audio','stage-speech','story-flow','story-words','story-scenes','spelling-data','spelling-flow','speech-highlights','audio-timings','at-reading-data','at-reading-scene','at-reading','story-gaps','home-page','values-stories','values-scenes','values-flow','move-data','move-scenes','move-flow','practice-data','practice-flow','progress-store','pwa'].map(n=>'/'+n+'.js'),...['at','an','ig','op','un','en','in','ap','og','ug'].map(n=>'/pictures/family-'+n+'.png')];
 FILES.push('/letter-match.js','/letter-match-data.js');

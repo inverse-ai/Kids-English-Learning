@@ -1,5 +1,5 @@
-// Lists every line the automatic narration can read in English for Math and
-// English for Science (both modes), and writes tools/narration-lines.json:
+// Lists every line the automatic narration can read: Math, Science, Stories
+// (both modes) and the Letters/Words game steps, and writes tools/narration-lines.json:
 //   english  – English lines that have no recording yet
 //   bangla   – every Bangla line (recorded by generate-pending-audio.py bangla)
 //   untranslated – English lines with no Bangla text at all (should be empty)
@@ -34,10 +34,23 @@ const hints=['Tap an item, then its place. Or drag it. Tap a placed item to move
  ...['the round ball','the square quilt','the triangle tent'].map(o=>'Match '+o+' to its shape.'),
  ...['bird','frog','cow','deer','these animals'].map(a=>'Choose the place shown for '+a+'. Some animals can live in more than one kind of place.')];
 for(const h of hints)add(h,banglaLines[h]);
+// Stories (both modes), values stories, and the Letters/Words game steps.
+const {stories}=await import(D+'stage-data.js');
+const {valuesStories}=await import(D+'values-stories.js');
+const {storyIntroductions}=await import(D+'story-words.js');
+const {playfulIds}=await import(D+'playful-data.js');
+const refuge=/A[‘']udhu/i;
+for(const s of [...stories,...valuesStories])for(const t of s.sentences){if(refuge.test(t)){const b=banglaLines[t];if(b)lines.set(t,{key:'value-refuge-prefix',banglas:new Set([b])});}else add(t,banglaLines[t]);}
+for(const t of ['Look, then fill the gap.','Which word was in the story?','Listen, then choose the matching picture.','Look at the picture. Choose the missing word.','Tap a pair to hear its English letter name.','Tap each name and sound. The big and little forms have the same name.','Drag a line from a big letter, or tap big then little.','Move a finger from the first sound to the last. Tapping each sound works too.'])add(t,banglaLines[t]);
+// Word meanings: values vocabulary (value-word: English), story helper words (story-meaning: if recorded).
+const extraBangla=new Set();
+for(const s of valuesStories)for(const v of s.vocabulary||[]){if(v.meaning)extraBangla.add(v.meaning);}
+for(const s of stories)for(let line=0;line<s.sentences.length;line++)for(const e of storyIntroductions(s,line,{storyWordsMet:[],playful:{wordsMet:[]},valueWordsMet:[],words:{}})||[])if(e?.meaning&&!stageSpeech['story-meaning:'+e.word.toLowerCase()])extraBangla.add(e.meaning);
+for(const id of playfulIds()){const l=playfulLesson(id);if(['math','science'].includes(l.section))continue;for(const st of l.steps){if(['finish','paragraph'].includes(st.type))continue;const t=st.vocabulary&&st.example?st.example:st.text;if(refuge.test(t))continue;add(t,l.section==='letters'&&st.meaning?st.meaning:banglaLines[t]);}}
 
-const has=k=>!!(stageSpeech[k]||familySpeech[k]);
+const has=k=>!!(stageSpeech[k]||familySpeech[k]||k==='value-refuge-prefix');
 const english=[...lines].filter(([en,v])=>!has(v.key)).map(([en])=>en);
-const bangla=[...new Set([...lines.values()].flatMap(v=>[...v.banglas]))];
+const bangla=[...new Set([...[...lines.values()].flatMap(v=>[...v.banglas]),...extraBangla])];
 const untranslated=[...lines].filter(([,v])=>!v.banglas.size).map(([en])=>en);
 const banglaMissing=bangla.filter(b=>!banglaSpeech[b]);
 writeFileSync(root+'tools/narration-lines.json',JSON.stringify({english,bangla,untranslated},null,1)+'\n');

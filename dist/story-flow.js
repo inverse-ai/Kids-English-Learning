@@ -3,18 +3,21 @@ import {storyIntroductions} from './story-words.js';
 import {storyScene} from './story-scenes.js';
 import {storyGap} from './story-gaps.js';
 import {emptyAttempt} from './story-gaps.js';
+import {narrationLine,narrationParagraph,narrationBangla,narrationControls} from './narration.js';
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pause=()=>'<button class="btn story-pause" data-action="stages-pause" disabled aria-pressed="false">Pause</button>';
 const button=(label,action,extra='',kind='')=>'<button class="btn '+kind+'" data-action="stages-story-'+action+'" '+extra+'>'+label+'</button>';
 
 export function createStoryFlow({onAttempt=()=>{},onStoryFinish=()=>{},getProgress,save,isSaved,render,status,play,stop,picture}){
  let selected=null;
+ // Some new words (Mum, by, get…) have no drawing; show the word without a picture instead of failing.
+ const drawable=word=>{try{return picture(word,true);}catch{return '';}};
  const learning=()=>getProgress(),story=()=>stories.find(s=>s.id===selected),progress=()=>learning().stories[selected];
  const intro=()=>storyIntroductions(story(),progress().line,learning())[0];
  function listen(parts){status('Listening…');play(parts);}
  function speakIntro(){const word=intro();if(word)listen([{key:'word:'+word.word},{key:'story-meaning:'+word.word.toLowerCase()}]);}
  function prepareSentence(quiet=false){
-  const p=progress();p.phase=!p.skipIntro&&intro()?'helper':'sentence';p.mode='read';save();render();if(p.phase==='helper'&&!quiet)speakIntro();
+  const p=progress();p.phase=!p.skipIntro&&intro()?'helper':'sentence';p.mode='read';save();render();// the narration reads the new step
  }
  function paragraph(blanks=false){
   const s=story(),p=progress();
@@ -30,20 +33,23 @@ export function createStoryFlow({onAttempt=()=>{},onStoryFinish=()=>{},getProgre
   if(p.phase==='helper'){
    const entry=intro();
    heading='One word before sentence '+(p.line+1);
-   content='<div class="story-helper"><div class="story-helper-main"><p class="story-helper-word '+(entry.word.length>6?'long':'')+'" lang="en">'+esc(entry.word)+'</p>'+(s.newWords.some(w=>w.toLowerCase()===entry.word.toLowerCase())?picture(entry.word,true):'')+'</div><p class="story-helper-meaning" lang="bn">'+esc(entry.meaning)+'</p></div><div class="story-controls">'+button('Replay','helper-replay')+pause()+button('Next →','helper-next','','primary')+'</div>';
+   // Non-game mode keeps the word and its meaning, then the story sentence it comes from.
+   content='<div class="story-helper"><div class="story-helper-main">'+narrationLine(entry.word,{key:'word:'+entry.word,bn:entry.meaning,bnKey:'story-meaning:'+entry.word.toLowerCase(),bnRef:'helper',cls:'story-helper-word '+(entry.word.length>6?'long':'')})+(s.newWords.some(w=>w.toLowerCase()===entry.word.toLowerCase())?drawable(entry.word):'')+'</div>'+narrationBangla(entry.meaning,{ref:'helper',cls:'story-helper-meaning'})+'</div>'+narrationLine(s.sentences[p.line],{cls:'story-sentence story-helper-example'})+narrationControls()+'<div class="story-controls">'+button('Next →','helper-next','','primary')+'</div>';
   }else if(p.phase==='sentence'){
    heading='Sentence '+(p.line+1)+' of '+s.sentences.length;
-   content=storyScene(s,p.line)+'<p class="story-sentence" lang="en">'+esc(s.sentences[p.line])+'</p><div class="story-listen">'+button('Hear sentence','sentence-audio','aria-label="Hear this sentence (optional)"')+pause()+'</div><div class="story-controls">'+button('← Previous','previous',p.line===0?'disabled':'')+button('Next →','next','','primary')+'</div>';
+   content=storyScene(s,p.line)+narrationLine(s.sentences[p.line],{cls:'story-sentence'})+narrationControls()+'<div class="story-controls">'+button('← Previous','previous',p.line===0?'disabled':'')+button('Next →','next','','primary')+'</div>';
   }else if(p.phase==='paragraph'){
    heading='Your whole story';hint='Read the sentences together.';
-   content=paragraph()+'<div class="story-listen">'+button('Hear paragraph','audio','aria-label="Hear the story (optional)"')+pause()+'</div><div class="story-controls">'+button('← Previous','previous')+(p.done?button('Try blanks →','mode','data-mode="blanks"','primary'):button('I read this story','finish','','primary'))+'</div><p class="story-feedback" role="status">'+(p.done?'Story practice complete. Try the blanks if you like.':'Tap when you have finished this practice.')+'</p><button class="btn" data-action="practice-open-story" data-id="'+s.id+'">A question about the story</button>';
+   content=narrationParagraph(s.sentences.map(en=>({en})))+narrationControls()+'<div class="story-controls">'+button('← Previous','previous')+(p.done?button('Try blanks →','mode','data-mode="blanks"','primary'):button('I read this story','finish','','primary'))+'</div><p class="story-feedback" role="status">'+(p.done?'Story practice complete. Try the blanks if you like.':'Tap when you have finished this practice.')+'</p><button class="btn" data-action="practice-open-story" data-id="'+s.id+'">A question about the story</button>';
   }else{
    const b=storyGap(s,p.blank),a=p.gapAttempts[p.blank],correct=p.answers[p.blank]===b.word,complete=s.blanks.every((b,i)=>p.answers[i]===b.word);
    heading=complete?'Your complete story':'Blank '+(p.blank+1)+' of '+s.blanks.length;
    const choices=a.easier?b.choices.filter(w=>w===b.word||w===b.choices.find(w=>w!==b.word)):b.choices;
-   content=(complete?'':storyScene(s,b.line)+'<p class="blank-prompt">'+(b.task==='recall'?'Which word was in the story?':'Look, then fill the gap.')+'</p>')+(a.helpOpen&&!correct?'':paragraph(true))+(!correct&&!a.helpOpen?'<div class="story-answer-choices">'+choices.map(w=>'<button class="choice word-choice '+(p.answers[p.blank]===w?'retry':'')+'" data-action="stages-story-answer" data-blank="'+p.blank+'" data-word="'+w+'">'+esc(w)+'</button>').join('')+'</div>':'')+(a.helpOpen&&!correct?'<div class="story-demonstration"><p class="story-sentence">'+esc(s.sentences[b.line])+'</p><div class="story-controls">'+button('Replay demonstration','demonstrate')+pause()+button('Try with help →','retry','','primary')+'</div></div>':'')+'<p class="story-feedback story-gap-hint" role="status">'+(complete?'✓ Your paragraph is complete! Read the whole story aloud.':correct?'✓ You did it! Read the completed sentence.':a.wrong?'Thank you for trying. The answer is '+esc(b.word)+'. '+esc(b.hint):b.task==='recall'?'Remember the sentence you read.':'Look, then choose.')+'</p>'+(!correct&&a.wrong&&!a.helpOpen?'<div class="story-listen">'+button('Hear hint','hint')+pause()+'</div>':'')+'<div class="story-controls">'+button('← Paragraph','previous')+(complete?button('Done ✓','finish','','primary'):correct?button('Next blank →','blank-next','','primary'):'')+'</div>';
+   content=(complete?'':storyScene(s,b.line)+(b.task==='recall'?narrationLine('Which word was in the story?',{key:'value-instruction:recall',cls:'blank-prompt'}):narrationLine('Look, then fill the gap.',{cls:'blank-prompt'}))+narrationControls())+(a.helpOpen&&!correct?'':paragraph(true))+(!correct&&!a.helpOpen?'<div class="story-answer-choices">'+choices.map(w=>'<button class="choice word-choice '+(p.answers[p.blank]===w?'retry':'')+'" data-action="stages-story-answer" data-blank="'+p.blank+'" data-word="'+w+'">'+esc(w)+'</button>').join('')+'</div>':'')+(a.helpOpen&&!correct?'<div class="story-demonstration"><p class="story-sentence">'+esc(s.sentences[b.line])+'</p><div class="story-controls">'+button('Replay demonstration','demonstrate')+pause()+button('Try with help →','retry','','primary')+'</div></div>':'')+'<p class="story-feedback story-gap-hint" role="status">'+(complete?'✓ Your paragraph is complete! Read the whole story aloud.':correct?'✓ You did it! Read the completed sentence.':a.wrong?'Thank you for trying. The answer is '+esc(b.word)+'. '+esc(b.hint):b.task==='recall'?'Remember the sentence you read.':'Look, then choose.')+'</p>'+(!correct&&a.wrong&&!a.helpOpen?'<div class="story-listen">'+button('Hear hint','hint')+pause()+'</div>':'')+'<div class="story-controls">'+button('← Paragraph','previous')+(complete?button('Done ✓','finish','','primary'):correct?button('Next blank →','blank-next','','primary'):'')+'</div>';
   }
-  return '<section class="activity story-player" data-phase="'+p.phase+'" data-gap-state="'+(p.phase==='blanks'&&p.answers[p.blank]!==s.blanks[p.blank].word?(p.gapAttempts[p.blank].helpOpen?'demonstration':p.gapAttempts[p.blank].wrong?'hint':'ready'):'ready')+'"><div class="story-player-heading"><p class="eyebrow">'+heading+'</p><h1>'+esc(s.title)+'</h1></div>'+(hint?'<p class="story-hint">'+hint+'</p>':'')+content+'<p class="story-save" id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</p><p id="audio-status" class="status" role="status"></p>'+(p.phase==='helper'?button('Skip to story','skip','','quiet story-skip'):'')+'</section>';
+  // One narration step per screen; answering a blank does not restart it.
+  const narrationStep=p.phase==='helper'?'helper:'+p.line+':'+intro()?.word:p.phase==='sentence'?'sentence:'+p.line:p.phase==='paragraph'?'paragraph':s.blanks.every((b,i)=>p.answers[i]===b.word)?'':'blank:'+p.blank;
+  return '<section class="activity story-player" '+(narrationStep?'data-narration-step="story:'+esc(s.id)+':'+esc(narrationStep)+'" ':'')+'data-phase="'+p.phase+'" data-gap-state="'+(p.phase==='blanks'&&p.answers[p.blank]!==s.blanks[p.blank].word?(p.gapAttempts[p.blank].helpOpen?'demonstration':p.gapAttempts[p.blank].wrong?'hint':'ready'):'ready')+'"><div class="story-player-heading"><p class="eyebrow">'+heading+'</p><h1>'+esc(s.title)+'</h1></div>'+(hint?'<p class="story-hint">'+hint+'</p>':'')+content+'<p class="story-save" id="save-status">'+(isSaved()?'Saved automatically':'Progress not saved')+'</p><p id="audio-status" class="status" role="status"></p>'+(p.phase==='helper'?button('Skip to story','skip','','quiet story-skip'):'')+'</section>';
  }
  return {
   html,

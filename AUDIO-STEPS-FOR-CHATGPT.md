@@ -32,16 +32,18 @@ The -all chart (ball, call, hall, mall, small) needs four word clips and the end
 .audio-tools\Scripts\python tools\generate-pending-audio.py family
 ```
 
-## Step 3 — Bangla narration for Math and Science
+## Step 3 — Bangla narration (Math, Science, Stories, Letters & Words games)
 
-The Math and Science lessons now read every sentence aloud automatically, in English and then in Bangla. The English recordings exist; the Bangla ones (349 lines) and 14 new English hint lines do not. The collector lists them, the generator records them:
+Lessons now read every sentence aloud automatically, in English and then in Bangla. Stories were added in this update (ordinary stories and values stories, with and without games). Most English recordings already exist; the Bangla ones (937 lines) and 22 short English instruction lines do not. The collector lists them, the generator records them:
 
 ```
 node tools\collect-narration-lines.mjs
 .audio-tools\Scripts\python tools\generate-pending-audio.py bangla
 ```
 
-Expected: `Untranslated: 0.` from the collector, then `Bangla job done: 349 Bangla clips available.` The clips are written to `dist\audio\` and listed in `dist\bangla-speech.js`.
+Expected: `Untranslated: 0.` from the collector, then `Bangla job done: 937 Bangla clips available.` (or more). The clips are written to `dist\audio\` and listed in `dist\bangla-speech.js`. This takes a while; if it stops on a network error, run the same command again — finished clips are skipped.
+
+The Arabic refuge phrase in “My brother, my friend” keeps its real Arabic recording. It is never recorded with a Bangla or English voice.
 
 Voice: `bn-BD-NabanitaNeural`. If Tahlil prefers a male voice, change `BANGLA_VOICE` at the top of `tools\generate-pending-audio.py` to `bn-BD-PradeepNeural` before running.
 
@@ -55,7 +57,7 @@ Then open `dist\sw.js` and change `APP_VERSION` (for example add `-audio` at the
 
 ```
 git add -A
-git commit -m "Record Sonia lesson clips, -all words and Bangla narration"
+git commit -m "Record Bangla narration clips"
 git push origin main
 ```
 

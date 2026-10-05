@@ -6,7 +6,7 @@ import {wordIllustration} from './word-art.js';
 import {letters,words,profiles,makeStages,normalizeProgress,normalizeCheckpoint,wordParts,partSound} from './curriculum.js';
 import {recordingVoice} from './recorded-speech.js';
 import {createFamilyLessons,familyEntry} from './family-lessons.js';
-import {playLessonAudio,stopLessonAudio,toggleLessonPause,syncLessonAudioControls} from './lesson-audio.js';
+import {playLessonAudio,stopLessonAudio,toggleLessonPause,syncLessonAudioControls,onLessonAudioStart} from './lesson-audio.js';
 import {createStageLessons} from './stage-lessons.js';
 import {prepareSpokenText} from './speech-highlights.js';
 import {learningSections} from './section-registry.js';
@@ -16,7 +16,7 @@ import {hydrateProfiles,syncProfile,selectProfile,exportProfile,validateExport,r
 import {recordAttempt} from './practice-data.js';
 import {createPracticeFlow} from './practice-flow.js';
 import {stagePicture} from './stage-lessons.js';
-import {playStageSequence,toggleStagePause} from './stage-audio.js';
+import {playStageSequence,toggleStagePause,stopStageAudio,stageAudioState} from './stage-audio.js';
 import {createOpeningAudio} from './opening-audio.js';
 import {initNarration,syncNarration,handleNarration,stopNarration,narrationEnabled,setNarrationEnabled} from './narration.js';
 const opening=createOpeningAudio();
@@ -27,7 +27,7 @@ let raw,unreadableSave=false;
 try { raw=JSON.parse(localStorage.getItem(STORE)||'null'); } catch { unreadableSave=true;try{const text=localStorage.getItem(STORE);if(text&&!localStorage.getItem(STORE+'-unreadable'))localStorage.setItem(STORE+'-unreadable',text);}catch{}storageNotice='Saved progress could not be read. The original stored text was retained where storage is available.'; }
 if(raw&&raw.profileVersion!==2){try{if(!localStorage.getItem(STORE+'-before-profiles-v2'))localStorage.setItem(STORE+'-before-profiles-v2',JSON.stringify(raw));}catch{storageNotice='The migration snapshot could not be saved. Export progress in For parents now.';}}
 let progress=hydrateProfiles(raw);
-initNarration({getSpeed:()=>progress.audioSpeed});if(unreadableSave)progress.migrationNotice='An unreadable older save was retained under the recovery storage key. Import a validated profile export to restore usable work.';
+initNarration({getSpeed:()=>progress.audioSpeed});onLessonAudioStart(()=>{if(stageAudioState().playing)stopStageAudio();});if(unreadableSave)progress.migrationNotice='An unreadable older save was retained under the recovery storage key. Import a validated profile export to restore usable work.';
 let profile=progress.profile;
 progress.lastActivity=validResume(progress.lastActivity)||priorResume(progress);
 let view='home';

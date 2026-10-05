@@ -30,8 +30,10 @@ export function stopLessonAudio() {
  }
 }
 
+// Other players (the lesson narration) stop when a lesson clip starts, so two sounds never overlap.
+const startListeners=new Set();export function onLessonAudioStart(listener){startListeners.add(listener);}
 export function playLessonAudio(text, {voice, speed = 1, preferRecordings = true}, onStatus) {
- stopLessonAudio();
+ stopLessonAudio();startListeners.forEach(f=>f());
  const ticket = sequence;
  const report = (message, failed = false) => { if (ticket === sequence){if(failed||message==='Ready to listen again.')lessonPlaying=false;syncLessonAudioControls();onStatus(message, failed);} };
  const playSystem = (fallback = false) => {
@@ -98,7 +100,7 @@ export function playLessonAudio(text, {voice, speed = 1, preferRecordings = true
 }
 
 export function playFamilyAudio(keys,{speed=1,onPart=()=>{},targets=[]},onStatus){
- stopLessonAudio();
+ stopLessonAudio();startListeners.forEach(f=>f());
  const ticket=sequence;
  const clips=keys.map(key=>familySpeech[key]||stageSpeech[key]);
  const report=(message,failed=false)=>{if(ticket===sequence){if(failed||message==='Ready to listen again.')lessonPlaying=false;syncLessonAudioControls();onStatus(message,failed);}};
