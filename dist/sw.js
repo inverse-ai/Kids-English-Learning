@@ -1,5 +1,5 @@
 // Bump APP_VERSION whenever shipped shell/lesson sources change. Audio is immutable.
-const APP_VERSION='little-english-2026-10-05-nonumbers-v34';
+const APP_VERSION='little-english-2026-10-05-stickers-v35';
 const SHELL=APP_VERSION+'-shell',MEDIA='little-english-audio-v1';
 const FILES=['/','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png','/icons/maskable-512.png','/icons/apple-touch-icon.png','/style.css',...['app','curriculum','lesson-audio','recorded-speech','family-data','family-lessons','family-speech','stage-data','stage-lessons','stage-audio','stage-speech','story-flow','story-words','story-scenes','spelling-data','spelling-flow','speech-highlights','audio-timings','at-reading-data','at-reading-scene','at-reading','story-gaps','home-page','values-stories','values-scenes','values-flow','move-data','move-scenes','move-flow','practice-data','practice-flow','progress-store','pwa'].map(n=>'/'+n+'.js'),...['at','an','ig','op','un','en','in','ap','og','ug'].map(n=>'/pictures/family-'+n+'.png')];
 FILES.push('/letter-match.js','/letter-match-data.js');
@@ -10,7 +10,7 @@ FILES.push('/playful-review.js');
 FILES.push(...['cat','hat','mat','rat','bat','pat','sat','fat','can','man','pan','fan','van','ran','pig','big','dig','wig','hop','mop','top','pop','sun','run','bun','fun','gun','hen','pen','ten','den','pin','tin','fin','bin','cap','map','tap','nap','dog','log','fog','jog','bug','mug','rug','hug'].map(w=>'/pictures/words/'+w+'.webp'));
 FILES.push('/playful-data.js','/playful-store.js','/playful-flow.js','/playful-audio.js','/letter-trails.js');
 FILES.push('/word-family-maps.js','/pictures/posters/all.png');
-FILES.push('/narration.js','/bangla-lines.js','/bangla-speech.js','/app-settings.js','/voice-speech.js');
+FILES.push('/narration.js','/bangla-lines.js','/bangla-speech.js','/app-settings.js','/voice-speech.js','/lesson-stickers.js');
 FILES.push('/sentence-writing.js','/sentence-writing-data.js');
 FILES.push('/illustration-style.js','/word-art.js','/character-art.js','/value-object-art.js','/section-registry.js');
 self.addEventListener('install',event=>{event.waitUntil((async()=>{

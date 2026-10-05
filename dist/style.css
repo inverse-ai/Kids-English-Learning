@@ -523,3 +523,37 @@ img.family-card-picture{display:block;width:100%;max-width:160px;height:auto;asp
 @media(max-width:560px){.topbar .top-actions{flex-wrap:nowrap;gap:4px}.topbar .top-actions .btn{padding:8px 8px;white-space:nowrap}.topbar .active-profile{display:none}}
 .voice-card.voice-leo{background:#fff6e5;border-color:#f1d38b}
 .words-menu-number{display:none}
+/* Colour pop and stickers on lesson cards */
+.pop-card{position:relative;overflow:visible!important;border:3px solid var(--pop-line)!important;background:var(--pop-bg)!important;box-shadow:0 4px 0 var(--pop-line)!important;border-radius:20px}
+.pop-card:active{transform:translateY(2px);box-shadow:0 2px 0 var(--pop-line)!important}
+.pop-card>b{color:var(--pop-ink)!important}
+.pop-rose{--pop-bg:#ffe6ee;--pop-line:#f6b3c8;--pop-ink:#c2456b}
+.pop-leaf{--pop-bg:#e3f7e9;--pop-line:#a9dfba;--pop-ink:#2f8a4f}
+.pop-sky{--pop-bg:#e6f1ff;--pop-line:#b1cff3;--pop-ink:#2d6cb5}
+.pop-sun{--pop-bg:#fff3d6;--pop-line:#f2cf7a;--pop-ink:#a5730a}
+.pop-grape{--pop-bg:#efe7ff;--pop-line:#cbb8f3;--pop-ink:#6a4cb8}
+.pop-peach{--pop-bg:#ffece0;--pop-line:#f5c09c;--pop-ink:#c4621c}
+.pop-mint{--pop-bg:#ddf6f4;--pop-line:#9fdcd5;--pop-ink:#1f8a80}
+.lesson-sticker{position:absolute;top:-12px;right:-8px;width:46px;height:46px;border-radius:50%;background:#fff;border:3px solid #fff;box-shadow:0 3px 6px #0003;display:grid;place-items:center;overflow:hidden;transform:rotate(12deg);z-index:2;pointer-events:none}
+.lesson-sticker svg,.lesson-sticker img,.lesson-sticker .sticker-picture{width:100%!important;height:100%!important;max-width:none;margin:0!important;border-radius:50%;object-fit:cover}
+.lesson-sticker.is-gold{background:#ffd54a}
+.lesson-sticker.is-mini{width:26px;height:26px;top:-9px;right:-7px;border-width:2px}
+.sticker-star{color:#fff;font-size:1.6rem;line-height:1;text-shadow:0 1px 2px #a5730a}
+.lesson-sticker.is-mini .sticker-star{font-size:.95rem}
+.pop-tag{position:absolute;bottom:8px;right:8px;background:var(--pop-ink);color:#fff;font-size:.72rem;font-weight:800;padding:3px 8px;border-radius:999px;line-height:1.3}
+.pop-tag.pop-new{background:#2e52df}
+.letter-grid>button.pop-card{border-radius:16px}
+.letter-grid>button.pop-card{color:var(--pop-ink)}
+/* Sticker book on Home */
+.sticker-book{margin:24px 0;background:#fff;border:2px dashed #cdd5ea;border-radius:22px;padding:16px 18px}
+.sticker-book h2{margin:0 0 10px;font-size:1.2rem}
+.sticker-row{display:flex;flex-wrap:wrap;gap:10px}
+.book-sticker{width:52px;height:52px;border-radius:50%;background:#fff;border:3px solid #fff;box-shadow:0 2px 6px #0002;display:grid;place-items:center;overflow:hidden}
+.book-sticker svg,.book-sticker .sticker-picture{width:100%!important;height:100%!important;margin:0!important}
+.book-sticker .sticker-star{color:#e0a800;text-shadow:none;font-size:1.7rem}
+.book-sticker.is-empty{background:#eef1f8;border:2px dashed #c6cee3;box-shadow:none}
+.tilt-0{transform:rotate(-8deg)}.tilt-1{transform:rotate(9deg)}.tilt-2{transform:rotate(-3deg)}.tilt-3{transform:rotate(6deg)}
+.sticker-book p{margin:10px 0 0;color:var(--muted);font-size:.9rem}
+.pop-tag{color:#fff!important}
+.pop-card .lesson-number{display:none}
+.pop-card:has(.pop-tag){padding-bottom:34px!important}
