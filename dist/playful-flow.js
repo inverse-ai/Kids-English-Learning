@@ -14,6 +14,7 @@ import {finishIllustration} from './illustration-style.js';
 import {letterTrails} from './letter-trails.js';
 import {wordParts} from './curriculum.js';
 import {narrationLine,narrationControls,narrationParagraph} from './narration.js';
+import {letterNameKey} from './stage-audio.js';
 import {mathLessons} from './math-data.js';
 import {scienceLessons} from './science-data.js';
 const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -143,7 +144,7 @@ export function createPlayfulFlow({getProgress,save,render,onAttempt,play,stop,o
    if(!st.choices?.some(c=>c.id===d.value))return;const right=d.value===st.answer;mark(right,right?st.feedback:'The answer is '+st.choices.find(c=>c.id===st.answer)?.label+'. '+(st.hint||'Look at the picture, then try again.'));w.value=d.value;w.done=right;save();render(false);if(right)praise();else play([{key:st.hintAudio||'text:'+st.hint,text:st.hint||feedback,target:'.playful-feedback'}]);
   }else if(action==='predict'){w.done=true;w.value=d.value;feedback='Let’s read and find out. Predictions are ideas, not scored answers.';save();render(false);}
   else if(action==='word-audio')play([{key:'word:'+d.word,text:d.word}]);
-  else if(action==='letter-name'||action==='letter-sound'){rememberSeen(action+':'+d.case);w.done=['letter-name:upper','letter-name:lower','letter-sound:upper','letter-sound:lower'].every(v=>w.seen.includes(v));save();play([{key:action==='letter-name'?'name:'+st.letter:'sound:'+alphabet.find(a=>a.letter===st.letter).sound,target:'.playful-letter-pair>div:nth-child('+(d.case==='upper'?1:2)+')>b'}]);document.querySelector('[data-action=playful-next]').disabled=!w.done;}
+  else if(action==='letter-name'||action==='letter-sound'){rememberSeen(action+':'+d.case);w.done=['letter-name:upper','letter-name:lower','letter-sound:upper','letter-sound:lower'].every(v=>w.seen.includes(v));save();play([{key:action==='letter-name'?letterNameKey(st.letter):'sound:'+alphabet.find(a=>a.letter===st.letter).sound,target:'.playful-letter-pair>div:nth-child('+(d.case==='upper'?1:2)+')>b'}]);document.querySelector('[data-action=playful-next]').disabled=!w.done;}
   else if(action==='pair')pair(d.value);
   else if(action==='sound-picture'){const right=st.answers.includes(d.value);mark(right,right?'You heard the sound in '+d.value+'.':st.hint);if(right)rememberSeen(d.value);w.done=st.answers.every(v=>w.seen.includes(v));save();render(false);play([{key:'sound:'+alphabet.find(a=>a.letter===st.letter).sound,target:'.playful-sound-letter'},{key:'word:'+(right?d.value:st.answers[0]),text:right?d.value:st.answers[0],target:'.playful-choice[data-value="'+(right?d.value:st.answers[0])+'"]>span'}]);}
   else if(action==='hidden-listen'||action==='blend-all'){const parts=wordParts(st.word);parts.forEach((_,i)=>rememberSeen(String(i)));w.done=true;save();render(false);say(st.word,parts.map((c,i)=>({key:'sound:'+c,target:'.blend-trail-letter[data-value="'+i+'"]'})).concat({key:'word:'+st.word,text:st.word}));}

@@ -1,4 +1,5 @@
 import {alphabet} from './stage-data.js';
+import {letterNameKey} from './stage-audio.js';
 import {letterMatchRounds,normalizeLetterMatching,normalizeMatchBoard} from './letter-match-data.js';
 const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const btn=(label,action,extra='',cls='')=>'<button class="btn '+cls+'" data-action="stages-match-'+action+'" '+extra+'>'+label+'</button>';
@@ -15,7 +16,7 @@ export function createLetterMatching({getProgress,getPractice,onAttempt,save,ren
   const target='.lm-letter[data-letter="'+letter+'"],.lm-example [data-case]';
   const parts=praise?[{key:'move:Well done!'}]:[];
   if(kind==='case')parts.push({key:'alphabet-case:'+letter,caseLetter:letter,caseTarget:'.lm-pair-'+letter});
-  else{if(kind!=='sound')parts.push({key:'name:'+letter,target});if(kind!=='name')parts.push({key:'sound:'+a.sound,target});}
+  else{if(kind!=='sound')parts.push({key:letterNameKey(letter),target});if(kind!=='name')parts.push({key:'sound:'+a.sound,target});}
   play(parts);
  }
  function choose(side,c,method='tap'){

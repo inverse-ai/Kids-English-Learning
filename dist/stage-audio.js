@@ -6,6 +6,8 @@ import {stopLessonAudio} from './lesson-audio.js';
 import {watchAudioHighlights,clearSpeechHighlights} from './speech-highlights.js';
 let stopHighlights=()=>{};
 let ticket=0,current=null,queue=[],position=0,paused=false,playing=false,callbacks={},timer=null,waitUntil=0,remainingWait=0;
+// Letter names: the cheerful child-voice letter (“A!”) once recorded, otherwise the older “The letter A” clip.
+export const letterNameKey=letter=>stageSpeech['letter-joy:'+letter]?'letter-joy:'+letter:'name:'+letter;
 export function stageClip(key){return stageSpeech[key]||familySpeech[key]||(key.startsWith('legacy:')?recordedSpeech[key.slice(7)]:key.startsWith('bn:')?banglaSpeech[key.slice(3)]:undefined);}
 // Lets the narration bar notice when another control stops the audio.
 const stopListeners=new Set();export function onStageStop(listener){stopListeners.add(listener);}

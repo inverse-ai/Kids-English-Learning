@@ -14,6 +14,8 @@ Jobs
           the old US voice (Jenny) with the app's main voice (Sonia, en-GB,
           rate -12%), with word timings, and point recorded-speech.js at the new
           clips. Old files stay in dist/audio (nothing is deleted).
+  letters Record 26 cheerful letter names ("A!", "B!") in a child's voice
+          for the alphabet; they replace "The letter A" everywhere.
   bangla  Record every Bangla narration line listed in tools/narration-lines.json
           (written by `node tools/collect-narration-lines.mjs`) with
           bn-BD-NabanitaNeural and add them to dist/bangla-speech.js.
@@ -41,6 +43,8 @@ LINES = ROOT / 'tools' / 'narration-lines.json'
 
 ENGLISH_VOICE, ENGLISH_RATE = 'en-GB-SoniaNeural', '-12%'
 BANGLA_VOICE, BANGLA_RATE = 'bn-BD-NabanitaNeural', '-8%'
+# Cheerful letter names ("A!", "B!") for the alphabet: a child's voice, a little higher.
+LETTER_VOICE, LETTER_RATE, LETTER_PITCH = 'en-GB-MaisieNeural', '-5%', '+6Hz'
 
 
 def read_map(path):
@@ -54,13 +58,13 @@ def write_map(path, name, data, prefix=''):
     path.write_text(prefix + 'export const ' + name + '=Object.freeze(' + json.dumps(data, ensure_ascii=False, indent=2) + ');\n', encoding='utf-8')
 
 
-async def record(text, voice, rate, slots, want_words):
+async def record(text, voice, rate, slots, want_words, pitch='+0Hz'):
     """Return (clip path, timing record or None)."""
     async with slots:
         for attempt in range(4):
             try:
                 data, events = bytearray(), []
-                speaker = edge_tts.Communicate(text, voice, rate=rate, boundary='WordBoundary' if want_words else 'SentenceBoundary')
+                speaker = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch, boundary='WordBoundary' if want_words else 'SentenceBoundary')
                 async for event in speaker.stream():
                     if event['type'] == 'audio':
                         data.extend(event['data'])
@@ -168,6 +172,25 @@ async def job_family(timings, speech):
     print('Family job done.', flush=True)
 
 
+# Spelled the way they sound so the voice says the letter name, never a word.
+LETTER_SAYINGS = {'a': 'Ay!', 'b': 'Bee!', 'c': 'See!', 'd': 'Dee!', 'e': 'Ee!', 'f': 'Eff!', 'g': 'Jee!', 'h': 'Aitch!', 'i': 'Eye!', 'j': 'Jay!', 'k': 'Kay!', 'l': 'Ell!', 'm': 'Em!', 'n': 'En!', 'o': 'Oh!', 'p': 'Pee!', 'q': 'Cue!', 'r': 'Ar!', 's': 'Ess!', 't': 'Tee!', 'u': 'You!', 'v': 'Vee!', 'w': 'Double you!', 'x': 'Ex!', 'y': 'Why!', 'z': 'Zed!'}
+
+
+async def job_letters(timings, speech):
+    slots = asyncio.Semaphore(4)
+
+    async def one(letter, text):
+        key = 'letter-joy:' + letter
+        if speech.get(key) and (DIST / speech[key].lstrip('/')).exists():
+            return
+        clip, _ = await record(text, LETTER_VOICE, LETTER_RATE, slots, False, LETTER_PITCH)
+        speech[key] = clip
+        print('  recorded:', key, flush=True)
+
+    await asyncio.gather(*(one(l, t) for l, t in LETTER_SAYINGS.items()))
+    print('Letters job done: 26 cheerful letter names.', flush=True)
+
+
 async def main(jobs):
     AUDIO.mkdir(parents=True, exist_ok=True)
     timings, speech = read_map(TIMINGS), read_map(SPEECH)
@@ -177,6 +200,8 @@ async def main(jobs):
         await job_family(timings, speech)
     if 'bangla' in jobs:
         await job_bangla(timings, speech)
+    if 'letters' in jobs:
+        await job_letters(timings, speech)
     write_map(SPEECH, 'stageSpeech', speech)
     TIMINGS.write_text('export const audioTimings=Object.freeze(' + json.dumps(timings, ensure_ascii=False, separators=(',', ':')) + ');\n', encoding='utf-8')
     print('Finished. Now run: npm run check, then bump APP_VERSION in dist/sw.js.', flush=True)
@@ -185,8 +210,8 @@ async def main(jobs):
 if __name__ == '__main__':
     args = set(sys.argv[1:]) or {'all'}
     if 'all' in args:
-        args = {'voice', 'family', 'bangla'}
-    unknown = args - {'voice', 'family', 'bangla'}
+        args = {'voice', 'family', 'bangla', 'letters'}
+    unknown = args - {'voice', 'family', 'bangla', 'letters'}
     if unknown:
         raise SystemExit('Unknown job: ' + ', '.join(sorted(unknown)))
     asyncio.run(main(args))

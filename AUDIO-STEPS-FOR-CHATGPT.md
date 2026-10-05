@@ -47,6 +47,16 @@ The Arabic refuge phrase in “My brother, my friend” keeps its real Arabic re
 
 Voice: `bn-BD-NabanitaNeural`. If Tahlil prefers a male voice, change `BANGLA_VOICE` at the top of `tools\generate-pending-audio.py` to `bn-BD-PradeepNeural` before running.
 
+## Step 3b — Cheerful letter names for the alphabet
+
+The alphabet used to say “The letter A, the letter B…”. Now it says just “A! B! C!” in a cheerful child's voice (`en-GB-MaisieNeural`). Record the 26 clips:
+
+```
+.audio-tools\Scripts\python tools\generate-pending-audio.py letters
+```
+
+Expected: `Letters job done: 26 cheerful letter names.` Until these exist the app keeps the old clips, so nothing breaks.
+
 ## Step 4 — Check, commit, push, publish
 
 ```

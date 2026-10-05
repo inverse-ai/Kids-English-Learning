@@ -1,5 +1,5 @@
 import {readingAlphabet,normalizeAlphabetReading} from './alphabet-reading-data.js';
-import {playStageSequence,stageAudioState,toggleStagePause} from './stage-audio.js';
+import {playStageSequence,stageAudioState,toggleStagePause,letterNameKey} from './stage-audio.js';
 import {narrationLine,narrationControls,narrationExtra} from './narration.js';
 const btn=(label,action,cls='')=>'<button class="btn '+cls+'" data-action="stages-alphabet-'+action+'">'+label+'</button>';
 export function createAlphabetReading({getProgress,getSpeed,save,status}){
@@ -12,7 +12,7 @@ export function createAlphabetReading({getProgress,getSpeed,save,status}){
  function sequence(indices,mode='single'){
   const all=mode==='all';let last=null;p().mode=mode;if(all)p().finished=false;
   const heard=()=>{if(last!==null&&!p().heard.includes(readingAlphabet[last]))p().heard.push(readingAlphabet[last]);};
-  return {parts:indices.map(index=>({key:'name:'+readingAlphabet[index],index,target:'.alphabet-pair[data-letter="'+readingAlphabet[index]+'"]'})),onPart:part=>{heard();last=part.index;p().index=part.index;save();status('Listen: '+readingAlphabet[part.index].toUpperCase());},onActive:(part,active)=>{const pair=document.querySelector('.alphabet-pair[data-letter="'+readingAlphabet[part.index]+'"]');pair?.setAttribute('aria-current',String(active));if(active)pair?.scrollIntoView({block:'nearest',behavior:'instant'});},onEnd:()=>{heard();if(all)p().finished=true;save();status('Ready to listen again. Choose a letter pair or Replay.');}};
+  return {parts:indices.map(index=>({key:letterNameKey(readingAlphabet[index]),index,target:'.alphabet-pair[data-letter="'+readingAlphabet[index]+'"]'})),onPart:part=>{heard();last=part.index;p().index=part.index;save();status('Listen: '+readingAlphabet[part.index].toUpperCase());},onActive:(part,active)=>{const pair=document.querySelector('.alphabet-pair[data-letter="'+readingAlphabet[part.index]+'"]');pair?.setAttribute('aria-current',String(active));if(active)pair?.scrollIntoView({block:'nearest',behavior:'instant'});},onEnd:()=>{heard();if(all)p().finished=true;save();status('Ready to listen again. Choose a letter pair or Replay.');}};
  }
  function read(indices,automatic=false,mode='single'){
   const s=sequence(indices,mode);

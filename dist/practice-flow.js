@@ -3,7 +3,7 @@ import {scienceScene,scienceChoice} from './science-scenes.js';
 import {mathScene,mathChoice} from './math-scenes.js';
 import {familyWords} from './family-data.js';
 import {pictureSymbols} from './stage-data.js';
-import {stageClip} from './stage-audio.js';
+import {stageClip,letterNameKey} from './stage-audio.js';
 import {alphabet} from './stage-data.js';
 import {items,comprehension,dueItems,recordAttempt} from './practice-data.js';
 import {storyScene} from './story-scenes.js';
@@ -19,7 +19,7 @@ export function createPracticeFlow({getProgress,save,render,stop,play,picture,on
  function open(kind,id){pauseClock();stop();mode=kind;index=0;answer=null;wrong=0;assisted=false;finished=kind==='fluency'&&!!p().round&&p().round.index===p().round.words.length;if(kind==='story')queue=['story:'+id];if(kind==='review')queue=dueItems(p()).slice(0,5);render();}
  function scene(q){if(q.kind==='move')return movePreview(q.task,q.movement);if(q.kind==='science')return scienceScene(q.scene);if(q.kind==='math')return mathScene(q.scene);const s=(q.value?valuesStories:stories).find(s=>s.id===q.storyId);return s?(q.value?valueScene(s,q.line):storyScene(s,q.line)):'';}
  function wordKey(word){if(stageClip('word:'+word))return 'word:'+word;if(stageClip('legacy:'+word))return 'legacy:'+word;const v=valuesStories.flatMap(s=>s.vocabulary).find(v=>v.word.toLowerCase()===word);return 'value-word:'+v?.word;}
- function listen(q=item()){if(!q)return;stop();const s=q.kind==='story'?(q.value?valuesStories:stories).find(s=>s.id===q.storyId):null;play(['math','science'].includes(q.kind)?[{key:'text:'+q.prompt}]:q.kind==='move'?[{key:'move:'+q.task.text}]:q.kind==='story'?(s.sentences.includes(q.evidence)?[q.evidence]:s.sentences).map(text=>({key:'text:'+text})):q.kind==='letter'?[{key:'name:'+q.answer},{key:'sound:'+alphabet.find(a=>a.letter===q.answer).sound}]:[{key:wordKey(q.answer)}]);}
+ function listen(q=item()){if(!q)return;stop();const s=q.kind==='story'?(q.value?valuesStories:stories).find(s=>s.id===q.storyId):null;play(['math','science'].includes(q.kind)?[{key:'text:'+q.prompt}]:q.kind==='move'?[{key:'move:'+q.task.text}]:q.kind==='story'?(s.sentences.includes(q.evidence)?[q.evidence]:s.sentences).map(text=>({key:'text:'+text})):q.kind==='letter'?[{key:letterNameKey(q.answer)},{key:'sound:'+alphabet.find(a=>a.letter===q.answer).sound}]:[{key:wordKey(q.answer)}]);}
  function html(){
   let content='';
   if(mode==='fluency'){
