@@ -83,13 +83,20 @@ git push origin main
 
 Finally publish the `dist` folder to the site exactly as the last update was published (the site project is in `.openai\hosting.json`; the live site is kids-english-learning.tahlil.chatgpt.site).
 
-## Later — Real recitation for the Arabic opening (when Tahlil sends the MP3)
+## Opening recitation by Mishary Rashid Alafasy (do this now)
+
+Tahlil wants the Arabic opening recited by Sheikh Mishary Rashid Alafasy instead of computer speech. Claude's workspace cannot download from the Quran audio sites, so download the real recordings here and push them; Claude will cut the three phrases (a'udhu…, bismillah…, rabbi zidni ilma) and install the opening.
 
 ```
-node tools\install-opening-recitation.mjs "C:\path\to\recitation.mp3" "Reciter name"
+git fetch origin
+git reset --hard origin/main
+.audio-tools\Scripts\python tools\fetch-opening-sources.py
+git add tools/opening-sources
+git commit -m "Add Alafasy source recordings for the opening"
+git push origin main
 ```
 
-Then change `APP_VERSION` in `dist\sw.js` again, commit, push and publish.
+Expected: `saved alafasy-001-fatiha-full.mp3`, `saved alafasy-001001-bismillah.mp3`, `saved alafasy-020114.mp3`. If one download fails, run it again. Do not publish yet; tell Tahlil it is pushed.
 
 ## Do not
 - Do not regenerate or replace the Arabic or letter-sound (phonics) recordings.
