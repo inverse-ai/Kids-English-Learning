@@ -3176,5 +3176,13 @@ export const stageSpeech=Object.freeze({
   "text:Choose the place shown for cow. Some animals can live in more than one kind of place.": "/audio/e6c8bb167edd58a02c6bbd86.mp3",
   "text:Choose the place shown for bird. Some animals can live in more than one kind of place.": "/audio/9fd5bb4079811edef58ee4ff.mp3",
   "text:Choose the place shown for these animals. Some animals can live in more than one kind of place.": "/audio/2e2353f288cb4d5c9d502a47.mp3",
-  "text:Choose the place shown for deer. Some animals can live in more than one kind of place.": "/audio/c091e212b55f051e1ffc07b9.mp3"
+  "text:Choose the place shown for deer. Some animals can live in more than one kind of place.": "/audio/c091e212b55f051e1ffc07b9.mp3",
+  "text:Listen, then choose the matching picture.": "/audio/dad81926b52528a1ea3cad9f.mp3",
+  "text:Which word was in the story?": "/audio/b7be973dd43385bd9901b9dd.mp3",
+  "text:Look at the picture. Choose the missing word.": "/audio/3dbd99911ff7301b306acde9.mp3",
+  "text:Look, then fill the gap.": "/audio/fd8176194a3b39da4e27a4bf.mp3",
+  "text:Drag a line from a big letter, or tap big then little.": "/audio/bb9c6ee422843f4cc6f98876.mp3",
+  "text:Tap a pair to hear its English letter name.": "/audio/fe34090278da51893cd47493.mp3",
+  "text:Tap each name and sound. The big and little forms have the same name.": "/audio/70f3b7a6c832513454ccc87a.mp3",
+  "text:Move a finger from the first sound to the last. Tapping each sound works too.": "/audio/63db26899f10c2690c21898d.mp3"
 });
