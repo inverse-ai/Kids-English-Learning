@@ -216,6 +216,9 @@ async def job_voices(timings, speech):
         text = (timings.get(clip) or {}).get('text') or (key.split(':', 1)[1] if prefix in SUFFIX_IS_TEXT and ':' in key else '')
         if text:
             jobs.append((key, text))
+    # The Settings page 'Listen' sample first, so each voice can be heard after the first batch.
+    first = ('text:I see a cat.', 'move:Well done!')
+    jobs.sort(key=lambda j: 0 if j[0] in first else 1)
     slots = asyncio.Semaphore(4)
     failed = []
 
