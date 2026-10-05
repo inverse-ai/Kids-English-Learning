@@ -249,6 +249,19 @@ async def job_voices(timings, speech):
     print('Voices job done:', {k: len(v) for k, v in voices.items()}, 'skipped', len(failed), flush=True)
 
 
+# The Arabic opening read slowly by Sonia from a careful transliteration
+# (Tahlil asked for Sonia's voice). Saved for review only; nothing in the app changes.
+OPENING_SONIA_TEXT = 'A-oodhu billaahi minash-shaytaanir-rajeem. ... Bismillaahir-rahmaanir-raheem. ... Rabbi zidnee ilmaa.'
+
+
+async def job_opening_sonia(timings, speech):
+    slots = asyncio.Semaphore(1)
+    clip, _ = await record(OPENING_SONIA_TEXT, ENGLISH_VOICE, '-25%', slots, False)
+    preview = ROOT / 'tools' / 'opening-preview-sonia.mp3'
+    preview.write_bytes((DIST / clip.lstrip('/')).read_bytes())
+    print('Opening preview saved: tools/opening-preview-sonia.mp3 (' + clip + ')', flush=True)
+
+
 async def main(jobs):
     AUDIO.mkdir(parents=True, exist_ok=True)
     timings, speech = read_map(TIMINGS), read_map(SPEECH)
@@ -262,6 +275,8 @@ async def main(jobs):
         await job_letters(timings, speech)
     if 'voices' in jobs:
         await job_voices(timings, speech)
+    if 'opening-sonia' in jobs:
+        await job_opening_sonia(timings, speech)
     write_map(SPEECH, 'stageSpeech', speech)
     TIMINGS.write_text('export const audioTimings=Object.freeze(' + json.dumps(timings, ensure_ascii=False, separators=(',', ':')) + ');\n', encoding='utf-8')
     print('Finished. Now run: npm run check, then bump APP_VERSION in dist/sw.js.', flush=True)
@@ -271,7 +286,7 @@ if __name__ == '__main__':
     args = set(sys.argv[1:]) or {'all'}
     if 'all' in args:
         args = {'voice', 'family', 'bangla', 'letters'}
-    unknown = args - {'voice', 'family', 'bangla', 'letters', 'voices'}
+    unknown = args - {'voice', 'family', 'bangla', 'letters', 'voices', 'opening-sonia'}
     if unknown:
         raise SystemExit('Unknown job: ' + ', '.join(sorted(unknown)))
     asyncio.run(main(args))
