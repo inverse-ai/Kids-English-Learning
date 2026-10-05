@@ -17,7 +17,7 @@ Jobs
   letters Record 26 cheerful letter names ("A!", "B!") in a child's voice
           for the alphabet; they replace "The letter A" everywhere.
   voices  Record the English lesson clips again in the two extra voices
-          (Maisie, a girl; Leo, a boy; Ryan, a man) for the Settings page. Long job.
+          (Maisie, a girl; Leo, a boy) for the Settings page. Long job.
   bangla  Record every Bangla narration line listed in tools/narration-lines.json
           (written by `node tools/collect-narration-lines.mjs`) with
           bn-BD-NabanitaNeural and add them to dist/bangla-speech.js.
@@ -199,7 +199,7 @@ async def job_letters(timings, speech):
 # (voice, rate, pitch). There is no boy's voice in the speech service, so Leo is
 # Ryan's voice raised in pitch. If Leo sounds odd, change '+45Hz' and run again
 # after deleting the "leo" entries in dist/voice-speech.js.
-EXTRA_VOICES = {'maisie': ('en-GB-MaisieNeural', '-5%', '+0Hz'), 'leo': ('en-GB-RyanNeural', '+0%', '+45Hz'), 'ryan': ('en-GB-RyanNeural', '-10%', '+0Hz')}
+EXTRA_VOICES = {'maisie': ('en-GB-MaisieNeural', '-5%', '+0Hz'), 'leo': ('en-GB-RyanNeural', '+0%', '+45Hz')}
 # English clips that are re-recorded in each extra voice. Letter names, letter
 # sounds, spelling, Bangla and Arabic are never re-recorded.
 VOICE_PREFIXES = ('text', 'word', 'move', 'help', 'math-word', 'math-feedback', 'math-hint', 'math-demo',

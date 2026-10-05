@@ -4,14 +4,13 @@
 import {voiceSpeech} from './voice-speech.js';
 
 const STORE='little-english-settings-v1';
-// The four English lesson voices. Sonia recorded every lesson; the other three are
+// The three English lesson voices. Sonia recorded every lesson; the other two are
 // recorded on the PC (generate-pending-audio.py voices). A clip that a voice does
 // not have yet plays in Sonia's voice, so lessons never go silent.
 export const lessonVoices=Object.freeze([
  {id:'sonia',name:'Sonia',label:'Teacher',detail:'Calm British teacher (default)',edge:'en-GB-SoniaNeural'},
  {id:'maisie',name:'Maisie',label:'Girl',detail:'A cheerful girl’s voice',edge:'en-GB-MaisieNeural'},
- {id:'leo',name:'Leo',label:'Boy',detail:'A playful little boy’s voice',edge:'en-GB-RyanNeural (higher)'},
- {id:'ryan',name:'Ryan',label:'Man',detail:'A friendly British man’s voice',edge:'en-GB-RyanNeural'}
+ {id:'leo',name:'Leo',label:'Boy',detail:'A playful little boy’s voice',edge:'en-GB-RyanNeural (higher)'}
 ]);
 let settings={version:1,voice:'sonia',volume:100,light:100};
 try{const saved=JSON.parse(localStorage.getItem(STORE)||'null');if(saved?.version===1){
