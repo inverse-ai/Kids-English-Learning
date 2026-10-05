@@ -45,3 +45,6 @@ export function normalizeMove(raw){const records={};for(const l of allMoveLesson
 export const moveAudioSpecs=[];const add=(text)=>moveAudioSpecs.push({key:'move:'+text,text,voice:'en-GB-SoniaNeural',rate:'-12%'});
 for(const l of allMoveLessons){moveVocabulary(l).forEach(v=>{add(v.word);add(v.spoken);});for(const group of l.tasks){add(group.text);for(const t of group.steps||[group]){add(t.text);add(moveHint(t));add(moveDescription(t));}}}
 ['Well done!','Good job!','Watch the demonstration. Then try again.','Choose a route from start to finish.','Drag the object, or choose a placement area.','Your turn.','You practised this lesson.'].forEach(add);
+
+// Practice history stores the meaning, independent of a lesson's screen index.
+export const moveReviewItems=[...new Set(moveLessons.flatMap(l=>l.tasks.map(t=>t.position)))].map(position=>{const l=moveLessons.find(l=>l.tasks.some(t=>t.position===position)),t=l.tasks.find(t=>t.position===position);return {id:'move:'+position,kind:'move',label:position,answer:position,prompt:'Which position or route does this picture show?',choices:[position,...['in','on','under'].filter(p=>p!==position)].slice(0,3),task:t,movement:isMovement(t,l),hint:moveHint(t),feedback:moveDescription(t)};});

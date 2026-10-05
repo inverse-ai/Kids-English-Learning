@@ -11,7 +11,7 @@ for(const s of stories)for(const word of s.newWords){const key=word.toLowerCase(
 
 export function storyIntroductions(s,line,learning){
  const allowed=new Set([...s.helpers,...s.newWords].map(w=>w.toLowerCase()));
- const introduced=new Set(learning.storyWordsMet||[]);
+ const introduced=new Set([...(learning.storyWordsMet||[]),...(learning.playful?.wordsMet||[])]);
  for(const lesson of wordLessons)if(learning.words[lesson.id]?.step>=2||learning.words[lesson.id]?.done)for(const word of lesson.helpers)introduced.add(word.toLowerCase());
  return [...new Set(s.sentences[line].match(/[a-z]+/gi).map(w=>w.toLowerCase()))].filter(w=>allowed.has(w)&&!introduced.has(w)).map(w=>storyWords.get(w));
 }

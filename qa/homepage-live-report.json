@@ -1,0 +1,202 @@
+{
+  "url": "https://kids-english-learning.tahlil.chatgpt.site",
+  "sections": [
+    {
+      "id": "letters",
+      "title": "Letters",
+      "age": "4+",
+      "caption": "Meet letters & sounds"
+    },
+    {
+      "id": "words",
+      "title": "Words",
+      "age": "5+",
+      "caption": "Spell, build & read"
+    },
+    {
+      "id": "stories",
+      "title": "Stories",
+      "age": "6+",
+      "caption": "Read little stories"
+    },
+    {
+      "id": "move",
+      "title": "Listen & Move",
+      "age": "",
+      "caption": "Listen and move objects"
+    },
+    {
+      "id": "math",
+      "title": "English for Math",
+      "age": "",
+      "caption": "Count, share & explore"
+    },
+    {
+      "id": "science",
+      "title": "English for Science",
+      "age": "",
+      "caption": "Look, test & discover"
+    }
+  ],
+  "layouts": [
+    {
+      "label": "little home 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little letters 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little words 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little stories 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little move 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little math 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "little science 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big home 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big letters 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big words 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big stories 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big move 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big math 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    },
+    {
+      "label": "big science 390",
+      "width": 390,
+      "scroll": 390,
+      "clipped": []
+    }
+  ],
+  "destinations": [
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "little",
+      "width": 390,
+      "id": "science",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "letters",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "words",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "stories",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "move",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "math",
+      "works": true
+    },
+    {
+      "profile": "big",
+      "width": 390,
+      "id": "science",
+      "works": true
+    }
+  ],
+  "passed": true
+}

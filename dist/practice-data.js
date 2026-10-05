@@ -1,3 +1,5 @@
+import {playfulReviewItems} from './playful-review.js';
+import {moveReviewItems} from './move-data.js';
 import {scienceReviewItems} from './science-data.js';
 import {mathReviewItems} from './math-data.js';
 import {alphabet,stories,pictureSymbols} from './stage-data.js';
@@ -38,7 +40,7 @@ export const comprehension=[...stories.map(s=>({s,parts:oldQuestions[s.id]})),..
 });
 export const items=Object.fromEntries([
  ...alphabet.map(a=>({id:'letter:'+a.letter,kind:'letter',label:a.letter.toUpperCase()+a.letter,answer:a.letter,prompt:'Find the little '+a.letter.toUpperCase()+'.',choices:[a.letter,...'abcdefghijklmnopqrstuvwxyz'].filter((c,i,a)=>a.indexOf(c)===i).slice(0,3)})),
- ...[...new Set([...Object.keys(words),...Object.keys(familyWords),...alphabet.flatMap(a=>a.examples),...valuesStories.flatMap(s=>s.vocabulary.map(v=>v.word.toLowerCase()))])].map(w=>({id:'word:'+w,kind:'word',label:w,answer:w,prompt:familyWords[w]||pictureSymbols[w]?'Look at the picture. Find the word.':'Hear the word. Choose it.',choices:[w,...['cat','sun','pen'].filter(x=>x!==w)].slice(0,3),picture:pictureSymbols[w]||words[w]||null})),...comprehension,...mathReviewItems,...scienceReviewItems
+ ...[...new Set([...Object.keys(words),...Object.keys(familyWords),...alphabet.flatMap(a=>a.examples),...valuesStories.flatMap(s=>s.vocabulary.map(v=>v.word.toLowerCase()))])].map(w=>({id:'word:'+w,kind:'word',label:w,answer:w,prompt:familyWords[w]||pictureSymbols[w]?'Look at the picture. Find the word.':'Hear the word. Choose it.',choices:[w,...['cat','sun','pen'].filter(x=>x!==w)].slice(0,3),picture:pictureSymbols[w]||words[w]||null})),...comprehension,...playfulReviewItems,...moveReviewItems,...mathReviewItems,...scienceReviewItems
 ].map(x=>[x.id,x]));
 export const DAY=86400000;
 const finite=(x,max)=>Number.isFinite(x)&&x>=0&&x<=max;

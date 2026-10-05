@@ -32,6 +32,11 @@
     "unfinishedExperimentResumed": true,
     "oldLetterPositionPreserved": true
   },
+  "offlinePlayful": {
+    "newModulesCached": true,
+    "tapScene": true,
+    "unfinishedActionResumed": true
+  },
   "passed": true,
   "limitations": [
     "Headless Edge verifies installability and prompt integration, not a physical Home Screen installation",

@@ -960,7 +960,7 @@
       "scroll": 768,
       "bad": [],
       "clipped": [],
-      "minText": 20
+      "minText": 16
     },
     {
       "label": "math library 768 true",
@@ -1072,7 +1072,7 @@
       "scroll": 1366,
       "bad": [],
       "clipped": [],
-      "minText": 20
+      "minText": 16
     },
     {
       "label": "math library 1366 true",

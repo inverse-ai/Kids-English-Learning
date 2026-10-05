@@ -1,0 +1,32 @@
+{
+  "interactions": [
+    "390 draw matching line",
+    "390 tap big/little match",
+    "390 drag sound tiles",
+    "390 finger/mouse blending",
+    "390 drag equal cake shares",
+    "390 unequal sharing corrected by tap",
+    "390 story placement",
+    "390 align ribbon starts",
+    "390 tap organs and jobs",
+    "390 interactive light switch",
+    "390 hints, assisted result, resume, per-profile export/restore",
+    "1366 draw matching line",
+    "1366 tap big/little match",
+    "1366 drag sound tiles",
+    "1366 finger/mouse blending",
+    "1366 drag equal cake shares",
+    "1366 unequal sharing corrected by tap",
+    "1366 story placement",
+    "1366 align ribbon starts",
+    "1366 tap organs and jobs",
+    "1366 interactive light switch",
+    "1366 hints, assisted result, resume, per-profile export/restore"
+  ],
+  "screenshots": [],
+  "checks": [
+    "Recorded misses in every section return after 1/3/7 days",
+    "Profile exports validate and restore playful work without replacing the other profile",
+    "Touch input uses Chromium trusted touch events; physical devices remain unverified"
+  ]
+}

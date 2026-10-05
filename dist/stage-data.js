@@ -1,3 +1,4 @@
+import {normalizePlayful} from './playful-store.js';
 import {normalizeLetterMatching} from './letter-match-data.js';
 import {normalizeScience} from './science-data.js';
 import {normalizeMath} from './math-data.js';
@@ -87,5 +88,6 @@ export function normalizeLearning(raw){
  if(raw?.science&&typeof raw.science==='object')result.science=normalizeScience(raw.science);
  if(raw?.math&&typeof raw.math==='object')result.math=normalizeMath(raw.math);
  if(raw?.alphabetReading&&typeof raw.alphabetReading==='object')result.alphabetReading=normalizeAlphabetReading(raw.alphabetReading);
+ if(raw?.playful&&typeof raw.playful==='object')result.playful=normalizePlayful(raw.playful,stories);
  return result;
 }

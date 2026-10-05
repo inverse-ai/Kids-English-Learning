@@ -108,6 +108,8 @@ Object.assign(drawings,{
  chat:group(childArt('stand','#ed8a9c'),4,31,.63)+group(childArt('stand','#83bcd2'),45,31,.63)+path('M5 3h34v20H24l-8 8v-8H5Z','#e6f3fa')+path('M60 3h34v20H84v8l-9-8H60Z','#fff0cd')+circle(16,13,2,'#9db7cf')+circle(27,13,2,'#9db7cf')+circle(71,13,2,'#c6ad75')+circle(83,13,2,'#c6ad75')
 });
 drawings.bug=drawings.insect;
+drawings.mango=path('M50 19q-30-3-35 36-5 29 20 36 33 7 45-28 10-36-12-41Z','#ffd475','#ab884b',2)+path('M51 21q-2-14 7-18','none','#826546',3)+path('M54 12q25-21 36-6-12 16-36 6Z','#7bb886');
+drawings.banana=path('M12 23q12 65 72 29-27 55-64 17-19-18-8-46Z','#ffe08a','#b49649',2)+path('M12 23q15 65 72 29','none','#d4b256',3)+path('m12 23-3-8 7-3 5 9m58 29 6-6 6 5-9 9','#8c7756');
 // No picture labels inside the art: word-building continues to hide answers.
 export function wordDrawing(word){if(drawings[word])return drawings[word];if(valueObjectArt[word])return valueObjectArt[word];return sceneSymbol(word);}
 export function wordIllustration(word,{className='',description=word}={}){

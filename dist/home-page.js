@@ -1,3 +1,4 @@
+import {playfulLesson} from './playful-data.js';
 import {learningSections} from './section-registry.js';
 import {finishIllustration} from './illustration-style.js';
 import {scienceLessons} from './science-data.js';
@@ -10,6 +11,7 @@ import {profiles} from './curriculum.js';
 
 export function validResume(r){
  if(!r||typeof r!=='object')return null;
+ if(r.kind==='playful'&&typeof r.id==='string'&&playfulLesson(r.id))return {kind:'playful',id:r.id};
  if(r.kind==='stage'){
   if(r.page==='letter'&&Number.isInteger(r.index)&&alphabet[r.index])return {kind:r.kind,page:r.page,index:r.index};
   if(r.page==='spelling')return {kind:r.kind,page:r.page};
@@ -50,6 +52,7 @@ export function priorResume(p){
 export function resumeName(r,p){
  if(r.kind==='legacy')return profiles[r.profile].lessons.find(x=>x.id===r.id).title;
  if(r.kind==='family')return r.page==='reading'?'The -at family · Read sentences & a story':r.page==='writing'?'Write '+r.word:r.page==='lesson'?'The -'+familyRounds.find(x=>x.id===r.round).family+' family · Round '+familyRounds.find(x=>x.id===r.round).number:'The -'+r.family+' word family';
+ if(r.kind==='playful')return playfulLesson(r.id).title+' · Play & practise';
  if(r.page==='spelling'){const a=alphabet[p.learning.spelling.letter];return 'Spell picture words · '+a.letter.toUpperCase()+a.letter;}
  if(r.page==='letter-match')return 'Big and small letters · '+(p.learning.letterMatching?.phase==='review'?'Review':'Round '+((p.learning.letterMatching?.round||0)+1));
  if(r.page==='alphabet')return 'Letters · Read the alphabet';

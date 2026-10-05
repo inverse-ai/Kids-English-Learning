@@ -9,7 +9,7 @@ export function createValueStoryFlow({onAttempt=()=>{},onStoryFinish=()=>{},getP
  const state=()=>getProgress(),story=()=>valuesStories.find(s=>s.id===selected),progress=()=>state().valueStories[selected],step=()=>valueSteps(story())[progress().step];
  const speak=parts=>{status('Listening…');play(parts);};
  function sentenceParts(line,paragraph=false){const s=story();return s.id==='values-brother-friend'&&line===2?[{key:'value-refuge-prefix',target:paragraph?'.story-line[data-line="2"]':'.story-sentence'},{key:'value-refuge-arabic',target:'.refuge-phrase [lang="ar"]'}]:[{key:'text:'+s.sentences[line],line:paragraph?line:undefined}];}
- function known(v){return progress().wordsMet.includes(v.word.toLowerCase())||state().valueWordsMet.includes(v.word.toLowerCase())||state().storyWordsMet.includes(v.word.toLowerCase())||Object.entries(state().words).some(([id,p])=>p.done&&id==='first-'+v.word.toLowerCase());}
+ function known(v){return state().playful?.wordsMet.includes(v.word.toLowerCase())||progress().wordsMet.includes(v.word.toLowerCase())||state().valueWordsMet.includes(v.word.toLowerCase())||state().storyWordsMet.includes(v.word.toLowerCase())||Object.entries(state().words).some(([id,p])=>p.done&&id==='first-'+v.word.toLowerCase());}
  function advance(){const p=progress();stop();if(!p.completed.includes(p.step))p.completed.push(p.step);p.step=Math.min(valueSteps(story()).length-1,p.step+1);p.blank=0;save();render();}
  function question(){const st=step(),p=progress();if(st.type==='paragraph-gaps')return {...story().questions[p.blank],id:'paragraph-'+story().questions[p.blank].id};return st.q;}
  function attempt(q){return progress().attempts[q.id];}

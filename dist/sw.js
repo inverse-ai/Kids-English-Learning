@@ -1,11 +1,13 @@
 // Bump APP_VERSION whenever shipped shell/lesson sources change. Audio is immutable.
-const APP_VERSION='little-english-2026-10-05-all-sections-art-v2';
+const APP_VERSION='little-english-2026-10-05-playful-v18';
 const SHELL=APP_VERSION+'-shell',MEDIA='little-english-audio-v1';
 const FILES=['/','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png','/icons/maskable-512.png','/icons/apple-touch-icon.png','/style.css',...['app','curriculum','lesson-audio','recorded-speech','family-data','family-lessons','family-speech','stage-data','stage-lessons','stage-audio','stage-speech','story-flow','story-words','story-scenes','spelling-data','spelling-flow','speech-highlights','audio-timings','at-reading-data','at-reading-scene','at-reading','story-gaps','home-page','values-stories','values-scenes','values-flow','move-data','move-scenes','move-flow','practice-data','practice-flow','progress-store','pwa'].map(n=>'/'+n+'.js'),...['at','an','ig','op','un','en','in','ap','og','ug'].map(n=>'/pictures/family-'+n+'.png')];
 FILES.push('/letter-match.js','/letter-match-data.js');
 FILES.push('/science-data.js','/science-scenes.js','/science-flow.js');
 FILES.push('/math-data.js','/math-scenes.js','/math-flow.js');
 FILES.push('/alphabet-reading.js','/alphabet-reading-data.js','/opening-audio.js','/opening-audio-data.js');
+FILES.push('/playful-review.js');
+FILES.push('/playful-data.js','/playful-store.js','/playful-flow.js','/playful-audio.js','/letter-trails.js');
 FILES.push('/illustration-style.js','/word-art.js','/character-art.js','/value-object-art.js','/section-registry.js');
 self.addEventListener('install',event=>{event.waitUntil((async()=>{
  const cache=await caches.open(SHELL);

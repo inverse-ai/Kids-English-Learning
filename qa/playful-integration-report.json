@@ -1,0 +1,100 @@
+{
+  "entries": [
+    "math card opens interactive lesson",
+    "science card opens interactive lesson",
+    "stories card opens interactive lesson",
+    "Word lesson opens sound mission",
+    "Letter lesson has find/name/sound/match/trace path"
+  ],
+  "demonstrations": [
+    {
+      "id": "word:cat",
+      "type": "build",
+      "assistedRecorded": true
+    },
+    {
+      "id": "letter:a",
+      "type": "pairs",
+      "assistedRecorded": true
+    },
+    {
+      "id": "letter:a",
+      "type": "trace",
+      "assistedRecorded": true
+    },
+    {
+      "id": "math:math-total-flowers",
+      "type": "join",
+      "assistedRecorded": true
+    },
+    {
+      "id": "math:math-bird-away",
+      "type": "away",
+      "assistedRecorded": true
+    },
+    {
+      "id": "math:math-cake",
+      "type": "share",
+      "assistedRecorded": true
+    },
+    {
+      "id": "math:math-chart",
+      "type": "chart",
+      "assistedRecorded": true
+    },
+    {
+      "id": "math:math-ribbon",
+      "type": "align",
+      "assistedRecorded": true
+    },
+    {
+      "id": "math:math-cups",
+      "type": "pour",
+      "assistedRecorded": true
+    },
+    {
+      "id": "science:science-sunlight",
+      "type": "days",
+      "assistedRecorded": true
+    },
+    {
+      "id": "science:science-body",
+      "type": "explore",
+      "assistedRecorded": true
+    },
+    {
+      "id": "science:science-push-pull",
+      "type": "push-pull",
+      "assistedRecorded": true
+    },
+    {
+      "id": "science:science-day-night",
+      "type": "earth",
+      "assistedRecorded": true
+    },
+    {
+      "id": "science:science-switch",
+      "type": "switch",
+      "assistedRecorded": true
+    },
+    {
+      "id": "science:science-float",
+      "type": "test",
+      "assistedRecorded": true
+    },
+    {
+      "id": "science:science-magnet",
+      "type": "sort",
+      "assistedRecorded": true
+    }
+  ],
+  "checks": [
+    "Read without games preserves the existing word reading position",
+    "Touch sorting, useful hint and concept-specific review records",
+    "Existing Bangla meaning/pronunciation recordings reused, pause/resume and Home stop",
+    "Keyboard big/little matching",
+    "Enlarged text on all six viewport sizes without horizontal overflow",
+    "Normal-motion bird flies away, then two birds remain; reduced-motion alternatives also tested",
+    "Existing completed movement lesson appears as a garden flower and reopens with the same friendly guide"
+  ]
+}

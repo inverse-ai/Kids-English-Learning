@@ -31,7 +31,7 @@ export function createStageLessons({onAttempt=()=>{},onStoryFinish=()=>{},getPro
  const storyFlow=createStoryFlow({onAttempt,onStoryFinish,getProgress,save,isSaved,render,status,play:audioParts,stop,picture:stagePicture});
  const scienceFlow=createScienceFlow({getProgress,save,isSaved,render,play:audioParts,stop,onAttempt});
  const mathFlow=createMathFlow({getProgress,save,isSaved,render,play:audioParts,stop,onAttempt});
- const moveFlow=createMoveFlow({getProgress,save,isSaved,render,play:audioParts,stop});
+ const moveFlow=createMoveFlow({getProgress,save,isSaved,render,play:audioParts,stop,onAttempt});
  const valueFlow=createValueStoryFlow({onAttempt,onStoryFinish,getProgress,save,isSaved,render,status,play:audioParts,stop});
  const newStories=valuesStories.filter(s=>!stories.some(old=>old.sentences.join(' ')===s.sentences.join(' '))).sort((a,b)=>valuesOrder.indexOf(a.id)-valuesOrder.indexOf(b.id));
  const spellingFlow=createSpellingFlow({getProgress:()=>state().spelling,save,isSaved,render,status,picture:stagePicture,getSpeed});
