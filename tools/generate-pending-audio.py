@@ -17,7 +17,7 @@ Jobs
   letters Record 26 cheerful letter names ("A!", "B!") in a child's voice
           for the alphabet; they replace "The letter A" everywhere.
   voices  Record the English lesson clips again in the two extra voices
-          (Maisie, a child; Ryan, a man) for the Settings page. Long job.
+          (Maisie, a girl; Leo, a boy; Ryan, a man) for the Settings page. Long job.
   bangla  Record every Bangla narration line listed in tools/narration-lines.json
           (written by `node tools/collect-narration-lines.mjs`) with
           bn-BD-NabanitaNeural and add them to dist/bangla-speech.js.
@@ -196,7 +196,10 @@ async def job_letters(timings, speech):
 
 
 # Extra lesson voices chosen on the Settings page. Sonia stays the default.
-EXTRA_VOICES = {'maisie': ('en-GB-MaisieNeural', '-5%'), 'ryan': ('en-GB-RyanNeural', '-10%')}
+# (voice, rate, pitch). There is no boy's voice in the speech service, so Leo is
+# Ryan's voice raised in pitch. If Leo sounds odd, change '+45Hz' and run again
+# after deleting the "leo" entries in dist/voice-speech.js.
+EXTRA_VOICES = {'maisie': ('en-GB-MaisieNeural', '-5%', '+0Hz'), 'leo': ('en-GB-RyanNeural', '+0%', '+45Hz'), 'ryan': ('en-GB-RyanNeural', '-10%', '+0Hz')}
 # English clips that are re-recorded in each extra voice. Letter names, letter
 # sounds, spelling, Bangla and Arabic are never re-recorded.
 VOICE_PREFIXES = ('text', 'word', 'move', 'help', 'math-word', 'math-feedback', 'math-hint', 'math-demo',
@@ -222,12 +225,12 @@ async def job_voices(timings, speech):
     slots = asyncio.Semaphore(4)
     failed = []
 
-    async def one(vid, voice, rate, key, text):
+    async def one(vid, voice, rate, pitch, key, text):
         bucket = voices.setdefault(vid, {})
         if bucket.get(key) and (DIST / bucket[key].lstrip('/')).exists():
             return
         try:
-            clip, timing = await record(text, voice, rate, slots, ' ' in text.strip())
+            clip, timing = await record(text, voice, rate, slots, ' ' in text.strip(), pitch)
         except Exception as error:
             failed.append(vid + ' ' + key)
             print('  skipped:', vid, key, error, flush=True)
@@ -236,9 +239,9 @@ async def job_voices(timings, speech):
         if timing:
             timings[clip] = timing
 
-    for vid, (voice, rate) in EXTRA_VOICES.items():
+    for vid, (voice, rate, pitch) in EXTRA_VOICES.items():
         print('Recording', len(jobs), 'lesson clips in', voice, '...', flush=True)
-        batch = [one(vid, voice, rate, k, tx) for k, tx in jobs]
+        batch = [one(vid, voice, rate, pitch, k, tx) for k, tx in jobs]
         for i in range(0, len(batch), 200):
             await asyncio.gather(*batch[i:i + 200])
             write_map(VOICES_FILE, 'voiceSpeech', voices, '// English lesson clips in the extra voices, keyed like stage-speech.js.\n// Filled by tools/generate-pending-audio.py voices\n')

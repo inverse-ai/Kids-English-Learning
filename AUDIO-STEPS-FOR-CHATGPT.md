@@ -59,13 +59,13 @@ Expected: `Letters job done: 26 cheerful letter names.` Until these exist the ap
 
 ## Step 3c — Two more lesson voices for the Settings page
 
-The app now has a ⚙ Settings page where a child can pick the lesson voice: Sonia (teacher, default), Maisie (child) or Ryan (man). Sonia's clips exist. This records about 2,700 English lesson clips in each of the two new voices (long job, can take an hour or more):
+The app now has a ⚙ Settings page where a child can pick the lesson voice: Sonia (teacher, default), Maisie (girl), Leo (boy) or Ryan (man). Sonia's clips exist. This records about 2,700 English lesson clips in each of the three new voices (long job, can take an hour or more):
 
 ```
 .audio-tools\Scripts\python tools\generate-pending-audio.py voices
 ```
 
-It saves progress every 200 clips to `dist\voice-speech.js`, so if it stops, run the same command again and it continues. Expected last line: `Voices job done: {'maisie': ..., 'ryan': ...} skipped 0`. Bangla, Arabic, letter names and letter sounds are not re-recorded.
+It saves progress every 200 clips to `dist\voice-speech.js`, so if it stops, run the same command again and it continues. Expected last line: `Voices job done: {'maisie': ..., 'leo': ..., 'ryan': ...} skipped 0`. Bangla, Arabic, letter names and letter sounds are not re-recorded. Leo is Ryan's voice made higher (pitch +45Hz) because there is no boy's voice in the service; after the first batch, play Leo on the Settings page and tell Tahlil how it sounds.
 
 ## Step 4 — Check, commit, push, publish
 
