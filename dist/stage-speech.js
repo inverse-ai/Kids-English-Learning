@@ -3210,5 +3210,11 @@ export const stageSpeech=Object.freeze({
   "letter-joy:v": "/audio/b5c0c8756f787a068b3b5ef0.mp3",
   "letter-joy:x": "/audio/65a7f89cf4e49405aafd1b82.mp3",
   "letter-joy:y": "/audio/b9a57c57d84ac0e40db0001a.mp3",
-  "letter-joy:z": "/audio/532822adfd40d483f9e59694.mp3"
+  "letter-joy:z": "/audio/532822adfd40d483f9e59694.mp3",
+  "text:Pick an item first, then tap where it goes.": "/audio/5023de1cca0db3d8406a4a48.mp3",
+  "text:Tap a sound tile first, then a word space.": "/audio/3b0a26d0289929068d48f3e4.mp3",
+  "text:Tap a big letter first, then its little letter.": "/audio/2944be4a961f3320b60ab373.mp3",
+  "text:Tap an object first, then its group.": "/audio/e2f1b7ca9fe96c78c18515cf.mp3",
+  "text:First pick the cat.": "/audio/5666b96ae5d8b26326b03be4.mp3",
+  "text:First pick the rat.": "/audio/a5da1e92f636ed2067ad53af.mp3"
 });
