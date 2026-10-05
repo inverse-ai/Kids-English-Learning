@@ -1,3 +1,4 @@
+import {sentenceWritingRefs,sentenceWritingEntries} from './sentence-writing-data.js';
 import {playfulLesson} from './playful-data.js';
 import {learningSections} from './section-registry.js';
 import {finishIllustration} from './illustration-style.js';
@@ -14,6 +15,7 @@ export function validResume(r){
  if(r.kind==='playful'&&typeof r.id==='string'&&playfulLesson(r.id))return {kind:'playful',id:r.id};
  if(r.kind==='stage'){
   if(r.page==='letter'&&Number.isInteger(r.index)&&alphabet[r.index])return {kind:r.kind,page:r.page,index:r.index};
+  if(r.page==='sentence-writing'&&sentenceWritingRefs.some(e=>e.id===r.id))return {kind:r.kind,page:r.page,id:r.id};
   if(r.page==='spelling')return {kind:r.kind,page:r.page};
   if(r.page==='letter-match')return {kind:r.kind,page:r.page};
   if(r.page==='alphabet')return {kind:r.kind,page:r.page};
@@ -34,6 +36,7 @@ export function priorResume(p){
  if(current)return validResume({kind:'legacy',profile:p.profile,id:current});
  if(p.pictureFamilies.current)return validResume({kind:'family',page:'lesson',round:p.pictureFamilies.current});
  if(p.pictureFamilies.writing.current)return validResume({kind:'family',page:'writing',word:p.pictureFamilies.writing.current});
+ if(p.learning.sentenceWriting?.current)return validResume({kind:'stage',page:'sentence-writing',id:p.learning.sentenceWriting.current});
  if(p.learning.science?.current)return validResume({kind:'stage',page:'science-lesson',id:p.learning.science.current});
  if(p.learning.math?.current)return validResume({kind:'stage',page:'math-lesson',id:p.learning.math.current});
  if(p.learning.moveCurrent)return validResume({kind:'stage',page:'move-lesson',id:p.learning.moveCurrent});
@@ -53,6 +56,7 @@ export function resumeName(r,p){
  if(r.kind==='legacy')return profiles[r.profile].lessons.find(x=>x.id===r.id).title;
  if(r.kind==='family')return r.page==='reading'?'The -at family · Read sentences & a story':r.page==='writing'?'Write '+r.word:r.page==='lesson'?'The -'+familyRounds.find(x=>x.id===r.round).family+' family · Round '+familyRounds.find(x=>x.id===r.round).number:'The -'+r.family+' word family';
  if(r.kind==='playful')return playfulLesson(r.id).title+' · Play & practise';
+ if(r.page==='sentence-writing')return 'Write · '+sentenceWritingEntries(stories).find(e=>e.id===r.id).text;
  if(r.page==='spelling'){const a=alphabet[p.learning.spelling.letter];return 'Spell picture words · '+a.letter.toUpperCase()+a.letter;}
  if(r.page==='letter-match')return 'Big and small letters · '+(p.learning.letterMatching?.phase==='review'?'Review':'Round '+((p.learning.letterMatching?.round||0)+1));
  if(r.page==='alphabet')return 'Letters · Read the alphabet';

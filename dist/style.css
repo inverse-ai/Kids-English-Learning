@@ -478,3 +478,22 @@ img.family-card-picture{display:block;width:100%;max-width:160px;height:auto;asp
 .settings-slider .btn{min-width:52px;font-size:1.4rem;padding:6px 12px}
 .settings-slider output{min-width:3.5em;text-align:right;font-weight:bold}
 @media(max-width:560px){.top-actions .settings-open{padding:8px 10px}}
+.stage-menu-symbol{display:block;min-width:64px;font-size:1.8rem;font-weight:bold;color:var(--card-ink,#2e52df);line-height:1.25;white-space:nowrap}
+.organised-menu .words-menu-card{min-height:112px}
+.organised-menu .words-menu-card>span:not(.words-menu-art){min-width:0;overflow-wrap:anywhere}
+.tracing-letter-grid button{min-height:72px;min-width:56px;font-size:1.8rem}
+.tracing-letter-grid small{display:block;font-size:1rem}
+.trace-case-controls button[aria-pressed=true]{background:#edf6ff;border-color:#4269bc}
+.story-practice-card{display:flex;flex-direction:column;gap:12px}
+.story-practice-card h2{font-size:1.15rem;margin:0}
+.story-practice-card .btn{white-space:normal;min-height:56px}
+.writing-library{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px}
+.writing-library .story-scene{width:100%;max-height:190px}
+.writing-library .word-path-card{max-width:100%;gap:12px}
+.sentence-writing-pad{height:220px;max-width:600px;touch-action:none}
+.sentence-writing-guide{position:absolute;inset:8px 6%;pointer-events:none}
+.sentence-writing-guide svg{width:100%;height:100%}
+.sentence-writing-guide[hidden]{display:none}
+.sentence-writing-pad canvas{width:100%;height:100%;touch-action:none}
+.writing-current-word{text-decoration:underline;text-decoration-color:#526fa9;text-underline-offset:6px}
+@media(max-width:600px){.organised-menu .words-menu-card{padding:18px 14px;gap:12px}.organised-menu .words-menu-card small{font-size:1rem}.organised-menu .stage-menu-symbol{font-size:1.6rem;min-width:56px}.sentence-writing-pad{height:200px}.sentence-writing-player h2{font-size:1.3rem}}

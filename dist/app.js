@@ -239,6 +239,8 @@ app.addEventListener('click',async event=>{
  if(action==='opening-stop'){opening.stop();return;}
  if(!await opening.beforeInteraction(action))return;
  if(action.startsWith('narration-')){handleNarration(action);return;}
+ if(action==='playful-trace-open'||action==='playful-practice-open'){checkpoint();families.checkpoint();cancelAudio();stages.setStage(action==='playful-trace-open'?'letters':'stories');view='playful';playful.openActivity(action==='playful-trace-open'?'letter:'+target.dataset.letter:target.dataset.id,action==='playful-trace-open'?'trace':'choose');return;}
+ if(action==='stages-build-open'&&view==='families'){checkpoint();families.checkpoint();cancelAudio();view='stages';stages.handle(target.dataset);return;}
  if(action==='playful-open'){checkpoint();families.checkpoint();cancelAudio();const section=target.dataset.id.split(':')[0];stages.setStage(section==='letter'?'letters':section==='word'?'words':section==='story'?'stories':section);view='playful';playful.open(target.dataset.id);return;}
  if(action.startsWith('playful-')){if(action==='playful-pause'){playfulAudio.pause();playful.toggleMotion();}else playful.handle(target.dataset);return;}
  if(action==='pwa-install'){installPwa().then(()=>render(false));return;}

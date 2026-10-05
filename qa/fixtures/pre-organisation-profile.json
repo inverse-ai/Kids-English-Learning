@@ -1,0 +1,163 @@
+{
+  "format": "little-english-profile",
+  "version": 1,
+  "exportedAt": "2026-10-05T12:00:00.000Z",
+  "profile": "little",
+  "data": {
+    "learning": {
+      "letter": 1,
+      "lettersDone": [
+        "a"
+      ],
+      "words": {},
+      "stories": {
+        "pig-pen": {
+          "mode": "blanks",
+          "phase": "blanks",
+          "line": 1,
+          "skipIntro": true,
+          "blank": 0,
+          "answers": [
+            "run"
+          ],
+          "done": true,
+          "gapAttempts": [
+            {
+              "attempts": 0,
+              "wrong": 0,
+              "firstChoice": null,
+              "firstCorrect": null,
+              "assisted": false,
+              "demonstrated": false,
+              "easier": false,
+              "helpOpen": false
+            }
+          ],
+          "assisted": false
+        }
+      },
+      "patterns": [],
+      "storyWordsMet": [],
+      "wordCurrent": "first-cat",
+      "storyCurrent": null,
+      "spelling": {
+        "letter": 2,
+        "position": 1,
+        "done": [
+          "a"
+        ]
+      },
+      "playful": {
+        "current": "letter:a",
+        "wordsMet": [
+          "cat"
+        ],
+        "lessons": {
+          "letter:a": {
+            "step": 4,
+            "completed": [
+              0,
+              1,
+              2
+            ],
+            "work": {
+              "4": {
+                "seen": [
+                  "upper"
+                ],
+                "order": [],
+                "placed": [],
+                "value": null,
+                "selected": null,
+                "trace": [
+                  [
+                    [
+                      0.2,
+                      0.3
+                    ],
+                    [
+                      0.4,
+                      0.6
+                    ]
+                  ]
+                ],
+                "done": false
+              }
+            },
+            "attempts": {
+              "4": {
+                "tries": 1,
+                "misses": 0,
+                "assisted": false,
+                "firstCorrect": true
+              }
+            },
+            "done": false
+          }
+        }
+      },
+      "valueStories": {},
+      "valueWordsMet": [],
+      "valueCurrent": null,
+      "move": {},
+      "moveCurrent": null
+    },
+    "pictureFamilies": {
+      "completed": [],
+      "inProgress": {},
+      "current": null,
+      "lastFamily": null,
+      "selected": {},
+      "writing": {
+        "completed": [
+          "dog"
+        ],
+        "drafts": {
+          "cat": {
+            "drawing": [
+              [
+                [
+                  0.1,
+                  0.2
+                ],
+                [
+                  0.3,
+                  0.4
+                ]
+              ]
+            ],
+            "showGuide": false
+          }
+        },
+        "current": "cat"
+      },
+      "reading": {
+        "at": {
+          "started": false,
+          "step": 0,
+          "completed": [],
+          "answers": {},
+          "wordsNeedingPractice": [],
+          "star": false,
+          "review": null,
+          "meaningOpen": false
+        }
+      }
+    },
+    "lastActivity": {
+      "kind": "family",
+      "page": "writing",
+      "word": "cat"
+    },
+    "practice": {
+      "items": {},
+      "history": [],
+      "fluency": [],
+      "round": null
+    },
+    "completed": [],
+    "inProgress": {},
+    "currentLesson": null,
+    "last": null
+  }
+}

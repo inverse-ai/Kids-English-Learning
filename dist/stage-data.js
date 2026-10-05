@@ -1,3 +1,4 @@
+import {normalizeSentenceWriting} from './sentence-writing-data.js';
 import {normalizePlayful} from './playful-store.js';
 import {normalizeLetterMatching} from './letter-match-data.js';
 import {normalizeScience} from './science-data.js';
@@ -88,6 +89,7 @@ export function normalizeLearning(raw){
  if(raw?.science&&typeof raw.science==='object')result.science=normalizeScience(raw.science);
  if(raw?.math&&typeof raw.math==='object')result.math=normalizeMath(raw.math);
  if(raw?.alphabetReading&&typeof raw.alphabetReading==='object')result.alphabetReading=normalizeAlphabetReading(raw.alphabetReading);
+ if(raw?.sentenceWriting&&typeof raw.sentenceWriting==='object')result.sentenceWriting=normalizeSentenceWriting(raw.sentenceWriting,stories);
  if(raw?.playful&&typeof raw.playful==='object')result.playful=normalizePlayful(raw.playful,stories);
  return result;
 }

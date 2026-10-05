@@ -53,11 +53,12 @@ export function createStoryFlow({onAttempt=()=>{},onStoryFinish=()=>{},getProgre
  }
  return {
   html,
-  open(id,quiet=false){
+  open(id,quiet=false,activity=null){
    if(!stories.some(s=>s.id===id))return;stop();selected=id;learning().storyCurrent=id;const existing=learning().stories[id];
    learning().stories[id]??={mode:'read',phase:'sentence',line:0,skipIntro:false,blank:0,answers:story().blanks.map(()=>null),done:false};
    progress().gapAttempts??=story().blanks.map(()=>emptyAttempt());progress().assisted??=false;
-   if(quiet&&existing){if(progress().phase==='helper'&&!intro())progress().phase='sentence';save();render();}
+   if(activity==='blanks'){progress().mode='blanks';progress().phase='blanks';progress().blank=Math.max(0,story().blanks.findIndex((b,i)=>progress().answers[i]!==b.word));save();render();}
+   else if(quiet&&existing){if(progress().phase==='helper'&&!intro())progress().phase='sentence';save();render();}
    else if(['sentence','helper'].includes(progress().phase))prepareSentence(quiet);else{save();render();}
   },
   handle(data){
