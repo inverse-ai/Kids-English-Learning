@@ -263,7 +263,7 @@ async def job_opening_sonia(timings, speech):
     #  joined   – written as one sound stream, explicit lam-lam-alif (bismillaahir)
     #  standard – the usual written form with full vowels
     texts = {
-        'joined': 'أَعُوذُ بِاللَّاهِ مِنَشْ شَيْطَانِرْ رَجِيمْ. ... بِسْمِلْلَاهِرْ رَحْمَانِرْ رَحِيمْ. ... رَبِّ زِدْنِيْ عِلْمَاْ.',
+        'joined': 'أَعُوذُ بِاللَّاهِ مِنَشْ شَيْطَانِرْ رَجِيمْ. ... بِسْمِلْلَاهِرْ رَحْمَانِرْ رَحِيمْ. ... رَبِّ زِدْنِي عِلْمَا.',
         'standard': 'أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ. ... بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ. ... رَبِّ زِدْنِي عِلْمًا.',
     }
     for spelling, arabic in texts.items():
