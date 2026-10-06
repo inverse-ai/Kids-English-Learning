@@ -15,13 +15,16 @@ export const lessonVoices=Object.freeze([
 let settings={version:1,voice:'sonia',volume:100,light:100};
 try{const saved=JSON.parse(localStorage.getItem(STORE)||'null');if(saved?.version===1){
  if(lessonVoices.some(v=>v.id===saved.voice))settings.voice=saved.voice;
+ if(saved.voiceChosen===true)settings.voiceChosen=true;
  if(Number.isFinite(saved.volume))settings.volume=clamp(saved.volume,0,100);
  if(Number.isFinite(saved.light))settings.light=clamp(saved.light,40,100);}}catch{}
 function clamp(n,lo,hi){return Math.max(lo,Math.min(hi,Math.round(n)));}
 function store(){try{localStorage.setItem(STORE,JSON.stringify(settings));}catch{}}
 
 export const currentVoice=()=>settings.voice;
-export function setVoice(id){if(lessonVoices.some(v=>v.id===id)){settings.voice=id;store();}}
+export function setVoice(id){if(lessonVoices.some(v=>v.id===id)){settings.voice=id;settings.voiceChosen=true;store();}}
+// True once a voice has been picked on the Settings page (Sonia is also the untouched default).
+export const voiceChosen=()=>settings.voiceChosen===true;
 // How many lesson clips the chosen voice has (0 = still to be recorded).
 export const voiceClipCount=id=>id==='sonia'?Infinity:Object.keys(voiceSpeech[id]||{}).length;
 // The chosen voice's recording of an English clip, if it has one.
