@@ -256,6 +256,16 @@ OPENING_SONIA_TEXT = 'A-oodhu billaahi minash-shaytaanir-rajeem. ... Bismillaahi
 
 async def job_opening_sonia(timings, speech):
     slots = asyncio.Semaphore(1)
+    # Arabic voice (better letters and tajweed sounds than an English voice).
+    # The words are written joined the way they are recited (wasl), so the voice
+    # says "bismillaahir-rahmaanir-raheem", not "bism allah".
+    arabic = 'أَعُوذُ بِاللّٰهِ مِنَ الشَّيْطَانِ الرَّجِيمْ. ... بِسْمِلّٰهِرْ رَحْمٰنِرْ رَحِيمْ. ... رَبِّ زِدْنِي عِلْمَا.'
+    for name, rate, pitch in (('arabic', '-18%', '+0Hz'), ('arabic-young', '-18%', '+30Hz')):
+        clip, _ = await record(arabic, 'ar-SA-ZariyahNeural', rate, slots, False, pitch)
+        preview = ROOT / 'tools' / ('opening-preview-' + name + '.mp3')
+        preview.write_bytes((DIST / clip.lstrip('/')).read_bytes())
+        print('Opening preview saved: tools/opening-preview-' + name + '.mp3 (' + clip + ')', flush=True)
+    return
     # Two previews: Maisie (the girl's voice, Tahlil's choice) and Sonia.
     for name, voice, rate in (('maisie', LETTER_VOICE, '-20%'), ('sonia', ENGLISH_VOICE, '-25%')):
         clip, _ = await record(OPENING_SONIA_TEXT, voice, rate, slots, False)
