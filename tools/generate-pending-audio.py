@@ -259,7 +259,7 @@ async def job_opening_sonia(timings, speech):
     # Arabic voice (better letters and tajweed sounds than an English voice).
     # The words are written joined the way they are recited (wasl), so the voice
     # says "bismillaahir-rahmaanir-raheem", not "bism allah".
-    arabic = 'أَعُوذُ بِاللّٰهِ مِنَ الشَّيْطَانِ الرَّجِيمْ. ... بِسْمِلّٰهِرْ رَحْمٰنِرْ رَحِيمْ. ... رَبِّ زِدْنِي عِلْمَا.'
+    arabic = 'أَعُوذُ بِاللّٰهِ مِنَشْ شَيْطَانِرْ رَجِيمْ. ... بِسْمِلّٰهِرْ رَحْمٰنِرْ رَحِيمْ. ... رَبِّ زِدْنِي عِلْمَا.'
     for name, rate, pitch in (('arabic', '-18%', '+0Hz'), ('arabic-young', '-18%', '+30Hz')):
         clip, _ = await record(arabic, 'ar-SA-ZariyahNeural', rate, slots, False, pitch)
         preview = ROOT / 'tools' / ('opening-preview-' + name + '.mp3')
