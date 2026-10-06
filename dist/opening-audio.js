@@ -20,7 +20,7 @@ export function createOpeningAudio(){
  }
  // A human recitation replaces the temporary synthetic clip when installed with
  // tools/install-opening-recitation.mjs; the note tells parents which one plays.
- function sourceNote(){const s=openingAudioSource;return s.recitation?'<p>Recitation'+(s.reciter?' by '+esc(s.reciter):'')+'.</p>':'<p>This opening is temporary computer speech. It will be replaced by a real recitation.</p>';}
+ function sourceNote(){const s=openingAudioSource;return s.recitation?'<p>Recitation'+(s.reciter?' by '+esc(s.reciter):'')+'.</p>':s.note?'<p>'+esc(s.note)+'</p>':'<p>This opening is temporary computer speech. It will be replaced by a real recitation.</p>';}
  function settings(){return '<div class="opening-settings"><label for="opening-audio-enabled"><input type="checkbox" id="opening-audio-enabled" '+(enabled?'checked':'')+'> Opening audio</label><p>Play the Arabic opening once when the app opens. Your choice is saved in this browser. Turning it on takes effect next time you open the app.</p><p lang="ar" dir="rtl">أعوذ بالله من الشيطان الرجيم، بسم الله الرحمن الرحيم، رب زدني علما</p>'+sourceNote()+'</div>';}
  return{html,settings,update,stop,beforeInteraction,begin:start,init:()=>{if(enabled)start();else state='done';},setEnabled:value=>{enabled=!!value;try{localStorage.setItem(STORE,JSON.stringify({version:1,enabled}));}catch{notice='This browser could not remember the opening audio setting.';}if(!enabled)stop();update();}};
 }
