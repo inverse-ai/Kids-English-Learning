@@ -268,9 +268,10 @@ async def job_opening_sonia(timings, speech):
         'standard': 'أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ. ... بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ. ... رَبِّ زِدْنِي عِلْمًا.',
     }
     for spelling, arabic in texts.items():
-        for tone, pitch in (('', '+0Hz'), ('-young', '+30Hz')):
+        # A child-like voice: the Arabic voice raised clearly higher and a touch quicker.
+        for tone, pitch, rate in (('-child', '+55Hz', '-12%'), ('', '+0Hz', '-18%')):
             name = 'arabic-' + spelling + tone
-            clip, _ = await record(arabic, 'ar-SA-ZariyahNeural', '-18%', slots, False, pitch)
+            clip, _ = await record(arabic, 'ar-SA-ZariyahNeural', rate, slots, False, pitch)
             preview = ROOT / 'tools' / ('opening-preview-' + name + '.mp3')
             preview.write_bytes((DIST / clip.lstrip('/')).read_bytes())
             print('Opening preview saved: tools/opening-preview-' + name + '.mp3', flush=True)
